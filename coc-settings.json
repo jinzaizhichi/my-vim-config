@@ -1,0 +1,15 @@
+{
+  "suggest.autoTrigger": "always",
+  "eslint.alwaysShowStatus": true,
+  "floatFactory.floatConfig": {
+    "border": true,
+    "rounded": true,
+    "borderhighlight": "CocFloating"
+  },
+  "outline.previewBorder": true,
+  "notification.border": true,
+  "suggest.floatConfig": {
+    "border": true,
+    "rounded": true
+  }
+}
