@@ -10,7 +10,8 @@ let g:config_files = [
     \ 'mappings.vim',
     \ 'nerdtree.vim',
     \ 'prettier.vim',
-    \ 'settings.vim'
+    \ 'settings.vim',
+    \ 'startscreen.vim'
     \ ]
 
 for config_file in g:config_files
