@@ -8,4 +8,8 @@
 
 And thats my vim setup.
 
+Dont forget to remove `.git` `.gitignore` `README.md` `sea-dark-custom.terminal` `seadark.vim` `vim-screenshot.png` `vimShortcuts.txt` from `~/.vim` folder after clone, thoose files should not be in the folder.
+
+I created this repo to install my config on my other machines easily, also record the changes of my config.
+
 ![screenshot](vim-screenshot.png)
