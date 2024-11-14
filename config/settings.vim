@@ -1,4 +1,5 @@
 highlight VertSplit cterm=NONE " split bar background color
+highlight LineNr ctermfg=0     " line number coloring
 set fillchars=vert:\│,eob:\    " split bar and end of buffer styling
 set hlsearch                   " highlight search results
 set nocompatible               " set compatibility to vim only
