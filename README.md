@@ -9,8 +9,10 @@
 
 And thats my vim setup.
 
-Dont forget to remove `README.md` `relaxed.vim` `vim-screenshot.jpeg` `vimShortcuts.txt` from `~/.vim` folder after clone, thoose files should not be in the folder.
-
 I created this repo to install my config on my other machines easily, also record the changes of my config.
 
-![screenshot](vim-screenshot.jpeg)
+run this command after installation thoose files somehow slows down or even breaks vim when they are present in .vim folder `rm -rf ~/.vim/README.md ~/.vim/vim-ss-1.jpeg ~/.vim/vim-ss-3.jpeg ~/.vim/vim-ss-3.jpeg ~/.vim/relaxed.vim` or maybe its .git repo I dont know the exact reason behind this but we remove .git and .gitignore in the first clone command.
+
+![screenshot](vim-ss-1.jpeg)
+![screenshot](vim-ss-2.jpeg)
+![screenshot](vim-ss-3.jpeg)
