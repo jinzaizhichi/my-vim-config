@@ -17,3 +17,5 @@ set nofoldenable               " dont fold on load
 set laststatus=2               " status bar
 set t_Co=16                    " colors
 set incsearch                  " Incremental search, hit `<CR>` to stop.
+set noswapfile                 " disable swap files
+set shortmess-=S               " show matching count when doing search or replace

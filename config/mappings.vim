@@ -11,6 +11,8 @@ inoremap <Right> <Right>
 inoremap <silent><expr> <C-j> coc#refresh()
 inoremap <silent><expr> <C-k><C-i> coc#rpc#request('doHover', [])
 nnoremap <silent><expr> <C-k><C-i> CocActionAsync('doHover')
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gt <Plug>(coc-type-definition)
 
 " nerdtree toggle
 nnoremap <C-t> :NERDTreeToggle<CR>
