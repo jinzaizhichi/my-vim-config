@@ -11,7 +11,8 @@ let g:config_files = [
     \ 'nerdtree.vim',
     \ 'prettier.vim',
     \ 'settings.vim',
-    \ 'startscreen.vim'
+    \ 'startscreen.vim',
+    \ 'tmuxline.vim'
     \ ]
 
 for config_file in g:config_files

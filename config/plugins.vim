@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
+Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -11,5 +12,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'konfekt/fastfold'
 Plug 'voldikss/vim-floaterm'
 Plug 'sheerun/vim-polyglot'
+Plug 'edkolev/tmuxline.vim'
 
 call plug#end()
