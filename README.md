@@ -22,10 +22,10 @@ Installation Steps
     4. Add alliases to your `~/.bashrc` or `~/.zshrc` files to run them, you can check my zsh config for how to add them. Or skip this if you gonna use my zsh config because they are already added there.
 4. Zsh
     1. Install lolcat or remove the ASCII echo in config
-    1. My cli based [todo app](https://github.com/dorukozerr/todo-app) is used in zsh config, install it or remove the related content from config.
-    2. Remove or backup your `/.zshrc` file, to remove it run `rm ~/.zshrc`.
-    3. Run `mv ~/kawaiDotfiles/zsh/.zshrc ~/`.
-    4. Source the file `source ~/.zshrc`.
+    2. My cli based [todo app](https://github.com/dorukozerr/todo-app) is used in zsh config, install it or remove the related content from config.
+    3. Remove or backup your `/.zshrc` file, to remove it run `rm ~/.zshrc`.
+    4. Run `mv ~/kawaiDotfiles/zsh/.zshrc ~/`.
+    5. Source the file `source ~/.zshrc`.
 5. Final notes
     - Don't forget to remove the git repo after you're done with everything `rm -rf ~/kawaiDotfiles`.
     - I use this [terminal theme](https://github.com/lysyi3m/macos-terminal-themes/blob/master/themes/Relaxed.terminal), if you are not on default macos terminal app search gogh terminal themes and inside it search relaxed theme they support almost every terminal for installation themes.
@@ -50,10 +50,10 @@ Installation Steps
 | <kbd>ctrl</kbd> <kbd>p</kbd>                              | Open fzf                              | `n`  |
 | <kbd>leader</kbd> <kbd>b</kbd> <kbd>n</kbd>               | Go to next buffer (buffer next)       | `n`  |
 | <kbd>leader</kbd> <kbd>b</kbd> <kbd>p</kbd>               | Go to prev buffer (buffer prev)       | `n`  |
-| <kbd>leader</kbd> <kbd>i</kbd> <kbd>w</kbd> <kbd>w</kbd>  | Increase pane width                   | `n`  |
-| <kbd>leader</kbd> <kbd>d</kbd> <kbd>w</kbd> <kbd>w</kbd>  | Decrease pane width                   | `n`  |
-| <kbd>leader</kbd> <kbd>i</kbd> <kbd>w</kbd> <kbd>h</kbd>  | Increase pane height                  | `n`  |
-| <kbd>leader</kbd> <kbd>d</kbd> <kbd>w</kbd> <kbd>h</kbd>  | Decrease pane height                  | `n`  |
+| <kbd>leader</kbd> <kbd>i</kbd> <kbd>p</kbd> <kbd>w</kbd>  | Increase pane width                   | `n`  |
+| <kbd>leader</kbd> <kbd>d</kbd> <kbd>p</kbd> <kbd>w</kbd>  | Decrease pane width                   | `n`  |
+| <kbd>leader</kbd> <kbd>i</kbd> <kbd>p</kbd> <kbd>h</kbd>  | Increase pane height                  | `n`  |
+| <kbd>leader</kbd> <kbd>d</kbd> <kbd>p</kbd> <kbd>h</kbd>  | Decrease pane height                  | `n`  |
 | <kbd>leader</kbd> <kbd>f</kbd> <kbd>t</kbd>               | Toggle floating terminal              | `n`  |
 | <kbd>leader</kbd> <kbd>f</kbd> <kbd>c</kbd>               | Create floating terminal instance     | `n`  |
 | <kbd>leader</kbd> <kbd>f</kbd> <kbd>n</kbd>               | Go to next floating terminal instance | `n`  |
