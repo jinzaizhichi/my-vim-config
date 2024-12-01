@@ -24,10 +24,10 @@ nnoremap <C-p> :FZF<CR>
 nnoremap <Leader>bn :bn<CR>
 nnoremap <Leader>bp :bp<CR>
 
-" window width increase/decrease
-nnoremap <Leader>iww :vertical resize +10<CR>
-nnoremap <Leader>dww :vertical resize -10<CR>
+" increase/decrease pane width
+nnoremap <Leader>ipw :vertical resize +10<CR>
+nnoremap <Leader>dpw :vertical resize -10<CR>
 
-" window height increase/decrease
-nnoremap <Leader>iwh :resize +10<CR>
-nnoremap <Leader>dwh :resize -10<CR>
+" increase/decrease pane height
+nnoremap <Leader>iph :resize +10<CR>
+nnoremap <Leader>dph :resize -10<CR>

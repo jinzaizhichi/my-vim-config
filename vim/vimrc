@@ -6,7 +6,6 @@ let g:config_files = [
     \ 'airline.vim',
     \ 'coc.vim',
     \ 'fastfold.vim',
-    \ 'floaterm.vim',
     \ 'mappings.vim',
     \ 'nerdtree.vim',
     \ 'prettier.vim',

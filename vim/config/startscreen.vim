@@ -1,19 +1,24 @@
 " I wish I could understand and write something like this myself...
-" https://github.com/arp242/startscreen.vim
+" Original author https://github.com/arp242/startscreen.vim
 
 scriptencoding utf-8
+
 if exists('g:loaded_startscreen') | finish | endif
+
 let g:loaded_startscreen = 1
 let s:save_cpo = &cpo
+
 set cpo&vim
 
 fun! startscreen#fortune()
 	let l:fortune = systemlist('fortune')
+	
 	call append('0', ['', ''] + map(l:fortune, '"        " . v:val'))
+	
 	:1
+	
 	redraw!
 
-	" Moar fortunes! :-)
 	nnoremap <buffer> <silent> <Return> :enew<CR>:call startscreen#start()<CR>
 endfun
 
@@ -56,4 +61,5 @@ augroup startscreen
 augroup end
 
 let &cpo = s:save_cpo
+
 unlet s:save_cpo
