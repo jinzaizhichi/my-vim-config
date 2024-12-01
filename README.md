@@ -1,6 +1,6 @@
 # My dotfiles
 
-## Installation Steps
+### Installation Steps
 
 -   Clone the repo `git clone git@github.com:dorukozerr/dotfiles.git ~/kawaiDotfiles`
 
@@ -22,7 +22,7 @@
     4. Add alliases to your `~/.bashrc` or `~/.zshrc` files to run them, you can check my zsh config for how to add them. Or skip this if you gonna use my zsh config because they are already added there.
 4. Zsh
     1. I use my cli based [todo app](https://github.com/dorukozerr/todo-app) in my zsh config install it or remove the related content from my config.
-    2. Remove or backup your `/.zshrc` file.
+    2. Remove or backup your `/.zshrc` file, to remove it run `~/.zshrc`.
     3. Run `mv ~/kawaiDotfiles/zsh/.zshrc ~/`.
     4. Source the file `source ~/.zshrc`.
 5. Final notes
