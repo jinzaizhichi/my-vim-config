@@ -21,8 +21,9 @@ Installation Steps
     3. Make scripts executable with `chmod +x ~/.scripts/commit.sh && chmod +x ~/.scripts/custom_grep.sh`.
     4. Add alliases to your `~/.bashrc` or `~/.zshrc` files to run them, you can check my zsh config for how to add them. Or skip this if you gonna use my zsh config because they are already added there.
 4. Zsh
-    1. I use my cli based [todo app](https://github.com/dorukozerr/todo-app) in my zsh config install it or remove the related content from my config.
-    2. Remove or backup your `/.zshrc` file, to remove it run `~/.zshrc`.
+    1. Install lolcat or remove the ASCII echo in config
+    1. My cli based [todo app](https://github.com/dorukozerr/todo-app) is used in zsh config, install it or remove the related content from config.
+    2. Remove or backup your `/.zshrc` file, to remove it run `rm ~/.zshrc`.
     3. Run `mv ~/kawaiDotfiles/zsh/.zshrc ~/`.
     4. Source the file `source ~/.zshrc`.
 5. Final notes
