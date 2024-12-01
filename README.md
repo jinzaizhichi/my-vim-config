@@ -1,6 +1,6 @@
 # My dotfiles
 
-### Installation Steps
+Installation Steps
 
 -   Clone the repo `git clone git@github.com:dorukozerr/dotfiles.git ~/kawaiDotfiles`
 
