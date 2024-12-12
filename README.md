@@ -2,10 +2,11 @@
 
 ## Installation Steps 
 
--   Clone the repo `git clone git@github.com:dorukozerr/dotfiles.git ~/kawaiDotfiles`
+-   Clone the repo `git clone git@github.com:dorukozerr/dotfiles.git ~/kawaiDotfiles`.
+-   You need yarn for installing vim plugins, just run `npm i -g yarn` if you don't have it.
 
 1. Vim
-    1. Remove or backup your `~/.vim` folder, to remove it run `rm -rf ~/.vim`
+    1. Remove or backup your `~/.vim` folder, to remove it run `rm -rf ~/.vim`.
     2. Run `mv ~/kawaiDotfiles/vim ~/.vim && curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`.
     3. Then enter vim and type `:PlugInstall`.
     4. Inside Vim run `:CocInstall coc-tsserver coc-eslint coc-vimlsp coc-json coc-css @yaegassy/coc-tailwindcss3 coc-go` to install my most used coc LSPs for web dev.
@@ -27,7 +28,7 @@
     4. Source the file `source ~/.zshrc`.
 5. Final notes
     - Don't forget to remove the git repo after you're done with everything `rm -rf ~/kawaiDotfiles`.
-    - I use my custom terminal theme named keta, you can import it if you are using macos terminal app just open keta.terminal file and set it as default profile from settings. If you're not on the macos terminal app I'm sharing the color schema below you can use the colors.
+    - I created a custom terminal theme, you can copy to colors from below if you like it.
     - I use fira code mono nerd fonts.
     - Hope you liked it >.<
 

@@ -12,11 +12,11 @@ set cpo&vim
 
 fun! startscreen#fortune()
 	let l:fortune = systemlist('fortune')
-	
+
 	call append('0', ['', ''] + map(l:fortune, '"        " . v:val'))
-	
+
 	:1
-	
+
 	redraw!
 
 	nnoremap <buffer> <silent> <Return> :enew<CR>:call startscreen#start()<CR>
@@ -34,15 +34,15 @@ fun! startscreen#start()
 	enew
 
 	setlocal
-		\ bufhidden=wipe
-		\ buftype=nofile
-		\ nobuflisted
-		\ nocursorcolumn
-		\ nocursorline
-		\ nolist
-		\ nonumber
-		\ noswapfile
-		\ norelativenumber
+				\ bufhidden=wipe
+				\ buftype=nofile
+				\ nobuflisted
+				\ nocursorcolumn
+				\ nocursorline
+				\ nolist
+				\ nonumber
+				\ noswapfile
+				\ norelativenumber
 
 	call g:Startscreen_function()
 

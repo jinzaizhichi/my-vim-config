@@ -11,6 +11,6 @@ autocmd BufEnter * if bufname('#') =~ 'NERDtree\d\+' && bufname('%') !~ 'NERDtre
 augroup nerdtreehidecwd
   autocmd!
   autocmd FileType nerdtree setlocal conceallevel=3
-          \ | syntax match NERDTreeHideCWD #^[</].*$# conceal
-          \ | setlocal concealcursor=n
+        \ | syntax match NERDTreeHideCWD #^[</].*$# conceal
+        \ | setlocal concealcursor=n
 augroup end
