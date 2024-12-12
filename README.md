@@ -66,13 +66,13 @@
 A soft, pastel color scheme named after my cat, featuring gentle pinks and greens.
 
 | Label          | Color Code | Preview                                           |
-| -------------- | ---------- | ------------------------------------------------- |
+| :------------- | :--------- | :------------------------------------------------ |
 | Background     | `#0D0D0D`  | ![#0D0D0D](https://placehold.co/30/0D0D0D/0D0D0D) |
 | Text           | `#E8E8E8`  | ![#E8E8E8](https://placehold.co/30/E8E8E8/E8E8E8) |
 | Bold Text      | `#E8E8E8`  | ![#E8E8E8](https://placehold.co/30/E8E8E8/E8E8E8) |
 | Cursor         | `#E8E8E8`  | ![#E8E8E8](https://placehold.co/30/E8E8E8/E8E8E8) |
 | Selection      | `#B48EAD`  | ![#B48EAD](https://placehold.co/30/B48EAD/B48EAD) |
-| Normal Black   | `#262626`  | ![#262626](https://placehold.co/30/262626/262626) |
+| Normal Black   | `#1E1E1E`  | ![#262626](https://placehold.co/30/1E1E1E/1E1E1E) |
 | Normal Red     | `#C47B7B`  | ![#C47B7B](https://placehold.co/30/C47B7B/C47B7B) |
 | Normal Green   | `#909D63`  | ![#909D63](https://placehold.co/30/909D63/909D63) |
 | Normal Yellow  | `#C4B27B`  | ![#C4B27B](https://placehold.co/30/C4B27B/C4B27B) |
@@ -80,7 +80,7 @@ A soft, pastel color scheme named after my cat, featuring gentle pinks and green
 | Normal Magenta | `#B48EAD`  | ![#B48EAD](https://placehold.co/30/B48EAD/B48EAD) |
 | Normal Cyan    | `#A4B49E`  | ![#A4B49E](https://placehold.co/30/A4B49E/A4B49E) |
 | Normal White   | `#E8E8E8`  | ![#E8E8E8](https://placehold.co/30/E8E8E8/E8E8E8) |
-| Bright Black   | `#363636`  | ![#363636](https://placehold.co/30/363636/363636) |
+| Bright Black   | `#141414`  | ![#363636](https://placehold.co/30/141414/141414) |
 | Bright Red     | `#C47B7B`  | ![#C47B7B](https://placehold.co/30/C47B7B/C47B7B) |
 | Bright Green   | `#909D63`  | ![#909D63](https://placehold.co/30/909D63/909D63) |
 | Bright Yellow  | `#C4B27B`  | ![#C4B27B](https://placehold.co/30/C4B27B/C4B27B) |
