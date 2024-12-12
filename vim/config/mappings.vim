@@ -20,9 +20,10 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 " fzf toggle
 nnoremap <C-p> :FZF<CR>
 
-" buffer navigation
+" buffer
 nnoremap <Leader>bn :bn<CR>
 nnoremap <Leader>bp :bp<CR>
+nnoremap <leader>bc :%bdelete<Bar>edit #<Bar>normal`"<CR>
 
 " increase/decrease pane width
 nnoremap <Leader>ipw :vertical resize +10<CR>
