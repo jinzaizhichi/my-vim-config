@@ -35,7 +35,7 @@
 ![screenshot](ss-2.png)
 ![screenshot](ss-3.png)
 
-## Vim shortcuts configured manually       
+## Vim shortcuts configured manually 
 
 -   Leader key is remapped to space.
 
