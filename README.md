@@ -34,7 +34,6 @@
 
 ![screenshot](ss-1.png)
 ![screenshot](ss-2.png)
-![screenshot](ss-3.png)
 
 ## Vim shortcuts configured manually 
 
