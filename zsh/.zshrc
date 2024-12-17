@@ -1,10 +1,10 @@
 PS1='%B%F{green}%n@%m%f%b %F{blue}%~%f $ '
 
-alias greps="~/.scripts/custom_grep.sh"
+alias lazygrep="~/.scripts/lazygrep.sh"
 alias commit="~/.scripts/commit.sh"
 alias ls="ls -GFla"
 
-export TERM=xterm-256color
+export TERM="xterm-256color"
 
 function startup_sequence() {
     messages=(

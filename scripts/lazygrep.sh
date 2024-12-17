@@ -1,6 +1,6 @@
 #!/bin/bash
 
-custom_grep() {
+lazygrep() {
     local search_term
     local file_types
     local exclude_dirs
@@ -18,7 +18,7 @@ custom_grep() {
         file_types="js,jsx,ts,tsx"
     fi
 
-    echo -n "Directories to exclude (comma-separated, press enter for default node_modules,build,dist,.next): "
+    echo -n "Directories to exclude (comma-separated, press enter for default node_modules,build,dist,.next,.expo,ios,android): "
     
     read exclude_dirs
     
@@ -37,4 +37,4 @@ custom_grep() {
     fi
 }
 
-custom_grep
+lazygrep
