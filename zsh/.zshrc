@@ -1,10 +1,13 @@
+export TERM='xterm-256color'
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 PS1='%B%F{green}%n@%m%f%b %F{blue}%~%f $ '
 
-alias lazygrep="~/.scripts/lazygrep.sh"
+alias greps="~/.scripts/custom_grep.sh"
 alias commit="~/.scripts/commit.sh"
 alias ls="ls -GFla"
-
-export TERM="xterm-256color"
 
 function startup_sequence() {
     messages=(

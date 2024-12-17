@@ -5,10 +5,11 @@ set hlsearch                                " highlight search results
 set nocompatible                            " set compatibility to vim only
 set backspace=indent,eol,start              " remap backspace key
 set wrap                                    " automatically wrap text that extends beyond the screen length
+scriptencoding utf-8
 set encoding=utf-8                          " encoding
 set nu rnu                                  " show line numbers
 filetype plugin indent on                   " must look into help for this
-set statusline=0                            " status line
+set statusline=1                            " status line
 set expandtab                               " must look into help for this
 set tabstop=2                               " must look into help for this
 set softtabstop=2                           " must look into help for this

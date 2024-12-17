@@ -1,6 +1,6 @@
-# My dotfiles 
+# My dotfiles
 
-## Installation Steps 
+## Installation Steps
 
 -   Clone the repo `git clone git@github.com:dorukozerr/dotfiles.git ~/kawaiDotfiles`.
 -   You need yarn for installing vim plugins, just run `npm i -g yarn` if you don't have it.
@@ -35,7 +35,7 @@
 ![screenshot](ss-1.png)
 ![screenshot](ss-2.png)
 
-## Vim shortcuts configured manually 
+## Vim shortcuts configured manually
 
 -   Leader key is remapped to space.
 
@@ -60,8 +60,9 @@
 | <kbd>leader</kbd> <kbd>f</kbd> <kbd>n</kbd>               | Go to next floating terminal instance | `n`  |
 | <kbd>leader</kbd> <kbd>f</kbd> <kbd>p</kbd>               | Go to prev floating terminal instance | `n`  |
 | <kbd>leader</kbd> <kbd>f</kbd> <kbd>q</kbd>               | Quit/Close floating terminal          | `n`  |
+| <kbd>leader</kbd> <kbd>s</kbd>                            | Save buffer                           | `n`  |
 
-## Keta Theme 
+## Keta Theme
 
 A soft, pastel color scheme named after my cat, featuring gentle pinks and greens.
 

@@ -32,3 +32,6 @@ nnoremap <Leader>dpw :vertical resize -10<CR>
 " increase/decrease pane height
 nnoremap <Leader>iph :resize +10<CR>
 nnoremap <Leader>dph :resize -10<CR>
+
+" save file
+nnoremap <leader>s :w<CR>
