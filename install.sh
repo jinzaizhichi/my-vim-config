@@ -46,7 +46,7 @@ echo "Installing Vim plugins..."
 vim +PlugInstall +qall
 
 echo "Installing CoC extensions..."
-vim  +"CocInstall -sync coc-tsserver coc-eslint coc-vimlsp coc-json coc-css @yaegassy/coc-tailwindcss3 coc-go" +qall
+vim -c 'CocInstall -sync coc-tsserver coc-eslint coc-vimlsp coc-json coc-css @yaegassy/coc-tailwindcss3 coc-go|q'
 
 echo "Setting up full Vim configuration..."
 mv ~/kawaiDotfiles/vim/* ~/.vim
