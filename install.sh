@@ -43,10 +43,10 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 echo "source ~/kawaiDotfiles/vim/config/plugins.vim" > ~/.vimrc
 
 echo "Installing Vim plugins..."
-TERM=xterm-256color vim -E -s -u ~/.vimrc +PlugInstall +qall || true
+vim +PlugInstall +qall
 
 echo "Installing CoC extensions..."
-TERM=xterm-256color vim -E -s -u ~/.vimrc -c 'CocInstall -sync coc-tsserver coc-eslint coc-vimlsp coc-json coc-css @yaegassy/coc-tailwindcss3 coc-go' -c 'qall!' || true
+vim  +"CocInstall -sync coc-tsserver coc-eslint coc-vimlsp coc-json coc-css @yaegassy/coc-tailwindcss3 coc-go" +qall
 
 echo "Setting up full Vim configuration..."
 mv ~/kawaiDotfiles/vim/* ~/.vim
