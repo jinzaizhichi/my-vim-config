@@ -64,7 +64,7 @@ augroup GitStatsUpdate
     autocmd BufLeave * let g:git_stats = GitStats()
 augroup END
 
-let g:airline_section_a = airline#section#create_left(['󰊕 %{mode()}'])
+let g:airline_section_a = airline#section#create_left(['mode', 'crypt', 'paste', 'keymap', 'spell', 'capslock', 'xkblayout', 'iminsert'])
 let g:airline_section_b = airline#section#create(['%t%m'])
 let g:airline_section_c = airline#section#create([' '])
 let g:airline_section_x = airline#section#create(['filetype', ' ', '%{WebDevIconsGetFileTypeSymbol()} '])
