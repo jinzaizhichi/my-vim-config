@@ -19,7 +19,7 @@
 3. Scripts
     1. Remove `~/.scripts` folder if you have it.
     2. Run `mv ~/kawaiDotfiles/scripts ~/.scripts`.
-    3. Make scripts executable with `chmod +x ~/.scripts/commit.sh && chmod +x ~/.scripts/custom_grep.sh`.
+    3. Make scripts executable with `chmod +x ~/.scripts/commit.sh && chmod +x ~/.scripts/lazygrep.sh`.
     4. Add alliases to your `~/.bashrc` or `~/.zshrc` files to run them, you can check my zsh config for how to add them. Or skip this if you gonna use my zsh config because they are already added there.
 4. Zsh
     1. My cli based [todo app](https://github.com/dorukozerr/todo-app) is used in zsh config, install it or remove the related content from config.
