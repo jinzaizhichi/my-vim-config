@@ -39,23 +39,23 @@
 
 -   Leader key is remapped to space.
 
-| Keys                                                      | Description                           | Mode |
-| :-------------------------------------------------------- | :------------------------------------ | :--- |
-| <kbd>ctrl</kbd> <kbd>j</kbd>                              | Open coc autocomplete suggestions     | `i`  |
-| <kbd>ctrl</kbd> <kbd>k</kbd> <kbd>ctrl</kbd> <kbd>i</kbd> | Coc do hover                          | `ì`  |
-| <kbd>ctrl</kbd> <kbd>k</kbd> <kbd>ctrl</kbd> <kbd>i</kbd> | Coc do hover                          | `n`  |
-| <kbd>g</kbd> <kbd>d</kbd>                                 | Coc open definition in split          | `n`  |
-| <kbd>g</kbd> <kbd>t</kbd>                                 | Coc open type definition in split     | `n`  |
-| <kbd>ctrl</kbd> <kbd>t</kbd>                              | Toggle NERDTREE                       | `n`  |
-| <kbd>ctrl</kbd> <kbd>p</kbd>                              | Open fzf                              | `n`  |
-| <kbd>leader</kbd> <kbd>b</kbd> <kbd>n</kbd>               | Go to next buffer (buffer next)       | `n`  |
-| <kbd>leader</kbd> <kbd>b</kbd> <kbd>p</kbd>               | Go to prev buffer (buffer prev)       | `n`  |
-| <kbd>leader</kbd> <kbd>b</kbd> <kbd>c</kbd>               | Close all buffers except active one   | `n`  |
-| <kbd>leader</kbd> <kbd>i</kbd> <kbd>p</kbd> <kbd>w</kbd>  | Increase pane width                   | `n`  |
-| <kbd>leader</kbd> <kbd>d</kbd> <kbd>p</kbd> <kbd>w</kbd>  | Decrease pane width                   | `n`  |
-| <kbd>leader</kbd> <kbd>i</kbd> <kbd>p</kbd> <kbd>h</kbd>  | Increase pane height                  | `n`  |
-| <kbd>leader</kbd> <kbd>d</kbd> <kbd>p</kbd> <kbd>h</kbd>  | Decrease pane height                  | `n`  |
-| <kbd>leader</kbd> <kbd>s</kbd>                            | Save buffer                           | `n`  |
+| Keys                                                      | Description                         | Mode |
+| :-------------------------------------------------------- | :---------------------------------- | :--- |
+| <kbd>ctrl</kbd> <kbd>j</kbd>                              | Open coc autocomplete suggestions   | `i`  |
+| <kbd>ctrl</kbd> <kbd>k</kbd> <kbd>ctrl</kbd> <kbd>i</kbd> | Coc do hover                        | `ì`  |
+| <kbd>ctrl</kbd> <kbd>k</kbd> <kbd>ctrl</kbd> <kbd>i</kbd> | Coc do hover                        | `n`  |
+| <kbd>g</kbd> <kbd>d</kbd>                                 | Coc open definition in split        | `n`  |
+| <kbd>g</kbd> <kbd>t</kbd>                                 | Coc open type definition in split   | `n`  |
+| <kbd>ctrl</kbd> <kbd>t</kbd>                              | Toggle NERDTREE                     | `n`  |
+| <kbd>ctrl</kbd> <kbd>p</kbd>                              | Open fzf                            | `n`  |
+| <kbd>leader</kbd> <kbd>b</kbd> <kbd>n</kbd>               | Go to next buffer (buffer next)     | `n`  |
+| <kbd>leader</kbd> <kbd>b</kbd> <kbd>p</kbd>               | Go to prev buffer (buffer prev)     | `n`  |
+| <kbd>leader</kbd> <kbd>b</kbd> <kbd>c</kbd>               | Close all buffers except active one | `n`  |
+| <kbd>leader</kbd> <kbd>i</kbd> <kbd>p</kbd> <kbd>w</kbd>  | Increase pane width                 | `n`  |
+| <kbd>leader</kbd> <kbd>d</kbd> <kbd>p</kbd> <kbd>w</kbd>  | Decrease pane width                 | `n`  |
+| <kbd>leader</kbd> <kbd>i</kbd> <kbd>p</kbd> <kbd>h</kbd>  | Increase pane height                | `n`  |
+| <kbd>leader</kbd> <kbd>d</kbd> <kbd>p</kbd> <kbd>h</kbd>  | Decrease pane height                | `n`  |
+| <kbd>leader</kbd> <kbd>s</kbd>                            | Save buffer                         | `n`  |
 
 ## Keta Theme
 
@@ -63,24 +63,24 @@ A soft, pastel color scheme named after my cat, featuring gentle pinks and green
 
 | Label          | Color Code | Preview                                           |
 | :------------- | :--------- | :------------------------------------------------ |
-| Background     | `#0D0D0D`  | ![#0D0D0D](https://placehold.co/30/0D0D0D/0D0D0D) |
-| Text           | `#E8E8E8`  | ![#E8E8E8](https://placehold.co/30/E8E8E8/E8E8E8) |
-| Bold Text      | `#E8E8E8`  | ![#E8E8E8](https://placehold.co/30/E8E8E8/E8E8E8) |
-| Cursor         | `#E8E8E8`  | ![#E8E8E8](https://placehold.co/30/E8E8E8/E8E8E8) |
-| Selection      | `#B48EAD`  | ![#B48EAD](https://placehold.co/30/B48EAD/B48EAD) |
-| Normal Black   | `#1E1E1E`  | ![#262626](https://placehold.co/30/1E1E1E/1E1E1E) |
+| Background     | `#030303`  | ![#030303](https://placehold.co/30/030303/030303) |
+| Text           | `#D1D5DB`  | ![#D1D5DB](https://placehold.co/30/D1D5DB/D1D5DB) |
+| Bold Text      | `#F3F4F6`  | ![#F3F4F6](https://placehold.co/30/F3F4F6/F3F4F6) |
+| Cursor         | `#85A7A5`  | ![#85A7A5](https://placehold.co/30/85A7A5/85A7A5) |
+| Selection      | `#3D4757`  | ![#3D4757](https://placehold.co/30/3D4757/3D4757) |
+| Normal Black   | `#0F0F0F`  | ![#0F0F0F](https://placehold.co/30/0F0F0F/0F0F0F) |
 | Normal Red     | `#C47B7B`  | ![#C47B7B](https://placehold.co/30/C47B7B/C47B7B) |
 | Normal Green   | `#909D63`  | ![#909D63](https://placehold.co/30/909D63/909D63) |
-| Normal Yellow  | `#C4B27B`  | ![#C4B27B](https://placehold.co/30/C4B27B/C4B27B) |
-| Normal Blue    | `#9B6B8F`  | ![#9B6B8F](https://placehold.co/30/9B6B8F/9B6B8F) |
+| Normal Yellow  | `#A898B7`  | ![#A898B7](https://placehold.co/30/A898B7/A898B7) |
+| Normal Blue    | `#8BA499`  | ![#8BA499](https://placehold.co/30/8BA499/8BA499) |
 | Normal Magenta | `#B48EAD`  | ![#B48EAD](https://placehold.co/30/B48EAD/B48EAD) |
 | Normal Cyan    | `#A4B49E`  | ![#A4B49E](https://placehold.co/30/A4B49E/A4B49E) |
 | Normal White   | `#E8E8E8`  | ![#E8E8E8](https://placehold.co/30/E8E8E8/E8E8E8) |
-| Bright Black   | `#141414`  | ![#363636](https://placehold.co/30/141414/141414) |
-| Bright Red     | `#C47B7B`  | ![#C47B7B](https://placehold.co/30/C47B7B/C47B7B) |
-| Bright Green   | `#909D63`  | ![#909D63](https://placehold.co/30/909D63/909D63) |
-| Bright Yellow  | `#C4B27B`  | ![#C4B27B](https://placehold.co/30/C4B27B/C4B27B) |
-| Bright Blue    | `#9B6B8F`  | ![#9B6B8F](https://placehold.co/30/9B6B8F/9B6B8F) |
-| Bright Magenta | `#B48EAD`  | ![#B48EAD](https://placehold.co/30/B48EAD/B48EAD) |
-| Bright Cyan    | `#A4B49E`  | ![#A4B49E](https://placehold.co/30/A4B49E/A4B49E) |
-| Bright White   | `#E8E8E8`  | ![#E8E8E8](https://placehold.co/30/E8E8E8/E8E8E8) |
+| Bright Black   | `#232323`  | ![#232323](https://placehold.co/30/232323/232323) |
+| Bright Red     | `#E19191`  | ![#E19191](https://placehold.co/30/E19191/E19191) |
+| Bright Green   | `#A8B777`  | ![#A8B777](https://placehold.co/30/A8B777/A8B777) |
+| Bright Yellow  | `#C2B0D6`  | ![#C2B0D6](https://placehold.co/30/C2B0D6/C2B0D6) |
+| Bright Blue    | `#A3C0B6`  | ![#A3C0B6](https://placehold.co/30/A3C0B6/A3C0B6) |
+| Bright Magenta | `#CCA5C9`  | ![#CCA5C9](https://placehold.co/30/CCA5C9/CCA5C9) |
+| Bright Cyan    | `#BCCBB6`  | ![#BCCBB6](https://placehold.co/30/BCCBB6/BCCBB6) |
+| Bright White   | `#FFFFFF`  | ![#FFFFFF](https://placehold.co/30/FFFFFF/FFFFFF) |

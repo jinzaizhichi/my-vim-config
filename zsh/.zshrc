@@ -5,7 +5,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 PS1='%B%F{green}%n@%m%f%b %F{blue}%~%f $ '
 
-alias greps="~/.scripts/custom_grep.sh"
+alias lazygrep="~/.scripts/lazygrep.sh"
 alias commit="~/.scripts/commit.sh"
 alias ls="ls -GFla"
 

@@ -2,9 +2,9 @@
 
 ctrl_c() {
     echo -e "\nScript interrupted. Exiting..."
-    
+
     tput cnorm
-    
+
     exit 1
 }
 
@@ -22,7 +22,7 @@ select_type() {
         clear
 
         echo "Select commit type (use arrow keys and press Enter):"
-       
+
         for i in "${!types[@]}"; do
             if [ $i -eq $selected ]; then
                 echo "> ${types[$i]}"
@@ -30,7 +30,7 @@ select_type() {
                 echo "  ${types[$i]}"
             fi
         done
- 
+
         read -s -n 1 key
 
         case $key in
@@ -69,7 +69,7 @@ fi
 
 while true; do
     read -p "Enter description (max 50 chars): " description
-   
+
     if [[ -z $description ]]; then
         echo "Error: Description cannot be empty."
     elif [[ ${#description} -gt 50 ]]; then
