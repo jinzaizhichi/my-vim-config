@@ -3,7 +3,9 @@
 - Install script will backup your `.vimrc`, `./vim`, `.zshrc`, `.config/tmux`, `.scripts` files and folders to `~/dotfiles_backup_<timestamp>` folder and installs my settings. I did this to install my environment but you can use also if you want >.<
 - I only did this on macos I don't know if it is compatible with other OS's, but it should be compatible with linux I guess but I didn't tested it.
 
-`curl -o- https://raw.githubusercontent.com/dorukozerr/dotfiles/main/install.sh | bash`
+```bash
+curl -o- https://raw.githubusercontent.com/dorukozerr/dotfiles/main/install.sh | bash
+```
 
 ![screenshot](ss-1.png)
 ![screenshot](ss-2.png)
