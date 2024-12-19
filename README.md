@@ -1,7 +1,10 @@
 # My dotfiles
 
-- Install script will backup your `.vimrc`, `./vim`, `.zshrc`, `.config/tmux`, `.scripts` files and folders to `~/dotfiles_backup_<timestamp>` folder and installs my settings. I did this to install my environment but you can use also if you want >.<
-- I only did this on macos I don't know if it is compatible with other OS's, but it should be compatible with linux I guess but I didn't tested it.
+-   Install script will backup your `~/.vimrc`, `~/.vim/`, `~/.zshrc`, `~/.config/tmux/`, `~/.scripts/` files and folders to `~/dotfiles_backup_<timestamp>/` folder and installs my settings. I did this to install my environment but you can use also if you want >.<
+-   I only did this on macos I don't know if it is compatible with other OS's, but it should be compatible with linux I guess but I didn't tested it.
+-   My cli based [todo app](https://github.com/dorukozerr/todo-app) being used in zshrc file. Either install it or remove that part from zshrc.
+
+## Installation
 
 ```bash
 curl -o- https://raw.githubusercontent.com/dorukozerr/dotfiles/main/install.sh | bash
