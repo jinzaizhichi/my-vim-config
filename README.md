@@ -25,7 +25,8 @@ curl -o- https://raw.githubusercontent.com/dorukozerr/dotfiles/main/install.sh |
 | <kbd>g</kbd> <kbd>d</kbd>                                 | Coc open definition in split        | `n`  |
 | <kbd>g</kbd> <kbd>t</kbd>                                 | Coc open type definition in split   | `n`  |
 | <kbd>ctrl</kbd> <kbd>t</kbd>                              | Toggle NERDTREE                     | `n`  |
-| <kbd>ctrl</kbd> <kbd>p</kbd>                              | Open fzf                            | `n`  |
+| <kbd>ctrl</kbd> <kbd>p</kbd>                              | Fzf file search                     | `n`  |
+| <kbd>ctrl</kbd> <kbd>f</kbd>                              | Fzf grep search                     | `n`  |
 | <kbd>leader</kbd> <kbd>b</kbd> <kbd>n</kbd>               | Go to next buffer (buffer next)     | `n`  |
 | <kbd>leader</kbd> <kbd>b</kbd> <kbd>p</kbd>               | Go to prev buffer (buffer prev)     | `n`  |
 | <kbd>leader</kbd> <kbd>b</kbd> <kbd>c</kbd>               | Close all buffers except active one | `n`  |

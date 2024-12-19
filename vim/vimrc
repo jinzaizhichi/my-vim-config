@@ -2,7 +2,6 @@ let g:config_dir = '~/.vim/config/'
 
 let g:config_files = [
     \ 'plugins.vim',
-    \ 'mappings.vim',
     \ 'coc.vim',
     \ 'fastfold.vim',
     \ 'mappings.vim',
@@ -12,6 +11,7 @@ let g:config_files = [
     \ 'tmuxline.vim',
     \ 'airline.vim',
     \ 'startscreen.vim',
+    \ 'fzf.vim',
     \ ]
 
 for config_file in g:config_files

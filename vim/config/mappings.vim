@@ -18,9 +18,10 @@ nmap <silent> gt <Plug>(coc-type-definition)
 nnoremap <C-t> :NERDTreeToggle<CR>
 
 " fzf toggle
-nnoremap <C-p> :FZF<CR>
+nnoremap <C-p> :Files<CR>
+nnoremap <C-f> :Rg<CR>
 
-" buffer
+" buffers
 nnoremap <Leader>bn :bn<CR>
 nnoremap <Leader>bp :bp<CR>
 nnoremap <leader>bc :%bdelete<Bar>edit #<Bar>normal`"<CR>
