@@ -10,7 +10,9 @@
   "notification.border": true,
   "suggest.floatConfig": {
     "border": true,
-    "rounded": true
+    "rounded": true,
+    "borderhighlight": "CocBorder",
+    "highlight": "CocFloating"
   },
   "javascript.suggest.autoImports": true,
   "typescript.suggest.autoImports": true
