@@ -39,7 +39,6 @@ done
 echo "=> Setting up Vim..."
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-echo "=> source ~/kawaiDotfiles/vim/config/plugins.vim" > ~/.vimrc
 
 echo "=> Installing Vim plugins..."
 cat > ~/.vim/temp.vimrc << 'EOF'
@@ -58,9 +57,6 @@ rm ~/.vim/temp.vimrc
 
 echo "=> Setting up full Vim configuration..."
 mv ~/kawaiDotfiles/vim/* ~/.vim
-
-echo "=> Cleaning up preinstall vimrc file"
-rm ~/.vimrc
 
 echo "=> Setting up airline theme..."
 mv ~/.vim/keta.vim ~/.vim/plugged/vim-airline-themes/autoload/airline/themes
