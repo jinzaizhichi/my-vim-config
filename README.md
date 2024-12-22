@@ -43,13 +43,13 @@ A soft, pastel color scheme named after my cat, featuring gentle pinks and green
 | Label          | Color Code | Preview                                           |
 | :------------- | :--------- | :------------------------------------------------ |
 | Background     | `#030303`  | ![#030303](https://placehold.co/30/030303/030303) |
-| Text           | `#D1D5DB`  | ![#D1D5DB](https://placehold.co/30/D1D5DB/D1D5DB) |
-| Bold Text      | `#F3F4F6`  | ![#F3F4F6](https://placehold.co/30/F3F4F6/F3F4F6) |
+| Text           | `#E2D8DC`  | ![#E2D8DC](https://placehold.co/30/E2D8DC/E2D8DC) |
+| Bold Text      | `#F7F0F3`  | ![#F7F0F3](https://placehold.co/30/F7F0F3/F7F0F3) |
 | Cursor         | `#85A7A5`  | ![#85A7A5](https://placehold.co/30/85A7A5/85A7A5) |
 | Selection      | `#3D4757`  | ![#3D4757](https://placehold.co/30/3D4757/3D4757) |
 | Normal Black   | `#0F0F0F`  | ![#0F0F0F](https://placehold.co/30/0F0F0F/0F0F0F) |
 | Normal Red     | `#C47B7B`  | ![#C47B7B](https://placehold.co/30/C47B7B/C47B7B) |
-| Normal Green   | `#909D63`  | ![#909D63](https://placehold.co/30/909D63/909D63) |
+| Normal Green   | `#B17F92`  | ![#B17F92](https://placehold.co/30/B17F92/B17F92) |
 | Normal Yellow  | `#A898B7`  | ![#A898B7](https://placehold.co/30/A898B7/A898B7) |
 | Normal Blue    | `#8BA499`  | ![#8BA499](https://placehold.co/30/8BA499/8BA499) |
 | Normal Magenta | `#B48EAD`  | ![#B48EAD](https://placehold.co/30/B48EAD/B48EAD) |
@@ -57,7 +57,7 @@ A soft, pastel color scheme named after my cat, featuring gentle pinks and green
 | Normal White   | `#E8E8E8`  | ![#E8E8E8](https://placehold.co/30/E8E8E8/E8E8E8) |
 | Bright Black   | `#232323`  | ![#232323](https://placehold.co/30/232323/232323) |
 | Bright Red     | `#E19191`  | ![#E19191](https://placehold.co/30/E19191/E19191) |
-| Bright Green   | `#A8B777`  | ![#A8B777](https://placehold.co/30/A8B777/A8B777) |
+| Bright Green   | `#CFA1B4`  | ![#CFA1B4](https://placehold.co/30/CFA1B4/CFA1B4) |
 | Bright Yellow  | `#C2B0D6`  | ![#C2B0D6](https://placehold.co/30/C2B0D6/C2B0D6) |
 | Bright Blue    | `#A3C0B6`  | ![#A3C0B6](https://placehold.co/30/A3C0B6/A3C0B6) |
 | Bright Magenta | `#CCA5C9`  | ![#CCA5C9](https://placehold.co/30/CCA5C9/CCA5C9) |
