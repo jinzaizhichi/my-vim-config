@@ -10,8 +10,7 @@
 curl -o- https://raw.githubusercontent.com/dorukozerr/dotfiles/main/install.sh | bash
 ```
 
-![screenshot](ss-1.png)
-![screenshot](ss-2.png)
+![screenshot](ss.png)
 
 ## Vim shortcuts configured manually
 
