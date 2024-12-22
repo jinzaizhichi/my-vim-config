@@ -1,6 +1,6 @@
 hi LineNr ctermfg=8                         " line number coloring
 set fillchars=vert:\|,eob:\                 " split bar and end of buffer styling
-hi VertSplit ctermbg=8 ctermfg=8 cterm=NONE " Split character coloring
+hi VertSplit ctermbg=0 ctermfg=0 cterm=NONE " Split character coloring
 set hlsearch                                " highlight search results
 set nocompatible                            " set compatibility to vim only
 set backspace=indent,eol,start              " remap backspace key
