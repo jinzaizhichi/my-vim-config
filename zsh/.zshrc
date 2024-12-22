@@ -3,7 +3,7 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-PS1='%B%F{green}%n@%m%f%b %F{blue}%~%f $ '
+PS1='%B%F{magenta}%n@%m%f%b %F{cyan}%~%f $ '
 
 alias lazygrep="~/.scripts/lazygrep.sh"
 alias commit="~/.scripts/commit.sh"
