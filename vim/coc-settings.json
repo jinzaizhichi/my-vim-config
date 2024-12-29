@@ -1,6 +1,7 @@
 {
   "suggest.autoTrigger": "always",
   "eslint.alwaysShowStatus": true,
+  "eslint.experimental.useFlatConfig": true,
   "floatFactory.floatConfig": {
     "border": true,
     "rounded": true,
