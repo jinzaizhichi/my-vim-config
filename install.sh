@@ -58,9 +58,6 @@ rm ~/.vim/temp.vimrc
 echo "=> Setting up full Vim configuration..."
 mv ~/kawaiDotfiles/vim/* ~/.vim
 
-echo "=> Setting up airline theme..."
-mv ~/.vim/keta.vim ~/.vim/plugged/vim-airline-themes/autoload/airline/themes
-
 echo "=> Setting up Tmux..."
 mkdir -p ~/.config
 mv ~/kawaiDotfiles/tmux ~/.config/
