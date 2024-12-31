@@ -36,19 +36,28 @@ for file in ~/.vim ~/.vimrc ~/.config/tmux ~/.scripts ~/.zshrc; do
     fi
 done
 
-echo "=> Setting up Vim..."
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
 echo "=> Installing Vim plugins..."
 cat > ~/.vim/temp.vimrc << 'EOF'
-source ~/kawaiDotfiles/vim/config/plugins.vim
 set nocompatible
 set hidden
 set updatetime=100
 let g:coc_disable_startup_warning = 1
 EOF
-yes | vim -u ~/.vim/temp.vimrc +PlugInstall +qall > /dev/null 2>&1
+
+mkdir -p ~/.vim/pack/plugins/start
+
+cd ~/.vim/pack/plugins/start
+
+git clone https://github.com/tpope/vim-fugitive.git
+git clone https://github.com/junegunn/fzf.git
+git clone https://github.com/junegunn/fzf.vim.git
+git clone https://github.com/neoclide/coc.nvim.git
+cd coc.nvim
+npm ci
+cd ..
+cd fzf
+./install --all
+cd ~
 
 echo "=> Installing CoC extensions..."
 yes | vim -u ~/.vim/temp.vimrc -c 'CocInstall -sync coc-tsserver coc-eslint coc-vimlsp coc-json coc-css @yaegassy/coc-tailwindcss3 coc-go coc-prettier' -c 'qall!' > /dev/null 2>&1
