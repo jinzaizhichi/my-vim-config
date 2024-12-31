@@ -1,3 +1,5 @@
+syntax on                                   " syntax highlighting
+
 hi LineNr ctermfg=8                         " line number coloring
 hi VertSplit ctermbg=0 ctermfg=0 cterm=NONE " Split character coloring
 
