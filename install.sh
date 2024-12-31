@@ -51,7 +51,7 @@ EOF
 yes | vim -u ~/.vim/temp.vimrc +PlugInstall +qall > /dev/null 2>&1
 
 echo "=> Installing CoC extensions..."
-yes | vim -u ~/.vim/temp.vimrc -c 'CocInstall -sync coc-tsserver coc-eslint coc-vimlsp coc-json coc-css @yaegassy/coc-tailwindcss3 coc-go' -c 'qall!' > /dev/null 2>&1
+yes | vim -u ~/.vim/temp.vimrc -c 'CocInstall -sync coc-tsserver coc-eslint coc-vimlsp coc-json coc-css @yaegassy/coc-tailwindcss3 coc-go coc-prettier' -c 'qall!' > /dev/null 2>&1
 
 rm ~/.vim/temp.vimrc
 

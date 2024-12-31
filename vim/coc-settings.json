@@ -16,5 +16,12 @@
     "highlight": "CocFloating"
   },
   "javascript.suggest.autoImports": true,
-  "typescript.suggest.autoImports": true
+  "typescript.suggest.autoImports": true,
+  "prettier.enable": true,
+  "prettier.trailingComma": "none",
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true,
+  "prettier.htmlWhitespaceSensitivity": "strict",
+  "prettier.arrowParens": "avoid",
+  "coc.preferences.formatOnSave": true
 }

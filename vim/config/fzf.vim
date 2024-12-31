@@ -33,8 +33,6 @@ command! -bang -nargs=* Rg
             \   '--glob "!ios/" '.
             \   '--glob "!android/" '.
             \   '--glob "!build/" '.
-            \   '--glob "!package-lock.json" '.
-            \   '--glob "!yarn.lock" '.
             \   '-- '.shellescape(<q-args>), 1,
             \   {
             \     'options': [

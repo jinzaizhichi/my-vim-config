@@ -7,15 +7,15 @@ inoremap <Down> <Down>
 inoremap <Left> <Left>
 inoremap <Right> <Right>
 
-" coc open autocompletion tab
+" open netrw
+nnoremap <C-t> :Explore<CR>
+
+" coc shortcuts
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gt <Plug>(coc-type-definition)
 inoremap <silent><expr> <C-j> coc#refresh()
 inoremap <silent><expr> <C-k><C-i> coc#rpc#request('doHover', [])
 nnoremap <silent><expr> <C-k><C-i> CocActionAsync('doHover')
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gt <Plug>(coc-type-definition)
-
-" nerdtree toggle
-nnoremap <C-t> :NERDTreeToggle<CR>
 
 " fzf toggle
 nnoremap <C-p> :Files<CR>
