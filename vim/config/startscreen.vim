@@ -1,65 +1,89 @@
-" I wish I could understand and write something like this myself...
-" Original author https://github.com/arp242/startscreen.vim
+let s:git_stats_throttle=0
+let g:git_icon='󰊢'
+let g:arrow_left=''
+let g:arrow_right=''
 
-scriptencoding utf-8
+hi StatusLine     cterm=NONE ctermfg=5 ctermbg=0 " active status bar
+hi StatusLineNC   cterm=NONE ctermfg=0 ctermbg=0 " inactive status bar
+hi BufferLine     cterm=NONE ctermfg=5 ctermbg=8 " inactive buffers
+hi BufferLineSel  cterm=NONE ctermfg=0 ctermbg=5 " active buffer
+hi BufferLineFill cterm=NONE ctermfg=5 ctermbg=0 " fill color
 
-if exists('g:loaded_startscreen') | finish | endif
+function! GitStats()
+  if localtime() - s:git_stats_throttle < 2  " Only update every 2 seconds
+    return get(g:, 'git_stats', '')
+  endif
 
-let g:loaded_startscreen = 1
-let s:save_cpo = &cpo
+  let s:git_stats_throttle = localtime()
+  let l:branch = exists('*FugitiveHead') ? FugitiveHead() : ''
+  let l:status = system('git status --porcelain 2>/dev/null')
 
-set cpo&vim
+  if v:shell_error
+    return ''
+  endif
 
-fun! startscreen#fortune()
-	let l:fortune = systemlist('fortune')
+  let l:files = len(filter(split(l:status, '\n'), 'v:val !~ "^!"'))
+  let l:additions = 0
+  let l:deletions = 0
+  let l:diff = system('git diff HEAD --numstat 2>/dev/null')
 
-	call append('0', ['', ''] + map(l:fortune, '"        " . v:val'))
+  for line in split(l:diff, '\n')
+    let stats = split(line)
 
-	:1
+    if len(stats) >= 2
+      let l:additions += str2nr(stats[0])
+      let l:deletions += str2nr(stats[1])
+    endif
+  endfor
 
-	redraw!
+  let l:staged_diff = system('git diff --cached --numstat 2>/dev/null')
 
-	nnoremap <buffer> <silent> <Return> :enew<CR>:call startscreen#start()<CR>
-endfun
+  for line in split(l:staged_diff, '\n')
+    let stats = split(line)
 
-if !exists('g:Startscreen_function')
-	let g:Startscreen_function = function('startscreen#fortune')
-endif
+    if len(stats) >= 2
+      let l:additions += str2nr(stats[0])
+      let l:deletions += str2nr(stats[1])
+    endif
+  endfor
 
-fun! startscreen#start()
-	if argc() || line2byte('$') != -1 || v:progname !~? '^[-gmnq]\=vim\=x\=\%[\.exe]$' || &insertmode
-		return
-	endif
+  for status_line in split(l:status, '\n')
+    if status_line =~ '^??'
+      let file = substitute(status_line, '^??\s\+', '', '')
+      let file_content = system('wc -l ' . shellescape(file) . ' 2>/dev/null')
 
-	enew
+      if !v:shell_error
+        let l:additions += str2nr(split(file_content)[0])
+      endif
+    endif
+  endfor
 
-	setlocal
-				\ bufhidden=wipe
-				\ buftype=nofile
-				\ nobuflisted
-				\ nocursorcolumn
-				\ nocursorline
-				\ nolist
-				\ nonumber
-				\ noswapfile
-				\ norelativenumber
+  return printf('+%d -%d 󱁻 %d', l:additions, l:deletions, l:files)
+endfunction
 
-	call g:Startscreen_function()
+function! GitStatus()
+  let head = FugitiveHead()
 
-	setlocal nomodifiable nomodified
+  if empty(head)
+    return g:git_icon . '  Git Gud'
+  endif
 
-	nnoremap <buffer><silent> e :enew<CR>
-	nnoremap <buffer><silent> i :enew <bar> startinsert<CR>
-	nnoremap <buffer><silent> o :enew <bar> startinsert<CR><CR>
-	nnoremap <buffer><silent> p :enew<CR>p
-	nnoremap <buffer><silent> P :enew<CR>P
-endfun
+  let stats = get(g:, 'git_stats')
 
-augroup startscreen
-	autocmd!
-	autocmd VimEnter * call startscreen#start()
-augroup end
+  return g:git_icon . ' ' . head . ' ' . stats
+endfunction
 
-let &cpo = s:save_cpo
+augroup GitStatsUpdate
+  autocmd!
+  autocmd BufWritePost * let g:git_stats = GitStats()
+  autocmd VimEnter * let g:git_stats = GitStats()
+  autocmd BufEnter * let g:git_stats = GitStats()
+  autocmd BufLeave * let g:git_stats = GitStats()
+augroup END
 
-unlet s:save_cpo
+set laststatus=2
+set statusline=
+set statusline+=%F\ %M
+set statusline+=%=
+set statusline+=%{GitStatus()}
+set showtabline=0

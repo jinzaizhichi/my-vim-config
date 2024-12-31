@@ -3,6 +3,9 @@ syntax on                                   " syntax highlighting
 hi LineNr ctermfg=8                         " line number coloring
 hi VertSplit ctermbg=0 ctermfg=0 cterm=NONE " Split character coloring
 
+filetype plugin indent on                   " must look into help for this
+scriptencoding utf-8
+
 set encoding=utf-8                          " encoding
 set backspace=indent,eol,start              " remap backspace key
 set fillchars=vert:\|,eob:\                 " split bar and end of buffer styling
