@@ -36,6 +36,8 @@ for file in ~/.vim ~/.vimrc ~/.config/tmux ~/.scripts ~/.zshrc; do
     fi
 done
 
+mkdir -p ~/.vim/pack/plugins/start
+
 echo "=> Installing Vim plugins..."
 cat > ~/.vim/temp.vimrc << 'EOF'
 set nocompatible
@@ -43,8 +45,6 @@ set hidden
 set updatetime=100
 let g:coc_disable_startup_warning = 1
 EOF
-
-mkdir -p ~/.vim/pack/plugins/start
 
 cd ~/.vim/pack/plugins/start
 
