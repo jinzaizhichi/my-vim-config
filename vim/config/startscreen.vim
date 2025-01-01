@@ -1,89 +1,65 @@
-let s:git_stats_throttle=0
-let g:git_icon='󰊢'
-let g:arrow_left=''
-let g:arrow_right=''
+" I wish I could understand and write something like this myself...
+" Original author https://github.com/arp242/startscreen.vim
 
-hi StatusLine     cterm=NONE ctermfg=5 ctermbg=0 " active status bar
-hi StatusLineNC   cterm=NONE ctermfg=0 ctermbg=0 " inactive status bar
-hi BufferLine     cterm=NONE ctermfg=5 ctermbg=8 " inactive buffers
-hi BufferLineSel  cterm=NONE ctermfg=0 ctermbg=5 " active buffer
-hi BufferLineFill cterm=NONE ctermfg=5 ctermbg=0 " fill color
+scriptencoding utf-8
 
-function! GitStats()
-  if localtime() - s:git_stats_throttle < 2  " Only update every 2 seconds
-    return get(g:, 'git_stats', '')
+if exists('g:loaded_startscreen') | finish | endif
+
+let g:loaded_startscreen = 1
+let s:save_cpo = &cpo
+
+set cpo&vim
+
+fun! startscreen#fortune()
+  let l:fortune = systemlist('fortune')
+
+  call append('0', ['', ''] + map(l:fortune, '"        " . v:val'))
+
+  :1
+
+  redraw!
+
+  nnoremap <buffer> <silent> <Return> :enew<CR>:call startscreen#start()<CR>
+endfun
+
+if !exists('g:Startscreen_function')
+  let g:Startscreen_function = function('startscreen#fortune')
+endif
+
+fun! startscreen#start()
+  if argc() || line2byte('$') != -1 || v:progname !~? '^[-gmnq]\=vim\=x\=\%[\.exe]$' || &insertmode
+    return
   endif
 
-  let s:git_stats_throttle = localtime()
-  let l:branch = exists('*FugitiveHead') ? FugitiveHead() : ''
-  let l:status = system('git status --porcelain 2>/dev/null')
+  enew
 
-  if v:shell_error
-    return ''
-  endif
+  setlocal
+        \ bufhidden=wipe
+        \ buftype=nofile
+        \ nobuflisted
+        \ nocursorcolumn
+        \ nocursorline
+        \ nolist
+        \ nonumber
+        \ noswapfile
+        \ norelativenumber
 
-  let l:files = len(filter(split(l:status, '\n'), 'v:val !~ "^!"'))
-  let l:additions = 0
-  let l:deletions = 0
-  let l:diff = system('git diff HEAD --numstat 2>/dev/null')
+  call g:Startscreen_function()
 
-  for line in split(l:diff, '\n')
-    let stats = split(line)
+  setlocal nomodifiable nomodified
 
-    if len(stats) >= 2
-      let l:additions += str2nr(stats[0])
-      let l:deletions += str2nr(stats[1])
-    endif
-  endfor
+  nnoremap <buffer><silent> e :enew<CR>
+  nnoremap <buffer><silent> i :enew <bar> startinsert<CR>
+  nnoremap <buffer><silent> o :enew <bar> startinsert<CR><CR>
+  nnoremap <buffer><silent> p :enew<CR>p
+  nnoremap <buffer><silent> P :enew<CR>P
+endfun
 
-  let l:staged_diff = system('git diff --cached --numstat 2>/dev/null')
-
-  for line in split(l:staged_diff, '\n')
-    let stats = split(line)
-
-    if len(stats) >= 2
-      let l:additions += str2nr(stats[0])
-      let l:deletions += str2nr(stats[1])
-    endif
-  endfor
-
-  for status_line in split(l:status, '\n')
-    if status_line =~ '^??'
-      let file = substitute(status_line, '^??\s\+', '', '')
-      let file_content = system('wc -l ' . shellescape(file) . ' 2>/dev/null')
-
-      if !v:shell_error
-        let l:additions += str2nr(split(file_content)[0])
-      endif
-    endif
-  endfor
-
-  return printf('+%d -%d 󱁻 %d', l:additions, l:deletions, l:files)
-endfunction
-
-function! GitStatus()
-  let head = FugitiveHead()
-
-  if empty(head)
-    return g:git_icon . '  Git Gud'
-  endif
-
-  let stats = get(g:, 'git_stats')
-
-  return g:git_icon . ' ' . head . ' ' . stats
-endfunction
-
-augroup GitStatsUpdate
+augroup startscreen
   autocmd!
-  autocmd BufWritePost * let g:git_stats = GitStats()
-  autocmd VimEnter * let g:git_stats = GitStats()
-  autocmd BufEnter * let g:git_stats = GitStats()
-  autocmd BufLeave * let g:git_stats = GitStats()
-augroup END
+  autocmd VimEnter * call startscreen#start()
+augroup end
 
-set laststatus=2
-set statusline=
-set statusline+=%F\ %M
-set statusline+=%=
-set statusline+=%{GitStatus()}
-set showtabline=0
+let &cpo = s:save_cpo
+
+unlet s:save_cpo
