@@ -44,6 +44,7 @@ echo "=> Setting up scripts..."
 mv ~/kawaiDotfiles/scripts ~/.scripts
 chmod +x ~/.scripts/commit.sh
 chmod +x ~/.scripts/lazygrep.sh
+chmod +x ~/.scripts/update_vim_plugints.sh
 
 echo "=> Setting up Zsh..."
 mv ~/kawaiDotfiles/zsh/.zshrc ~/
@@ -71,7 +72,7 @@ git clone https://github.com/vim-airline/vim-airline-themes.git
 git clone https://github.com/edkolev/tmuxline.vim.git
 
 cd coc.nvim
-npm ci
+yarn
 cd ..
 cd fzf
 ./install --all

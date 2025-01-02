@@ -7,6 +7,7 @@ PS1='%B%F{magenta}%n@%m%f%b %F{cyan}%~%f $ '
 
 alias lazygrep="~/.scripts/lazygrep.sh"
 alias commit="~/.scripts/commit.sh"
+alias uvp="~/.scripts/update_vim_plugints.sh"
 alias ls="ls -GFla"
 
 function startup_sequence() {
@@ -15,7 +16,7 @@ function startup_sequence() {
         "Looking for Stack Overflow again? Can't write your own code?"
         "Your commit messages are as meaningful as your career"
         "Another day of copying code you don't understand?"
-        "I see you're back to pretend you understand async/await" 
+        "I see you're back to pretend you understand async/await"
         "How many times will you git push --force today?"
         "Even Internet Explorer has better performance than your code"
         "Your code has more bugs than features"
@@ -71,14 +72,14 @@ function startup_sequence() {
     ⠄⠄⠈⠻⣿⣿⣿⣿⣿⣿⡄⢻⣿⣿⣿⠄⣿⣿⡀⣾⣿⣿⣿⣿⣛⠛⠁⠄⠄⠄
     \033[0m'
 
-    echo 
+    echo
 
     if [ ${#messages[@]} -gt 0 ]; then
         echo "\033[1m${messages[$((RANDOM % ${#messages[@]} + 1))]}\033[0m"
     fi
 
 
-    echo 
+    echo
 
     todo_count=$(td | grep -c "^")
 
@@ -87,7 +88,7 @@ function startup_sequence() {
     else
         echo "\033[1mYou have no active todos, just like your social life...\033[0m"
     fi
-    
+
     echo
 }
 
