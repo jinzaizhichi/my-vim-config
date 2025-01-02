@@ -52,6 +52,7 @@ git clone https://github.com/tpope/vim-fugitive.git
 git clone https://github.com/junegunn/fzf.git
 git clone https://github.com/junegunn/fzf.vim.git
 git clone https://github.com/neoclide/coc.nvim.git
+git clone https://github.com/cohama/lexima.vim
 cd coc.nvim
 npm ci
 cd ..
