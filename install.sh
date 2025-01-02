@@ -72,7 +72,7 @@ git clone https://github.com/vim-airline/vim-airline-themes.git
 git clone https://github.com/edkolev/tmuxline.vim.git
 
 cd coc.nvim
-yarn
+npm ci
 cd ..
 cd fzf
 ./install --all

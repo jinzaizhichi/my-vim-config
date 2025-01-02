@@ -50,8 +50,8 @@ update_coc() {
     print_status "INFO" "$YELLOW" "Updating coc.nvim..."
 
     if git pull origin master; then
-        print_status "INFO" "$YELLOW" "Running yarn install for coc.nvim..."
-        if yarn install; then
+        print_status "INFO" "$YELLOW" "Running npm ci for coc.nvim..."
+        if npm ci; then
             print_status "SUCCESS" "$GREEN" "Updated coc.nvim successfully"
             return 0
         else
