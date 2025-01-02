@@ -6,7 +6,8 @@ let g:config_files = [
       \ 'settings.vim',
       \ 'startscreen.vim',
       \ 'fzf.vim',
-      \ 'statusline.vim',
+      \ 'airline.vim',
+      \ 'tmuxline.vim',
       \ ]
 
 for config_file in g:config_files
