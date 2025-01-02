@@ -36,9 +36,21 @@ for file in ~/.vim ~/.vimrc ~/.config/tmux ~/.scripts ~/.zshrc; do
     fi
 done
 
-mkdir -p ~/.vim/pack/plugins/start
+echo "=> Setting up Tmux..."
+mkdir -p ~/.config
+mv ~/kawaiDotfiles/tmux ~/.config/
+
+echo "=> Setting up scripts..."
+mv ~/kawaiDotfiles/scripts ~/.scripts
+chmod +x ~/.scripts/commit.sh
+chmod +x ~/.scripts/lazygrep.sh
+
+echo "=> Setting up Zsh..."
+mv ~/kawaiDotfiles/zsh/.zshrc ~/
 
 echo "=> Installing Vim plugins..."
+mkdir -p ~/.vim/pack/plugins/start
+
 cat > ~/.vim/temp.vimrc << 'EOF'
 set nocompatible
 set hidden
@@ -68,25 +80,12 @@ cd ~
 echo "=> Installing CoC extensions..."
 yes | vim -u ~/.vim/temp.vimrc -c 'CocInstall -sync coc-tsserver coc-eslint coc-vimlsp coc-json coc-css @yaegassy/coc-tailwindcss3 coc-go coc-prettier' -c 'qall!' > /dev/null 2>&1
 
-rm ~/.vim/temp.vimrc
-
 echo "=> Setting up full Vim configuration..."
 mv ~/kawaiDotfiles/vim/* ~/.vim
 mv ~/.vim/keta.vim ~/.vim/pack/plugins/start/vim-airline-themes/autoload/airline/themes
 
-echo "=> Setting up Tmux..."
-mkdir -p ~/.config
-mv ~/kawaiDotfiles/tmux ~/.config/
-
-echo "=> Setting up scripts..."
-mv ~/kawaiDotfiles/scripts ~/.scripts
-chmod +x ~/.scripts/commit.sh
-chmod +x ~/.scripts/lazygrep.sh
-
-echo "=> Setting up Zsh..."
-mv ~/kawaiDotfiles/zsh/.zshrc ~/
-
 echo "=> Cleaning up..."
+rm ~/.vim/temp.vimrc
 rm -rf ~/kawaiDotfiles
 
 echo "=> Installation complete! A backup of your previous configuration can be found in $backup_dir"
