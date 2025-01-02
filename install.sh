@@ -80,7 +80,7 @@ cd fzf
 cd ~
 
 echo "=> Installing CoC extensions..."
-yes | vim -u ~/.vim/temp.vimrc -c 'CocInstall -sync coc-tsserver coc-eslint coc-vimlsp coc-json coc-css @yaegassy/coc-tailwindcss3 coc-go coc-prettier' -c 'qall!' > /dev/null 2>&1
+yes | vim -u ~/.vim/temp.vimrc -c 'CocInstall -sync coc-vimlsp coc-sh coc-tsserver coc-go coc-html coc-css @yaegassy/coc-tailwindcss3 coc-json coc-yaml coc-prettier coc-eslint coc-dotenv' -c 'qall!' > /dev/null 2>&1
 
 echo "=> Setting up full Vim configuration..."
 mv ~/kawaiDotfiles/vim/* ~/.vim

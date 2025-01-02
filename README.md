@@ -3,12 +3,50 @@
 - Install script will backup your `~/.vimrc`, `~/.vim/`, `~/.zshrc`, `~/.config/tmux/`, `~/.scripts/` files and folders to `~/dotfiles_backup_<timestamp>/` folder and installs my settings. I did this to install my environment but you can use also if you want >.<
 - I only did this on macos I don't know if it is compatible with other OS's, but it should be compatible with linux I guess but I didn't tested it.
 - My cli based [todo app](https://github.com/dorukozerr/todo-app) being used in zshrc file. Either install it or remove that part from zshrc.
+- I tried to keep my vim configuration minimal as possible, instead of third party plugin managers like Vundle or vim-plug I used Vim's native solution. I also created a script to update vim plugins feel free to check it out.
+- FZF plugin has some dependencies to install them run `brew install fzf bat ripgrep the_silver_searcher perl universal-ctags`.
 
-## Installation
+### Vim Plugins
+
+- [vim-fugite](https://github.com/tpope/vim-fugitive)
+- [fzf](https://github.com/junegunn/fzf)
+- [fzf.vim](https://github.com/junegunn/fzf.vim)
+- [coc.nvim](https://github.com/neoclide/coc.nvim)
+- [lexima.vim](https://github.com/cohama/lexima.vim)
+- [vim-devicons](https://github.com/ryanoasis/vim-devicons)
+- [vim-airline](https://github.com/vim-airline/vim-airline)
+- [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
+- [tmuxline.vim](https://github.com/edkolev/tmuxline.vim)
+
+### CoC Extensions
+
+#### Language Support
+
+- [coc-vimlsp](https://www.npmjs.com/package/coc-vimlsp)
+- [coc-sh](https://www.npmjs.com/package/coc-sh)
+- [coc-tsserver](https://www.npmjs.com/package/coc-tsserver)
+- [coc-go](https://www.npmjs.com/package/coc-go)
+- [coc-html](https://www.npmjs.com/package/coc-html)
+- [coc-css](https://www.npmjs.com/package/coc-css)
+- [@yaegassy/coc-tailwindcss3](https://www.npmjs.com/package/@yaegassy/coc-tailwindcss3)
+- [coc-json](https://www.npmjs.com/package/coc-json)
+- [coc-yaml](https://www.npmjs.com/package/coc-yaml)
+
+#### Tools and Formatting
+
+- [coc-prettier](https://www.npmjs.com/package/coc-prettier)
+- [coc-eslint](https://www.npmjs.com/package/coc-eslint)
+- [coc-dotenv](https://www.npmjs.com/package/coc-dotenv)
+
+## Installation Script
 
 ```bash
 curl -o- https://raw.githubusercontent.com/dorukozerr/dotfiles/main/install.sh | bash
 ```
+
+#### Note
+
+- Run `:helptags ALL` to sync vim help command with installed plugins and extensions.
 
 ![screenshot](ss-1.png)
 ![screenshot](ss-2.png)
@@ -24,6 +62,12 @@ curl -o- https://raw.githubusercontent.com/dorukozerr/dotfiles/main/install.sh |
 | <kbd>ctrl</kbd> <kbd>k</kbd> <kbd>ctrl</kbd> <kbd>i</kbd> | Coc do hover                        | `n`  |
 | <kbd>g</kbd> <kbd>d</kbd>                                 | Coc open definition in split        | `n`  |
 | <kbd>g</kbd> <kbd>t</kbd>                                 | Coc open type definition in split   | `n`  |
+| <kbd>ctrl</kbd> <kbd>f</kbd>                              | Scroll down on coc floating window  | `n`  |
+| <kbd>ctrl</kbd> <kbd>b</kbd>                              | Scroll up on coc floating window    | `n`  |
+| <kbd>ctrl</kbd> <kbd>f</kbd>                              | Scroll down on coc floating window  | `i`  |
+| <kbd>ctrl</kbd> <kbd>b</kbd>                              | Scroll up on coc floating window    | `i`  |
+| <kbd>ctrl</kbd> <kbd>f</kbd>                              | Scroll down on coc floating window  | `v`  |
+| <kbd>ctrl</kbd> <kbd>b</kbd>                              | Scroll up on coc floating window    | `v`  |
 | <kbd>ctrl</kbd> <kbd>t</kbd>                              | Open Netrw                          | `n`  |
 | <kbd>ctrl</kbd> <kbd>p</kbd>                              | Fzf file search                     | `n`  |
 | <kbd>ctrl</kbd> <kbd>f</kbd>                              | Fzf grep search                     | `n`  |
