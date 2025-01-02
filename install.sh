@@ -45,6 +45,7 @@ mv ~/kawaiDotfiles/scripts ~/.scripts
 chmod +x ~/.scripts/commit.sh
 chmod +x ~/.scripts/lazygrep.sh
 chmod +x ~/.scripts/update_vim_plugins.sh
+chmod +x ~/.scripts/qms_tmux.sh
 
 echo "=> Setting up Zsh..."
 mv ~/kawaiDotfiles/zsh/.zshrc ~/
