@@ -68,6 +68,6 @@ augroup END
 let g:airline_section_a = airline#section#create_left(['mode', 'crypt', 'paste', 'keymap', 'spell', 'capslock', 'xkblayout', 'iminsert'])
 let g:airline_section_b = airline#section#create(['%t%m'])
 let g:airline_section_c = airline#section#create([' '])
-let g:airline_section_x = airline#section#create(['filetype', ' ', '%{WebDevIconsGetFileTypeSymbol()} '])
+let g:airline_section_x = airline#section#create([' '])
 let g:airline_section_y = airline#section#create(['%l:%c %p%%'])
 let g:airline_section_z = airline#section#create([' %{empty(FugitiveHead()) ? "git gud" : FugitiveHead()}%{get(g:, "git_stats", "")}'])
