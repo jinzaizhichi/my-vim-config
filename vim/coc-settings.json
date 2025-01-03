@@ -1,5 +1,4 @@
 {
-  "suggest.autoTrigger": "always",
   "eslint.alwaysShowStatus": true,
   "eslint.experimental.useFlatConfig": true,
   "floatFactory.floatConfig": {
@@ -7,21 +6,24 @@
     "rounded": true,
     "borderhighlight": "CocFloating"
   },
-  "outline.previewBorder": true,
-  "notification.border": true,
   "suggest.floatConfig": {
     "border": true,
     "rounded": true,
     "borderhighlight": "CocBorder",
     "highlight": "CocFloating"
   },
-  "javascript.suggest.autoImports": true,
-  "typescript.suggest.autoImports": true,
-  "prettier.enable": true,
+  "diagnostic.floatConfig": {
+    "border": true,
+    "rounded": true,
+    "borderhighlight": "CocBorder",
+    "highlight": "CocFloating"
+  },
   "prettier.trailingComma": "none",
   "prettier.singleQuote": true,
   "prettier.jsxSingleQuote": true,
   "prettier.htmlWhitespaceSensitivity": "strict",
   "prettier.arrowParens": "avoid",
-  "coc.preferences.formatOnSave": true
+  "coc.preferences.formatOnSave": true,
+  "diagnostic.virtualText": true,
+  "diagnostic.virtualTextCurrentLineOnly": false
 }

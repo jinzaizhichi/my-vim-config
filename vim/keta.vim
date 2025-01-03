@@ -12,14 +12,14 @@ let s:red         = [ '#C47B7B', 1 ]
 let s:soft_teal   = [ '#8BA499', 4 ]
 
 function! s:color_list(fg, bg) abort
-    return [a:fg[0], a:bg[0], a:fg[1], a:bg[1]]
+  return [a:fg[0], a:bg[0], a:fg[1], a:bg[1]]
 endfunction
 
 let g:airline#themes#keta#palette = {}
 
 let s:modified = {
-            \ 'airline_b': s:color_list(s:green, s:bg)
-            \ }
+      \ 'airline_b': s:color_list(s:green, s:bg)
+      \ }
 
 let s:warning = s:color_list(s:bg, s:soft_purple)
 let s:error = s:color_list(s:bg, s:red)
