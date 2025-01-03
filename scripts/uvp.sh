@@ -64,7 +64,7 @@ update_coc() {
     fi
 }
 
-main() {
+update_vim_plugins() {
     if [ ! -d "$PLUGIN_DIR" ]; then
         print_status "ERROR" "$RED" "Plugin directory not found: $PLUGIN_DIR"
         exit 1
@@ -106,4 +106,4 @@ main() {
     fi
 }
 
-main
+update_vim_plugins

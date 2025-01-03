@@ -7,7 +7,7 @@ PS1='%B%F{magenta}%n@%m%f%b %F{cyan}%~%f $ '
 
 alias lazygrep="~/.scripts/lazygrep.sh"
 alias commit="~/.scripts/commit.sh"
-alias uvp="~/.scripts/update_vim_plugins.sh"
+alias uvp="~/.scripts/uvp.sh"
 alias qms-tmux="~/.scripts/qms_tmux.sh"
 alias ls="ls -GFla"
 

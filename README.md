@@ -6,21 +6,16 @@
 - I tried to keep my vim configuration minimal as possible, instead of third party plugin managers like Vundle or vim-plug I used Vim's native solution. I also created a script to update vim plugins feel free to check it out.
 - FZF plugin has some dependencies to install them run `brew install fzf bat ripgrep the_silver_searcher perl universal-ctags`.
 
-### Vim Plugins
+## Vim Plugins
 
 - [vim-fugite](https://github.com/tpope/vim-fugitive)
 - [fzf](https://github.com/junegunn/fzf)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
 - [coc.nvim](https://github.com/neoclide/coc.nvim)
-- [lexima.vim](https://github.com/cohama/lexima.vim)
-- [vim-devicons](https://github.com/ryanoasis/vim-devicons)
-- [vim-airline](https://github.com/vim-airline/vim-airline)
-- [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
-- [tmuxline.vim](https://github.com/edkolev/tmuxline.vim)
 
-### CoC Extensions
+## CoC Extensions
 
-#### Language Support
+### Language Support
 
 - [coc-vimlsp](https://www.npmjs.com/package/coc-vimlsp)
 - [coc-sh](https://www.npmjs.com/package/coc-sh)
@@ -32,7 +27,7 @@
 - [coc-json](https://www.npmjs.com/package/coc-json)
 - [coc-yaml](https://www.npmjs.com/package/coc-yaml)
 
-#### Tools and Formatting
+### Tools and Formatting
 
 - [coc-prettier](https://www.npmjs.com/package/coc-prettier)
 - [coc-eslint](https://www.npmjs.com/package/coc-eslint)
@@ -44,7 +39,7 @@
 curl -o- https://raw.githubusercontent.com/dorukozerr/dotfiles/main/install.sh | bash
 ```
 
-#### Note
+### Note
 
 - Run `:helptags ALL` to sync vim help command with installed plugins and extensions.
 
