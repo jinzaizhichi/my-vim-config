@@ -42,3 +42,10 @@ nnoremap <Leader>dph :resize -10<CR>
 
 " save file
 nnoremap <leader>s :w<CR>
+
+" auto close some pairs
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap { {}<left>
+inoremap [ []<left>
