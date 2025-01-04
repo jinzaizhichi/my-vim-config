@@ -25,5 +25,6 @@
   "prettier.arrowParens": "avoid",
   "coc.preferences.formatOnSave": true,
   "diagnostic.virtualText": true,
-  "diagnostic.virtualTextCurrentLineOnly": false
+  "diagnostic.virtualTextCurrentLineOnly": false,
+  "diagnostic.virtualTextFormat": "Fucking retard -> %message"
 }
