@@ -82,23 +82,23 @@ A soft, pastel color scheme named after my cat, featuring gentle pinks and green
 | Label          | Color Code | Preview                                           |
 | :------------- | :--------- | :------------------------------------------------ |
 | Background     | `#030303`  | ![#030303](https://placehold.co/30/030303/030303) |
-| Text           | `#E2D8DC`  | ![#E2D8DC](https://placehold.co/30/E2D8DC/E2D8DC) |
+| Text           | `#E6DDE1`  | ![#E6DDE1](https://placehold.co/30/E6DDE1/E6DDE1) |
 | Bold Text      | `#F7F0F3`  | ![#F7F0F3](https://placehold.co/30/F7F0F3/F7F0F3) |
-| Cursor         | `#85A7A5`  | ![#85A7A5](https://placehold.co/30/85A7A5/85A7A5) |
-| Selection      | `#3D4757`  | ![#3D4757](https://placehold.co/30/3D4757/3D4757) |
-| Normal Black   | `#0F0F0F`  | ![#0F0F0F](https://placehold.co/30/0F0F0F/0F0F0F) |
-| Normal Red     | `#C47B7B`  | ![#C47B7B](https://placehold.co/30/C47B7B/C47B7B) |
-| Normal Green   | `#A898B7`  | ![#A898B7](https://placehold.co/30/A898B7/A898B7) |
-| Normal Yellow  | `#B17F92`  | ![#B17F92](https://placehold.co/30/B17F92/B17F92) |
-| Normal Blue    | `#8BA499`  | ![#8BA499](https://placehold.co/30/8BA499/8BA499) |
-| Normal Magenta | `#B48EAD`  | ![#B48EAD](https://placehold.co/30/B48EAD/B48EAD) |
-| Normal Cyan    | `#A4B49E`  | ![#A4B49E](https://placehold.co/30/A4B49E/A4B49E) |
-| Normal White   | `#E8E8E8`  | ![#E8E8E8](https://placehold.co/30/E8E8E8/E8E8E8) |
-| Bright Black   | `#232323`  | ![#232323](https://placehold.co/30/232323/232323) |
-| Bright Red     | `#E19191`  | ![#E19191](https://placehold.co/30/E19191/E19191) |
-| Bright Green   | `#C2B0D6`  | ![#C2B0D6](https://placehold.co/30/C2B0D6/C2B0D6) |
-| Bright Yellow  | `#CFA1B4`  | ![#CFA1B4](https://placehold.co/30/CFA1B4/CFA1B4) |
-| Bright Blue    | `#A3C0B6`  | ![#A3C0B6](https://placehold.co/30/A3C0B6/A3C0B6) |
-| Bright Magenta | `#CCA5C9`  | ![#CCA5C9](https://placehold.co/30/CCA5C9/CCA5C9) |
-| Bright Cyan    | `#BCCBB6`  | ![#BCCBB6](https://placehold.co/30/BCCBB6/BCCBB6) |
+| Cursor         | `#96B8B6`  | ![#96B8B6](https://placehold.co/30/96B8B6/96B8B6) |
+| Selection      | `#2D3747`  | ![#2D3747](https://placehold.co/30/2D3747/2D3747) |
+| Normal Black   | `#121212`  | ![#121212](https://placehold.co/30/121212/121212) |
+| Normal Red     | `#D48C8C`  | ![#D48C8C](https://placehold.co/30/D48C8C/D48C8C) |
+| Normal Green   | `#B5A7C4`  | ![#B5A7C4](https://placehold.co/30/B5A7C4/B5A7C4) |
+| Normal Yellow  | `#C38EA1`  | ![#C38EA1](https://placehold.co/30/C38EA1/C38EA1) |
+| Normal Blue    | `#96B0A4`  | ![#96B0A4](https://placehold.co/30/96B0A4/96B0A4) |
+| Normal Magenta | `#C19DBD`  | ![#C19DBD](https://placehold.co/30/C19DBD/C19DBD) |
+| Normal Cyan    | `#B1C0AB`  | ![#B1C0AB](https://placehold.co/30/B1C0AB/B1C0AB) |
+| Normal White   | `#EAEAEA`  | ![#EAEAEA](https://placehold.co/30/EAEAEA/EAEAEA) |
+| Bright Black   | `#2A2A2A`  | ![#2A2A2A](https://placehold.co/30/2A2A2A/2A2A2A) |
+| Bright Red     | `#E9A3A3`  | ![#E9A3A3](https://placehold.co/30/E9A3A3/E9A3A3) |
+| Bright Green   | `#CFBDE3`  | ![#CFBDE3](https://placehold.co/30/CFBDE3/CFBDE3) |
+| Bright Yellow  | `#DCAEC1`  | ![#DCAEC1](https://placehold.co/30/DCAEC1/DCAEC1) |
+| Bright Blue    | `#B0CDC3`  | ![#B0CDC3](https://placehold.co/30/B0CDC3/B0CDC3) |
+| Bright Magenta | `#D9B2D6`  | ![#D9B2D6](https://placehold.co/30/D9B2D6/D9B2D6) |
+| Bright Cyan    | `#C9D8C3`  | ![#C9D8C3](https://placehold.co/30/C9D8C3/C9D8C3) |
 | Bright White   | `#FFFFFF`  | ![#FFFFFF](https://placehold.co/30/FFFFFF/FFFFFF) |
