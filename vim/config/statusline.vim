@@ -1,87 +1,117 @@
 let s:git_stats_throttle=0
-let g:git_icon='󰊢'
 
-hi StatusLine     cterm=NONE ctermfg=5 ctermbg=0 " active status bar
-hi StatusLineNC   cterm=NONE ctermfg=0 ctermbg=0 " inactive status bar
-hi BufferLine     cterm=NONE ctermfg=5 ctermbg=8 " inactive buffers
-hi BufferLineSel  cterm=NONE ctermfg=0 ctermbg=5 " active buffer
-hi BufferLineFill cterm=NONE ctermfg=5 ctermbg=0 " fill color
+hi FilenameSection cterm=NONE ctermbg=5 ctermfg=0
+hi FilenameSectionEdgeIcon cterm=NONE ctermbg=0 ctermfg=5
+hi GitSectionEdgeIcon cterm=NONE ctermbg=0 ctermfg=5
+hi FillSection cterm=NONE ctermbg=0 ctermfg=0
+hi InfoSectionLeftEdgeIcon cterm=NONE ctermbg=0 ctermfg=8
+hi InfoSection cterm=NONE ctermbg=8 ctermfg=5
+hi InfoSectionRightEdgeIcon cterm=NONE ctermbg=0 ctermfg=8
+hi GitSection cterm=NONE ctermbg=5 ctermfg=0
 
 function! GitStats()
-    if localtime() - s:git_stats_throttle < 2  " Only update every 2 seconds
-        return get(g:, 'git_stats', '')
+  if localtime() - s:git_stats_throttle < 2
+    return get(g:, 'git_stats', '')
+  endif
+
+  let s:git_stats_throttle = localtime()
+  let l:branch = exists('*FugitiveHead') ? FugitiveHead() : ''
+  let l:status = system('git status --porcelain 2>/dev/null')
+
+  if v:shell_error
+    return ''
+  endif
+
+  let l:files = len(filter(split(l:status, '\n'), 'v:val !~ "^!"'))
+  let l:additions = 0
+  let l:deletions = 0
+  let l:diff = system('git diff HEAD --numstat 2>/dev/null')
+
+  for line in split(l:diff, '\n')
+    let stats = split(line)
+
+    if len(stats) >= 2
+      let l:additions += str2nr(stats[0])
+      let l:deletions += str2nr(stats[1])
     endif
+  endfor
 
-    let s:git_stats_throttle = localtime()
-    let l:branch = exists('*FugitiveHead') ? FugitiveHead() : ''
-    let l:status = system('git status --porcelain 2>/dev/null')
+  let l:staged_diff = system('git diff --cached --numstat 2>/dev/null')
 
-    if v:shell_error
-        return ''
+  for line in split(l:staged_diff, '\n')
+    let stats = split(line)
+
+    if len(stats) >= 2
+      let l:additions += str2nr(stats[0])
+      let l:deletions += str2nr(stats[1])
     endif
+  endfor
 
-    let l:files = len(filter(split(l:status, '\n'), 'v:val !~ "^!"'))
-    let l:additions = 0
-    let l:deletions = 0
-    let l:diff = system('git diff HEAD --numstat 2>/dev/null')
+  for status_line in split(l:status, '\n')
+    if status_line =~ '^??'
+      let file = substitute(status_line, '^??\s\+', '', '')
+      let file_content = system('wc -l ' . shellescape(file) . ' 2>/dev/null')
 
-    for line in split(l:diff, '\n')
-        let stats = split(line)
+      if !v:shell_error
+        let l:additions += str2nr(split(file_content)[0])
+      endif
+    endif
+  endfor
 
-        if len(stats) >= 2
-            let l:additions += str2nr(stats[0])
-            let l:deletions += str2nr(stats[1])
-        endif
-    endfor
-
-    let l:staged_diff = system('git diff --cached --numstat 2>/dev/null')
-
-    for line in split(l:staged_diff, '\n')
-        let stats = split(line)
-
-        if len(stats) >= 2
-            let l:additions += str2nr(stats[0])
-            let l:deletions += str2nr(stats[1])
-        endif
-    endfor
-
-    for status_line in split(l:status, '\n')
-        if status_line =~ '^??'
-            let file = substitute(status_line, '^??\s\+', '', '')
-            let file_content = system('wc -l ' . shellescape(file) . ' 2>/dev/null')
-
-            if !v:shell_error
-                let l:additions += str2nr(split(file_content)[0])
-            endif
-        endif
-    endfor
-
-    return printf('+%d -%d 󱁻 %d', l:additions, l:deletions, l:files)
+  return printf('+%d -%d 󱁻 %d', l:additions, l:deletions, l:files)
 endfunction
 
 function! GitStatus()
-    let head = FugitiveHead()
+  let head = FugitiveHead()
 
-    if empty(head)
-        return g:git_icon . '  Git Gud'
-    endif
+  if empty(head)
+    return '󰊢  Git Gud'
+  endif
 
-    let stats = get(g:, 'git_stats')
+  let stats = get(g:, 'git_stats')
 
-    return g:git_icon . ' ' . head . ' ' . stats
+  return '󰊢 ' . head . ' ' . stats
 endfunction
 
-augroup GitStatsUpdate
-    autocmd!
-    autocmd BufWritePost * let g:git_stats = GitStats()
-    autocmd VimEnter * let g:git_stats = GitStats()
-    autocmd BufEnter * let g:git_stats = GitStats()
-    autocmd BufLeave * let g:git_stats = GitStats()
+function! ActiveStatus()
+  let statusline=''
+  let statusline.='%#FilenameSection#'
+  let statusline.=' %f %M'
+  let statusline.='%#FilenameSectionEdgeIcon#'
+  let statusline.=''
+  let statusline.='%#FillSection#'
+  let statusline.='%='
+  let statusline.='%#InfoSectionLeftEdgeIcon#'
+  let statusline.=''
+  let statusline.='%#InfoSection#'
+  let statusline.=' %l/%L %c '
+  let statusline.='%#InfoSectionRightEdgeIcon#'
+  let statusline.=''
+  let statusline.='%#GitSectionEdgeIcon#'
+  let statusline.=''
+  let statusline.='%#GitSection#'
+  let statusline.=' %{GitStatus()} '
+
+  return statusline
+endfunction
+
+function! InactiveStatus()
+  return '%#FillSection#'
+endfunction
+
+augroup StatusLineUpdate
+  autocmd!
+
+  autocmd BufWritePost * let g:git_stats = GitStats()
+  autocmd VimEnter * let g:git_stats = GitStats()
+  autocmd BufEnter * let g:git_stats = GitStats()
+  autocmd BufLeave * let g:git_stats = GitStats()
+
+  autocmd WinEnter,ModeChanged * setlocal statusline=%!ActiveStatus()
+  autocmd WinLeave * setlocal statusline=%!InactiveStatus()
 augroup END
 
 set laststatus=2
-set statusline=
-set statusline+=%F\ %M
-set statusline+=%=
-set statusline+=%{GitStatus()}
+set statusline=%!ActiveStatus()
+
 set showtabline=0
