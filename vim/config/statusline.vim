@@ -4,10 +4,10 @@ hi FilenameSection cterm=NONE ctermbg=5 ctermfg=0
 hi FilenameSectionEdgeIcon cterm=NONE ctermbg=0 ctermfg=5
 hi GitSectionEdgeIcon cterm=NONE ctermbg=0 ctermfg=5
 hi FillSection cterm=NONE ctermbg=0 ctermfg=0
-hi InfoSectionLeftEdgeIcon cterm=NONE ctermbg=0 ctermfg=8
+hi InfoSectionLeftEdgeIcon cterm=NONE ctermbg=8 ctermfg=0
 hi InfoSection cterm=NONE ctermbg=8 ctermfg=5
 hi InfoSectionRightEdgeIcon cterm=NONE ctermbg=0 ctermfg=8
-hi GitSectionLeftEdgeIcon cterm=NONE ctermbg=0 ctermfg=5
+hi GitSectionLeftEdgeIcon cterm=NONE ctermbg=5 ctermfg=0
 hi GitSection cterm=NONE ctermbg=5 ctermfg=0
 hi ErrorSection cterm=NONE ctermbg=1 ctermfg=0
 hi WarningSection cterm=NONE ctermbg=3 ctermfg=0
@@ -91,13 +91,13 @@ function! ActiveStatus()
   let statusline.='%#FillSection#'
   let statusline.='%='
   let statusline.='%#InfoSectionLeftEdgeIcon#'
-  let statusline.=''
+  let statusline.=''
   let statusline.='%#InfoSection#'
   let statusline.=' %l/%L %c '
   let statusline.='%#InfoSectionRightEdgeIcon#'
   let statusline.=''
   let statusline.='%#GitSectionLeftEdgeIcon#'
-  let statusline.=''
+  let statusline.=''
   let statusline.='%#GitSection#'
   let statusline.=' %{GitStatus()} '
 
