@@ -7,7 +7,10 @@ hi FillSection cterm=NONE ctermbg=0 ctermfg=0
 hi InfoSectionLeftEdgeIcon cterm=NONE ctermbg=0 ctermfg=8
 hi InfoSection cterm=NONE ctermbg=8 ctermfg=5
 hi InfoSectionRightEdgeIcon cterm=NONE ctermbg=0 ctermfg=8
+hi GitSectionLeftEdgeIcon cterm=NONE ctermbg=0 ctermfg=5
 hi GitSection cterm=NONE ctermbg=5 ctermfg=0
+hi ErrorSection cterm=NONE ctermbg=1 ctermfg=0
+hi WarningSection cterm=NONE ctermbg=3 ctermfg=0
 
 function! GitStats()
   if localtime() - s:git_stats_throttle < 2
@@ -73,7 +76,13 @@ function! GitStatus()
   return '󰊢 ' . head . ' ' . stats
 endfunction
 
+
 function! ActiveStatus()
+  let info = get(b:, 'coc_diagnostic_info', {})
+
+  let errors = get(info, 'error', 0)
+  let warnings = get(info, 'warning', 0)
+
   let statusline=''
   let statusline.='%#FilenameSection#'
   let statusline.=' %f %M'
@@ -87,10 +96,20 @@ function! ActiveStatus()
   let statusline.=' %l/%L %c '
   let statusline.='%#InfoSectionRightEdgeIcon#'
   let statusline.=''
-  let statusline.='%#GitSectionEdgeIcon#'
+  let statusline.='%#GitSectionLeftEdgeIcon#'
   let statusline.=''
   let statusline.='%#GitSection#'
   let statusline.=' %{GitStatus()} '
+
+  if errors > 0
+    let statusline.='%#ErrorSection#'
+    let statusline.=' 󰅚 ' . errors . ' '
+  endif
+
+  if warnings > 0
+    let statusline.='%#WarningSection#'
+    let statusline.=' 󰀦 ' . warnings . ' '
+  endif
 
   return statusline
 endfunction
@@ -109,6 +128,9 @@ augroup StatusLineUpdate
 
   autocmd WinEnter,ModeChanged * setlocal statusline=%!ActiveStatus()
   autocmd WinLeave * setlocal statusline=%!InactiveStatus()
+
+  autocmd User CocDiagnosticChange redrawstatus
+  autocmd User CocStatusChange redrawstatus
 augroup END
 
 set laststatus=2
