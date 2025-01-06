@@ -8,7 +8,7 @@ inoremap <Left> <Left>
 inoremap <Right> <Right>
 
 " open netrw
-nnoremap <C-t> :Explore<CR>
+nnoremap <Leader>t :Explore<CR>
 
 " coc
 nmap <silent> gd <Plug>(coc-definition)
@@ -24,8 +24,8 @@ vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(
 vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 
 " fzf toggle
-nnoremap <C-p> :Files<CR>
-nnoremap <C-f> :Rg<CR>
+nnoremap <Leader>p :Files<CR>
+nnoremap <Leader>f :Rg<CR>
 
 " buffers
 nnoremap <Leader>bn :bn<CR>

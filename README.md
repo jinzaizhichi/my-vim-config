@@ -63,9 +63,9 @@ curl -o- https://raw.githubusercontent.com/dorukozerr/dotfiles/main/install.sh |
 | <kbd>ctrl</kbd> <kbd>b</kbd>                              | Scroll up on coc floating window    | `i`  |
 | <kbd>ctrl</kbd> <kbd>f</kbd>                              | Scroll down on coc floating window  | `v`  |
 | <kbd>ctrl</kbd> <kbd>b</kbd>                              | Scroll up on coc floating window    | `v`  |
-| <kbd>ctrl</kbd> <kbd>t</kbd>                              | Open Netrw                          | `n`  |
-| <kbd>ctrl</kbd> <kbd>p</kbd>                              | Fzf file search                     | `n`  |
-| <kbd>ctrl</kbd> <kbd>f</kbd>                              | Fzf grep search                     | `n`  |
+| <kbd>leader</kbd> <kbd>t</kbd>                            | Open Netrw                          | `n`  |
+| <kbd>leader</kbd> <kbd>p</kbd>                            | Fzf file search                     | `n`  |
+| <kbd>leader</kbd> <kbd>f</kbd>                            | Fzf grep search                     | `n`  |
 | <kbd>leader</kbd> <kbd>b</kbd> <kbd>n</kbd>               | Go to next buffer (buffer next)     | `n`  |
 | <kbd>leader</kbd> <kbd>b</kbd> <kbd>p</kbd>               | Go to prev buffer (buffer prev)     | `n`  |
 | <kbd>leader</kbd> <kbd>b</kbd> <kbd>c</kbd>               | Close all buffers except active one | `n`  |
