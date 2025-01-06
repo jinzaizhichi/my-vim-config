@@ -23,8 +23,5 @@
   "prettier.jsxSingleQuote": true,
   "prettier.htmlWhitespaceSensitivity": "strict",
   "prettier.arrowParens": "avoid",
-  "coc.preferences.formatOnSave": true,
-  "diagnostic.virtualText": true,
-  "diagnostic.virtualTextCurrentLineOnly": false,
-  "diagnostic.virtualTextFormat": "Fucking retard -> %message"
+  "coc.preferences.formatOnSave": true
 }
