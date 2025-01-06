@@ -13,9 +13,9 @@
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
 - [coc.nvim](https://github.com/neoclide/coc.nvim)
 
-## CoC Extensions
+### CoC Extensions
 
-### Language Support
+#### Language Support
 
 - [coc-vimlsp](https://www.npmjs.com/package/coc-vimlsp)
 - [coc-sh](https://www.npmjs.com/package/coc-sh)
@@ -27,7 +27,7 @@
 - [coc-json](https://www.npmjs.com/package/coc-json)
 - [coc-yaml](https://www.npmjs.com/package/coc-yaml)
 
-### Tools and Formatting
+#### Tools and Formatting
 
 - [coc-prettier](https://www.npmjs.com/package/coc-prettier)
 - [coc-eslint](https://www.npmjs.com/package/coc-eslint)
