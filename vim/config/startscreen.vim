@@ -11,53 +11,53 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 fun! startscreen#fortune()
-  let l:fortune = systemlist('fortune')
+    let l:fortune = systemlist('fortune')
 
-  call append('0', ['', ''] + map(l:fortune, '"        " . v:val'))
+    call append('0', ['', ''] + map(l:fortune, '"        " . v:val'))
 
-  :1
+    :1
 
-  redraw!
+    redraw!
 
-  nnoremap <buffer> <silent> <Return> :enew<CR>:call startscreen#start()<CR>
+    nnoremap <buffer> <silent> <Return> :enew<CR>:call startscreen#start()<CR>
 endfun
 
 if !exists('g:Startscreen_function')
-  let g:Startscreen_function = function('startscreen#fortune')
+    let g:Startscreen_function = function('startscreen#fortune')
 endif
 
 fun! startscreen#start()
-  if argc() || line2byte('$') != -1 || v:progname !~? '^[-gmnq]\=vim\=x\=\%[\.exe]$' || &insertmode
-    return
-  endif
+    if argc() || line2byte('$') != -1 || v:progname !~? '^[-gmnq]\=vim\=x\=\%[\.exe]$' || &insertmode
+        return
+    endif
 
-  enew
+    enew
 
-  setlocal
-        \ bufhidden=wipe
-        \ buftype=nofile
-        \ nobuflisted
-        \ nocursorcolumn
-        \ nocursorline
-        \ nolist
-        \ nonumber
-        \ noswapfile
-        \ norelativenumber
+    setlocal
+                \ bufhidden=wipe
+                \ buftype=nofile
+                \ nobuflisted
+                \ nocursorcolumn
+                \ nocursorline
+                \ nolist
+                \ nonumber
+                \ noswapfile
+                \ norelativenumber
 
-  call g:Startscreen_function()
+    call g:Startscreen_function()
 
-  setlocal nomodifiable nomodified
+    setlocal nomodifiable nomodified
 
-  nnoremap <buffer><silent> e :enew<CR>
-  nnoremap <buffer><silent> i :enew <bar> startinsert<CR>
-  nnoremap <buffer><silent> o :enew <bar> startinsert<CR><CR>
-  nnoremap <buffer><silent> p :enew<CR>p
-  nnoremap <buffer><silent> P :enew<CR>P
+    nnoremap <buffer><silent> e :enew<CR>
+    nnoremap <buffer><silent> i :enew <bar> startinsert<CR>
+    nnoremap <buffer><silent> o :enew <bar> startinsert<CR><CR>
+    nnoremap <buffer><silent> p :enew<CR>p
+    nnoremap <buffer><silent> P :enew<CR>P
 endfun
 
 augroup startscreen
-  autocmd!
-  autocmd VimEnter * call startscreen#start()
+    autocmd!
+    autocmd VimEnter * call startscreen#start()
 augroup end
 
 let &cpo = s:save_cpo
