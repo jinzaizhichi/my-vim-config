@@ -11,6 +11,9 @@ inoremap <down> <NOP>
 inoremap <left> <NOP>
 inoremap <right> <NOP>
 
+" exit insert mode
+inoremap jk <esc>
+
 " open netrw
 nnoremap <Leader>t :Explore<CR>
 
