@@ -1,11 +1,11 @@
 " reset leader key
 let mapleader = "\<Space>"
 
-" disabled arrow keys to get used to hjkl
-noremap <up> :echoerr "Umm, use k instead"<CR>
-noremap <down> :echoerr "Umm, use j instead"<CR>
-noremap <left> :echoerr "Umm, use h instead"<CR>
-noremap <right> :echoerr "Umm, use l instead"<CR>
+" gotta develop that muscle memory, one way or another
+noremap <up> :echoerr "Senpai, use k instead"<CR>
+noremap <down> :echoerr "Senpai, use j instead"<CR>
+noremap <left> :echoerr "Senpai, use h instead"<CR>
+noremap <right> :echoerr "Senpai, use l instead"<CR>
 inoremap <up> <NOP>
 inoremap <down> <NOP>
 inoremap <left> <NOP>
@@ -46,10 +46,3 @@ nnoremap <Leader>dph :resize -10<CR>
 
 " save file
 nnoremap <leader>s :w<CR>
-
-" auto close some pairs
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap { {}<left>
-inoremap [ []<left>

@@ -54,6 +54,7 @@ curl -o- https://raw.githubusercontent.com/dorukozerr/dotfiles/main/install.sh |
 | :-------------------------------------------------------- | :---------------------------------- | :--- |
 | <kbd>ctrl</kbd> <kbd>j</kbd>                              | Open coc autocomplete suggestions   | `i`  |
 | <kbd>ctrl</kbd> <kbd>k</kbd> <kbd>ctrl</kbd> <kbd>i</kbd> | Coc do hover                        | `ì`  |
+| <kbd>j</kbd> <kbd>k</kbd>                                 | Exit insert mode                    | `i`  |
 | <kbd>ctrl</kbd> <kbd>k</kbd> <kbd>ctrl</kbd> <kbd>i</kbd> | Coc do hover                        | `n`  |
 | <kbd>g</kbd> <kbd>d</kbd>                                 | Coc open definition in split        | `n`  |
 | <kbd>g</kbd> <kbd>t</kbd>                                 | Coc open type definition in split   | `n`  |
