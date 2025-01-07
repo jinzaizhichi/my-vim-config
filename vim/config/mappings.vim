@@ -1,11 +1,11 @@
 " reset leader key
 let mapleader = "\<Space>"
 
-" fix arrow key behavior in insert mode
-inoremap <Up> <Up>
-inoremap <Down> <Down>
-inoremap <Left> <Left>
-inoremap <Right> <Right>
+" disabled arrow keys to get used to hjkl
+map <Up> <nop>
+map <Down> <nop>
+map <Left> <nop>
+map <Right> <nop>
 
 " open netrw
 nnoremap <Leader>t :Explore<CR>
