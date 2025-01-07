@@ -26,13 +26,6 @@ command! -bang -nargs=? -complete=dir Files
 command! -bang -nargs=* Rg
       \ call fzf#vim#grep(
       \   'rg --column --line-number --no-heading --color=always --smart-case --fixed-strings '.
-      \   '--glob "!node_modules/" '.
-      \   '--glob "!dist/" '.
-      \   '--glob "!.git/" '.
-      \   '--glob "!.expo/" '.
-      \   '--glob "!ios/" '.
-      \   '--glob "!android/" '.
-      \   '--glob "!build/" '.
       \   '-- '.shellescape(<q-args>), 1,
       \   {
       \     'options': [
