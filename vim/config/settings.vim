@@ -14,9 +14,9 @@ set hlsearch                                " highlight search results
 set wrap                                    " automatically wrap text that extends beyond the screen length
 set nu rnu                                  " show line numbers
 set expandtab                               " self-explanatory
-set tabstop=2                               " self-explanatory
-set softtabstop=2                           " self-explanatory
-set shiftwidth=2                            " self-explanatory
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set t_Co=16                                 " infer colors from terminal ansi colors
 set incsearch                               " Incremental search, hit `<CR>` to stop.
 set noswapfile                              " disable swap files
