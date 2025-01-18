@@ -16,7 +16,7 @@ update_regular_plugin() {
     cd "$plugin_name" || return 1
 
     print_status "INFO" "$YELLOW" "Updating $plugin_name..."
-    if git pull origin master; then
+    if git pull; then
         print_status "SUCCESS" "$GREEN" "Updated $plugin_name"
         return 0
     else
@@ -29,7 +29,7 @@ update_fzf() {
     cd "fzf" || return 1
     print_status "INFO" "$YELLOW" "Updating fzf..."
 
-    if git pull origin master; then
+    if git pull; then
         print_status "INFO" "$YELLOW" "Running fzf install script..."
 
         if ./install --all; then
@@ -49,7 +49,7 @@ update_coc() {
     cd "coc.nvim" || return 1
     print_status "INFO" "$YELLOW" "Updating coc.nvim..."
 
-    if git pull origin master; then
+    if git pull; then
         print_status "INFO" "$YELLOW" "Running npm ci for coc.nvim..."
         if npm ci; then
             print_status "SUCCESS" "$GREEN" "Updated coc.nvim successfully"
