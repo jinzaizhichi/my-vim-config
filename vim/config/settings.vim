@@ -20,5 +20,6 @@ set shiftwidth=2                            " self-explanatory
 set t_Co=16                                 " infer colors from terminal ansi colors
 set incsearch                               " Incremental search, hit `<CR>` to stop.
 set noswapfile                              " disable swap files
+set foldmethod=syntax                       " fold by syntax
 
 autocmd BufWritePre * :%s/\s\+$//e          " Remove trailing whitespace on save
