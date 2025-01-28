@@ -12,6 +12,11 @@ let g:airline#extensions#tmuxline#enabled=0
 let g:webdevicons_enable_airline_statusline=0
 let g:webdevicons_enable_airline_statusline_fileformat=0
 
+let g:airline_left_alt_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+
 let s:git_stats_throttle=0
 
 function! GitStats()
