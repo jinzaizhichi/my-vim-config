@@ -66,9 +66,6 @@ git clone https://github.com/tpope/vim-fugitive.git
 git clone https://github.com/junegunn/fzf.git
 git clone https://github.com/junegunn/fzf.vim.git
 git clone https://github.com/neoclide/coc.nvim.git
-git clone https://github.com/vim-airline/vim-airline.git
-git clone https://github.com/vim-airline/vim-airline-themes.git
-git clone https://github.com/ryanoasis/vim-devicons.git
 git clone https://github.com/dorukozerr/kisuke.vim.git
 git clone https://github.com/Konfekt/FastFold.git
 
@@ -87,7 +84,6 @@ yes | vim -u ~/.vim/temp.vimrc -c 'CocInstall -sync coc-vimlsp coc-sh coc-tsserv
 
 echo "=> Setting up full Vim configuration..."
 mv ~/kawaiDotfiles/vim/* ~/.vim
-mv ~/.vim/keta.vim ~/.vim/pack/plugins/start/vim-airline-themes/autoload/airline/themes
 
 echo "=> Cleaning up..."
 rm ~/.vim/temp.vimrc

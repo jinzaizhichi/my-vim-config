@@ -22,5 +22,6 @@ set incsearch                               " Incremental search, hit `<CR>` to 
 set noswapfile                              " disable swap files
 set foldmethod=syntax                       " fold by syntax
 set nofoldenable                            " don't fold blocks initially
+set laststatus=0                            " disable statusline
 
 autocmd BufWritePre * :%s/\s\+$//e          " Remove trailing whitespace on save

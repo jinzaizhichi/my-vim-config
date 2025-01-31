@@ -6,7 +6,6 @@ let g:config_files = [
       \ 'mappings.vim',
       \ 'settings.vim',
       \ 'startscreen.vim',
-      \ 'airline.vim',
       \ 'fastfold.vim',
       \ ]
 
