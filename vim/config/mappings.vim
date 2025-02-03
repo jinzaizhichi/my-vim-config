@@ -11,6 +11,9 @@ inoremap <down> <NOP>
 inoremap <left> <NOP>
 inoremap <right> <NOP>
 
+nnoremap j gj
+nnoremap k gk
+
 " exit insert mode
 inoremap jk <esc>
 
