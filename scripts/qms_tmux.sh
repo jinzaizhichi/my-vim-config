@@ -2,8 +2,8 @@
 
 SESSION_NAME="QuizMeSenpai"
 
-CLIENT_PATH="~/Repositories/QuizMeSenpai/client/"
-SERVER_PATH="~/Repositories/QuizMeSenpai/api/"
+CLIENT_PATH="~/Repositories/personal/QuizMeSenpai/client/"
+SERVER_PATH="~/Repositories/personal/QuizMeSenpai/api/"
 
 SESSION_EXISTS=$(tmux list-sessions | grep $SESSION_NAME)
 
