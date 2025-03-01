@@ -10,6 +10,7 @@ alias commit="~/.scripts/commit.sh"
 alias uvp="~/.scripts/uvp.sh"
 alias qms-tmux="~/.scripts/qms_tmux.sh"
 alias ls="ls -GFla"
+alias kp="~/.scripts/kp.sh"
 
 function startup_sequence() {
     messages=(
