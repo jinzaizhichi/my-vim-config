@@ -9,89 +9,77 @@ alias lazygrep="~/.scripts/lazygrep.sh"
 alias commit="~/.scripts/commit.sh"
 alias uvp="~/.scripts/uvp.sh"
 alias qms-tmux="~/.scripts/qms_tmux.sh"
-alias ls="ls -GFla"
+alias ls="ls -GFlah"
 alias kp="~/.scripts/kp.sh"
 
 function startup_sequence() {
-    messages=(
-        "Ah, the guy who thinks console.log() is debugging"
-        "Looking for Stack Overflow again? Can't write your own code?"
-        "Your commit messages are as meaningful as your career"
-        "Another day of copying code you don't understand?"
-        "I see you're back to pretend you understand async/await"
-        "How many times will you git push --force today?"
-        "Even Internet Explorer has better performance than your code"
-        "Your code has more bugs than features"
-        "Still writing code like it's your first week?"
-        "Your error handling strategy: ignore and pray"
-        "Your functions are longer than your attention span"
-        "Documentation? Never heard of her"
-        "Your variable names look like keyboard smashes"
-        "Even PHP developers laugh at your code"
-        "Back to write more infinite loops?"
-        "Your code makes WordPress look optimized"
-        "Your git history is just 'fix bug' and 'final final v3 real'"
-        "You're the reason code reviews need a 'reject all' button"
-        "Your database queries would make an SQL intern cry"
-        "Back to rename everything to 'temp' and 'test'?"
-        "Your browser history would make Satan uncomfortable"
-        "Your homework folder isn't fooling anyone"
-        "Even your ISP judges your browsing habits"
-        "The FBI agent monitoring you needed therapy"
-        "Your incognito mode deserves hazard pay"
-        "ChromeOS removed incognito mode just for you"
-        "Your browser cache needs holy water"
-        "Back from another 'research' session?"
-        "Your bookmarks would make a priest faint"
-        "The NSA agent watching you quit their job"
-        "Your cookies are more cursed than a haunted house"
-        "Your recommended algorithms need counseling"
-        "Even your antivirus is concerned about you"
-        "Your search history is a cry for help"
-        "Your waifu folder is bigger than your codebase"
-        "Another day of watching 'code tutorials' on certain Hub sites?"
-        "Your anime collection is more organized than your git repos"
-        "Tabs vs Spaces? You can't even decide on a waifu"
-        "Your code is as messy as your manga collection"
-        "Writing spaghetti code while watching tentacle movies?"
-        "Your weeb powers are inversely proportional to your coding skills"
-        "Error 404: Coding skills not found (but found 10TB of 'hentai')"
-    )
+  messages=(
+    "Not even Stack Overflow can fix your catastrophic coding incompetence"
+    "Your commit history reads like a confession of technological crimes against humanity"
+    "Your code is so fragile it breaks when you look at it wrong"
+    "You don't write code, you commit digital war crimes"
+    "Your debugging strategy: reboot and pray to silicon gods who abandoned you long ago"
+    "git push --force: the digital equivalent of your poor life choices"
+    "Even COBOL programmers laugh at your archaic coding style"
+    "Your codebase is where good ideas go to die horrible deaths"
+    "Error handling? You can't even handle basic syntax without three Google searches"
+    "Your functions are more bloated than a decomposing whale carcass"
+    "Documentation implies you'd understand it if you wrote it, which we both know is false"
+    "Your variable names suggest you're communicating with aliens, not other developers"
+    "Even WordPress developers hold emergency meetings about your code quality"
+    "If technical debt were currency, your code would crash the global economy"
+    "Your git history is just 'please work' and 'why god why' with timestamps of despair"
+    "Code reviewers need therapy after seeing your pull requests"
+    "Your database schema looks like it was designed by throwing darts blindfolded"
+    "You don't write algorithms, you write algorithmic war crimes"
+    "Your browser history would make even 4chan moderators question their life choices"
+    "That's not a homework folder, it's a monument to your perpetual disappointment"
+    "Your ISP considered terminating service just to protect the internet from you"
+    "The FBI agent monitoring your activity requested hazard pay and trauma counseling"
+    "Your incognito mode history would violate the Geneva Convention"
+    "If imposter syndrome had a poster child, your LinkedIn profile would be it"
+  )
 
 
-    echo '\033[1;35m
-    ⠄⠄⠄⢰⣧⣼⣯⠄⣸⣠⣶⣶⣦⣾⠄⠄⠄⠄⡀⠄⢀⣿⣿⠄⠄⠄⢸⡇⠄⠄
-    ⠄⠄⠄⣾⣿⠿⠿⠶⠿⢿⣿⣿⣿⣿⣦⣤⣄⢀⡅⢠⣾⣛⡉⠄⠄⠄⠸⢀⣿⠄
-    ⠄⠄⢀⡋⣡⣴⣶⡀⠄⠄⠙⢿⣿⣿⣿⣿⣿⣴⣿⣿⣿⢃⣤⣄⣀⣥⣿⣿⠄
-    ⠄⠄⢸⣇⠻⣿⣿⣿⣧⣀⢀⣠⡌⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⣿⣿⣿⠄
-    ⠄⢀⢸⣿⣷⣤⣤⣤⣬⣙⣛⢿⣿⣿⣿⣿⣿⣿⡿⣿⣿⡍⠄⠄⢀⣤⣄⠉⠋⣰
-    ⠄⣼⣖⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⢇⣿⣿⡷⠶⠶⢿⣿⣿⠇⢀⣤
-    ⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⣿⣿⡇⣿⣿⣿⣿⣿⣿⣷⣶⣥⣴⣿⡗
-    ⢀⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠄
-    ⢸⣿⣦⣌⣛⣻⣿⣿⣧⠙⠛⡭⠅⠒⠦⠭⣭⡻⣿⣿⣿⣿⣿⣿⣿⣿⡿⠃⠄
-    ⠘⣿⣿⣿⣿⣿⣿⣿⣿⡆⠄⠄⠄⠄⠄⠄⠄⠄⠹⠈⢋⣽⣿⣿⣿⣿⣵⣾⠃⠄
-    ⠄⠘⣿⣿⣿⣿⣿⣿⣿⣿⠄⣴⣿⣶⣄⠄⣴⣶⠄⢀⣾⣿⣿⣿⣿⣿⣿⠃⠄⠄
-    ⠄⠄⠈⠻⣿⣿⣿⣿⣿⣿⡄⢻⣿⣿⣿⠄⣿⣿⡀⣾⣿⣿⣿⣿⣛⠛⠁⠄⠄⠄
-    \033[0m'
+  echo '\033[1;35m
+  ⠄⠄⠄⢰⣧⣼⣯⠄⣸⣠⣶⣶⣦⣾⠄⠄⠄⠄⡀⠄⢀⣿⣿⠄⠄⠄⢸⡇⠄⠄
+  ⠄⠄⠄⣾⣿⠿⠿⠶⠿⢿⣿⣿⣿⣿⣦⣤⣄⢀⡅⢠⣾⣛⡉⠄⠄⠄⠸⢀⣿⠄
+  ⠄⠄⢀⡋⣡⣴⣶⡀⠄⠄⠙⢿⣿⣿⣿⣿⣿⣴⣿⣿⣿⢃⣤⣄⣀⣥⣿⣿⠄
+  ⠄⠄⢸⣇⠻⣿⣿⣿⣧⣀⢀⣠⡌⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⣿⣿⣿⠄
+  ⠄⢀⢸⣿⣷⣤⣤⣤⣬⣙⣛⢿⣿⣿⣿⣿⣿⣿⡿⣿⣿⡍⠄⠄⢀⣤⣄⠉⠋⣰
+  ⠄⣼⣖⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⢇⣿⣿⡷⠶⠶⢿⣿⣿⠇⢀⣤
+  ⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⣿⣿⡇⣿⣿⣿⣿⣿⣿⣷⣶⣥⣴⣿⡗
+  ⢀⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠄
+  ⢸⣿⣦⣌⣛⣻⣿⣿⣧⠙⠛⡭⠅⠒⠦⠭⣭⡻⣿⣿⣿⣿⣿⣿⣿⣿⡿⠃⠄
+  ⠘⣿⣿⣿⣿⣿⣿⣿⣿⡆⠄⠄⠄⠄⠄⠄⠄⠄⠹⠈⢋⣽⣿⣿⣿⣿⣵⣾⠃⠄
+  ⠄⠘⣿⣿⣿⣿⣿⣿⣿⣿⠄⣴⣿⣶⣄⠄⣴⣶⠄⢀⣾⣿⣿⣿⣿⣿⣿⠃⠄⠄
+  ⠄⠄⠈⠻⣿⣿⣿⣿⣿⣿⡄⢻⣿⣿⣿⠄⣿⣿⡀⣾⣿⣿⣿⣿⣛⠛⠁⠄⠄⠄
+  \033[0m'
 
-    echo
+  echo
 
-    if [ ${#messages[@]} -gt 0 ]; then
-        echo "\033[1m${messages[$((RANDOM % ${#messages[@]} + 1))]}\033[0m"
-    fi
+  if [ ${#messages[@]} -gt 0 ]; then
+    echo "\033[1m${messages[$((RANDOM % ${#messages[@]} + 1))]}\033[0m"
+  fi
 
 
-    echo
+  echo
 
-    todo_count=$(td | grep -c "^")
+  todo_count=$(td | grep -c "^")
 
-    if [ $todo_count -gt 0 ]; then
-        td
-    else
-        echo "\033[1mYou have no active todos, just like your social life...\033[0m"
-    fi
+  if [ $todo_count -gt 0 ]; then
+    td
+  else
+    echo "\033[1mYou have no active todos, just like your social life...\033[0m"
+  fi
 
-    echo
+  echo
 }
 
 startup_sequence
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+if [ -f ~/.work.zsh ]; then
+  source ~/.work.zsh
+fi
