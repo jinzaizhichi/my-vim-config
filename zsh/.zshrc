@@ -79,7 +79,4 @@ function startup_sequence() {
 startup_sequence
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-if [ -f ~/.work.zsh ]; then
-  source ~/.work.zsh
-fi
+[ -f ~/.work/.work.zsh ] && source ~/.work/.work.zsh
