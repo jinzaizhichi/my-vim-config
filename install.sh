@@ -43,10 +43,10 @@ mv ~/kawaiDotfiles/tmux ~/.config/
 echo "=> Setting up scripts..."
 mv ~/kawaiDotfiles/scripts ~/.scripts
 chmod +x ~/.scripts/commit.sh
-chmod +x ~/.scripts/lazygrep.sh
+chmod +x ~/.scripts/lg.sh
 chmod +x ~/.scripts/uvp.sh
-chmod +x ~/.scripts/qms_tmux.sh
 chmod +x ~/.scripts/kp.sh
+chmod +x ~/.scripts/epr.sh
 
 echo "=> Setting up Zsh..."
 mv ~/kawaiDotfiles/zsh/.zshrc ~/
