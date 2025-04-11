@@ -34,19 +34,25 @@ validate_title() {
 
 select_target_branch() {
     print_magic "Let's choose where to send this magical PR! (Enter for main)"
-
     echo ""
 
-    branches=(main $(git branch -r | grep -v HEAD | sed 's/origin\///'))
+    mapfile -t remote_branches < <(git branch -r | grep -v 'HEAD' | sed 's/origin\///' | sort -u)
+
+    branches=("main")
+
+    for branch in "${remote_branches[@]}"; do
+        if [[ "$branch" != "main" ]]; then
+            branches+=("$branch")
+        fi
+    done
 
     echo "Available branches:"
-    echo "0) main (default)"
-
-    local i=1
-
-    for branch in "${branches[@]:1}"; do
-        echo "$i) $branch"
-        ((i++))
+    for i in "${!branches[@]}"; do
+        if [ $i -eq 0 ]; then
+            echo "$i) ${branches[$i]} (default)"
+        else
+            echo "$i) ${branches[$i]}"
+        fi
     done
 
     read -p "Enter branch number (or press Enter for main): " branch_choice
@@ -60,7 +66,6 @@ select_target_branch() {
         echo "${branches[$branch_choice]}"
     else
         print_error "Invalid branch number, falling back to main"
-
         echo "main"
     fi
 }
