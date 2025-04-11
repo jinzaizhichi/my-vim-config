@@ -23,7 +23,7 @@ echo "=> Installing yarn globally..."
 npm i -g yarn@latest > /dev/null
 
 echo "=> Cloning dotfiles repository..."
-git clone git@github.com:dorukozerr/dotfiles.git ~/kawaiDotfiles > /dev/null
+git clone git@github.com:dorukozerr/dotfiles.git ~/kawaiDotfiles &> /dev/null
 
 backup_dir="$HOME/dotfiles_backup_$(date +%Y%m%d_%H%M%S)"
 
