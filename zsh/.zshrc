@@ -5,12 +5,12 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 PS1='%B%F{magenta}%n@%m%f%b %F{cyan}%~%f $ '
 
-alias lazygrep="~/.scripts/lazygrep.sh"
-alias commit="~/.scripts/commit.sh"
-alias uvp="~/.scripts/uvp.sh"
-alias qms-tmux="~/.scripts/qms_tmux.sh"
 alias ls="ls -GFlah"
+alias commit="~/.scripts/commit.sh"
+alias lg="~/.scripts/lg.sh"
+alias uvp="~/.scripts/uvp.sh"
 alias kp="~/.scripts/kp.sh"
+alias epr="~/.scripts/epr.sh"
 
 function startup_sequence() {
   messages=(
