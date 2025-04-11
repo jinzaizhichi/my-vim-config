@@ -51,7 +51,6 @@ chmod +x ~/.scripts/easy_pull_request.sh
 echo "=> Setting up Zsh..."
 mv ~/kawaiDotfiles/zsh/.zshrc ~/
 
-echo "=> Installing Vim plugins..."
 mkdir -p ~/.vim/pack/plugins/start
 
 cat > ~/.vim/temp.vimrc << 'EOF'
@@ -64,15 +63,15 @@ EOF
 cd ~/.vim/pack/plugins/start
 
 echo "=> Setting up Vim plugins..."
-git clone https://github.com/tpope/vim-fugitive.git > /dev/null
-git clone https://github.com/junegunn/fzf.git > /dev/null
-git clone https://github.com/junegunn/fzf.vim.git > /dev/null
-git clone https://github.com/neoclide/coc.nvim.git > /dev/null
-git clone https://github.com/vim-airline/vim-airline.git > /dev/null
-git clone https://github.com/vim-airline/vim-airline-themes.git > /dev/null
-git clone https://github.com/ryanoasis/vim-devicons.git > /dev/null
-git clone git@github.com:dorukozerr/kisuke.vim.git > /dev/null
-git clone https://github.com/Konfekt/FastFold.git > /dev/null
+git clone https://github.com/tpope/vim-fugitive.git &> /dev/null
+git clone https://github.com/junegunn/fzf.git &> /dev/null
+git clone https://github.com/junegunn/fzf.vim.git &> /dev/null
+git clone https://github.com/neoclide/coc.nvim.git &> /dev/null
+git clone https://github.com/vim-airline/vim-airline.git &> /dev/null
+git clone https://github.com/vim-airline/vim-airline-themes.git &> /dev/null
+git clone https://github.com/ryanoasis/vim-devicons.git &> /dev/null
+git clone git@github.com:dorukozerr/kisuke.vim.git &> /dev/null
+git clone https://github.com/Konfekt/FastFold.git &> /dev/null
 echo "=> Vim plugins base installation finished..."
 
 cd coc.nvim
