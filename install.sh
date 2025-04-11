@@ -20,10 +20,10 @@ if ! command -v fortune &> /dev/null; then
 fi
 
 echo "=> Installing yarn globally..."
-npm i -g yarn@latest
+npm i -g yarn@latest > /dev/null
 
 echo "=> Cloning dotfiles repository..."
-git clone git@github.com:dorukozerr/dotfiles.git ~/kawaiDotfiles
+git clone git@github.com:dorukozerr/dotfiles.git ~/kawaiDotfiles > /dev/null
 
 backup_dir="$HOME/dotfiles_backup_$(date +%Y%m%d_%H%M%S)"
 
@@ -43,10 +43,10 @@ mv ~/kawaiDotfiles/tmux ~/.config/
 echo "=> Setting up scripts..."
 mv ~/kawaiDotfiles/scripts ~/.scripts
 chmod +x ~/.scripts/commit.sh
-chmod +x ~/.scripts/lg.sh
-chmod +x ~/.scripts/uvp.sh
-chmod +x ~/.scripts/kp.sh
-chmod +x ~/.scripts/epr.sh
+chmod +x ~/.scripts/lazy_grep.sh
+chmod +x ~/.scripts/update_vim_plugins.sh
+chmod +x ~/.scripts/kill_process.sh
+chmod +x ~/.scripts/easy_pull_request.sh
 
 echo "=> Setting up Zsh..."
 mv ~/kawaiDotfiles/zsh/.zshrc ~/
@@ -63,24 +63,29 @@ EOF
 
 cd ~/.vim/pack/plugins/start
 
-git clone https://github.com/tpope/vim-fugitive.git
-git clone https://github.com/junegunn/fzf.git
-git clone https://github.com/junegunn/fzf.vim.git
-git clone https://github.com/neoclide/coc.nvim.git
-git clone https://github.com/vim-airline/vim-airline.git
-git clone https://github.com/vim-airline/vim-airline-themes.git
-git clone https://github.com/ryanoasis/vim-devicons.git
-git clone git@github.com:dorukozerr/kisuke.vim.git
-git clone https://github.com/Konfekt/FastFold.git
+echo "=> Setting up Vim plugins..."
+git clone https://github.com/tpope/vim-fugitive.git > /dev/null
+git clone https://github.com/junegunn/fzf.git > /dev/null
+git clone https://github.com/junegunn/fzf.vim.git > /dev/null
+git clone https://github.com/neoclide/coc.nvim.git > /dev/null
+git clone https://github.com/vim-airline/vim-airline.git > /dev/null
+git clone https://github.com/vim-airline/vim-airline-themes.git > /dev/null
+git clone https://github.com/ryanoasis/vim-devicons.git > /dev/null
+git clone git@github.com:dorukozerr/kisuke.vim.git > /dev/null
+git clone https://github.com/Konfekt/FastFold.git > /dev/null
+echo "=> Vim plugins base installation finished..."
 
 cd coc.nvim
-npm ci
+echo "=> Finishing CoC installation..."
+npm ci > /dev/null
 cd ..
 cd fzf
-./install --all
+echo "=> Finishing FZF installation..."
+./install --all > /dev/null
 cd ..
 cd kisuke.vim
-yarn build
+echo "=> Building Kisuke..."
+yarn build > /dev/null
 cd ~
 
 echo "=> Installing CoC extensions..."

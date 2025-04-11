@@ -7,10 +7,10 @@ PS1='%B%F{magenta}%n@%m%f%b %F{cyan}%~%f $ '
 
 alias ls="ls -GFlah"
 alias commit="~/.scripts/commit.sh"
-alias lg="~/.scripts/lg.sh"
-alias uvp="~/.scripts/uvp.sh"
-alias kp="~/.scripts/kp.sh"
-alias epr="~/.scripts/epr.sh"
+alias lg="~/.scripts/lazy_grep.sh"
+alias uvp="~/.scripts/update_vim_plugins.sh"
+alias kp="~/.scripts/kill_process.sh"
+alias epr="~/.scripts/easy_pull_request.sh"
 
 function startup_sequence() {
   messages=(
