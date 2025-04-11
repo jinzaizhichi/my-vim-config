@@ -36,7 +36,7 @@
 ## Installation Script
 
 ```bash
-curl -o- https://raw.githubusercontent.com/dorukozerr/dotfiles/main/install.sh | bash
+curl -o- https://raw.githubusercontent.com/dorukozerr/dotfiles/main/install.sh &> /dev/null | bash
 ```
 
 ### Note
