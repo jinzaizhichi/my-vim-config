@@ -47,6 +47,7 @@ chmod +x ~/.scripts/lazy_grep.sh
 chmod +x ~/.scripts/update_vim_plugins.sh
 chmod +x ~/.scripts/kill_process.sh
 chmod +x ~/.scripts/easy_pull_request.sh
+chmod +x ~/.scripts/sync_with_main.sh
 
 echo "=> Setting up Zsh..."
 mv ~/kawaiDotfiles/zsh/.zshrc ~/

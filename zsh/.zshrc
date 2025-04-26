@@ -11,6 +11,7 @@ alias lg="~/.scripts/lazy_grep.sh"
 alias uvp="~/.scripts/update_vim_plugins.sh"
 alias kp="~/.scripts/kill_process.sh"
 alias epr="~/.scripts/easy_pull_request.sh"
+alias swm="~/.scripts/sync_with_main.sh"
 
 function startup_sequence() {
   messages=(
