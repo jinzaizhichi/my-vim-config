@@ -29,7 +29,7 @@ backup_dir="$HOME/dotfiles_backup_$(date +%Y%m%d_%H%M%S)"
 
 echo "=> Creating backup directory at $backup_dir"
 mkdir -p "$backup_dir"
-for file in ~/.vim ~/.vimrc ~/.config/tmux ~/.scripts ~/.zshrc; do
+for file in ~/.vim ~/.vimrc ~/.config/tmux ~/.scripts ~/.zshrc ~/.gitconfig; do
     if [ -e "$file" ]; then
         echo "=> Backing up $file"
         mv "$file" "$backup_dir/"
@@ -52,6 +52,10 @@ chmod +x ~/.scripts/sync_with_main.sh
 echo "=> Setting up Zsh..."
 mv ~/kawaiDotfiles/zsh/.zshrc ~/
 
+echo "=> Setting up .gitconfig"
+mv ~/kawaiDotfiles/git/.gitconfig ~/
+
+echo "=> Setting up temp Vim config"
 mkdir -p ~/.vim/pack/plugins/start
 
 cat > ~/.vim/temp.vimrc << 'EOF'
