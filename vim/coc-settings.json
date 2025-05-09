@@ -23,5 +23,8 @@
   "prettier.jsxSingleQuote": true,
   "prettier.htmlWhitespaceSensitivity": "strict",
   "prettier.arrowParens": "avoid",
-  "coc.preferences.formatOnSave": true
+  "coc.preferences.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }
