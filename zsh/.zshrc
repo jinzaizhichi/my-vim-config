@@ -106,16 +106,16 @@ function startup_sequence() {
     echo "\033[1m${messages[$((RANDOM % ${#messages[@]} + 1))]}\033[0m"
   fi
 
+  echo
 
+  # I'm updating my cli todo app this one will be uncommented once its finish
+  # todo_count=$(td | grep -c "^")
 
- # I'm updating my cli todo app this one will be uncommented once its finish
- # todo_count=$(td | grep -c "^")
-
- # if [ $todo_count -gt 0 ]; then
- #   td
- # else
- #   echo "\033[1mYou have no active todos, just like your social life...\033[0m"
- # fi
+  # if [ $todo_count -gt 0 ]; then
+  #   td
+  # else
+  #   echo "\033[1mYou have no active todos, just like your social life...\033[0m"
+  # fi
 }
 
 startup_sequence
