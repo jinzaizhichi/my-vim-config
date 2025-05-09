@@ -1,9 +1,10 @@
-export TERM='xterm-256color'
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+zstyle ':vcs_info:git:*' formats '%F{green} %b%f'
 
-PS1='%B%F{magenta}%n@%m%f%b %F{cyan}%~%f $ '
+PS1=$'%B%F{magenta}╭─%f%F{yellow}%n%f%F{white}@%f%F{cyan}%m%f %F{magenta}in%f %F{blue}%~%f${vcs_info_msg_0_}\n%B%F{magenta}╰─%f%b%F{red}❯%f%F{yellow}❯%f%F{green}❯%f '
 
 alias ls="ls -GFlah"
 alias commit="~/.scripts/commit.sh"

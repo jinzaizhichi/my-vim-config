@@ -29,7 +29,7 @@ backup_dir="$HOME/dotfiles_backup_$(date +%Y%m%d_%H%M%S)"
 
 echo "=> Creating backup directory at $backup_dir"
 mkdir -p "$backup_dir"
-for file in ~/.vim ~/.vimrc ~/.config/tmux ~/.scripts ~/.zshrc ~/.gitconfig; do
+for file in ~/.vim ~/.vimrc ~/.config/tmux ~/.scripts ~/.zshrc ~/.zprofile ~/.gitconfig; do
     if [ -e "$file" ]; then
         echo "=> Backing up $file"
         mv "$file" "$backup_dir/"
@@ -51,6 +51,7 @@ chmod +x ~/.scripts/sync_with_main.sh
 
 echo "=> Setting up Zsh..."
 mv ~/kawaiDotfiles/zsh/.zshrc ~/
+mv ~/kawaiDotfiles/zsh/.zprofile ~/
 
 echo "=> Setting up .gitconfig"
 mv ~/kawaiDotfiles/git/.gitconfig ~/
@@ -104,4 +105,6 @@ rm ~/.vim/temp.vimrc
 rm -rf ~/kawaiDotfiles
 
 echo "=> Installation complete! A backup of your previous configuration can be found in $backup_dir"
-echo "=> Please restart your terminal for all changes to take effect."
+echo "=> Sourcing new settings"
+source ~/.zprofile
+source ~/.zshrc
