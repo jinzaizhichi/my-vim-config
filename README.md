@@ -37,6 +37,8 @@ curl -o- https://raw.githubusercontent.com/dorukozerr/dotfiles/main/install.sh &
 
 ![screenshot](ss-1.png)
 ![screenshot](ss-2.png)
+![screenshot](ss-3.png)
+![screenshot](ss-4.png)
 
 ## Keta Theme
 
