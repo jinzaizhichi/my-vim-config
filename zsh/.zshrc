@@ -2,9 +2,9 @@ autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
-zstyle ':vcs_info:git:*' formats '%F{green} %b%f'
+zstyle ':vcs_info:git:*' formats '%F{5} 󰊢 %b%f'
 
-PS1=$'%B%F{magenta}╭─%f%F{yellow}%n%f%F{white}@%f%F{cyan}%m%f %F{magenta}in%f %F{blue}%~%f${vcs_info_msg_0_}\n%B%F{magenta}╰─%f%b%F{red}❯%f%F{yellow}❯%f%F{green}❯%f '
+PS1=$'%B%F{5}╭─%f%F{5}%n%f%F{5}@%f%F{5}%m%f %F{5}󰉋%f %F{5}%~%f${vcs_info_msg_0_}\n%B%F{5}╰─%f%b%F{5}%f '
 
 alias ls="ls -GFlah"
 alias commit="~/.scripts/commit.sh"
@@ -50,7 +50,7 @@ function startup_sequence() {
   ⠄⠄⢸⣇⠻⣿⣿⣿⣧⣀⢀⣠⡌⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⣿⣿⣿⠄
   ⠄⢀⢸⣿⣷⣤⣤⣤⣬⣙⣛⢿⣿⣿⣿⣿⣿⣿⡿⣿⣿⡍⠄⠄⢀⣤⣄⠉⠋⣰
   ⠄⣼⣖⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⢇⣿⣿⡷⠶⠶⢿⣿⣿⠇⢀⣤
-  ⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⣿⣿⡇⣿⣿⣿⣿⣿⣿⣷⣶⣥⣴⣿⡗
+  ⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⣿⣿⡇⣿⣿⣿⣿⣿⣿⣷⣶⣥⣴⣿⡗
   ⢀⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠄
   ⢸⣿⣦⣌⣛⣻⣿⣿⣧⠙⠛⡭⠅⠒⠦⠭⣭⡻⣿⣿⣿⣿⣿⣿⣿⣿⡿⠃⠄
   ⠘⣿⣿⣿⣿⣿⣿⣿⣿⡆⠄⠄⠄⠄⠄⠄⠄⠄⠹⠈⢋⣽⣿⣿⣿⣿⣵⣾⠃⠄
