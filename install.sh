@@ -82,15 +82,15 @@ echo "=> Vim plugins base installation finished..."
 
 cd coc.nvim
 echo "=> Finishing CoC installation..."
-npm ci > /dev/null
+npm ci &> /dev/null
 cd ..
 cd fzf
 echo "=> Finishing FZF installation..."
-./install --all > /dev/null
+./install --all &> /dev/null
 cd ..
 cd kisuke.vim
 echo "=> Building Kisuke..."
-yarn build > /dev/null
+yarn build &> /dev/null
 cd ~
 
 echo "=> Installing CoC extensions..."
@@ -105,6 +105,4 @@ rm ~/.vim/temp.vimrc
 rm -rf ~/kawaiDotfiles
 
 echo "=> Installation complete! A backup of your previous configuration can be found in $backup_dir"
-echo "=> Sourcing new settings"
-source ~/.zprofile
-source ~/.zshrc
+echo "=> Please restart your terminal or source config files"
