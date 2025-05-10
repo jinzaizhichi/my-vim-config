@@ -1,8 +1,6 @@
 # My dotfiles
 
 - Install script will backup your `~/.vimrc`, `~/.vim/`, `~/.zshrc`, `~/.zprofile`, `~/.config/tmux/`, `~/.scripts/`, `~/.gitconfig`files and folders to`~/dotfiles*backup*<timestamp>/` folder and installs my settings. I did this to install my environment but you can use also if you want >.<
-- I only did this on macos I don't know if it is compatible with other OS's, but it should be compatible with linux I guess but I didn't tested it.
-- My cli based [todo app](https://github.com/dorukozerr/todo-app) being used in zshrc file. Either install it or remove that part from zshrc.
 - I tried to keep my vim configuration minimal as possible, instead of third party plugin managers like Vundle or vim-plug I used Vim's native solution. I also created a script to update vim plugins feel free to check it out.
 - FZF plugin has some dependencies to install them run `brew install fzf bat ripgrep the_silver_searcher perl universal-ctags`.
 
