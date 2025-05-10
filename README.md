@@ -46,27 +46,27 @@ A soft, pastel color scheme named after my cat, featuring gentle pinks and green
 
 | Label          | Color Code | Preview                                           |
 | :------------- | :--------- | :------------------------------------------------ |
-| Background     | `#030303`  | ![#030303](https://placehold.co/30/030303/030303) |
-| Text           | `#E6DDE1`  | ![#E6DDE1](https://placehold.co/30/E6DDE1/E6DDE1) |
-| Bold Text      | `#F7F0F3`  | ![#F7F0F3](https://placehold.co/30/F7F0F3/F7F0F3) |
-| Cursor         | `#96B8B6`  | ![#96B8B6](https://placehold.co/30/96B8B6/96B8B6) |
-| Selection      | `#2D3747`  | ![#2D3747](https://placehold.co/30/2D3747/2D3747) |
-| Normal Black   | `#121212`  | ![#121212](https://placehold.co/30/121212/121212) |
-| Normal Red     | `#D48C8C`  | ![#D48C8C](https://placehold.co/30/D48C8C/D48C8C) |
-| Normal Green   | `#B5A7C4`  | ![#B5A7C4](https://placehold.co/30/B5A7C4/B5A7C4) |
-| Normal Yellow  | `#C38EA1`  | ![#C38EA1](https://placehold.co/30/C38EA1/C38EA1) |
-| Normal Blue    | `#96B0A4`  | ![#96B0A4](https://placehold.co/30/96B0A4/96B0A4) |
-| Normal Magenta | `#C19DBD`  | ![#C19DBD](https://placehold.co/30/C19DBD/C19DBD) |
-| Normal Cyan    | `#B1C0AB`  | ![#B1C0AB](https://placehold.co/30/B1C0AB/B1C0AB) |
-| Normal White   | `#EAEAEA`  | ![#EAEAEA](https://placehold.co/30/EAEAEA/EAEAEA) |
-| Bright Black   | `#2A2A2A`  | ![#2A2A2A](https://placehold.co/30/2A2A2A/2A2A2A) |
-| Bright Red     | `#E9A3A3`  | ![#E9A3A3](https://placehold.co/30/E9A3A3/E9A3A3) |
-| Bright Green   | `#CFBDE3`  | ![#CFBDE3](https://placehold.co/30/CFBDE3/CFBDE3) |
-| Bright Yellow  | `#DCAEC1`  | ![#DCAEC1](https://placehold.co/30/DCAEC1/DCAEC1) |
-| Bright Blue    | `#B0CDC3`  | ![#B0CDC3](https://placehold.co/30/B0CDC3/B0CDC3) |
-| Bright Magenta | `#D9B2D6`  | ![#D9B2D6](https://placehold.co/30/D9B2D6/D9B2D6) |
-| Bright Cyan    | `#C9D8C3`  | ![#C9D8C3](https://placehold.co/30/C9D8C3/C9D8C3) |
-| Bright White   | `#FFFFFF`  | ![#FFFFFF](https://placehold.co/30/FFFFFF/FFFFFF) |
+| Background     | `#000000`  | ![#000000](https://placehold.co/30/000000/000000) |
+| Text           | `#FFFFFF`  | ![#FFFFFF](https://placehold.co/30/FFFFFF/FFFFFF) |
+| Bold Text      | `#FFFFFF`  | ![#FFFFFF](https://placehold.co/30/FFFFFF/FFFFFF) |
+| Cursor         | `#B56F88`  | ![#B56F88](https://placehold.co/30/B56F88/B56F88) |
+| Selection      | `#808080`  | ![#808080](https://placehold.co/30/808080/808080) |
+| Normal Black   | `#0A0A0A`  | ![#0A0A0A](https://placehold.co/30/0A0A0A/0A0A0A) |
+| Normal Red     | `#C55A5A`  | ![#C55A5A](https://placehold.co/30/C55A5A/C55A5A) |
+| Normal Green   | `#7F6D9E`  | ![#7F6D9E](https://placehold.co/30/7F6D9E/7F6D9E) |
+| Normal Yellow  | `#B56F88`  | ![#B56F88](https://placehold.co/30/B56F88/B56F88) |
+| Normal Blue    | `#5E8C7A`  | ![#5E8C7A](https://placehold.co/30/5E8C7A/5E8C7A) |
+| Normal Magenta | `#9C6D9A`  | ![#9C6D9A](https://placehold.co/30/9C6D9A/9C6D9A) |
+| Normal Cyan    | `#78997C`  | ![#78997C](https://placehold.co/30/78997C/78997C) |
+| Normal White   | `#F5F5F5`  | ![#F5F5F5](https://placehold.co/30/F5F5F5/F5F5F5) |
+| Bright Black   | `#141414`  | ![#141414](https://placehold.co/30/141414/141414) |
+| Bright Red     | `#D77272`  | ![#D77272](https://placehold.co/30/D77272/D77272) |
+| Bright Green   | `#9989B8`  | ![#9989B8](https://placehold.co/30/9989B8/9989B8) |
+| Bright Yellow  | `#C7869E`  | ![#C7869E](https://placehold.co/30/C7869E/C7869E) |
+| Bright Blue    | `#7AAA98`  | ![#7AAA98](https://placehold.co/30/7AAA98/7AAA98) |
+| Bright Magenta | `#B784B4`  | ![#B784B4](https://placehold.co/30/B784B4/B784B4) |
+| Bright Cyan    | `#93AF8A`  | ![#93AF8A](https://placehold.co/30/93AF8A/93AF8A) |
+| Bright White   | `#EBEBEB`  | ![#EBEBEB](https://placehold.co/30/EBEBEB/EBEBEB) |
 
 ## Vim shortcuts configured manually
 
