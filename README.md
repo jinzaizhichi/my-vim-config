@@ -70,28 +70,30 @@ A soft, pastel color scheme named after my cat, featuring gentle pinks and green
 
 - Leader key is remapped to space.
 
-| Keys                                                      | Description                         | Mode |
-| :-------------------------------------------------------- | :---------------------------------- | :--- |
-| <kbd>ctrl</kbd> <kbd>j</kbd>                              | Open coc autocomplete suggestions   | `i`  |
-| <kbd>ctrl</kbd> <kbd>k</kbd> <kbd>ctrl</kbd> <kbd>i</kbd> | Coc do hover                        | `ì`  |
-| <kbd>j</kbd> <kbd>k</kbd>                                 | Exit insert mode                    | `i`  |
-| <kbd>ctrl</kbd> <kbd>k</kbd> <kbd>ctrl</kbd> <kbd>i</kbd> | Coc do hover                        | `n`  |
-| <kbd>g</kbd> <kbd>d</kbd>                                 | Coc open definition in split        | `n`  |
-| <kbd>g</kbd> <kbd>t</kbd>                                 | Coc open type definition in split   | `n`  |
-| <kbd>ctrl</kbd> <kbd>f</kbd>                              | Scroll down on coc floating window  | `n`  |
-| <kbd>ctrl</kbd> <kbd>b</kbd>                              | Scroll up on coc floating window    | `n`  |
-| <kbd>ctrl</kbd> <kbd>f</kbd>                              | Scroll down on coc floating window  | `i`  |
-| <kbd>ctrl</kbd> <kbd>b</kbd>                              | Scroll up on coc floating window    | `i`  |
-| <kbd>ctrl</kbd> <kbd>f</kbd>                              | Scroll down on coc floating window  | `v`  |
-| <kbd>ctrl</kbd> <kbd>b</kbd>                              | Scroll up on coc floating window    | `v`  |
-| <kbd>leader</kbd> <kbd>t</kbd>                            | Open Netrw                          | `n`  |
-| <kbd>leader</kbd> <kbd>p</kbd>                            | Fzf file search                     | `n`  |
-| <kbd>leader</kbd> <kbd>f</kbd>                            | Fzf grep search                     | `n`  |
-| <kbd>leader</kbd> <kbd>b</kbd> <kbd>n</kbd>               | Go to next buffer (buffer next)     | `n`  |
-| <kbd>leader</kbd> <kbd>b</kbd> <kbd>p</kbd>               | Go to prev buffer (buffer prev)     | `n`  |
-| <kbd>leader</kbd> <kbd>b</kbd> <kbd>c</kbd>               | Close all buffers except active one | `n`  |
-| <kbd>leader</kbd> <kbd>i</kbd> <kbd>p</kbd> <kbd>w</kbd>  | Increase pane width                 | `n`  |
-| <kbd>leader</kbd> <kbd>d</kbd> <kbd>p</kbd> <kbd>w</kbd>  | Decrease pane width                 | `n`  |
-| <kbd>leader</kbd> <kbd>i</kbd> <kbd>p</kbd> <kbd>h</kbd>  | Increase pane height                | `n`  |
-| <kbd>leader</kbd> <kbd>d</kbd> <kbd>p</kbd> <kbd>h</kbd>  | Decrease pane height                | `n`  |
-| <kbd>leader</kbd> <kbd>s</kbd>                            | Save buffer                         | `n`  |
+| Keys                                                      | Description                    | Mode    |
+| :-------------------------------------------------------- | :----------------------------- | :------ |
+| <kbd>j</kbd> <kbd>k</kbd>                                 | Exit insert mode               | `i`     |
+| <kbd>leader</kbd> <kbd>s</kbd>                            | Save buffer                    | `n`     |
+| <kbd>leader</kbd> <kbd>t</kbd>                            | Open Netrw file explorer       | `n`     |
+| <kbd>leader</kbd> <kbd>p</kbd>                            | Search files                   | `n`     |
+| <kbd>leader</kbd> <kbd>f</kbd>                            | Search content (grep)          | `n`     |
+| <kbd>leader</kbd> <kbd>b</kbd> <kbd>n</kbd>               | Next buffer                    | `n`     |
+| <kbd>leader</kbd> <kbd>b</kbd> <kbd>p</kbd>               | Previous buffer                | `n`     |
+| <kbd>leader</kbd> <kbd>b</kbd> <kbd>c</kbd>               | Close all other buffers        | `n`     |
+| <kbd>leader</kbd> <kbd>i</kbd> <kbd>p</kbd> <kbd>w</kbd>  | Increase pane width            | `n`     |
+| <kbd>leader</kbd> <kbd>d</kbd> <kbd>p</kbd> <kbd>w</kbd>  | Decrease pane width            | `n`     |
+| <kbd>leader</kbd> <kbd>i</kbd> <kbd>p</kbd> <kbd>h</kbd>  | Increase pane height           | `n`     |
+| <kbd>leader</kbd> <kbd>d</kbd> <kbd>p</kbd> <kbd>h</kbd>  | Decrease pane height           | `n`     |
+| <kbd>leader</kbd> <kbd>g</kbd> <kbd>s</kbd>               | Git status                     | `n`     |
+| <kbd>leader</kbd> <kbd>g</kbd> <kbd>a</kbd>               | Git add all                    | `n`     |
+| <kbd>leader</kbd> <kbd>g</kbd> <kbd>c</kbd>               | Git commit                     | `n`     |
+| <kbd>leader</kbd> <kbd>g</kbd> <kbd>p</kbd>               | Git push                       | `n`     |
+| <kbd>leader</kbd> <kbd>g</kbd> <kbd>d</kbd>               | Git diff                       | `n`     |
+| <kbd>leader</kbd> <kbd>g</kbd> <kbd>l</kbd>               | Git log                        | `n`     |
+| <kbd>g</kbd> <kbd>d</kbd>                                 | Go to definition               | `n`     |
+| <kbd>g</kbd> <kbd>t</kbd>                                 | Go to type definition          | `n`     |
+| <kbd>ctrl</kbd> <kbd>j</kbd>                              | Trigger completion             | `i`     |
+| <kbd>ctrl</kbd> <kbd>k</kbd> <kbd>ctrl</kbd> <kbd>i</kbd> | Show documentation             | `i`     |
+| <kbd>ctrl</kbd> <kbd>k</kbd> <kbd>ctrl</kbd> <kbd>i</kbd> | Show documentation             | `n`     |
+| <kbd>ctrl</kbd> <kbd>f</kbd>                              | Scroll down in floating window | `n/i/v` |
+| <kbd>ctrl</kbd> <kbd>b</kbd>                              | Scroll up in floating window   | `n/i/v` |
