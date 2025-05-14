@@ -17,6 +17,14 @@ nnoremap k gk
 " exit insert mode
 inoremap jk <esc>
 
+" fugitive
+nnoremap <Leader>gs :G status<CR>
+nnoremap <Leader>ga :G add .<CR>
+nnoremap <Leader>gc :vertical G commit<CR>
+nnoremap <Leader>gp :G push<CR>
+nnoremap <Leader>gd :vertical G diff<CR>
+nnoremap <Leader>gl :vertical G log<CR>
+
 " open netrw
 nnoremap <Leader>t :Explore<CR>
 
