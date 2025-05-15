@@ -36,7 +36,36 @@ What it does:
 - Sets up vim, tmux, zsh, git configurations
 - Installs all necessary plugins
 
-After installation, run `:helptags ALL` in vim to sync help documentation.
+## Vim Plugins
+
+My Vim setup uses a carefully curated set of plugins installed via Vim's native package management system:
+
+### Core Functionality
+
+- **vim-fugitive** - Git integration so seamless you'll forget it's a plugin
+- **fzf & fzf.vim** - Lightning-fast fuzzy finding for files, buffers, and more
+- **FastFold** - Speed optimization for code folding
+
+### Development Tools
+
+- **coc.nvim** - Intellisense engine for Vim, providing VSCode-like features
+- **kisuke.vim** - My custom AI assistant for coding support
+
+### Visual Enhancements
+
+- **vim-airline** - Lightweight yet informative status bar
+- **vim-airline-themes** - Includes custom Keta theme for airline
+- **vim-devicons** - Pretty icons for filetypes and directories
+
+### CoC Extensions
+
+CoC provides IDE-like features through these extensions:
+
+- Language Support: coc-vimlsp, coc-sh, coc-tsserver, coc-go, coc-html, coc-css, coc-json, coc-yaml
+- Frontend: @yaegassy/coc-tailwindcss3
+- Tooling: coc-prettier, coc-eslint, coc-dotenv
+
+All plugins are automatically installed during the dotfiles setup process. Run `:helptags ALL` after installation to generate help documentation.
 
 ## Important Notes
 
