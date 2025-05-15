@@ -64,6 +64,25 @@ update_coc() {
     fi
 }
 
+update_kisuke() {
+    cd "kisuke.vim" || return 1
+    print_status "INFO" "$YELLOW" "Updating kisuke.vim..."
+
+    if git pull; then
+        print_status "INFO" "$YELLOW" "Running yarn build for kisuke.vim..."
+        if yarn build; then
+            print_status "SUCCESS" "$GREEN" "Updated kisuke.vim successfully"
+            return 0
+        else
+            print_status "ERROR" "$RED" "Failed to run yarn build for kisuke.vim"
+            return 1
+        fi
+    else
+        print_status "ERROR" "$RED" "Failed to update kisuke.vim"
+        return 1
+    fi
+}
+
 update_vim_plugins() {
     if [ ! -d "$PLUGIN_DIR" ]; then
         print_status "ERROR" "$RED" "Plugin directory not found: $PLUGIN_DIR"
@@ -86,6 +105,9 @@ update_vim_plugins() {
                 ;;
             "coc.nvim")
                 update_coc || failed_plugins+=("$plugin")
+                ;;
+            "kisuke.vim")
+                update_kisuke || failed_plugins+=("$plugin")
                 ;;
             *)
                 update_regular_plugin "$plugin" || failed_plugins+=("$plugin")
