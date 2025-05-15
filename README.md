@@ -1,37 +1,48 @@
-# My dotfiles
+# Keta-powered Dotfiles
 
-- Install script will backup your `~/.vimrc`, `~/.vim/`, `~/.zshrc`, `~/.zprofile`, `~/.config/tmux/`, `~/.scripts/`, `~/.gitconfig`files and folders to`~/dotfiles*backup*<timestamp>/` folder and installs my settings. I did this to install my environment but you can use also if you want >.<
-- I tried to keep my vim configuration minimal as possible, instead of third party plugin managers like Vundle or vim-plug I used Vim's native solution. I also created a script to update vim plugins feel free to check it out.
-- FZF plugin has some dependencies to install them run `brew install fzf bat ripgrep the_silver_searcher perl universal-ctags`.
+Welcome to my meticulously crafted dotfiles - named after my cat and optimized for pure coding joy! These configs turn your terminal into a productivity powerhouse without the bloat.
 
-## Vim Plugins
+## What's Inside
 
-- [vim-fugite](https://github.com/tpope/vim-fugitive)
-- [fzf](https://github.com/junegunn/fzf)
-- [fzf.vim](https://github.com/junegunn/fzf.vim)
-- [coc.nvim](https://github.com/neoclide/coc.nvim)
-  - [coc-vimlsp](https://www.npmjs.com/package/coc-vimlsp)
-  - [coc-sh](https://www.npmjs.com/package/coc-sh)
-  - [coc-tsserver](https://www.npmjs.com/package/coc-tsserver)
-  - [coc-go](https://www.npmjs.com/package/coc-go)
-  - [coc-html](https://www.npmjs.com/package/coc-html)
-  - [coc-css](https://www.npmjs.com/package/coc-css)
-  - [@yaegassy/coc-tailwindcss3](https://www.npmjs.com/package/@yaegassy/coc-tailwindcss3)
-  - [coc-json](https://www.npmjs.com/package/coc-json)
-  - [coc-yaml](https://www.npmjs.com/package/coc-yaml)
-  - [coc-prettier](https://www.npmjs.com/package/coc-prettier)
-  - [coc-eslint](https://www.npmjs.com/package/coc-eslint)
-  - [coc-dotenv](https://www.npmjs.com/package/coc-dotenv)
+A carefully curated selection of configurations for vim, tmux, zsh, and git that just work™. My vim setup is intentionally minimal - using Vim's native plugin management instead of third-party solutions because sometimes vanilla is the best flavor.
 
-## Installation Script
+## Requirements
+
+Before diving in, make sure you have:
+
+- `git` - version control that powers everything
+- `npm` - for CoC and other JavaScript tooling
+- `fortune` - for those terminal wisdom snippets
+- `fzf`, `bat`, `ripgrep`, `the_silver_searcher`, `perl`, `universal-ctags` - the fuzzy-finding dream team
+
+Quick install of dependencies on macOS:
 
 ```bash
-curl -o- https://raw.githubusercontent.com/dorukozerr/dotfiles/main/install.sh &> /dev/null | bash
+brew install git npm fortune fzf bat ripgrep the_silver_searcher perl universal-ctags
 ```
 
-### Note
+## Installation
 
-- Run `:helptags ALL` to sync vim help command with installed plugins and extensions.
+One command and you're flying:
+
+```bash
+curl -o- https://raw.githubusercontent.com/dorukozerr/dotfiles/main/install.sh | bash
+```
+
+What it does:
+
+- Backs up your existing configs to `~/dotfiles_backup_<timestamp>/`
+- Specifically backs up: `~/.vimrc`, `~/.vim/`, `~/.zshrc`, `~/.zprofile`, `~/.config/tmux/`, `~/.scripts/`, `~/.gitconfig`
+- Sets up vim, tmux, zsh, git configurations
+- Installs all necessary plugins
+
+After installation, run `:helptags ALL` in vim to sync help documentation.
+
+## Important Notes
+
+- The dotfiles contain my personal Git configuration. You **must** update `~/.gitconfig` with your own name and email before using.
+
+- To achieve the exact look shown in the screenshots, set your terminal to use the Keta theme colors defined in the theme section below. All vim and tmux colors inherit from the terminal ANSI color definitions rather than being hardcoded.
 
 ![screenshot](ss-1.png)
 ![screenshot](ss-2.png)
