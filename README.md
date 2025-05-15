@@ -81,30 +81,39 @@ A soft, pastel color scheme named after my cat, featuring gentle pinks and green
 
 - Leader key is remapped to space.
 
-| Keys                                                      | Description                    | Mode    |
-| :-------------------------------------------------------- | :----------------------------- | :------ |
-| <kbd>j</kbd> <kbd>k</kbd>                                 | Exit insert mode               | `i`     |
-| <kbd>leader</kbd> <kbd>s</kbd>                            | Save buffer                    | `n`     |
-| <kbd>leader</kbd> <kbd>t</kbd>                            | Open Netrw file explorer       | `n`     |
-| <kbd>leader</kbd> <kbd>p</kbd>                            | Search files                   | `n`     |
-| <kbd>leader</kbd> <kbd>f</kbd>                            | Search content (grep)          | `n`     |
-| <kbd>leader</kbd> <kbd>b</kbd> <kbd>n</kbd>               | Next buffer                    | `n`     |
-| <kbd>leader</kbd> <kbd>b</kbd> <kbd>p</kbd>               | Previous buffer                | `n`     |
-| <kbd>leader</kbd> <kbd>b</kbd> <kbd>c</kbd>               | Close all other buffers        | `n`     |
-| <kbd>leader</kbd> <kbd>i</kbd> <kbd>p</kbd> <kbd>w</kbd>  | Increase pane width            | `n`     |
-| <kbd>leader</kbd> <kbd>d</kbd> <kbd>p</kbd> <kbd>w</kbd>  | Decrease pane width            | `n`     |
-| <kbd>leader</kbd> <kbd>i</kbd> <kbd>p</kbd> <kbd>h</kbd>  | Increase pane height           | `n`     |
-| <kbd>leader</kbd> <kbd>d</kbd> <kbd>p</kbd> <kbd>h</kbd>  | Decrease pane height           | `n`     |
-| <kbd>leader</kbd> <kbd>g</kbd> <kbd>s</kbd>               | Git status                     | `n`     |
-| <kbd>leader</kbd> <kbd>g</kbd> <kbd>a</kbd>               | Git add all                    | `n`     |
-| <kbd>leader</kbd> <kbd>g</kbd> <kbd>c</kbd>               | Git commit                     | `n`     |
-| <kbd>leader</kbd> <kbd>g</kbd> <kbd>p</kbd>               | Git push                       | `n`     |
-| <kbd>leader</kbd> <kbd>g</kbd> <kbd>d</kbd>               | Git diff                       | `n`     |
-| <kbd>leader</kbd> <kbd>g</kbd> <kbd>l</kbd>               | Git log                        | `n`     |
-| <kbd>g</kbd> <kbd>d</kbd>                                 | Go to definition               | `n`     |
-| <kbd>g</kbd> <kbd>t</kbd>                                 | Go to type definition          | `n`     |
-| <kbd>ctrl</kbd> <kbd>j</kbd>                              | Trigger completion             | `i`     |
-| <kbd>ctrl</kbd> <kbd>k</kbd> <kbd>ctrl</kbd> <kbd>i</kbd> | Show documentation             | `i`     |
-| <kbd>ctrl</kbd> <kbd>k</kbd> <kbd>ctrl</kbd> <kbd>i</kbd> | Show documentation             | `n`     |
-| <kbd>ctrl</kbd> <kbd>f</kbd>                              | Scroll down in floating window | `n/i/v` |
-| <kbd>ctrl</kbd> <kbd>b</kbd>                              | Scroll up in floating window   | `n/i/v` |
+| Keys                                                      | Description                          | Mode    |
+| :-------------------------------------------------------- | :----------------------------------- | :------ |
+| <kbd>j</kbd> <kbd>k</kbd>                                 | Exit insert mode                     | `i`     |
+| <kbd>leader</kbd> <kbd>s</kbd>                            | Save current buffer                  | `n`     |
+| <kbd>j</kbd>                                              | Move down (works with wrapped lines) | `n`     |
+| <kbd>k</kbd>                                              | Move up (works with wrapped lines)   | `n`     |
+| <kbd>leader</kbd> <kbd>t</kbd>                            | Open Netrw file explorer             | `n`     |
+| <kbd>leader</kbd> <kbd>p</kbd>                            | Find files (FZF)                     | `n`     |
+| <kbd>leader</kbd> <kbd>f</kbd>                            | Find in files (Ripgrep)              | `n`     |
+| <kbd>leader</kbd> <kbd>b</kbd> <kbd>n</kbd>               | Next buffer                          | `n`     |
+| <kbd>leader</kbd> <kbd>b</kbd> <kbd>p</kbd>               | Previous buffer                      | `n`     |
+| <kbd>leader</kbd> <kbd>b</kbd> <kbd>c</kbd>               | Close all buffers except current     | `n`     |
+| <kbd>leader</kbd> <kbd>i</kbd> <kbd>p</kbd> <kbd>w</kbd>  | Increase pane width (+10)            | `n`     |
+| <kbd>leader</kbd> <kbd>d</kbd> <kbd>p</kbd> <kbd>w</kbd>  | Decrease pane width (-10)            | `n`     |
+| <kbd>leader</kbd> <kbd>i</kbd> <kbd>p</kbd> <kbd>h</kbd>  | Increase pane height (+10)           | `n`     |
+| <kbd>leader</kbd> <kbd>d</kbd> <kbd>p</kbd> <kbd>h</kbd>  | Decrease pane height (-10)           | `n`     |
+| <kbd>leader</kbd> <kbd>g</kbd> <kbd>s</kbd>               | Git status                           | `n`     |
+| <kbd>leader</kbd> <kbd>g</kbd> <kbd>a</kbd>               | Git add all                          | `n`     |
+| <kbd>leader</kbd> <kbd>g</kbd> <kbd>c</kbd>               | Git commit (vertical split)          | `n`     |
+| <kbd>leader</kbd> <kbd>g</kbd> <kbd>p</kbd>               | Git push                             | `n`     |
+| <kbd>leader</kbd> <kbd>g</kbd> <kbd>d</kbd>               | Git diff (vertical split)            | `n`     |
+| <kbd>leader</kbd> <kbd>g</kbd> <kbd>l</kbd>               | Git log (vertical split)             | `n`     |
+| <kbd>g</kbd> <kbd>d</kbd>                                 | Go to definition                     | `n`     |
+| <kbd>g</kbd> <kbd>t</kbd>                                 | Go to type definition                | `n`     |
+| <kbd>ctrl</kbd> <kbd>j</kbd>                              | Trigger completion                   | `i`     |
+| <kbd>ctrl</kbd> <kbd>k</kbd> <kbd>ctrl</kbd> <kbd>i</kbd> | Show documentation                   | `i`     |
+| <kbd>ctrl</kbd> <kbd>k</kbd> <kbd>ctrl</kbd> <kbd>i</kbd> | Show documentation                   | `n`     |
+| <kbd>ctrl</kbd> <kbd>f</kbd>                              | Scroll down in floating window       | `n/i/v` |
+| <kbd>ctrl</kbd> <kbd>b</kbd>                              | Scroll up in floating window         | `n/i/v` |
+| <kbd>leader</kbd> <kbd>k</kbd> <kbd>o</kbd>               | Open Kisuke                          | `n`     |
+| <kbd>leader</kbd> <kbd>k</kbd> <kbd>r</kbd> <kbd>s</kbd>  | Resume last Kisuke session           | `n`     |
+| <kbd>leader</kbd> <kbd>k</kbd> <kbd>m</kbd>               | Mark focused file for Kisuke         | `n`     |
+| <kbd>leader</kbd> <kbd>k</kbd> <kbd>h</kbd>               | Mark highlighted text for Kisuke     | `v`     |
+| <kbd>leader</kbd> <kbd>k</kbd> <kbd>r</kbd> <kbd>c</kbd>  | Remove last marked code block        | `n`     |
+| <kbd>leader</kbd> <kbd>k</kbd> <kbd>c</kbd>               | Create new Kisuke session            | `n`     |
+| <kbd>leader</kbd> <kbd>k</kbd> <kbd>d</kbd>               | Delete Kisuke session                | `n`     |
