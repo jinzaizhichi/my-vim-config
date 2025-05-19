@@ -1,9 +1,6 @@
 #!/bin/bash
 
 set -e
-
-echo "=> Starting dotfiles installation..."
-
 if ! command -v npm &> /dev/null; then
     echo "npm is not installed. Please install npm first."
     exit 1
@@ -18,6 +15,8 @@ if ! command -v fortune &> /dev/null; then
     echo "fortune is not installed. Please install fortune first."
     exit 1
 fi
+
+echo "=> Starting dotfiles installation..."
 
 echo "=> Installing yarn globally..."
 npm i -g yarn@latest > /dev/null
@@ -46,8 +45,6 @@ chmod +x ~/.scripts/commit.sh
 chmod +x ~/.scripts/lazy_grep.sh
 chmod +x ~/.scripts/update_vim_plugins.sh
 chmod +x ~/.scripts/kill_process.sh
-chmod +x ~/.scripts/easy_pull_request.sh
-chmod +x ~/.scripts/sync_with_main.sh
 
 echo "=> Setting up Zsh..."
 mv ~/kawaiDotfiles/zsh/.zshrc ~/
