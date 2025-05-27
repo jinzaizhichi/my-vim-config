@@ -127,6 +127,6 @@ function startup_sequence() {
 startup_sequence
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.private/.private.zsh ] && source ~/.private/.private.zsh
 [ -f ~/.work/.work.zsh ] && source ~/.work/.work.zsh
-
 
