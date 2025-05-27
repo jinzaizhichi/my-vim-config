@@ -70,7 +70,6 @@ All plugins are automatically installed during the dotfiles setup process. Run `
 ## Important Notes
 
 - The dotfiles contain my personal Git configuration. You **must** update `~/.gitconfig` with your own name and email before using.
-
 - To achieve the exact look shown in the screenshots, set your terminal to use the Keta theme colors defined in the theme section below. All vim and tmux colors inherit from the terminal ANSI color definitions rather than being hardcoded.
 
 ![screenshot](ss-1.png)
@@ -135,8 +134,7 @@ A soft, pastel color scheme named after my cat, featuring gentle pinks and green
 | <kbd>g</kbd> <kbd>d</kbd>                                 | Go to definition                     | `n`     |
 | <kbd>g</kbd> <kbd>t</kbd>                                 | Go to type definition                | `n`     |
 | <kbd>ctrl</kbd> <kbd>j</kbd>                              | Trigger completion                   | `i`     |
-| <kbd>ctrl</kbd> <kbd>k</kbd> <kbd>ctrl</kbd> <kbd>i</kbd> | Show documentation                   | `i`     |
-| <kbd>ctrl</kbd> <kbd>k</kbd> <kbd>ctrl</kbd> <kbd>i</kbd> | Show documentation                   | `n`     |
+| <kbd>ctrl</kbd> <kbd>k</kbd> <kbd>ctrl</kbd> <kbd>i</kbd> | Show documentation                   | `n/i`   |
 | <kbd>ctrl</kbd> <kbd>f</kbd>                              | Scroll down in floating window       | `n/i/v` |
 | <kbd>ctrl</kbd> <kbd>b</kbd>                              | Scroll up in floating window         | `n/i/v` |
 | <kbd>leader</kbd> <kbd>k</kbd> <kbd>o</kbd>               | Open Kisuke                          | `n`     |
