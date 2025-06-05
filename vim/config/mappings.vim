@@ -71,4 +71,10 @@ nnoremap <Leader>dph :resize -10<CR>
 nnoremap <leader>s :w<CR>
 
 " Search and replace word under cursor
-nnoremap <leader>r :%s/\<<C-r><C-w>\>//g<left><left>
+nnoremap <leader>wr :%s/\<<C-r><C-w>\>//g<left><left>
+
+" Visual mode: replace highlighted text with entered value
+vnoremap <leader>pr y:%s/\V<C-r>=escape(@", '/\')<CR>//g<Left><Left>
+
+" Visual mode: replace highlighted text with highlighted value + entered value
+vnoremap <leader>pa y:%s/\V<C-r>=escape(@", '/\')<CR>/<C-r>=escape(@", '/\&~')<CR>/g<Left><Left>
