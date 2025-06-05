@@ -69,3 +69,6 @@ nnoremap <Leader>dph :resize -10<CR>
 
 " save file
 nnoremap <leader>s :w<CR>
+
+" Search and replace word under cursor
+nnoremap <leader>r :%s/\<<C-r><C-w>\>//g<left><left>
