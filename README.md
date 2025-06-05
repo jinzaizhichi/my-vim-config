@@ -50,6 +50,8 @@ My Vim setup uses a carefully curated set of plugins installed via Vim's native 
 
 - **coc.nvim** - Intellisense engine for Vim, providing VSCode-like features
 - **kisuke.vim** - My custom AI assistant for coding support
+- **vim-jsx-pretty** - JSX syntax highlighting and indentation
+- **typescript-vim** - TypeScript syntax support
 
 ### Visual Enhancements
 
