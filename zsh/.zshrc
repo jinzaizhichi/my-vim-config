@@ -122,8 +122,6 @@ function startup_sequence() {
   # else
   #   echo "\033[1mYou have no active todos, just like your social life...\033[0m"
   # fi
-
-  echo '08/06/2025'
 }
 
 startup_sequence
