@@ -28,7 +28,7 @@ backup_dir="$HOME/dotfiles_backup_$(date +%Y%m%d_%H%M%S)"
 
 echo "=> Creating backup directory at $backup_dir"
 mkdir -p "$backup_dir"
-for file in ~/.vim ~/.vimrc ~/.config/tmux ~/.scripts ~/.zshrc ~/.zprofile ~/.gitconfig; do
+for file in ~/.vim ~/.vimrc ~/.config/tmux ~/.scripts ~/.zshrc ~/.zprofile ~/.gitconfig ~/.config/wezterm; do
     if [ -e "$file" ]; then
         echo "=> Backing up $file"
         mv "$file" "$backup_dir/"
@@ -49,6 +49,9 @@ chmod +x ~/.scripts/kill_process.sh
 echo "=> Setting up Zsh..."
 mv ~/kawaiDotfiles/zsh/.zshrc ~/
 mv ~/kawaiDotfiles/zsh/.zprofile ~/
+
+echo "=> Setting up WezTerm..."
+mv ~/kawaiDotfiles/wezterm ~/.config
 
 echo "=> Setting up .gitconfig"
 mv ~/kawaiDotfiles/git/.gitconfig ~/
