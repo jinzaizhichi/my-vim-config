@@ -7,7 +7,7 @@ end
 
 -- Font configuration
 config.font = wezterm.font('Hack Nerd Font Propo', { weight = 'Regular' })
-config.font_size = 14.0
+config.font_size = 16.0
 
 -- DARK SOPHISTICATED COLOR SCHEME
 config.colors = {
