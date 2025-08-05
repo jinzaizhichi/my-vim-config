@@ -16,6 +16,7 @@ let g:fzf_colors = {
 
 command! -bang -nargs=? -complete=dir Files
       \ call fzf#vim#files(<q-args>, {
+      \   'source': 'rg --files --hidden --follow --glob "!.git/*"',
       \   'options': [
       \     '--info=inline',
       \     '--preview',
