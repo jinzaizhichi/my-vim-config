@@ -1,6 +1,7 @@
 let g:config_dir = '~/.vim/config/'
 
 let g:config_files = [
+      \ 'custom.vim',
       \ 'coc.vim',
       \ 'fzf.vim',
       \ 'mappings.vim',

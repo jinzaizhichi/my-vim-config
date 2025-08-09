@@ -139,6 +139,7 @@ A soft, pastel color scheme named after my cat, featuring gentle pinks and green
 | <kbd>ctrl</kbd> <kbd>k</kbd> <kbd>ctrl</kbd> <kbd>i</kbd> | Show documentation                                                     | `n/i`   |
 | <kbd>ctrl</kbd> <kbd>f</kbd>                              | Scroll down in floating window                                         | `n/i/v` |
 | <kbd>ctrl</kbd> <kbd>b</kbd>                              | Scroll up in floating window                                           | `n/i/v` |
+| <kbd>ctrl</kbd> <kbd>c</kbd> <kbd>d</kbd>                 | Copy type definitions                                                  | `n`     |
 | <kbd>leader</kbd> <kbd>k</kbd> <kbd>o</kbd>               | Open Kisuke                                                            | `n`     |
 | <kbd>leader</kbd> <kbd>k</kbd> <kbd>r</kbd> <kbd>s</kbd>  | Resume last Kisuke session                                             | `n`     |
 | <kbd>leader</kbd> <kbd>k</kbd> <kbd>m</kbd>               | Mark focused file for Kisuke                                           | `n`     |
