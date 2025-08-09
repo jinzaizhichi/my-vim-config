@@ -12,13 +12,12 @@ Before diving in, make sure you have:
 
 - `git` - version control that powers everything
 - `npm` - for CoC and other JavaScript tooling
-- `fortune` - for those terminal wisdom snippets
 - `fzf`, `bat`, `ripgrep`, `the_silver_searcher`, `perl`, `universal-ctags` - the fuzzy-finding dream team
 
 Quick install of dependencies on macOS:
 
 ```bash
-brew install git npm fortune fzf bat ripgrep the_silver_searcher perl universal-ctags
+brew install git npm fzf bat ripgrep the_silver_searcher perl universal-ctags
 ```
 
 ## Installation
@@ -123,6 +122,7 @@ A soft, pastel color scheme named after my cat, featuring gentle pinks and green
 | <kbd>leader</kbd> <kbd>b</kbd> <kbd>n</kbd>               | Next buffer                                                            | `n`     |
 | <kbd>leader</kbd> <kbd>b</kbd> <kbd>p</kbd>               | Previous buffer                                                        | `n`     |
 | <kbd>leader</kbd> <kbd>b</kbd> <kbd>c</kbd>               | Close all buffers except current                                       | `n`     |
+| <kbd>leader</kbd> <kbd>b</kbd> <kbd>t</kbd>               | Buffer maximize toggle                                                 | `n`     |
 | <kbd>leader</kbd> <kbd>i</kbd> <kbd>p</kbd> <kbd>w</kbd>  | Increase pane width (+10)                                              | `n`     |
 | <kbd>leader</kbd> <kbd>d</kbd> <kbd>p</kbd> <kbd>w</kbd>  | Decrease pane width (-10)                                              | `n`     |
 | <kbd>leader</kbd> <kbd>i</kbd> <kbd>p</kbd> <kbd>h</kbd>  | Increase pane height (+10)                                             | `n`     |
@@ -139,7 +139,7 @@ A soft, pastel color scheme named after my cat, featuring gentle pinks and green
 | <kbd>ctrl</kbd> <kbd>k</kbd> <kbd>ctrl</kbd> <kbd>i</kbd> | Show documentation                                                     | `n/i`   |
 | <kbd>ctrl</kbd> <kbd>f</kbd>                              | Scroll down in floating window                                         | `n/i/v` |
 | <kbd>ctrl</kbd> <kbd>b</kbd>                              | Scroll up in floating window                                           | `n/i/v` |
-| <kbd>ctrl</kbd> <kbd>c</kbd> <kbd>d</kbd>                 | Copy type definitions                                                  | `n`     |
+| <kbd>leader</kbd> <kbd>c</kbd> <kbd>d</kbd>               | Copy definition                                                        | `n`     |
 | <kbd>leader</kbd> <kbd>k</kbd> <kbd>o</kbd>               | Open Kisuke                                                            | `n`     |
 | <kbd>leader</kbd> <kbd>k</kbd> <kbd>r</kbd> <kbd>s</kbd>  | Resume last Kisuke session                                             | `n`     |
 | <kbd>leader</kbd> <kbd>k</kbd> <kbd>m</kbd>               | Mark focused file for Kisuke                                           | `n`     |

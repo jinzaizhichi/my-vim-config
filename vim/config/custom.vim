@@ -1,11 +1,12 @@
-func! CocHoverYank() abort
+func! CopyDefinition() abort
     let hover_result = CocActionAsync('doHover')
 
     sleep 100m
 
     let float_wins = coc#float#get_float_win_list()
     if empty(float_wins)
-        echo "S-senpai, there's no hover information here..."
+        echoerr "You must be joking..."
+
         return
     endif
 
@@ -21,7 +22,7 @@ func! CocHoverYank() abort
 
     call coc#float#close_all()
 
-    echo "Senpai! I copied the hover content for you! ♡"
+    echom "Now put it where it belongs..."
 endfunc
 
 let s:git_stats_throttle=0
@@ -112,3 +113,24 @@ func! GenerateLoremIpsum(count)
 endfunc
 
 command! -nargs=1 Lorem call GenerateLoremIpsum(<args>)
+
+let g:window_zoomed = 0
+let g:window_layout = {}
+
+func! BufferToggle()
+    if g:window_zoomed == 0
+        let g:window_layout = {
+            \ 'width': winwidth(0),
+            \ 'height': winheight(0),
+            \ 'win_count': winnr('$')
+        \ }
+        if g:window_layout.win_count > 1
+            resize
+            vertical resize
+            let g:window_zoomed = 1
+        endif
+    else
+        wincmd =
+        let g:window_zoomed = 0
+    endif
+endfunc

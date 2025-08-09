@@ -40,7 +40,9 @@ inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float
 inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
 vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
 vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-nnoremap <Leader>cd :call CocHoverYank()<CR>
+
+" custom funcs
+nnoremap <Leader>cd :call CopyDefinition()<CR>
 
 " kisuke
 nnoremap <Leader>ko :KisukeOpen<CR>
@@ -59,6 +61,7 @@ nnoremap <Leader>f :Rg<CR>
 nnoremap <Leader>bn :bn<CR>
 nnoremap <Leader>bp :bp<CR>
 nnoremap <leader>bc :%bdelete<Bar>edit #<Bar>normal`"<CR>
+nnoremap <Leader>bt :call BufferToggle()<CR>
 
 " increase/decrease pane width
 nnoremap <Leader>ipw :vertical resize +10<CR>
