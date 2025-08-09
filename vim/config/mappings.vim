@@ -40,9 +40,7 @@ inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float
 inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
 vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
 vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-
-" custom funcs
-nnoremap <Leader>cd :call CopyDefinition()<CR>
+nnoremap <Leader>ccd :call CocCopyDefinition()<CR>
 
 " kisuke
 nnoremap <Leader>ko :KisukeOpen<CR>
@@ -53,15 +51,17 @@ nnoremap <leader>krc :KisukeRemoveLastMarkedCodeBlock<CR>
 nnoremap <Leader>kc :KisukeCreateNewSession<CR>
 nnoremap <Leader>kd :KisukeDeleteSession<CR>
 
-" fzf toggle
+" fzf
 nnoremap <Leader>p :Files<CR>
 nnoremap <Leader>f :Rg<CR>
+nnoremap <Leader>bb :Buffers<CR>
 
 " buffers
 nnoremap <Leader>bn :bn<CR>
 nnoremap <Leader>bp :bp<CR>
-nnoremap <leader>bc :%bdelete<Bar>edit #<Bar>normal`"<CR>
 nnoremap <Leader>bt :call BufferToggle()<CR>
+nnoremap <leader>bda :%bdelete<Bar>edit #<Bar>normal`"<CR>
+nnoremap <Leader>bdc :call BufferDeleteCurrent()<CR>
 
 " increase/decrease pane width
 nnoremap <Leader>ipw :vertical resize +10<CR>

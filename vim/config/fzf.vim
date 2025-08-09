@@ -37,3 +37,12 @@ command! -bang -nargs=* Rg
       \     ]
       \   },
       \   <bang>0)
+
+command! -bang -nargs=* Buffers
+      \ call fzf#vim#buffers(<q-args>, {
+      \   'options': [
+      \     '--info=inline',
+      \     '--preview',
+      \     'echo {} | sed "s/.*\t//" | xargs -I% bat -f --style=numbers --theme=base16 %'
+      \   ]
+      \ }, <bang>0)

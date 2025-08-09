@@ -1,4 +1,4 @@
-func! CopyDefinition() abort
+func! CocCopyDefinition() abort
     let hover_result = CocActionAsync('doHover')
 
     sleep 100m
@@ -28,7 +28,7 @@ endfunc
 let s:git_stats_throttle=0
 
 func! GitStats()
-  if localtime() - s:git_stats_throttle < 2  " Only update every 2 seconds
+  if localtime() - s:git_stats_throttle < 2
     return get(g:, 'git_stats', '')
   endif
 
@@ -133,4 +133,24 @@ func! BufferToggle()
         wincmd =
         let g:window_zoomed = 0
     endif
+endfunc
+
+func! BufferDeleteCurrent()
+  if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) <= 1
+    echo "Cannot delete the last buffer"
+
+    return
+  endif
+
+  let l:current_buf = bufnr('%')
+
+  if bufnr('#') != -1 && buflisted(bufnr('#'))
+    buffer #
+  elseif exists(':bprevious')
+    bprevious
+  else
+    bnext
+  endif
+
+  execute 'bdelete ' . l:current_buf
 endfunc

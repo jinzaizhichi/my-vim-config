@@ -119,9 +119,11 @@ A soft, pastel color scheme named after my cat, featuring gentle pinks and green
 | <kbd>leader</kbd> <kbd>t</kbd>                            | Open Netrw file explorer                                               | `n`     |
 | <kbd>leader</kbd> <kbd>p</kbd>                            | Find files (FZF)                                                       | `n`     |
 | <kbd>leader</kbd> <kbd>f</kbd>                            | Find in files (Ripgrep)                                                | `n`     |
+| <kbd>leader</kbd> <kbd>b</kbd> <kbd>b</kbd>               | Browse buffers (FZF)                                                   | `n`     |
 | <kbd>leader</kbd> <kbd>b</kbd> <kbd>n</kbd>               | Next buffer                                                            | `n`     |
 | <kbd>leader</kbd> <kbd>b</kbd> <kbd>p</kbd>               | Previous buffer                                                        | `n`     |
-| <kbd>leader</kbd> <kbd>b</kbd> <kbd>c</kbd>               | Close all buffers except current                                       | `n`     |
+| <kbd>leader</kbd> <kbd>b</kbd> <kbd>d</kbd> <kbd>c</kbd>  | Buffer delete current                                                  | `n`     |
+| <kbd>leader</kbd> <kbd>b</kbd> <kbd>d</kbd> <kbd>a</kbd>  | Buffer delete all except focused                                       | `n`     |
 | <kbd>leader</kbd> <kbd>b</kbd> <kbd>t</kbd>               | Buffer maximize toggle                                                 | `n`     |
 | <kbd>leader</kbd> <kbd>i</kbd> <kbd>p</kbd> <kbd>w</kbd>  | Increase pane width (+10)                                              | `n`     |
 | <kbd>leader</kbd> <kbd>d</kbd> <kbd>p</kbd> <kbd>w</kbd>  | Decrease pane width (-10)                                              | `n`     |
@@ -139,7 +141,7 @@ A soft, pastel color scheme named after my cat, featuring gentle pinks and green
 | <kbd>ctrl</kbd> <kbd>k</kbd> <kbd>ctrl</kbd> <kbd>i</kbd> | Show documentation                                                     | `n/i`   |
 | <kbd>ctrl</kbd> <kbd>f</kbd>                              | Scroll down in floating window                                         | `n/i/v` |
 | <kbd>ctrl</kbd> <kbd>b</kbd>                              | Scroll up in floating window                                           | `n/i/v` |
-| <kbd>leader</kbd> <kbd>c</kbd> <kbd>d</kbd>               | Copy definition                                                        | `n`     |
+| <kbd>leader</kbd> <kbd>c</kbd> <kbd>c</kbd><kbd>d</kbd>   | Coc copy definition                                                    | `n`     |
 | <kbd>leader</kbd> <kbd>k</kbd> <kbd>o</kbd>               | Open Kisuke                                                            | `n`     |
 | <kbd>leader</kbd> <kbd>k</kbd> <kbd>r</kbd> <kbd>s</kbd>  | Resume last Kisuke session                                             | `n`     |
 | <kbd>leader</kbd> <kbd>k</kbd> <kbd>m</kbd>               | Mark focused file for Kisuke                                           | `n`     |
