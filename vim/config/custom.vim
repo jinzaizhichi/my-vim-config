@@ -85,3 +85,30 @@ augroup GitStatsUpdate
   autocmd BufEnter * let g:git_stats = GitStats()
   autocmd BufLeave * let g:git_stats = GitStats()
 augroup END
+
+func! GenerateLoremIpsum(count)
+  let lorem_words = ['lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur', 'adipiscing', 'elit', 'sed', 'do', 'eiusmod', 'tempor', 'incididunt', 'ut', 'labore', 'et', 'dolore', 'magna', 'aliqua', 'enim', 'ad', 'minim', 'veniam', 'quis', 'nostrud', 'exercitation', 'ullamco', 'laboris', 'nisi', 'aliquip', 'ex', 'ea', 'commodo', 'consequat', 'duis', 'aute', 'irure', 'in', 'reprehenderit', 'voluptate', 'velit', 'esse', 'cillum', 'fugiat', 'nulla', 'pariatur', 'excepteur', 'sint', 'occaecat', 'cupidatat', 'non', 'proident', 'sunt', 'culpa', 'qui', 'officia', 'deserunt', 'mollit', 'anim', 'id', 'est', 'laborum']
+
+  let result = []
+  let word_count = a:count
+
+  if word_count >= 2
+    call add(result, 'Lorem')
+    call add(result, 'ipsum')
+    let word_count -= 2
+  elseif word_count == 1
+    call add(result, 'Lorem')
+    let word_count -= 1
+  endif
+
+  while word_count > 0
+    let random_index = rand() % len(lorem_words)
+    call add(result, lorem_words[random_index])
+    let word_count -= 1
+  endwhile
+
+  let text = join(result, ' ') . '.'
+  execute "normal! a" . text
+endfunc
+
+command! -nargs=1 Lorem call GenerateLoremIpsum(<args>)
