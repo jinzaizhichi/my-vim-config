@@ -11,6 +11,7 @@ alias commit="~/.scripts/commit.sh"
 alias lg="~/.scripts/lazy_grep.sh"
 alias uvp="~/.scripts/update_vim_plugins.sh"
 alias kp="~/.scripts/kill_process.sh"
+alias far="~/.scripts/find_and_replace.sh"
 
 function startup_sequence() {
   messages=(
