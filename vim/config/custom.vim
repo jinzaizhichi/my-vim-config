@@ -154,3 +154,15 @@ func! BufferDeleteCurrent()
 
   execute 'bdelete ' . l:current_buf
 endfunc
+
+func! GoImportsOnSave()
+  let l:curw = winsaveview()
+  try
+    silent! call CocAction('organizeImport')
+  catch
+    " Ignore errors when no imports need organizing
+  endtry
+  call winrestview(l:curw)
+endfunc
+
+autocmd BufWritePre *.go silent! call GoImportsOnSave()
