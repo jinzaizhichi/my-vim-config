@@ -2,6 +2,8 @@ syntax on                                   " syntax highlighting
 
 hi LineNr ctermfg=8                         " line number coloring
 hi VertSplit ctermbg=0 ctermfg=0 cterm=NONE " Split character coloring
+hi Search ctermbg=blue ctermfg=white
+hi IncSearch ctermbg=lightblue ctermfg=black
 
 filetype plugin indent on                   " must look into help for this
 
@@ -10,7 +12,7 @@ scriptencoding utf-8
 set encoding=utf-8                          " encoding
 set backspace=indent,eol,start              " remap backspace key
 set fillchars=vert:\|,eob:\                 " split bar and end of buffer styling
-set hlsearch                                " highlight search results
+set hlsearch                                " highlighting search results
 set wrap                                    " automatically wrap text that extends beyond the screen length
 set nu rnu                                  " show line numbers
 set expandtab                               " self-explanatory

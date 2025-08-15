@@ -82,3 +82,16 @@ vnoremap <leader>pr y:%s/\V<C-r>=escape(@", '/\')<CR>//g<Left><Left>
 
 " Visual mode: replace highlighted text with highlighted value + entered value
 vnoremap <leader>pa y:%s/\V<C-r>=escape(@", '/\')<CR>/<C-r>=escape(@", '/\&~')<CR>/g<Left><Left>
+
+" Auto-center screen after page navigation
+nnoremap <C-f> <C-f>zz
+nnoremap <C-b> <C-b>zz
+
+" Auto-center screen after search navigation
+nnoremap n nzz
+nnoremap N Nzz
+
+" Copying yanked text into system clipboard.
+nnoremap y "+y
+vnoremap y "+y
+nnoremap Y "+Y
