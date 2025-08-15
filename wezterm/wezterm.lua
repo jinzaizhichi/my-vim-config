@@ -6,7 +6,7 @@ if wezterm.config_builder then
 end
 
 -- Font configuration
-config.font = wezterm.font('FiraCode Nerd Font')
+config.font = wezterm.font('Hack Nerd Font')
 config.font_size = 14.0
 
 -- DARK SOPHISTICATED COLOR SCHEME
