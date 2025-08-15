@@ -7,7 +7,7 @@ hi IncSearch ctermbg=lightblue ctermfg=black
 
 set encoding=utf-8
 set backspace=indent,eol,start
-set fillchars=vert:\|,eob:\ 
+set fillchars=eob:\ ,vert:\|
 set hlsearch
 set wrap
 set nu rnu
