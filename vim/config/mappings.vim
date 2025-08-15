@@ -2,6 +2,8 @@
 let mapleader = "\<Space>"
 
 " gotta develop that muscle memory, one way or another
+" Note after months of enabling this mappings, it was the best decision in my
+" life, no joke
 noremap <up> :echoerr "Senpai, use k instead"<CR>
 noremap <down> :echoerr "Senpai, use j instead"<CR>
 noremap <left> :echoerr "Senpai, use h instead"<CR>
@@ -84,12 +86,12 @@ vnoremap <leader>pr y:%s/\V<C-r>=escape(@", '/\')<CR>//g<Left><Left>
 vnoremap <leader>pa y:%s/\V<C-r>=escape(@", '/\')<CR>/<C-r>=escape(@", '/\&~')<CR>/g<Left><Left>
 
 " Auto-center screen after page navigation
-nnoremap <C-f> <C-f>zz
-nnoremap <C-b> <C-b>zz
+nnoremap <silent> <C-f> <C-f>zz
+nnoremap <silent> <C-b> <C-b>zz
 
 " Auto-center screen after search navigation
-nnoremap n nzz
-nnoremap N Nzz
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
 
 " Copying yanked text into system clipboard.
 nnoremap y "+y

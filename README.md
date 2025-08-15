@@ -106,49 +106,94 @@ A soft, pastel color scheme named after my cat, featuring gentle pinks and green
 | Bright Cyan    | `#93AF8A`  | ![#93AF8A](https://placehold.co/30/93AF8A/93AF8A) |
 | Bright White   | `#EBEBEB`  | ![#EBEBEB](https://placehold.co/30/EBEBEB/EBEBEB) |
 
-## Vim shortcuts configured manually
+## Keyboard Shortcuts
 
-- Leader key is remapped to space.
+### Core Navigation & Editing
 
-| Keys                                                      | Description                                                            | Mode    |
-| :-------------------------------------------------------- | :--------------------------------------------------------------------- | :------ |
-| <kbd>j</kbd> <kbd>k</kbd>                                 | Exit insert mode                                                       | `i`     |
-| <kbd>leader</kbd> <kbd>s</kbd>                            | Save current buffer                                                    | `n`     |
-| <kbd>j</kbd>                                              | Move down (works with wrapped lines)                                   | `n`     |
-| <kbd>k</kbd>                                              | Move up (works with wrapped lines)                                     | `n`     |
-| <kbd>leader</kbd> <kbd>t</kbd>                            | Open Netrw file explorer                                               | `n`     |
-| <kbd>leader</kbd> <kbd>p</kbd>                            | Find files (FZF)                                                       | `n`     |
-| <kbd>leader</kbd> <kbd>f</kbd>                            | Find in files (Ripgrep)                                                | `n`     |
-| <kbd>leader</kbd> <kbd>b</kbd> <kbd>b</kbd>               | Browse buffers (FZF)                                                   | `n`     |
-| <kbd>leader</kbd> <kbd>b</kbd> <kbd>n</kbd>               | Next buffer                                                            | `n`     |
-| <kbd>leader</kbd> <kbd>b</kbd> <kbd>p</kbd>               | Previous buffer                                                        | `n`     |
-| <kbd>leader</kbd> <kbd>b</kbd> <kbd>d</kbd> <kbd>c</kbd>  | Buffer delete current                                                  | `n`     |
-| <kbd>leader</kbd> <kbd>b</kbd> <kbd>d</kbd> <kbd>a</kbd>  | Buffer delete all except focused                                       | `n`     |
-| <kbd>leader</kbd> <kbd>b</kbd> <kbd>t</kbd>               | Buffer maximize toggle                                                 | `n`     |
-| <kbd>leader</kbd> <kbd>i</kbd> <kbd>p</kbd> <kbd>w</kbd>  | Increase pane width (+10)                                              | `n`     |
-| <kbd>leader</kbd> <kbd>d</kbd> <kbd>p</kbd> <kbd>w</kbd>  | Decrease pane width (-10)                                              | `n`     |
-| <kbd>leader</kbd> <kbd>i</kbd> <kbd>p</kbd> <kbd>h</kbd>  | Increase pane height (+10)                                             | `n`     |
-| <kbd>leader</kbd> <kbd>d</kbd> <kbd>p</kbd> <kbd>h</kbd>  | Decrease pane height (-10)                                             | `n`     |
-| <kbd>leader</kbd> <kbd>g</kbd> <kbd>s</kbd>               | Git status                                                             | `n`     |
-| <kbd>leader</kbd> <kbd>g</kbd> <kbd>a</kbd>               | Git add all                                                            | `n`     |
-| <kbd>leader</kbd> <kbd>g</kbd> <kbd>c</kbd>               | Git commit (vertical split)                                            | `n`     |
-| <kbd>leader</kbd> <kbd>g</kbd> <kbd>p</kbd>               | Git push                                                               | `n`     |
-| <kbd>leader</kbd> <kbd>g</kbd> <kbd>d</kbd>               | Git diff (vertical split)                                              | `n`     |
-| <kbd>leader</kbd> <kbd>g</kbd> <kbd>l</kbd>               | Git log (vertical split)                                               | `n`     |
-| <kbd>g</kbd> <kbd>d</kbd>                                 | Go to definition                                                       | `n`     |
-| <kbd>g</kbd> <kbd>t</kbd>                                 | Go to type definition                                                  | `n`     |
-| <kbd>ctrl</kbd> <kbd>j</kbd>                              | Trigger completion                                                     | `i`     |
-| <kbd>ctrl</kbd> <kbd>k</kbd> <kbd>ctrl</kbd> <kbd>i</kbd> | Show documentation                                                     | `n/i`   |
-| <kbd>ctrl</kbd> <kbd>f</kbd>                              | Scroll down in floating window                                         | `n/i/v` |
-| <kbd>ctrl</kbd> <kbd>b</kbd>                              | Scroll up in floating window                                           | `n/i/v` |
-| <kbd>leader</kbd> <kbd>c</kbd> <kbd>c</kbd><kbd>d</kbd>   | Coc copy definition                                                    | `n`     |
-| <kbd>leader</kbd> <kbd>k</kbd> <kbd>o</kbd>               | Open Kisuke                                                            | `n`     |
-| <kbd>leader</kbd> <kbd>k</kbd> <kbd>r</kbd> <kbd>s</kbd>  | Resume last Kisuke session                                             | `n`     |
-| <kbd>leader</kbd> <kbd>k</kbd> <kbd>m</kbd>               | Mark focused file for Kisuke                                           | `n`     |
-| <kbd>leader</kbd> <kbd>k</kbd> <kbd>h</kbd>               | Mark highlighted text for Kisuke                                       | `v`     |
-| <kbd>leader</kbd> <kbd>k</kbd> <kbd>r</kbd> <kbd>c</kbd>  | Remove last marked code block                                          | `n`     |
-| <kbd>leader</kbd> <kbd>k</kbd> <kbd>c</kbd>               | Create new Kisuke session                                              | `n`     |
-| <kbd>leader</kbd> <kbd>k</kbd> <kbd>d</kbd>               | Delete Kisuke session                                                  | `n`     |
-| <kbd>leader</kbd> <kbd>w</kbd> <kbd>r</kbd>               | Search and replace word under cursor with entered value                | `n`     |
-| <kbd>leader</kbd> <kbd>p</kbd> <kbd>r</kbd>               | Search and replace entered value to highlighted pattern in visual mode | `v`     |
-| <kbd>leader</kbd> <kbd>p</kbd> <kbd>a</kbd>               | Search and append entered value to highlighted pattern in visual mode  | `v`     |
+| Keys                        | Description                           | Mode  |
+| :-------------------------- | :------------------------------------ | :---- |
+| <kbd>Space</kbd>            | Leader key                            | `n`   |
+| <kbd>j</kbd> <kbd>k</kbd>   | Exit insert mode                      | `i`   |
+| <kbd>j</kbd> / <kbd>k</kbd> | Move down/up (respects line wrapping) | `n`   |
+| <kbd>y</kbd> / <kbd>Y</kbd> | Copy to system clipboard              | `n/v` |
+
+### File & Buffer Management
+
+| Keys                                                     | Description                       | Mode |
+| :------------------------------------------------------- | :-------------------------------- | :--- |
+| <kbd>Leader</kbd> <kbd>s</kbd>                           | Save current buffer               | `n`  |
+| <kbd>Leader</kbd> <kbd>t</kbd>                           | Open file explorer (Netrw)        | `n`  |
+| <kbd>Leader</kbd> <kbd>p</kbd>                           | Find files (FZF)                  | `n`  |
+| <kbd>Leader</kbd> <kbd>f</kbd>                           | Search in files (Ripgrep)         | `n`  |
+| <kbd>Leader</kbd> <kbd>b</kbd> <kbd>b</kbd>              | Browse open buffers               | `n`  |
+| <kbd>Leader</kbd> <kbd>b</kbd> <kbd>n</kbd>              | Next buffer                       | `n`  |
+| <kbd>Leader</kbd> <kbd>b</kbd> <kbd>p</kbd>              | Previous buffer                   | `n`  |
+| <kbd>Leader</kbd> <kbd>b</kbd> <kbd>d</kbd> <kbd>c</kbd> | Delete current buffer             | `n`  |
+| <kbd>Leader</kbd> <kbd>b</kbd> <kbd>d</kbd> <kbd>a</kbd> | Delete all buffers except current | `n`  |
+| <kbd>Leader</kbd> <kbd>b</kbd> <kbd>t</kbd>              | Toggle buffer maximize/restore    | `n`  |
+
+### Window & Pane Control
+
+| Keys                                                     | Description                | Mode |
+| :------------------------------------------------------- | :------------------------- | :--- |
+| <kbd>Leader</kbd> <kbd>i</kbd> <kbd>p</kbd> <kbd>w</kbd> | Increase pane width (+10)  | `n`  |
+| <kbd>Leader</kbd> <kbd>d</kbd> <kbd>p</kbd> <kbd>w</kbd> | Decrease pane width (-10)  | `n`  |
+| <kbd>Leader</kbd> <kbd>i</kbd> <kbd>p</kbd> <kbd>h</kbd> | Increase pane height (+10) | `n`  |
+| <kbd>Leader</kbd> <kbd>d</kbd> <kbd>p</kbd> <kbd>h</kbd> | Decrease pane height (-10) | `n`  |
+
+### Git Integration (Fugitive)
+
+| Keys                                        | Description                 | Mode |
+| :------------------------------------------ | :-------------------------- | :--- |
+| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>s</kbd> | Git status                  | `n`  |
+| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>a</kbd> | Git add all changes         | `n`  |
+| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>c</kbd> | Git commit (vertical split) | `n`  |
+| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>p</kbd> | Git push                    | `n`  |
+| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>d</kbd> | Git diff (vertical split)   | `n`  |
+| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>l</kbd> | Git log (vertical split)    | `n`  |
+
+### Code Intelligence (CoC)
+
+| Keys                                                        | Description                  | Mode    |
+| :---------------------------------------------------------- | :--------------------------- | :------ |
+| <kbd>g</kbd> <kbd>d</kbd>                                   | Go to definition             | `n`     |
+| <kbd>g</kbd> <kbd>t</kbd>                                   | Go to type definition        | `n`     |
+| <kbd>Ctrl</kbd> <kbd>j</kbd>                                | Trigger completion manually  | `i`     |
+| <kbd>Ctrl</kbd> <kbd>k</kbd> <kbd>Ctrl</kbd> <kbd>i</kbd>   | Show hover documentation     | `n/i`   |
+| <kbd>Ctrl</kbd> <kbd>f</kbd> / <kbd>Ctrl</kbd> <kbd>b</kbd> | Scroll floating windows      | `n/i/v` |
+| <kbd>Leader</kbd> <kbd>c</kbd> <kbd>c</kbd> <kbd>d</kbd>    | Copy definition to clipboard | `n`     |
+
+### AI Assistant (Kisuke)
+
+| Keys                                                     | Description                       | Mode |
+| :------------------------------------------------------- | :-------------------------------- | :--- |
+| <kbd>Leader</kbd> <kbd>k</kbd> <kbd>o</kbd>              | Open Kisuke interface             | `n`  |
+| <kbd>Leader</kbd> <kbd>k</kbd> <kbd>r</kbd> <kbd>s</kbd> | Resume last Kisuke session        | `n`  |
+| <kbd>Leader</kbd> <kbd>k</kbd> <kbd>m</kbd>              | Mark current file for context     | `n`  |
+| <kbd>Leader</kbd> <kbd>k</kbd> <kbd>h</kbd>              | Mark highlighted text for context | `v`  |
+| <kbd>Leader</kbd> <kbd>k</kbd> <kbd>r</kbd> <kbd>c</kbd> | Remove last marked code block     | `n`  |
+| <kbd>Leader</kbd> <kbd>k</kbd> <kbd>c</kbd>              | Create new Kisuke session         | `n`  |
+| <kbd>Leader</kbd> <kbd>k</kbd> <kbd>d</kbd>              | Delete Kisuke session             | `n`  |
+
+### Search & Replace
+
+| Keys                                        | Description                                 | Mode |
+| :------------------------------------------ | :------------------------------------------ | :--- |
+| <kbd>Leader</kbd> <kbd>w</kbd> <kbd>r</kbd> | Replace word under cursor globally          | `n`  |
+| <kbd>Leader</kbd> <kbd>p</kbd> <kbd>r</kbd> | Replace highlighted text with entered value | `v`  |
+| <kbd>Leader</kbd> <kbd>p</kbd> <kbd>a</kbd> | Append to highlighted text pattern          | `v`  |
+| <kbd>n</kbd> / <kbd>N</kbd>                 | Next/previous search result (auto-centered) | `n`  |
+
+## Tmux Configuration
+
+The tmux setup uses <kbd>Ctrl</kbd> <kbd>t</kbd> as the prefix key instead of the default <kbd>Ctrl</kbd> <kbd>b</kbd>. Copy mode is enabled with vi-style key bindings for natural vim-like navigation.
+
+Key tmux features:
+
+- **Copy Mode**: <kbd>Prefix</kbd> <kbd>v</kbd> to enter, <kbd>v</kbd> to start selection, <kbd>y</kbd> to copy to system clipboard
+- **Vi Navigation**: Full vim-style movement (hjkl, w/b/e for words, 0/$/^ for line navigation)
+- **Search**: <kbd>/</kbd> and <kbd>?</kbd> for forward/backward search in copy mode
+- **Page Navigation**: <kbd>Ctrl</kbd> <kbd>f</kbd>/<kbd>Ctrl</kbd> <kbd>b</kbd> for page up/down
+- **System Integration**: Copied text automatically goes to macOS clipboard via pbcopy
+
+All standard tmux window and pane management commands work with the <kbd>Ctrl</kbd> <kbd>t</kbd> prefix.
