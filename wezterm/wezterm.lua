@@ -2,8 +2,8 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 -- Font & Display
-config.font = wezterm.font('Hack Nerd Font')
-config.font_size = 16.0
+config.font = wezterm.font('0xProto Nerd Font Mono')
+config.font_size = 18.0
 
 -- Window Appearance
 config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
