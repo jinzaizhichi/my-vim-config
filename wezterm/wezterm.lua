@@ -14,6 +14,7 @@ config.window_close_confirmation = 'NeverPrompt'
 -- Terminal Behavior
 config.scrollback_lines = 10000
 config.cursor_blink_rate = 10
+config.term = 'wezterm'
 
 -- Performance & Features
 config.max_fps = 120
