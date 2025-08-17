@@ -1,0 +1,19 @@
+#!/bin/bash
+
+CUSTOM_SOCK="$HOME/.local/var/run/watchman/doruk-state/sock"
+CUSTOM_LOG="$HOME/.local/var/log/watchman/watchman.log"
+
+mkdir -p "$(dirname "$CUSTOM_SOCK")"
+mkdir -p "$(dirname "$CUSTOM_LOG")"
+chmod 700 "$(dirname "$CUSTOM_SOCK")"
+chmod 755 "$(dirname "$CUSTOM_LOG")"
+
+if ! [ -S "$CUSTOM_SOCK" ]; then
+  /opt/homebrew/bin/watchman shutdown-server 2>/dev/null || true
+  pkill -f watchman 2>/dev/null || true
+
+    /opt/homebrew/bin/watchman --sockname="$CUSTOM_SOCK" --logfile="$CUSTOM_LOG" version >/dev/null 2>&1
+fi
+
+exec /opt/homebrew/bin/watchman --sockname="$CUSTOM_SOCK" "$@"
+
