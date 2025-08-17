@@ -36,8 +36,8 @@ nmap <silent> gt <Plug>(coc-type-definition)
 inoremap <silent><expr> <C-j> coc#refresh()
 inoremap <silent><expr> <C-k><C-i> coc#rpc#request('doHover', [])
 nnoremap <silent><expr> <C-k><C-i> CocActionAsync('doHover')
-nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>zz"
+nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>zz"
 inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
 inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
 vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
@@ -85,9 +85,6 @@ vnoremap <leader>pr y:%s/\V<C-r>=escape(@", '/\')<CR>//g<Left><Left>
 " Visual mode: replace highlighted text with highlighted value + entered value
 vnoremap <leader>pa y:%s/\V<C-r>=escape(@", '/\')<CR>/<C-r>=escape(@", '/\&~')<CR>/g<Left><Left>
 
-" Auto-center screen after page navigation
-nnoremap <silent> <C-f> <C-f>zz
-nnoremap <silent> <C-b> <C-b>zz
 
 " Auto-center screen after search navigation
 nnoremap <silent> n nzz
