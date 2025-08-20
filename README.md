@@ -197,3 +197,35 @@ Key tmux features:
 - **System Integration**: Copied text automatically goes to macOS clipboard via pbcopy
 
 All standard tmux window and pane management commands work with the <kbd>Ctrl</kbd> <kbd>t</kbd> prefix.
+
+## WezTerm Keyboard Shortcuts
+
+WezTerm is configured with intuitive keyboard shortcuts for terminal and tab management:
+
+### Standard Controls
+
+| Keys                        | Description          |
+| :-------------------------- | :------------------- |
+| <kbd>Cmd</kbd> <kbd>c</kbd> | Copy to clipboard    |
+| <kbd>Cmd</kbd> <kbd>v</kbd> | Paste from clipboard |
+| <kbd>Cmd</kbd> <kbd>=</kbd> | Increase font size   |
+| <kbd>Cmd</kbd> <kbd>-</kbd> | Decrease font size   |
+| <kbd>Cmd</kbd> <kbd>0</kbd> | Reset font size      |
+
+### Tab & Window Management
+
+| Keys                                         | Description       |
+| :------------------------------------------- | :---------------- |
+| <kbd>Cmd</kbd> <kbd>n</kbd>                  | New tab           |
+| <kbd>Cmd</kbd> <kbd>w</kbd>                  | Close current tab |
+| <kbd>Cmd</kbd> <kbd>Shift</kbd> <kbd>n</kbd> | New window        |
+
+### Tab Navigation
+
+| Keys                                         | Description       |
+| :------------------------------------------- | :---------------- |
+| <kbd>Cmd</kbd> <kbd>1-9</kbd>                | Switch to tab 1-9 |
+| <kbd>Cmd</kbd> <kbd>Shift</kbd> <kbd>[</kbd> | Previous tab      |
+| <kbd>Cmd</kbd> <kbd>Shift</kbd> <kbd>]</kbd> | Next tab          |
+
+WezTerm launches in fullscreen mode and hides the tab bar when only one tab is open for a clean interface.
