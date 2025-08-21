@@ -188,13 +188,47 @@ A soft, pastel color scheme named after my cat, featuring gentle pinks and green
 
 The tmux setup uses <kbd>Ctrl</kbd> <kbd>t</kbd> as the prefix key instead of the default <kbd>Ctrl</kbd> <kbd>b</kbd>. Copy mode is enabled with vi-style key bindings for natural vim-like navigation.
 
-Key tmux features:
+### Session Management
 
-- **Copy Mode**: <kbd>Prefix</kbd> <kbd>v</kbd> to enter, <kbd>v</kbd> to start selection, <kbd>y</kbd> to copy to system clipboard
-- **Vi Navigation**: Full vim-style movement (hjkl, w/b/e for words, 0/$/^ for line navigation)
-- **Search**: <kbd>/</kbd> and <kbd>?</kbd> for forward/backward search in copy mode
-- **Page Navigation**: <kbd>Ctrl</kbd> <kbd>f</kbd>/<kbd>Ctrl</kbd> <kbd>b</kbd> for page up/down
-- **System Integration**: Copied text automatically goes to macOS clipboard via pbcopy
+| Keys                           | Description  | Mode |
+| :----------------------------- | :----------- | :--- |
+| <kbd>Prefix</kbd> <kbd>K</kbd> | Kill session | `n`  |
+
+### Copy Mode
+
+| Keys                             | Description                     | Mode |
+| :------------------------------- | :------------------------------ | :--- |
+| <kbd>Prefix</kbd> <kbd>v</kbd>   | Enter copy mode                 | `n`  |
+| <kbd>v</kbd>                     | Start selection                 | copy |
+| <kbd>V</kbd>                     | Select entire line              | copy |
+| <kbd>Ctrl</kbd> <kbd>v</kbd>     | Toggle rectangle selection      | copy |
+| <kbd>y</kbd>                     | Copy to system clipboard & exit | copy |
+| <kbd>q</kbd> / <kbd>Escape</kbd> | Exit copy mode                  | copy |
+
+### Copy Mode Navigation
+
+| Keys                                                        | Description              | Mode |
+| :---------------------------------------------------------- | :----------------------- | :--- |
+| <kbd>h</kbd> <kbd>j</kbd> <kbd>k</kbd> <kbd>l</kbd>         | Vi-style cursor movement | copy |
+| <kbd>w</kbd> / <kbd>b</kbd> / <kbd>e</kbd>                  | Word navigation          | copy |
+| <kbd>0</kbd> / <kbd>$</kbd> / <kbd>^</kbd>                  | Line navigation          | copy |
+| <kbd>g</kbd> / <kbd>G</kbd>                                 | Go to top/bottom         | copy |
+| <kbd>Ctrl</kbd> <kbd>f</kbd> / <kbd>Ctrl</kbd> <kbd>b</kbd> | Page down/up             | copy |
+| <kbd>Ctrl</kbd> <kbd>d</kbd> / <kbd>Ctrl</kbd> <kbd>u</kbd> | Half page down/up        | copy |
+
+### Copy Mode Search
+
+| Keys                        | Description             | Mode |
+| :-------------------------- | :---------------------- | :--- |
+| <kbd>/</kbd> / <kbd>?</kbd> | Forward/backward search | copy |
+| <kbd>n</kbd> / <kbd>N</kbd> | Next/previous match     | copy |
+
+### Pane Management (No Prefix Required)
+
+| Keys                                                               | Description       | Mode |
+| :----------------------------------------------------------------- | :---------------- | :--- |
+| <kbd>Alt</kbd> <kbd>h</kbd> <kbd>j</kbd> <kbd>k</kbd> <kbd>l</kbd> | Switch panes      | `n`  |
+| <kbd>Alt</kbd> <kbd>←</kbd> <kbd>→</kbd> <kbd>↑</kbd> <kbd>↓</kbd> | Resize panes (±5) | `n`  |
 
 All standard tmux window and pane management commands work with the <kbd>Ctrl</kbd> <kbd>t</kbd> prefix.
 
