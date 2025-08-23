@@ -1,17 +1,22 @@
 let g:airline_skip_empty_sections=1
-let g:airline_powerline_fonts=1
 let g:airline_highlighting_cache=1
 let g:airline_theme='keta'
-
-let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#tabline#formatter='unique_tail'
+let g:airline_powerline_fonts = 0
 
 let g:webdevicons_enable_airline_statusline=0
 let g:webdevicons_enable_airline_statusline_fileformat=0
 
 let g:airline_left_sep=''
 let g:airline_right_sep=''
+let g:airline_left_alt_sep = ''
+let g:airline_right_alt_sep = ''
+
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#formatter='unique_tail'
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#right_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = ''
 
 let g:airline_section_a = airline#section#create_left(['mode'])
 let g:airline_section_b = airline#section#create(['%t %m'])
