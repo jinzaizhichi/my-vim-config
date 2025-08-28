@@ -60,11 +60,26 @@ My Vim setup uses a carefully curated set of plugins installed via Vim's native 
 
 ### CoC Extensions
 
-CoC provides IDE-like features through these extensions:
+**Language Servers:**
 
-- Language Support: coc-vimlsp, coc-sh, coc-tsserver, coc-go, coc-html, coc-css, coc-json, coc-yaml
-- Frontend: @yaegassy/coc-tailwindcss3
-- Tooling: coc-prettier, coc-eslint, coc-dotenv
+- `coc-vimlsp` - VimScript support
+- `coc-sh` - Shell script support
+- `coc-tsserver` - TypeScript/JavaScript support
+- `coc-go` - Go language support
+- `coc-html` - HTML support
+- `coc-css` - CSS support
+- `coc-json` - JSON support
+- `coc-yaml` - YAML support
+- `coc-lua` - Lua support
+- `coc-sql` - SQL support
+- `coc-svg` - SVG support
+
+**Development Tools:**
+
+- `coc-prettier` - Code formatting
+- `coc-eslint` - JavaScript/TypeScript linting
+- `coc-dotenv` - Environment variable support
+- `@yaegassy/coc-tailwindcss3` - TailwindCSS support
 
 All plugins are automatically installed during the dotfiles setup process. Run `:helptags ALL` after installation to generate help documentation.
 
