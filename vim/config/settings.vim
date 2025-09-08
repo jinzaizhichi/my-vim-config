@@ -26,3 +26,5 @@ filetype plugin indent on
 scriptencoding utf-8
 
 autocmd BufWritePre * :%s/\s\+$//e
+
+runtime! ftplugin/man.vim
