@@ -112,7 +112,7 @@ A soft, pastel color scheme named after my cat, featuring gentle pinks and green
 | Normal Magenta | `#9C6D9A`  | ![#9C6D9A](https://placehold.co/30/9C6D9A/9C6D9A) |
 | Normal Cyan    | `#78997C`  | ![#78997C](https://placehold.co/30/78997C/78997C) |
 | Normal White   | `#F5F5F5`  | ![#F5F5F5](https://placehold.co/30/F5F5F5/F5F5F5) |
-| Bright Black   | `#141414`  | ![#141414](https://placehold.co/30/141414/141414) |
+| Bright Black   | `#606060`  | ![#606060](https://placehold.co/30/606060/606060) |
 | Bright Red     | `#D77272`  | ![#D77272](https://placehold.co/30/D77272/D77272) |
 | Bright Green   | `#9989B8`  | ![#9989B8](https://placehold.co/30/9989B8/9989B8) |
 | Bright Yellow  | `#C7869E`  | ![#C7869E](https://placehold.co/30/C7869E/C7869E) |
