@@ -94,3 +94,6 @@ nnoremap <silent> N Nzz
 nnoremap y "+y
 vnoremap y "+y
 nnoremap Y "+Y
+
+" Man pages search
+nnoremap <leader>ms :ManSearch <C-r><right>

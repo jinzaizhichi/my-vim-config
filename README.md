@@ -199,6 +199,13 @@ A soft, pastel color scheme named after my cat, featuring gentle pinks and green
 | <kbd>Leader</kbd> <kbd>p</kbd> <kbd>a</kbd> | Append to highlighted text pattern          | `v`  |
 | <kbd>n</kbd> / <kbd>N</kbd>                 | Next/previous search result (auto-centered) | `n`  |
 
+### Man Pages Search
+
+| Keys                                        | Description                                                                                         | Mode                     |
+| :------------------------------------------ | :-------------------------------------------------------------------------------------------------- | :----------------------- |
+| <kbd>Leader</kbd> <kbd>m</kbd> <kbd>s</kbd> | Prepares man pages search command after running this you can enter the page name you want to search | `n`                      |
+| <kbd>Enter</kbd>                            | Opens the man page for option under cursor, works only in man pages search buffer                   | `man page search buffer` |
+
 ## Tmux Configuration
 
 The tmux setup uses <kbd>Ctrl</kbd> <kbd>t</kbd> as the prefix key instead of the default <kbd>Ctrl</kbd> <kbd>b</kbd>. Copy mode is enabled with vi-style key bindings for natural vim-like navigation.

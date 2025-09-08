@@ -1,32 +1,31 @@
 func! CocCopyDefinition() abort
-    let hover_result = CocActionAsync('doHover')
+  let hover_result = CocActionAsync('doHover')
 
-    sleep 100m
+  sleep 100m
 
-    let float_wins = coc#float#get_float_win_list()
-    if empty(float_wins)
-        echoerr "You must be joking..."
+  let float_wins = coc#float#get_float_win_list()
+  if empty(float_wins)
+    echoerr "You must be joking..."
 
-        return
-    endif
+    return
+  endif
 
-    let float_bufnr = winbufnr(float_wins[0])
-    let hover_lines = getbufline(float_bufnr, 1, '$')
-    let hover_content = join(hover_lines, "\n")
+  let float_bufnr = winbufnr(float_wins[0])
+  let hover_lines = getbufline(float_bufnr, 1, '$')
+  let hover_content = join(hover_lines, "\n")
 
-    let @" = hover_content
+  let @" = hover_content
 
-    if has('clipboard')
-        let @+ = hover_content
-    endif
+  if has('clipboard')
+    let @+ = hover_content
+  endif
 
-    call coc#float#close_all()
+  call coc#float#close_all()
 
-    echom "Now put it where it belongs..."
+  echom "Now put it where it belongs..."
 endfunc
 
 let s:git_stats_throttle=0
-
 func! GitStats()
   if localtime() - s:git_stats_throttle < 2
     return get(g:, 'git_stats', '')
@@ -78,7 +77,6 @@ func! GitStats()
 
   return printf('  +%d -%d 󱁻 %d', l:additions, l:deletions, l:files)
 endfunc
-
 augroup GitStatsUpdate
   autocmd!
   autocmd BufWritePost * let g:git_stats = GitStats()
@@ -111,28 +109,27 @@ func! GenerateLoremIpsum(count)
   let text = join(result, ' ') . '.'
   execute "normal! a" . text
 endfunc
-
 command! -nargs=1 Lorem call GenerateLoremIpsum(<args>)
 
 let g:window_zoomed = 0
 let g:window_layout = {}
 
 func! BufferToggle()
-    if g:window_zoomed == 0
-        let g:window_layout = {
-            \ 'width': winwidth(0),
-            \ 'height': winheight(0),
-            \ 'win_count': winnr('$')
-        \ }
-        if g:window_layout.win_count > 1
-            resize
-            vertical resize
-            let g:window_zoomed = 1
-        endif
-    else
-        wincmd =
-        let g:window_zoomed = 0
+  if g:window_zoomed == 0
+    let g:window_layout = {
+          \ 'width': winwidth(0),
+          \ 'height': winheight(0),
+          \ 'win_count': winnr('$')
+          \ }
+    if g:window_layout.win_count > 1
+      resize
+      vertical resize
+      let g:window_zoomed = 1
     endif
+  else
+    wincmd =
+      let g:window_zoomed = 0
+  endif
 endfunc
 
 func! BufferDeleteCurrent()
@@ -164,5 +161,55 @@ func! GoImportsOnSave()
   endtry
   call winrestview(l:curw)
 endfunc
-
 autocmd BufWritePre *.go silent! call GoImportsOnSave()
+
+func! SearchManPages(name) abort
+  let output = systemlist('whatis ' . shellescape(a:name))
+
+  if empty(output)
+    echom 'No sections found for ' . a:name
+    return
+  endif
+
+  vne
+
+  setlocal buftype=nofile bufhidden=hide noswapfile nowrap nonumber norelativenumber
+  setlocal filetype=man
+
+  call setline(1, output)
+endfunc
+command! -nargs=1 ManSearch call SearchManPages(<q-args>)
+
+func! OpenSelectedManPage() abort
+  let current_line = getline('.')
+
+  if empty(trim(current_line)) || current_line =~ '^Press Enter'
+    return
+  endif
+
+  let pattern = '^\(\S\+\)(\(\d\+\))'
+  let matches = matchlist(current_line, pattern)
+
+  if empty(matches)
+    echom 'Cannot parse this line - expected format: command(section)'
+    return
+  endif
+
+  let command_name = matches[1]
+  let section_number = matches[2]
+
+  bwipeout!
+
+  if !empty(section_number)
+    execute 'vertical Man ' . section_number . ' ' . command_name
+  else
+    execute 'vertical Man ' . command_name
+  endif
+endfunc
+augroup ManSearchResults
+  autocmd!
+  autocmd FileType man
+        \ if &buftype == 'nofile' && bufname('%') == '' |
+        \   nnoremap <buffer> <CR> :call OpenSelectedManPage()<CR> |
+        \ endif
+augroup END
