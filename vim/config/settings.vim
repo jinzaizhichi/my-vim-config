@@ -20,6 +20,7 @@ set incsearch
 set noswapfile
 set foldmethod=syntax
 set nofoldenable
+set autoread
 
 filetype plugin indent on
 
