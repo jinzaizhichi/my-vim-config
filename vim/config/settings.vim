@@ -20,8 +20,6 @@ set incsearch
 set noswapfile
 set foldmethod=syntax
 set nofoldenable
-set autoread
-set fileformat=unix
 
 filetype plugin indent on
 
