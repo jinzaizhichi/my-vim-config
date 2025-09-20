@@ -97,3 +97,6 @@ nnoremap Y "+Y
 
 " Man pages search
 nnoremap <leader>ms :ManSearch <C-r><right>
+
+" Clear/Reset file
+nnoremap <leader>cfe :call CleanFileLineEndings()<CR>

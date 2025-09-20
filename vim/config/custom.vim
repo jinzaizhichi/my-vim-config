@@ -213,3 +213,14 @@ augroup ManSearchResults
         \   nnoremap <buffer> <CR> :call OpenSelectedManPage()<CR> |
         \ endif
 augroup END
+
+func! CleanFileLineEndings()
+  edit ++enc=utf-8
+  set nobomb
+  set fileformat=unix
+  %s/\r//g
+  %s/[^\x00-\x7F]//g
+  update
+  edit!
+  echo "File cleaned and reloaded."
+endfunc
