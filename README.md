@@ -89,6 +89,15 @@ Plugins install automatically. Run :helptags ALL after setup.
 | Bright Cyan    | #93AF8A    | ![#93AF8A](https://placehold.co/30/93AF8A/93AF8A) |
 | Bright White   | #EBEBEB    | ![#EBEBEB](https://placehold.co/30/EBEBEB/EBEBEB) |
 
+---
+
+![screenshot](ss-1.png)
+![screenshot](ss-2.png)
+![screenshot](ss-3.png)
+![screenshot](ss-4.png)
+
+---
+
 ## Vim Keyboard Shortcuts
 
 ### Navigation & Editing
