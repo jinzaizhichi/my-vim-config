@@ -5,5 +5,5 @@ hi CocWarningFloat ctermbg=NONE ctermfg=3
 hi CocInfoFloat ctermbg=NONE ctermfg=10
 hi CocHintFloat ctermbg=NONE ctermfg=10
 hi CocCursorRange ctermbg=NONE ctermfg=13
-hi CocBorder ctermbg=NONE ctermfg=0
+hi CocBorder ctermbg=NONE ctermfg=5
 hi CocPrompt ctermbg=NONE ctermfg=6
