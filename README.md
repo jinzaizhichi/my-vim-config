@@ -1,280 +1,272 @@
-# Keta-powered Dotfiles
+> Kisuke initialized 124/124
+> 61e535fd10035c12a93e1ec98d3b652c
 
-Welcome to my meticulously crafted dotfiles - named after my cat and optimized for pure coding joy! These configs turn your terminal into a productivity powerhouse without the bloat.
+Kisuke > Welcome to Urahara candy shop, how can I help you today? By the way don't forget that longer sessions burn more tokens, try to use new sessions for every distinguished prompt.
 
-## What's Inside
+> Marked File Count - 5
+> File Path - /Users/doruk/Repositories/personal/dotfiles/README.md
+> File Path - /Users/doruk/Repositories/personal/dotfiles/vim/config/mappings.vim
+> File Path - /Users/doruk/Repositories/personal/dotfiles/tmux/tmux.conf
+> File Path - /Users/doruk/Repositories/personal/dotfiles/wezterm/wezterm.lua
+> File Path - /Users/doruk/Repositories/personal/dotfiles/vim/config/custom.vim
 
-A carefully curated selection of configurations for vim, tmux, zsh, and git that just work™. My vim setup is intentionally minimal - using Vim's native plugin management instead of third-party solutions because sometimes vanilla is the best flavor.
+Prompt > I added some stuff to my dotfiles but didnt updated the readme can you add missing stuff to readme? Also can you improve my readme overall I do not want fancy emojis or meaningless filler words keep everything simple short and meaningfull use tables and <kbd> tags almost for mappings
+
+Kisuke > Here's the updated README.md. I removed fluffy language, made descriptions concise and factual, ensured all sections are short and meaningful. Added missing elements from your configs: Watchman integration in tmux, new Vim functions (GitStats for status info, Lorem for placeholder text, CleanFileLineEndings), and ensured all mappings match your mappings.vim (using tables and <kbd> tags). Consolidated some sections for brevity. Updated WezTerm to include all keys from wezterm.lua. Removed screenshots as they add no functional value.
+
+````markdown
+# Dotfiles
+
+Configurations for vim, tmux, zsh, git, and WezTerm. Uses Vim's native plugin management.
 
 ## Requirements
 
-Before diving in, make sure you have:
+- git
+- npm
+- fzf, bat, ripgrep, the_silver_searcher, perl, universal-ctags
 
-- `git` - version control that powers everything
-- `npm` - for CoC and other JavaScript tooling
-- `fzf`, `bat`, `ripgrep`, `the_silver_searcher`, `perl`, `universal-ctags` - the fuzzy-finding dream team
-
-Quick install of dependencies on macOS:
+Install on macOS:
 
 ```bash
 brew install git npm fzf bat ripgrep the_silver_searcher perl universal-ctags
 ```
+````
 
 ## Installation
-
-One command and you're flying:
 
 ```bash
 curl -o- https://raw.githubusercontent.com/dorukozerr/dotfiles/main/install.sh | bash
 ```
 
-What it does:
-
-- Backs up your existing configs to `~/dotfiles_backup_<timestamp>/`
-- Specifically backs up: `~/.vimrc`, `~/.vim/`, `~/.zshrc`, `~/.zprofile`, `~/.config/tmux/`, `~/.scripts/`, `~/.gitconfig`
-- Sets up vim, tmux, zsh, git configurations
-- Installs all necessary plugins
+This backs up existing configs to ~/dotfiles*backup*<timestamp>/ (including ~/.vimrc, ~/.vim/, ~/.zshrc, ~/.zprofile, ~/.config/tmux/, ~/.scripts/, ~/.gitconfig), sets up all configurations, and installs plugins.
 
 ## Vim Plugins
 
-My Vim setup uses a carefully curated set of plugins installed via Vim's native package management system:
+### Core
 
-### Core Functionality
+- vim-fugitive: Git integration
+- fzf & fzf.vim: Fuzzy finding
+- FastFold: Folding optimization
 
-- **vim-fugitive** - Git integration so seamless you'll forget it's a plugin
-- **fzf & fzf.vim** - Lightning-fast fuzzy finding for files, buffers, and more
-- **FastFold** - Speed optimization for code folding
+### Development
 
-### Development Tools
+- coc.nvim: Intellisense
+- kisuke.vim: AI coding assistant
+- vim-jsx-pretty: JSX support
 
-- **coc.nvim** - Intellisense engine for Vim, providing VSCode-like features
-- **kisuke.vim** - My custom AI assistant for coding support
-- **vim-jsx-pretty** - JSX syntax highlighting and indentation
-- **typescript-vim** - TypeScript syntax support
+### Visual
 
-### Visual Enhancements
-
-- **vim-airline** - Lightweight yet informative status bar
-- **vim-airline-themes** - Includes custom Keta theme for airline
-- **vim-devicons** - Pretty icons for filetypes and directories
+- vim-airline: Status bar
+- vim-airline-themes: Themes including Keta
+- vim-devicons: Filetype icons
 
 ### CoC Extensions
 
-**Language Servers:**
+Language servers: coc-vimlsp, coc-sh, coc-tsserver, coc-go, coc-html, coc-css, coc-json, coc-yaml, coc-lua, coc-sql, coc-svg
 
-- `coc-vimlsp` - VimScript support
-- `coc-sh` - Shell script support
-- `coc-tsserver` - TypeScript/JavaScript support
-- `coc-go` - Go language support
-- `coc-html` - HTML support
-- `coc-css` - CSS support
-- `coc-json` - JSON support
-- `coc-yaml` - YAML support
-- `coc-lua` - Lua support
-- `coc-sql` - SQL support
-- `coc-svg` - SVG support
+Tools: coc-prettier, coc-eslint, coc-dotenv, @yaegassy/coc-tailwindcss3
 
-**Development Tools:**
+Plugins install automatically. Run :helptags ALL after setup.
 
-- `coc-prettier` - Code formatting
-- `coc-eslint` - JavaScript/TypeScript linting
-- `coc-dotenv` - Environment variable support
-- `@yaegassy/coc-tailwindcss3` - TailwindCSS support
+## Additional Vim Features
 
-All plugins are automatically installed during the dotfiles setup process. Run `:helptags ALL` after installation to generate help documentation.
+- GitStats: Shows branch changes (+lines, -lines, modified files) in status bar, updates on write/enter/leave.
+- Lorem <count>: Inserts <count> words of lorem ipsum text.
+- CleanFileLineEndings (<leader>cfe): Fixes encodings, removes CR, non-ASCII, sets unix format.
+- GoImportsOnSave: Auto-organizes Go imports on save.
 
 ## Important Notes
 
-- The dotfiles contain my personal Git configuration. You **must** update `~/.gitconfig` with your own name and email before using.
-- To achieve the exact look shown in the screenshots, set your terminal to use the Keta theme colors defined in the theme section below. All vim and tmux colors inherit from the terminal ANSI color definitions rather than being hardcoded.
-
-![screenshot](ss-1.png)
-![screenshot](ss-2.png)
-![screenshot](ss-3.png)
-![screenshot](ss-4.png)
+- Update ~/.gitconfig with your name and email.
+- Set terminal to Keta theme colors (below) for consistent vim/tmux appearance.
 
 ## Keta Theme
 
-A soft, pastel color scheme named after my cat, featuring gentle pinks and greens.
-
 | Label          | Color Code | Preview                                           |
 | :------------- | :--------- | :------------------------------------------------ |
-| Background     | `#000000`  | ![#000000](https://placehold.co/30/000000/000000) |
-| Text           | `#FFFFFF`  | ![#FFFFFF](https://placehold.co/30/FFFFFF/FFFFFF) |
-| Bold Text      | `#FFFFFF`  | ![#FFFFFF](https://placehold.co/30/FFFFFF/FFFFFF) |
-| Cursor         | `#B56F88`  | ![#B56F88](https://placehold.co/30/B56F88/B56F88) |
-| Selection      | `#808080`  | ![#808080](https://placehold.co/30/808080/808080) |
-| Normal Black   | `#0A0A0A`  | ![#0A0A0A](https://placehold.co/30/0A0A0A/0A0A0A) |
-| Normal Red     | `#C55A5A`  | ![#C55A5A](https://placehold.co/30/C55A5A/C55A5A) |
-| Normal Green   | `#7F6D9E`  | ![#7F6D9E](https://placehold.co/30/7F6D9E/7F6D9E) |
-| Normal Yellow  | `#B56F88`  | ![#B56F88](https://placehold.co/30/B56F88/B56F88) |
-| Normal Blue    | `#5E8C7A`  | ![#5E8C7A](https://placehold.co/30/5E8C7A/5E8C7A) |
-| Normal Magenta | `#9C6D9A`  | ![#9C6D9A](https://placehold.co/30/9C6D9A/9C6D9A) |
-| Normal Cyan    | `#78997C`  | ![#78997C](https://placehold.co/30/78997C/78997C) |
-| Normal White   | `#F5F5F5`  | ![#F5F5F5](https://placehold.co/30/F5F5F5/F5F5F5) |
-| Bright Black   | `#606060`  | ![#606060](https://placehold.co/30/606060/606060) |
-| Bright Red     | `#D77272`  | ![#D77272](https://placehold.co/30/D77272/D77272) |
-| Bright Green   | `#9989B8`  | ![#9989B8](https://placehold.co/30/9989B8/9989B8) |
-| Bright Yellow  | `#C7869E`  | ![#C7869E](https://placehold.co/30/C7869E/C7869E) |
-| Bright Blue    | `#7AAA98`  | ![#7AAA98](https://placehold.co/30/7AAA98/7AAA98) |
-| Bright Magenta | `#B784B4`  | ![#B784B4](https://placehold.co/30/B784B4/B784B4) |
-| Bright Cyan    | `#93AF8A`  | ![#93AF8A](https://placehold.co/30/93AF8A/93AF8A) |
-| Bright White   | `#EBEBEB`  | ![#EBEBEB](https://placehold.co/30/EBEBEB/EBEBEB) |
+| Background     | #000000    | ![#000000](https://placehold.co/30/000000/000000) |
+| Text           | #FFFFFF    | ![#FFFFFF](https://placehold.co/30/FFFFFF/FFFFFF) |
+| Bold Text      | #FFFFFF    | ![#FFFFFF](https://placehold.co/30/FFFFFF/FFFFFF) |
+| Cursor         | #B56F88    | ![#B56F88](https://placehold.co/30/B56F88/B56F88) |
+| Selection      | #808080    | ![#808080](https://placehold.co/30/808080/808080) |
+| Normal Black   | #0A0A0A    | ![#0A0A0A](https://placehold.co/30/0A0A0A/0A0A0A) |
+| Normal Red     | #C55A5A    | ![#C55A5A](https://placehold.co/30/C55A5A/C55A5A) |
+| Normal Green   | #7F6D9E    | ![#7F6D9E](https://placehold.co/30/7F6D9E/7F6D9E) |
+| Normal Yellow  | #B56F88    | ![#B56F88](https://placehold.co/30/B56F88/B56F88) |
+| Normal Blue    | #5E8C7A    | ![#5E8C7A](https://placehold.co/30/5E8C7A/5E8C7A) |
+| Normal Magenta | #9C6D9A    | ![#9C6D9A](https://placehold.co/30/9C6D9A/9C6D9A) |
+| Normal Cyan    | #78997C    | ![#78997C](https://placehold.co/30/78997C/78997C) |
+| Normal White   | #F5F5F5    | ![#F5F5F5](https://placehold.co/30/F5F5F5/F5F5F5) |
+| Bright Black   | #606060    | ![#606060](https://placehold.co/30/606060/606060) |
+| Bright Red     | #D77272    | ![#D77272](https://placehold.co/30/D77272/D77272) |
+| Bright Green   | #9989B8    | ![#9989B8](https://placehold.co/30/9989B8/9989B8) |
+| Bright Yellow  | #C7869E    | ![#C7869E](https://placehold.co/30/C7869E/C7869E) |
+| Bright Blue    | #7AAA98    | ![#7AAA98](https://placehold.co/30/7AAA98/7AAA98) |
+| Bright Magenta | #B784B4    | ![#B784B4](https://placehold.co/30/B784B4/B784B4) |
+| Bright Cyan    | #93AF8A    | ![#93AF8A](https://placehold.co/30/93AF8A/93AF8A) |
+| Bright White   | #EBEBEB    | ![#EBEBEB](https://placehold.co/30/EBEBEB/EBEBEB) |
 
-## Keyboard Shortcuts
+## Vim Keyboard Shortcuts
 
-### Core Navigation & Editing
+### Navigation & Editing
 
-| Keys                        | Description                           | Mode  |
-| :-------------------------- | :------------------------------------ | :---- |
-| <kbd>Space</kbd>            | Leader key                            | `n`   |
-| <kbd>j</kbd> <kbd>k</kbd>   | Exit insert mode                      | `i`   |
-| <kbd>j</kbd> / <kbd>k</kbd> | Move down/up (respects line wrapping) | `n`   |
-| <kbd>y</kbd> / <kbd>Y</kbd> | Copy to system clipboard              | `n/v` |
+| Keys                        | Description              | Mode |
+| :-------------------------- | :----------------------- | :--- |
+| <kbd>Space</kbd>            | Leader key               | n    |
+| <kbd>j</kbd> <kbd>k</kbd>   | Exit insert mode         | i    |
+| <kbd>j</kbd> / <kbd>k</kbd> | Move down/up (with wrap) | n    |
+| <kbd>y</kbd> / <kbd>Y</kbd> | Copy to system clipboard | n/v  |
 
-### File & Buffer Management
+### File & Buffer
 
-| Keys                                                     | Description                       | Mode |
-| :------------------------------------------------------- | :-------------------------------- | :--- |
-| <kbd>Leader</kbd> <kbd>s</kbd>                           | Save current buffer               | `n`  |
-| <kbd>Leader</kbd> <kbd>t</kbd>                           | Open file explorer (Netrw)        | `n`  |
-| <kbd>Leader</kbd> <kbd>p</kbd>                           | Find files (FZF)                  | `n`  |
-| <kbd>Leader</kbd> <kbd>f</kbd>                           | Search in files (Ripgrep)         | `n`  |
-| <kbd>Leader</kbd> <kbd>b</kbd> <kbd>b</kbd>              | Browse open buffers               | `n`  |
-| <kbd>Leader</kbd> <kbd>b</kbd> <kbd>n</kbd>              | Next buffer                       | `n`  |
-| <kbd>Leader</kbd> <kbd>b</kbd> <kbd>p</kbd>              | Previous buffer                   | `n`  |
-| <kbd>Leader</kbd> <kbd>b</kbd> <kbd>d</kbd> <kbd>c</kbd> | Delete current buffer             | `n`  |
-| <kbd>Leader</kbd> <kbd>b</kbd> <kbd>d</kbd> <kbd>a</kbd> | Delete all buffers except current | `n`  |
-| <kbd>Leader</kbd> <kbd>b</kbd> <kbd>t</kbd>              | Toggle buffer maximize/restore    | `n`  |
+| Keys                                                     | Description               | Mode |
+| :------------------------------------------------------- | :------------------------ | :--- |
+| <kbd>Leader</kbd> <kbd>s</kbd>                           | Save buffer               | n    |
+| <kbd>Leader</kbd> <kbd>t</kbd>                           | Open explorer (Netrw)     | n    |
+| <kbd>Leader</kbd> <kbd>p</kbd>                           | Find files (FZF)          | n    |
+| <kbd>Leader</kbd> <kbd>f</kbd>                           | Search files (Ripgrep)    | n    |
+| <kbd>Leader</kbd> <kbd>b</kbd> <kbd>b</kbd>              | Browse buffers            | n    |
+| <kbd>Leader</kbd> <kbd>b</kbd> <kbd>n</kbd>              | Next buffer               | n    |
+| <kbd>Leader</kbd> <kbd>b</kbd> <kbd>p</kbd>              | Previous buffer           | n    |
+| <kbd>Leader</kbd> <kbd>b</kbd> <kbd>d</kbd> <kbd>c</kbd> | Delete current buffer     | n    |
+| <kbd>Leader</kbd> <kbd>b</kbd> <kbd>d</kbd> <kbd>a</kbd> | Delete all except current | n    |
+| <kbd>Leader</kbd> <kbd>b</kbd> <kbd>t</kbd>              | Toggle maximize/restore   | n    |
 
-### Window & Pane Control
+### Window & Pane
 
-| Keys                                                     | Description                | Mode |
-| :------------------------------------------------------- | :------------------------- | :--- |
-| <kbd>Leader</kbd> <kbd>i</kbd> <kbd>p</kbd> <kbd>w</kbd> | Increase pane width (+10)  | `n`  |
-| <kbd>Leader</kbd> <kbd>d</kbd> <kbd>p</kbd> <kbd>w</kbd> | Decrease pane width (-10)  | `n`  |
-| <kbd>Leader</kbd> <kbd>i</kbd> <kbd>p</kbd> <kbd>h</kbd> | Increase pane height (+10) | `n`  |
-| <kbd>Leader</kbd> <kbd>d</kbd> <kbd>p</kbd> <kbd>h</kbd> | Decrease pane height (-10) | `n`  |
+| Keys                                                     | Description           | Mode |
+| :------------------------------------------------------- | :-------------------- | :--- |
+| <kbd>Leader</kbd> <kbd>i</kbd> <kbd>p</kbd> <kbd>w</kbd> | Increase width (+10)  | n    |
+| <kbd>Leader</kbd> <kbd>d</kbd> <kbd>p</kbd> <kbd>w</kbd> | Decrease width (-10)  | n    |
+| <kbd>Leader</kbd> <kbd>i</kbd> <kbd>p</kbd> <kbd>h</kbd> | Increase height (+10) | n    |
+| <kbd>Leader</kbd> <kbd>d</kbd> <kbd>p</kbd> <kbd>h</kbd> | Decrease height (-10) | n    |
 
-### Git Integration (Fugitive)
+### Git (Fugitive)
 
-| Keys                                        | Description                 | Mode |
-| :------------------------------------------ | :-------------------------- | :--- |
-| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>s</kbd> | Git status                  | `n`  |
-| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>a</kbd> | Git add all changes         | `n`  |
-| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>c</kbd> | Git commit (vertical split) | `n`  |
-| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>p</kbd> | Git push                    | `n`  |
-| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>d</kbd> | Git diff (vertical split)   | `n`  |
-| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>l</kbd> | Git log (vertical split)    | `n`  |
+| Keys                                        | Description       | Mode |
+| :------------------------------------------ | :---------------- | :--- |
+| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>s</kbd> | Status            | n    |
+| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>a</kbd> | Add all           | n    |
+| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>c</kbd> | Commit (vertical) | n    |
+| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>p</kbd> | Push              | n    |
+| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>d</kbd> | Diff (vertical)   | n    |
+| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>l</kbd> | Log (vertical)    | n    |
 
-### Code Intelligence (CoC)
+### Code (CoC)
 
-| Keys                                                        | Description                  | Mode    |
-| :---------------------------------------------------------- | :--------------------------- | :------ |
-| <kbd>g</kbd> <kbd>d</kbd>                                   | Go to definition             | `n`     |
-| <kbd>g</kbd> <kbd>t</kbd>                                   | Go to type definition        | `n`     |
-| <kbd>Ctrl</kbd> <kbd>j</kbd>                                | Trigger completion manually  | `i`     |
-| <kbd>Ctrl</kbd> <kbd>k</kbd> <kbd>Ctrl</kbd> <kbd>i</kbd>   | Show hover documentation     | `n/i`   |
-| <kbd>Ctrl</kbd> <kbd>f</kbd> / <kbd>Ctrl</kbd> <kbd>b</kbd> | Scroll floating windows      | `n/i/v` |
-| <kbd>Leader</kbd> <kbd>c</kbd> <kbd>c</kbd> <kbd>d</kbd>    | Copy definition to clipboard | `n`     |
+| Keys                                                        | Description                  | Mode  |
+| :---------------------------------------------------------- | :--------------------------- | :---- |
+| <kbd>g</kbd> <kbd>d</kbd>                                   | Definition                   | n     |
+| <kbd>g</kbd> <kbd>t</kbd>                                   | Type definition              | n     |
+| <kbd>Ctrl</kbd> <kbd>j</kbd>                                | Trigger completion           | i     |
+| <kbd>Ctrl</kbd> <kbd>k</kbd> <kbd>Ctrl</kbd> <kbd>i</kbd>   | Hover docs                   | n/i   |
+| <kbd>Ctrl</kbd> <kbd>f</kbd> / <kbd>Ctrl</kbd> <kbd>b</kbd> | Scroll floats                | n/i/v |
+| <kbd>Leader</kbd> <kbd>c</kbd> <kbd>c</kbd> <kbd>d</kbd>    | Copy definition to clipboard | n     |
 
-### AI Assistant (Kisuke)
+### AI (Kisuke)
 
-| Keys                                                     | Description                       | Mode |
-| :------------------------------------------------------- | :-------------------------------- | :--- |
-| <kbd>Leader</kbd> <kbd>k</kbd> <kbd>o</kbd>              | Open Kisuke interface             | `n`  |
-| <kbd>Leader</kbd> <kbd>k</kbd> <kbd>r</kbd> <kbd>s</kbd> | Resume last Kisuke session        | `n`  |
-| <kbd>Leader</kbd> <kbd>k</kbd> <kbd>m</kbd>              | Mark current file for context     | `n`  |
-| <kbd>Leader</kbd> <kbd>k</kbd> <kbd>h</kbd>              | Mark highlighted text for context | `v`  |
-| <kbd>Leader</kbd> <kbd>k</kbd> <kbd>r</kbd> <kbd>c</kbd> | Remove last marked code block     | `n`  |
-| <kbd>Leader</kbd> <kbd>k</kbd> <kbd>c</kbd>              | Create new Kisuke session         | `n`  |
-| <kbd>Leader</kbd> <kbd>k</kbd> <kbd>d</kbd>              | Delete Kisuke session             | `n`  |
+| Keys                                                     | Description                  | Mode |
+| :------------------------------------------------------- | :--------------------------- | :--- |
+| <kbd>Leader</kbd> <kbd>k</kbd> <kbd>o</kbd>              | Open interface               | n    |
+| <kbd>Leader</kbd> <kbd>k</kbd> <kbd>r</kbd> <kbd>s</kbd> | Resume last session          | n    |
+| <kbd>Leader</kbd> <kbd>k</kbd> <kbd>m</kbd>              | Mark file for context        | n    |
+| <kbd>Leader</kbd> <kbd>k</kbd> <kbd>h</kbd>              | Mark highlighted for context | v    |
+| <kbd>Leader</kbd> <kbd>k</kbd> <kbd>r</kbd> <kbd>c</kbd> | Remove last marked block     | n    |
+| <kbd>Leader</kbd> <kbd>k</kbd> <kbd>c</kbd>              | New session                  | n    |
+| <kbd>Leader</kbd> <kbd>k</kbd> <kbd>d</kbd>              | Delete session               | n    |
 
 ### Search & Replace
 
-| Keys                                        | Description                                 | Mode |
-| :------------------------------------------ | :------------------------------------------ | :--- |
-| <kbd>Leader</kbd> <kbd>w</kbd> <kbd>r</kbd> | Replace word under cursor globally          | `n`  |
-| <kbd>Leader</kbd> <kbd>p</kbd> <kbd>r</kbd> | Replace highlighted text with entered value | `v`  |
-| <kbd>Leader</kbd> <kbd>p</kbd> <kbd>a</kbd> | Append to highlighted text pattern          | `v`  |
-| <kbd>n</kbd> / <kbd>N</kbd>                 | Next/previous search result (auto-centered) | `n`  |
+| Keys                                        | Description                        | Mode |
+| :------------------------------------------ | :--------------------------------- | :--- |
+| <kbd>Leader</kbd> <kbd>w</kbd> <kbd>r</kbd> | Replace word under cursor globally | n    |
+| <kbd>Leader</kbd> <kbd>p</kbd> <kbd>r</kbd> | Replace highlighted with input     | v    |
+| <kbd>Leader</kbd> <kbd>p</kbd> <kbd>a</kbd> | Append to highlighted pattern      | v    |
+| <kbd>n</kbd> / <kbd>N</kbd>                 | Next/previous result (centered)    | n    |
 
-### Man Pages Search
+### Man Pages
 
-| Keys                                        | Description                                                                                         | Mode                     |
-| :------------------------------------------ | :-------------------------------------------------------------------------------------------------- | :----------------------- |
-| <kbd>Leader</kbd> <kbd>m</kbd> <kbd>s</kbd> | Prepares man pages search command after running this you can enter the page name you want to search | `n`                      |
-| <kbd>Enter</kbd>                            | Opens the man page for option under cursor, works only in man pages search buffer                   | `man page search buffer` |
+| Keys                                        | Description                             | Mode          |
+| :------------------------------------------ | :-------------------------------------- | :------------ |
+| <kbd>Leader</kbd> <kbd>m</kbd> <kbd>s</kbd> | Start man page search (then enter name) | n             |
+| <kbd>Enter</kbd>                            | Open page under cursor                  | search buffer |
+
+### Other
+
+| Keys                                                     | Description                  | Mode |
+| :------------------------------------------------------- | :--------------------------- | :--- |
+| <kbd>Leader</kbd> <kbd>c</kbd> <kbd>f</kbd> <kbd>e</kbd> | Clean file encodings/formats | n    |
 
 ## Tmux Configuration
 
-The tmux setup uses <kbd>Ctrl</kbd> <kbd>t</kbd> as the prefix key instead of the default <kbd>Ctrl</kbd> <kbd>b</kbd>. Copy mode is enabled with vi-style key bindings for natural vim-like navigation.
+Prefix: <kbd>Ctrl</kbd> <kbd>t</kbd>. Vi mode for copy. Integrates Watchman for file watching (starts on tmux attach/create).
 
-### Session Management
+### Session
 
 | Keys                           | Description  | Mode |
 | :----------------------------- | :----------- | :--- |
-| <kbd>Prefix</kbd> <kbd>K</kbd> | Kill session | `n`  |
+| <kbd>Prefix</kbd> <kbd>K</kbd> | Kill session | n    |
 
 ### Copy Mode
 
-| Keys                             | Description                     | Mode |
-| :------------------------------- | :------------------------------ | :--- |
-| <kbd>Prefix</kbd> <kbd>v</kbd>   | Enter copy mode                 | `n`  |
-| <kbd>v</kbd>                     | Start selection                 | copy |
-| <kbd>V</kbd>                     | Select entire line              | copy |
-| <kbd>Ctrl</kbd> <kbd>v</kbd>     | Toggle rectangle selection      | copy |
-| <kbd>y</kbd>                     | Copy to system clipboard & exit | copy |
-| <kbd>q</kbd> / <kbd>Escape</kbd> | Exit copy mode                  | copy |
+| Keys                             | Description              | Mode |
+| :------------------------------- | :----------------------- | :--- |
+| <kbd>Prefix</kbd> <kbd>v</kbd>   | Enter                    | n    |
+| <kbd>v</kbd>                     | Start selection          | copy |
+| <kbd>V</kbd>                     | Select line              | copy |
+| <kbd>Ctrl</kbd> <kbd>v</kbd>     | Rectangle toggle         | copy |
+| <kbd>y</kbd>                     | Copy to clipboard & exit | copy |
+| <kbd>q</kbd> / <kbd>Escape</kbd> | Exit                     | copy |
 
-### Copy Mode Navigation
+### Copy Navigation
 
-| Keys                                                        | Description              | Mode |
-| :---------------------------------------------------------- | :----------------------- | :--- |
-| <kbd>h</kbd> <kbd>j</kbd> <kbd>k</kbd> <kbd>l</kbd>         | Vi-style cursor movement | copy |
-| <kbd>w</kbd> / <kbd>b</kbd> / <kbd>e</kbd>                  | Word navigation          | copy |
-| <kbd>0</kbd> / <kbd>$</kbd> / <kbd>^</kbd>                  | Line navigation          | copy |
-| <kbd>g</kbd> / <kbd>G</kbd>                                 | Go to top/bottom         | copy |
-| <kbd>Ctrl</kbd> <kbd>f</kbd> / <kbd>Ctrl</kbd> <kbd>b</kbd> | Page down/up             | copy |
-| <kbd>Ctrl</kbd> <kbd>d</kbd> / <kbd>Ctrl</kbd> <kbd>u</kbd> | Half page down/up        | copy |
+| Keys                                                        | Description       | Mode |
+| :---------------------------------------------------------- | :---------------- | :--- |
+| <kbd>h</kbd> <kbd>j</kbd> <kbd>k</kbd> <kbd>l</kbd>         | Cursor movement   | copy |
+| <kbd>w</kbd> / <kbd>b</kbd> / <kbd>e</kbd>                  | Word navigation   | copy |
+| <kbd>0</kbd> / <kbd>$</kbd> / <kbd>^</kbd>                  | Line navigation   | copy |
+| <kbd>g</kbd> / <kbd>G</kbd>                                 | Top/bottom        | copy |
+| <kbd>Ctrl</kbd> <kbd>f</kbd> / <kbd>Ctrl</kbd> <kbd>b</kbd> | Page down/up      | copy |
+| <kbd>Ctrl</kbd> <kbd>d</kbd> / <kbd>Ctrl</kbd> <kbd>u</kbd> | Half page down/up | copy |
 
-### Copy Mode Search
+### Copy Search
 
 | Keys                        | Description             | Mode |
 | :-------------------------- | :---------------------- | :--- |
 | <kbd>/</kbd> / <kbd>?</kbd> | Forward/backward search | copy |
 | <kbd>n</kbd> / <kbd>N</kbd> | Next/previous match     | copy |
 
-### Pane Management (No Prefix Required)
+### Panes (No Prefix)
 
-| Keys                                                               | Description       | Mode |
-| :----------------------------------------------------------------- | :---------------- | :--- |
-| <kbd>Alt</kbd> <kbd>h</kbd> <kbd>j</kbd> <kbd>k</kbd> <kbd>l</kbd> | Switch panes      | `n`  |
-| <kbd>Alt</kbd> <kbd>←</kbd> <kbd>→</kbd> <kbd>↑</kbd> <kbd>↓</kbd> | Resize panes (±5) | `n`  |
-
-All standard tmux window and pane management commands work with the <kbd>Ctrl</kbd> <kbd>t</kbd> prefix.
+| Keys                                                               | Description  | Mode |
+| :----------------------------------------------------------------- | :----------- | :--- |
+| <kbd>Alt</kbd> <kbd>h</kbd> <kbd>j</kbd> <kbd>k</kbd> <kbd>l</kbd> | Switch panes | n    |
+| <kbd>Alt</kbd> <kbd>←</kbd> <kbd>→</kbd> <kbd>↑</kbd> <kbd>↓</kbd> | Resize (±5)  | n    |
 
 ## WezTerm Keyboard Shortcuts
 
-WezTerm is configured with intuitive keyboard shortcuts for terminal and tab management:
+Launches fullscreen, hides tab bar if one tab.
 
-### Standard Controls
+### Controls
 
-| Keys                        | Description          |
-| :-------------------------- | :------------------- |
-| <kbd>Cmd</kbd> <kbd>c</kbd> | Copy to clipboard    |
-| <kbd>Cmd</kbd> <kbd>v</kbd> | Paste from clipboard |
-| <kbd>Cmd</kbd> <kbd>=</kbd> | Increase font size   |
-| <kbd>Cmd</kbd> <kbd>-</kbd> | Decrease font size   |
-| <kbd>Cmd</kbd> <kbd>0</kbd> | Reset font size      |
+| Keys                                         | Description          |
+| :------------------------------------------- | :------------------- |
+| <kbd>Cmd</kbd> <kbd>c</kbd>                  | Copy to clipboard    |
+| <kbd>Cmd</kbd> <kbd>v</kbd>                  | Paste from clipboard |
+| <kbd>Cmd</kbd> <kbd>=</kbd>                  | Increase font        |
+| <kbd>Cmd</kbd> <kbd>-</kbd>                  | Decrease font        |
+| <kbd>Cmd</kbd> <kbd>0</kbd>                  | Reset font           |
+| <kbd>Cmd</kbd> <kbd>k</kbd> <kbd>Shift</kbd> | Clear scrollback     |
+| <kbd>Cmd</kbd> <kbd>r</kbd>                  | Reload config        |
+| <kbd>Cmd</kbd> <kbd>Enter</kbd>              | Toggle fullscreen    |
 
-### Tab & Window Management
+### Tabs & Windows
 
-| Keys                                         | Description       |
-| :------------------------------------------- | :---------------- |
-| <kbd>Cmd</kbd> <kbd>n</kbd>                  | New tab           |
-| <kbd>Cmd</kbd> <kbd>w</kbd>                  | Close current tab |
-| <kbd>Cmd</kbd> <kbd>Shift</kbd> <kbd>n</kbd> | New window        |
+| Keys                                         | Description |
+| :------------------------------------------- | :---------- |
+| <kbd>Cmd</kbd> <kbd>n</kbd>                  | New tab     |
+| <kbd>Cmd</kbd> <kbd>w</kbd>                  | Close tab   |
+| <kbd>Cmd</kbd> <kbd>Shift</kbd> <kbd>n</kbd> | New window  |
 
 ### Tab Navigation
 
@@ -283,5 +275,3 @@ WezTerm is configured with intuitive keyboard shortcuts for terminal and tab man
 | <kbd>Cmd</kbd> <kbd>1-9</kbd>                | Switch to tab 1-9 |
 | <kbd>Cmd</kbd> <kbd>Shift</kbd> <kbd>[</kbd> | Previous tab      |
 | <kbd>Cmd</kbd> <kbd>Shift</kbd> <kbd>]</kbd> | Next tab          |
-
-WezTerm launches in fullscreen mode and hides the tab bar when only one tab is open for a clean interface.

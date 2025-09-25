@@ -77,6 +77,7 @@ git clone https://github.com/vim-airline/vim-airline.git &> /dev/null
 git clone https://github.com/vim-airline/vim-airline-themes.git &> /dev/null
 git clone https://github.com/ryanoasis/vim-devicons.git &> /dev/null
 git clone git@github.com:dorukozerr/kisuke.vim.git &> /dev/null
+git clone https://github.com/MaxMEllon/vim-jsx-pretty.git &> /dev/null
 git clone https://github.com/Konfekt/FastFold.git &> /dev/null
 echo "=> Vim plugins base installation finished..."
 
