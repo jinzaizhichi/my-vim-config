@@ -28,3 +28,4 @@ scriptencoding utf-8
 autocmd BufWritePre * :%s/\s\+$//e
 
 runtime! ftplugin/man.vim
+packadd! matchit

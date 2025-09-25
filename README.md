@@ -53,6 +53,7 @@ This backs up existing configs to ~/dotfiles*backup*<timestamp>/ (including ~/.v
 - coc.nvim: Intellisense
 - kisuke.vim: AI coding assistant
 - vim-jsx-pretty: JSX support
+- vim-matchit: Jump to opposite tags
 
 ### Visual
 
