@@ -36,6 +36,7 @@ This backs up existing configs to ~/dotfiles*backup*<timestamp>/ (including ~/.v
 - kisuke.vim: AI coding assistant
 - vim-jsx-pretty: JSX support
 - vim-matchit: Jump to opposite tags
+- vim-visual-multi: Multi cursor editing
 
 ### Visual
 

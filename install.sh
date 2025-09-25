@@ -80,6 +80,7 @@ git clone git@github.com:dorukozerr/kisuke.vim.git &> /dev/null
 git clone https://github.com/MaxMEllon/vim-jsx-pretty.git &> /dev/null
 git clone https://github.com/Konfekt/FastFold.git &> /dev/null
 git clone git@github.com:adelarsq/vim-matchit.git &> /dev/null
+git clone https://github.com/mg979/vim-visual-multi.git &> /dev/null
 echo "=> Vim plugins base installation finished..."
 
 cd coc.nvim
