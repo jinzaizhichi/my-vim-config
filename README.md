@@ -1,20 +1,3 @@
-> Kisuke initialized 124/124
-> 61e535fd10035c12a93e1ec98d3b652c
-
-Kisuke > Welcome to Urahara candy shop, how can I help you today? By the way don't forget that longer sessions burn more tokens, try to use new sessions for every distinguished prompt.
-
-> Marked File Count - 5
-> File Path - /Users/doruk/Repositories/personal/dotfiles/README.md
-> File Path - /Users/doruk/Repositories/personal/dotfiles/vim/config/mappings.vim
-> File Path - /Users/doruk/Repositories/personal/dotfiles/tmux/tmux.conf
-> File Path - /Users/doruk/Repositories/personal/dotfiles/wezterm/wezterm.lua
-> File Path - /Users/doruk/Repositories/personal/dotfiles/vim/config/custom.vim
-
-Prompt > I added some stuff to my dotfiles but didnt updated the readme can you add missing stuff to readme? Also can you improve my readme overall I do not want fancy emojis or meaningless filler words keep everything simple short and meaningfull use tables and <kbd> tags almost for mappings
-
-Kisuke > Here's the updated README.md. I removed fluffy language, made descriptions concise and factual, ensured all sections are short and meaningful. Added missing elements from your configs: Watchman integration in tmux, new Vim functions (GitStats for status info, Lorem for placeholder text, CleanFileLineEndings), and ensured all mappings match your mappings.vim (using tables and <kbd> tags). Consolidated some sections for brevity. Updated WezTerm to include all keys from wezterm.lua. Removed screenshots as they add no functional value.
-
-````markdown
 # Dotfiles
 
 Configurations for vim, tmux, zsh, git, and WezTerm. Uses Vim's native plugin management.
@@ -30,7 +13,6 @@ Install on macOS:
 ```bash
 brew install git npm fzf bat ripgrep the_silver_searcher perl universal-ctags
 ```
-````
 
 ## Installation
 
