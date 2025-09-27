@@ -2,7 +2,7 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 -- Font & Display (keeping your preferences)
-config.font = wezterm.font('0xProto Nerd Font Mono')
+config.font = wezterm.font('Hack Nerd Font')
 config.font_size = 14.0
 
 -- Valid font rendering improvements
@@ -24,7 +24,6 @@ config.tab_max_width = 32
 config.enable_scroll_bar = false
 config.window_close_confirmation = 'NeverPrompt'
 config.native_macos_fullscreen_mode = true
-config.window_decorations = 'RESIZE'
 
 -- Terminal Behavior improvements
 config.scrollback_lines = 50000
