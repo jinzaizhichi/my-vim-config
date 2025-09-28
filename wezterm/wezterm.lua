@@ -3,7 +3,7 @@ local config = wezterm.config_builder()
 
 -- Font & Display (keeping your preferences)
 config.font = wezterm.font('Hack Nerd Font')
-config.font_size = 14.0
+config.font_size = 18.0
 
 -- Valid font rendering improvements
 config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
