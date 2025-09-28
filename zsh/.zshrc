@@ -31,6 +31,13 @@ alias uvp="~/.scripts/update_vim_plugins.sh"
 alias kp="~/.scripts/kill_process.sh"
 alias far="~/.scripts/find_and_replace.sh"
 
+setopt SHARE_HISTORY
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_FIND_NO_DUPS
+export HISTSIZE=50000
+export SAVEHIST=50000
+
 function startup_sequence() {
   messages=(
     "Not even Stack Overflow can fix your catastrophic coding incompetence"
