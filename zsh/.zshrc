@@ -6,17 +6,6 @@ zstyle ':vcs_info:git:*' formats '%F{5} 󰊢 %b%f'
 
 PS1=$'%B%F{5}╭─%f%F{5}%n%f%F{5}@%f%F{5}%m%f %F{5}󰉋%f %F{5}%~%f${vcs_info_msg_0_}\n%B%F{5}╰─%f%b%F{5}%f '
 
-export FZF_DEFAULT_OPTS="
-  --color=bg:#000000,fg:#FFFFFF
-  --color=hl:#9C6D9A,fg+:#FFFFFF,bg+:#141414,hl+:#9C6D9A
-  --color=info:#7F6D9E,prompt:#9C6D9A,pointer:#9C6D9A
-  --color=marker:#78997C,spinner:#9C6D9A,header:#5E8C7A
-  --color=border:#78997C,preview-bg:#000000,preview-fg:#FFFFFF
-  --border=rounded
-  --preview-window=border-rounded
-  --prompt='❯ '
-  --pointer='❯'
-  --marker='✓'"
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always --theme=ansi {} 2>/dev/null || cat {}'"
