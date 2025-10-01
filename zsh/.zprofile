@@ -6,6 +6,8 @@ export NVM_DIR="$HOME/.nvm"
 
 export TERM='xterm-256color'
 export ANDROID_HOME=$HOME/Library/Android/sdk
+export JAVA_HOME="$(brew --prefix)/opt/openjdk@17"
+export PATH="$JAVA_HOME/bin:$PATH"
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:/Users/doruk/go/bin
