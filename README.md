@@ -62,33 +62,33 @@ Plugins install automatically. Run :helptags ALL after setup.
 ## Important Notes
 
 - Update ~/.gitconfig with your name and email.
-- Set terminal to Keta theme colors (below) for consistent vim/tmux appearance.
+- Set terminal to Psychosis theme colors (below) for consistent vim/tmux appearance.
 
-## Keta Theme
+## Psychosis Theme
 
 | Label          | Color Code | Preview                                           |
 | :------------- | :--------- | :------------------------------------------------ |
 | Background     | #000000    | ![#000000](https://placehold.co/30/000000/000000) |
-| Text           | #FFFFFF    | ![#FFFFFF](https://placehold.co/30/FFFFFF/FFFFFF) |
-| Bold Text      | #FFFFFF    | ![#FFFFFF](https://placehold.co/30/FFFFFF/FFFFFF) |
-| Cursor         | #B56F88    | ![#B56F88](https://placehold.co/30/B56F88/B56F88) |
-| Selection      | #808080    | ![#808080](https://placehold.co/30/808080/808080) |
-| Normal Black   | #0A0A0A    | ![#0A0A0A](https://placehold.co/30/0A0A0A/0A0A0A) |
-| Normal Red     | #C55A5A    | ![#C55A5A](https://placehold.co/30/C55A5A/C55A5A) |
-| Normal Green   | #7F6D9E    | ![#7F6D9E](https://placehold.co/30/7F6D9E/7F6D9E) |
-| Normal Yellow  | #B56F88    | ![#B56F88](https://placehold.co/30/B56F88/B56F88) |
-| Normal Blue    | #5E8C7A    | ![#5E8C7A](https://placehold.co/30/5E8C7A/5E8C7A) |
-| Normal Magenta | #9C6D9A    | ![#9C6D9A](https://placehold.co/30/9C6D9A/9C6D9A) |
-| Normal Cyan    | #78997C    | ![#78997C](https://placehold.co/30/78997C/78997C) |
-| Normal White   | #F5F5F5    | ![#F5F5F5](https://placehold.co/30/F5F5F5/F5F5F5) |
+| Text           | #F4F4F4    | ![#F4F4F4](https://placehold.co/30/F4F4F4/F4F4F4) |
+| Bold Text      | #F4F4F4    | ![#F4F4F4](https://placehold.co/30/F4F4F4/F4F4F4) |
+| Cursor         | #AB3FB1    | ![#AB3FB1](https://placehold.co/30/AB3FB1/AB3FB1) |
+| Selection      | #606060    | ![#606060](https://placehold.co/30/606060/606060) |
+| Normal Black   | #000000    | ![#000000](https://placehold.co/30/000000/000000) |
+| Normal Red     | #CB2F2D    | ![#CB2F2D](https://placehold.co/30/CB2F2D/CB2F2D) |
+| Normal Green   | #9000EE    | ![#9000EE](https://placehold.co/30/9000EE/9000EE) |
+| Normal Yellow  | #AB3FB1    | ![#AB3FB1](https://placehold.co/30/AB3FB1/AB3FB1) |
+| Normal Blue    | #B7306E    | ![#B7306E](https://placehold.co/30/B7306E/B7306E) |
+| Normal Magenta | #52D283    | ![#52D283](https://placehold.co/30/52D283/52D283) |
+| Normal Cyan    | #7DD275    | ![#7DD275](https://placehold.co/30/7DD275/7DD275) |
+| Normal White   | #F4F4F4    | ![#F4F4F4](https://placehold.co/30/F4F4F4/F4F4F4) |
 | Bright Black   | #606060    | ![#606060](https://placehold.co/30/606060/606060) |
-| Bright Red     | #D77272    | ![#D77272](https://placehold.co/30/D77272/D77272) |
-| Bright Green   | #9989B8    | ![#9989B8](https://placehold.co/30/9989B8/9989B8) |
-| Bright Yellow  | #C7869E    | ![#C7869E](https://placehold.co/30/C7869E/C7869E) |
-| Bright Blue    | #7AAA98    | ![#7AAA98](https://placehold.co/30/7AAA98/7AAA98) |
-| Bright Magenta | #B784B4    | ![#B784B4](https://placehold.co/30/B784B4/B784B4) |
-| Bright Cyan    | #93AF8A    | ![#93AF8A](https://placehold.co/30/93AF8A/93AF8A) |
-| Bright White   | #EBEBEB    | ![#EBEBEB](https://placehold.co/30/EBEBEB/EBEBEB) |
+| Bright Red     | #F3BDB9    | ![#F3BDB9](https://placehold.co/30/F3BDB9/F3BDB9) |
+| Bright Green   | #CAA7EA    | ![#CAA7EA](https://placehold.co/30/CAA7EA/CAA7EA) |
+| Bright Yellow  | #DE99E3    | ![#DE99E3](https://placehold.co/30/DE99E3/DE99E3) |
+| Bright Blue    | #F0A1C7    | ![#F0A1C7](https://placehold.co/30/F0A1C7/F0A1C7) |
+| Bright Magenta | #C6EED9    | ![#C6EED9](https://placehold.co/30/C6EED9/C6EED9) |
+| Bright Cyan    | #CDFFC9    | ![#CDFFC9](https://placehold.co/30/CDFFC9/CDFFC9) |
+| Bright White   | #F4F4F4    | ![#F4F4F4](https://placehold.co/30/F4F4F4/F4F4F4) |
 
 ---
 
