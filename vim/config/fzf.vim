@@ -20,7 +20,7 @@ command! -bang -nargs=? -complete=dir Files
       \   'options': [
       \     '--info=inline',
       \     '--preview',
-      \     'bat -f --style=numbers --theme=ansi {}'
+      \     'bat -f --style=numbers --theme=base16 {}'
       \   ]
       \ }, <bang>0)
 
@@ -32,7 +32,7 @@ command! -bang -nargs=* Rg
       \     'options': [
       \       '--info=inline',
       \       '--preview',
-      \       'bat -f --style=numbers --theme=ansi {1} --highlight-line {2}',
+      \       'bat -f --style=numbers --theme=base16 {1} --highlight-line {2}',
       \       '--exact',
       \     ]
       \   },
@@ -43,6 +43,6 @@ command! -bang -nargs=* Buffers
       \   'options': [
       \     '--info=inline',
       \     '--preview',
-      \     'echo {} | sed "s/.*\t//" | xargs -I% bat -f --style=numbers --theme=ansi %'
+      \     'echo {} | sed "s/.*\t//" | xargs -I% bat -f --style=numbers --theme=base16 %'
       \   ]
       \ }, <bang>0)

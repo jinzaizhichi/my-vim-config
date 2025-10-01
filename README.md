@@ -59,45 +59,6 @@ Plugins install automatically. Run :helptags ALL after setup.
 - CleanFileLineEndings (<leader>cfe): Fixes encodings, removes CR, non-ASCII, sets unix format.
 - GoImportsOnSave: Auto-organizes Go imports on save.
 
-## Important Notes
-
-- Update ~/.gitconfig with your name and email.
-- Set terminal to Psychosis theme colors (below) for consistent vim/tmux appearance.
-
-## Psychosis Theme
-
-| Label          | Color Code | Preview                                           |
-| :------------- | :--------- | :------------------------------------------------ |
-| Background     | #000000    | ![#000000](https://placehold.co/30/000000/000000) |
-| Text           | #F4F4F4    | ![#F4F4F4](https://placehold.co/30/F4F4F4/F4F4F4) |
-| Bold Text      | #F4F4F4    | ![#F4F4F4](https://placehold.co/30/F4F4F4/F4F4F4) |
-| Cursor         | #AB3FB1    | ![#AB3FB1](https://placehold.co/30/AB3FB1/AB3FB1) |
-| Selection      | #606060    | ![#606060](https://placehold.co/30/606060/606060) |
-| Normal Black   | #000000    | ![#000000](https://placehold.co/30/000000/000000) |
-| Normal Red     | #CB2F2D    | ![#CB2F2D](https://placehold.co/30/CB2F2D/CB2F2D) |
-| Normal Green   | #9000EE    | ![#9000EE](https://placehold.co/30/9000EE/9000EE) |
-| Normal Yellow  | #AB3FB1    | ![#AB3FB1](https://placehold.co/30/AB3FB1/AB3FB1) |
-| Normal Blue    | #B7306E    | ![#B7306E](https://placehold.co/30/B7306E/B7306E) |
-| Normal Magenta | #52D283    | ![#52D283](https://placehold.co/30/52D283/52D283) |
-| Normal Cyan    | #7DD275    | ![#7DD275](https://placehold.co/30/7DD275/7DD275) |
-| Normal White   | #F4F4F4    | ![#F4F4F4](https://placehold.co/30/F4F4F4/F4F4F4) |
-| Bright Black   | #606060    | ![#606060](https://placehold.co/30/606060/606060) |
-| Bright Red     | #F3BDB9    | ![#F3BDB9](https://placehold.co/30/F3BDB9/F3BDB9) |
-| Bright Green   | #CAA7EA    | ![#CAA7EA](https://placehold.co/30/CAA7EA/CAA7EA) |
-| Bright Yellow  | #DE99E3    | ![#DE99E3](https://placehold.co/30/DE99E3/DE99E3) |
-| Bright Blue    | #F0A1C7    | ![#F0A1C7](https://placehold.co/30/F0A1C7/F0A1C7) |
-| Bright Magenta | #C6EED9    | ![#C6EED9](https://placehold.co/30/C6EED9/C6EED9) |
-| Bright Cyan    | #CDFFC9    | ![#CDFFC9](https://placehold.co/30/CDFFC9/CDFFC9) |
-| Bright White   | #F4F4F4    | ![#F4F4F4](https://placehold.co/30/F4F4F4/F4F4F4) |
-
----
-
-![screenshot](ss-1.png)
-![screenshot](ss-2.png)
-![screenshot](ss-3.png)
-
----
-
 ## Vim Keyboard Shortcuts
 
 ### Navigation & Editing

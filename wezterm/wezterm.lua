@@ -2,8 +2,8 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 -- Font & Display (keeping your preferences)
-config.font = wezterm.font('FiraCode Nerd Font')
-config.font_size = 18.0
+config.font = wezterm.font('0xProto Nerd Font')
+config.font_size = 16.0
 
 -- Valid font rendering improvements
 config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
@@ -110,64 +110,78 @@ table.insert(config.hyperlink_rules, {
 --   visual_bell = '#B56F88',
 -- }
 
--- Psychosis theme
+-- -- Psychosis theme
+-- config.colors = {
+--   background = '#000000',
+--   foreground = '#F4F4F4',
+--   cursor_bg = '#AB3FB1',
+--   cursor_fg = '#000000',
+--   cursor_border = '#AB3FB1',
+--   selection_fg = '#F4F4F4',
+--   selection_bg = '#606060',
+--
+--   ansi = {
+--     '#000000',
+--     '#CB2F2D',
+--     '#9000EE',
+--     '#AB3FB1',
+--     '#B7306E',
+--     '#52D283',
+--     '#7DD275',
+--     '#F4F4F4',
+--   },
+--   brights = {
+--     '#606060',
+--     '#F3BDB9',
+--     '#CAA7EA',
+--     '#DE99E3',
+--     '#F0A1C7',
+--     '#C6EED9',
+--     '#CDFFC9',
+--     '#F4F4F4',
+--   },
+--
+--   tab_bar = {
+--     background = '#000000',
+--     active_tab = {
+--       bg_color = '#AB3FB1',
+--       fg_color = '#000000',
+--       intensity = 'Bold',
+--     },
+--     inactive_tab = {
+--       bg_color = '#000000',
+--       fg_color = '#606060',
+--     },
+--     inactive_tab_hover = {
+--       bg_color = '#9000EE',
+--       fg_color = '#F4F4F4',
+--     },
+--     new_tab = {
+--       bg_color = '#000000',
+--       fg_color = '#606060',
+--     },
+--     new_tab_hover = {
+--       bg_color = '#9000EE',
+--       fg_color = '#F4F4F4',
+--     },
+--   },
+--
+--   -- Visual bell color
+--   visual_bell = '#AB3FB1',
+-- }
+
+-- Black Metal (Burzum) - https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/wezterm/Black%20Metal%20(Burzum).toml
+-- Swapped ansi slot 1 and 5 only
 config.colors = {
-  background = '#000000',
-  foreground = '#F4F4F4',
-  cursor_bg = '#AB3FB1',
-  cursor_fg = '#000000',
-  cursor_border = '#AB3FB1',
-  selection_fg = '#F4F4F4',
-  selection_bg = '#606060',
-
-  ansi = {
-    '#000000',
-    '#CB2F2D',
-    '#9000EE',
-    '#AB3FB1',
-    '#B7306E',
-    '#52D283',
-    '#7DD275',
-    '#F4F4F4',
-  },
-  brights = {
-    '#606060',
-    '#F3BDB9',
-    '#CAA7EA',
-    '#DE99E3',
-    '#F0A1C7',
-    '#C6EED9',
-    '#CDFFC9',
-    '#F4F4F4',
-  },
-
-  tab_bar = {
-    background = '#000000',
-    active_tab = {
-      bg_color = '#AB3FB1',
-      fg_color = '#000000',
-      intensity = 'Bold',
-    },
-    inactive_tab = {
-      bg_color = '#000000',
-      fg_color = '#606060',
-    },
-    inactive_tab_hover = {
-      bg_color = '#9000EE',
-      fg_color = '#F4F4F4',
-    },
-    new_tab = {
-      bg_color = '#000000',
-      fg_color = '#606060',
-    },
-    new_tab_hover = {
-      bg_color = '#9000EE',
-      fg_color = '#F4F4F4',
-    },
-  },
-
-  -- Visual bell color
-  visual_bell = '#AB3FB1',
+  foreground = "#c1c1c1",
+  background = "#000000",
+  cursor_bg = "#c1c1c1",
+  cursor_border = "#c1c1c1",
+  cursor_fg = "#c1c1c1",
+  selection_bg = "#c1c1c1",
+  selection_fg = "#000000",
+  ansi = { "#000000", "#999999", "#ddeecc", "#99bbaa", "#888888", "#5f8787", "#aaaaaa", "#c1c1c1" },
+  brights = { "#333333", "#999999", "#ddeecc", "#99bbaa", "#888888", "#5f8787", "#aaaaaa", "#c1c1c1" },
 }
 
 -- Enhanced key bindings (your existing ones plus useful additions)
