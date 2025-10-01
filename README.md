@@ -95,7 +95,6 @@ Plugins install automatically. Run :helptags ALL after setup.
 ![screenshot](ss-1.png)
 ![screenshot](ss-2.png)
 ![screenshot](ss-3.png)
-![screenshot](ss-4.png)
 
 ---
 
