@@ -184,6 +184,21 @@ config.colors = {
   brights = { "#333333", "#999999", "#ddeecc", "#99bbaa", "#888888", "#5f8787", "#aaaaaa", "#c1c1c1" },
 }
 
+config.window_background_gradient = {
+  orientation = {
+    Radial = {
+      cx = 0,
+      cy = 0,
+      radius = 1.5,
+    },
+  },
+  colors = {
+    '#000000',
+    '#131B1B',
+    '#000000',
+  },
+}
+
 -- Enhanced key bindings (your existing ones plus useful additions)
 config.keys = {
   -- Your existing clipboard and font controls
