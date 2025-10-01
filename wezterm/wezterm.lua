@@ -2,7 +2,7 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 -- Font & Display (keeping your preferences)
-config.font = wezterm.font('Hack Nerd Font')
+config.font = wezterm.font('FiraCode Nerd Font')
 config.font_size = 18.0
 
 -- Valid font rendering improvements
@@ -50,64 +50,124 @@ table.insert(config.hyperlink_rules, {
   format = '$0',
 })
 
--- Keta theme
+-- -- Keta theme
+-- config.colors = {
+--   background = '#000000',
+--   foreground = '#FFFFFF',
+--   cursor_bg = '#B56F88',
+--   cursor_fg = '#000000',
+--   cursor_border = '#B56F88',
+--   selection_fg = '#FFFFFF',
+--   selection_bg = '#808080',
+--
+--   ansi = {
+--     '#000000',
+--     '#C55A5A',
+--     '#7F6D9E',
+--     '#B56F88',
+--     '#5E8C7A',
+--     '#9C6D9A',
+--     '#78997C',
+--     '#F5F5F5',
+--   },
+--   brights = {
+--     '#606060',
+--     '#D77272',
+--     '#9989B8',
+--     '#C7869E',
+--     '#7AAA98',
+--     '#B784B4',
+--     '#93AF8A',
+--     '#EBEBEB',
+--   },
+--
+--   tab_bar = {
+--     background = '#000000',
+--     active_tab = {
+--       bg_color = '#B56F88',
+--       fg_color = '#000000',
+--       intensity = 'Bold',
+--     },
+--     inactive_tab = {
+--       bg_color = '#141414',
+--       fg_color = '#FFFFFF',
+--     },
+--     inactive_tab_hover = {
+--       bg_color = '#7F6D9E',
+--       fg_color = '#FFFFFF',
+--     },
+--     new_tab = {
+--       bg_color = '#141414',
+--       fg_color = '#FFFFFF',
+--     },
+--     new_tab_hover = {
+--       bg_color = '#7F6D9E',
+--       fg_color = '#FFFFFF',
+--     },
+--   },
+--
+--   -- Visual bell color
+--   visual_bell = '#B56F88',
+-- }
+
+-- Psychosis theme
 config.colors = {
   background = '#000000',
-  foreground = '#FFFFFF',
-  cursor_bg = '#B56F88',
+  foreground = '#F4F4F4',
+  cursor_bg = '#AB3FB1',
   cursor_fg = '#000000',
-  cursor_border = '#B56F88',
-  selection_fg = '#FFFFFF',
-  selection_bg = '#808080',
+  cursor_border = '#AB3FB1',
+  selection_fg = '#F4F4F4',
+  selection_bg = '#606060',
 
   ansi = {
-    '#000000', -- black
-    '#C55A5A', -- red
-    '#7F6D9E', -- green (purple-ish)
-    '#B56F88', -- yellow (mauve)
-    '#5E8C7A', -- blue (teal)
-    '#9C6D9A', -- magenta (purple)
-    '#78997C', -- cyan (sage)
-    '#F5F5F5', -- white
+    '#000000',
+    '#CB2F2D',
+    '#9000EE',
+    '#AB3FB1',
+    '#B7306E',
+    '#52D283',
+    '#7DD275',
+    '#F4F4F4',
   },
   brights = {
-    '#606060', -- bright black (improved contrast)
-    '#D77272', -- bright red
-    '#9989B8', -- bright green (light purple)
-    '#C7869E', -- bright yellow (light mauve)
-    '#7AAA98', -- bright blue (light teal)
-    '#B784B4', -- bright magenta (light purple)
-    '#93AF8A', -- bright cyan (light sage)
-    '#EBEBEB', -- bright white
+    '#606060',
+    '#F3BDB9',
+    '#CAA7EA',
+    '#DE99E3',
+    '#F0A1C7',
+    '#C6EED9',
+    '#CDFFC9',
+    '#F4F4F4',
   },
 
   tab_bar = {
     background = '#000000',
     active_tab = {
-      bg_color = '#B56F88',
+      bg_color = '#AB3FB1',
       fg_color = '#000000',
       intensity = 'Bold',
     },
     inactive_tab = {
-      bg_color = '#141414',
-      fg_color = '#FFFFFF',
+      bg_color = '#000000',
+      fg_color = '#606060',
     },
     inactive_tab_hover = {
-      bg_color = '#7F6D9E',
-      fg_color = '#FFFFFF',
+      bg_color = '#9000EE',
+      fg_color = '#F4F4F4',
     },
     new_tab = {
-      bg_color = '#141414',
-      fg_color = '#FFFFFF',
+      bg_color = '#000000',
+      fg_color = '#606060',
     },
     new_tab_hover = {
-      bg_color = '#7F6D9E',
-      fg_color = '#FFFFFF',
+      bg_color = '#9000EE',
+      fg_color = '#F4F4F4',
     },
   },
 
   -- Visual bell color
-  visual_bell = '#B56F88',
+  visual_bell = '#AB3FB1',
 }
 
 -- Enhanced key bindings (your existing ones plus useful additions)
