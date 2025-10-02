@@ -50,125 +50,7 @@ table.insert(config.hyperlink_rules, {
   format = '$0',
 })
 
--- -- Keta theme
--- config.colors = {
---   background = '#000000',
---   foreground = '#FFFFFF',
---   cursor_bg = '#B56F88',
---   cursor_fg = '#000000',
---   cursor_border = '#B56F88',
---   selection_fg = '#FFFFFF',
---   selection_bg = '#808080',
---
---   ansi = {
---     '#000000',
---     '#C55A5A',
---     '#7F6D9E',
---     '#B56F88',
---     '#5E8C7A',
---     '#9C6D9A',
---     '#78997C',
---     '#F5F5F5',
---   },
---   brights = {
---     '#606060',
---     '#D77272',
---     '#9989B8',
---     '#C7869E',
---     '#7AAA98',
---     '#B784B4',
---     '#93AF8A',
---     '#EBEBEB',
---   },
---
---   tab_bar = {
---     background = '#000000',
---     active_tab = {
---       bg_color = '#B56F88',
---       fg_color = '#000000',
---       intensity = 'Bold',
---     },
---     inactive_tab = {
---       bg_color = '#141414',
---       fg_color = '#FFFFFF',
---     },
---     inactive_tab_hover = {
---       bg_color = '#7F6D9E',
---       fg_color = '#FFFFFF',
---     },
---     new_tab = {
---       bg_color = '#141414',
---       fg_color = '#FFFFFF',
---     },
---     new_tab_hover = {
---       bg_color = '#7F6D9E',
---       fg_color = '#FFFFFF',
---     },
---   },
---
---   -- Visual bell color
---   visual_bell = '#B56F88',
--- }
-
--- -- Psychosis theme
--- config.colors = {
---   background = '#000000',
---   foreground = '#F4F4F4',
---   cursor_bg = '#AB3FB1',
---   cursor_fg = '#000000',
---   cursor_border = '#AB3FB1',
---   selection_fg = '#F4F4F4',
---   selection_bg = '#606060',
---
---   ansi = {
---     '#000000',
---     '#CB2F2D',
---     '#9000EE',
---     '#AB3FB1',
---     '#B7306E',
---     '#52D283',
---     '#7DD275',
---     '#F4F4F4',
---   },
---   brights = {
---     '#606060',
---     '#F3BDB9',
---     '#CAA7EA',
---     '#DE99E3',
---     '#F0A1C7',
---     '#C6EED9',
---     '#CDFFC9',
---     '#F4F4F4',
---   },
---
---   tab_bar = {
---     background = '#000000',
---     active_tab = {
---       bg_color = '#AB3FB1',
---       fg_color = '#000000',
---       intensity = 'Bold',
---     },
---     inactive_tab = {
---       bg_color = '#000000',
---       fg_color = '#606060',
---     },
---     inactive_tab_hover = {
---       bg_color = '#9000EE',
---       fg_color = '#F4F4F4',
---     },
---     new_tab = {
---       bg_color = '#000000',
---       fg_color = '#606060',
---     },
---     new_tab_hover = {
---       bg_color = '#9000EE',
---       fg_color = '#F4F4F4',
---     },
---   },
---
---   -- Visual bell color
---   visual_bell = '#AB3FB1',
--- }
+config.bold_brightens_ansi_colors = "BrightAndBold"
 
 -- Black Metal (Burzum) - https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/wezterm/Black%20Metal%20(Burzum).toml
 -- Swapped ansi slot 1 and 5 only
@@ -185,18 +67,8 @@ config.colors = {
 }
 
 config.window_background_gradient = {
-  orientation = {
-    Radial = {
-      cx = 0,
-      cy = 0,
-      radius = 1.5,
-    },
-  },
-  colors = {
-    '#000000',
-    '#131B1B',
-    '#000000',
-  },
+  orientation = { Radial = { cx = 0, cy = 0, radius = 1.5, }, },
+  colors = { '#000000', '#131B1B', '#000000', },
 }
 
 -- Enhanced key bindings (your existing ones plus useful additions)
@@ -207,15 +79,12 @@ config.keys = {
   { key = '=',     mods = 'CMD',       action = wezterm.action.IncreaseFontSize },
   { key = '-',     mods = 'CMD',       action = wezterm.action.DecreaseFontSize },
   { key = '0',     mods = 'CMD',       action = wezterm.action.ResetFontSize },
-
   -- Tab management
   { key = 'n',     mods = 'CMD',       action = wezterm.action.SpawnTab 'CurrentPaneDomain' },
   { key = 'w',     mods = 'CMD',       action = wezterm.action.CloseCurrentTab { confirm = false } },
-
   -- Window management
   { key = 'n',     mods = 'CMD|SHIFT', action = wezterm.action.SpawnWindow },
   { key = 'Enter', mods = 'CMD',       action = wezterm.action.ToggleFullScreen },
-
   -- Tab navigation
   { key = '1',     mods = 'CMD',       action = wezterm.action.ActivateTab(0) },
   { key = '2',     mods = 'CMD',       action = wezterm.action.ActivateTab(1) },
@@ -226,11 +95,9 @@ config.keys = {
   { key = '7',     mods = 'CMD',       action = wezterm.action.ActivateTab(6) },
   { key = '8',     mods = 'CMD',       action = wezterm.action.ActivateTab(7) },
   { key = '9',     mods = 'CMD',       action = wezterm.action.ActivateTab(8) },
-
   -- Tab navigation with brackets
   { key = '[',     mods = 'CMD|SHIFT', action = wezterm.action.ActivateTabRelative(-1) },
   { key = ']',     mods = 'CMD|SHIFT', action = wezterm.action.ActivateTabRelative(1) },
-
   -- Useful additions
   { key = 'k',     mods = 'CMD|SHIFT', action = wezterm.action.ClearScrollback 'ScrollbackAndViewport' },
   { key = 'r',     mods = 'CMD',       action = wezterm.action.ReloadConfiguration },
