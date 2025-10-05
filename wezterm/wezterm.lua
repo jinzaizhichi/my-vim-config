@@ -1,20 +1,17 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
--- Font & Display (keeping your preferences)
 config.font = wezterm.font('0xProto Nerd Font')
 config.font_size = 16.0
 
--- Valid font rendering improvements
 config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 config.bold_brightens_ansi_colors = true
-config.font_shaper = 'Harfbuzz' -- Explicitly use HarfBuzz (usually default)
-config.cell_width = 1.0         -- Adjust character cell width if needed
-config.line_height = 1.0        -- Adjust line spacing
-config.underline_thickness = 1  -- Control underline thickness
-config.underline_position = -2  -- Control underline position
+config.font_shaper = 'Harfbuzz'
+config.cell_width = 1.0
+config.line_height = 1.0
+config.underline_thickness = 1
+config.underline_position = -2
 
--- Window Appearance
 config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
 config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
@@ -25,12 +22,10 @@ config.enable_scroll_bar = false
 config.window_close_confirmation = 'NeverPrompt'
 config.native_macos_fullscreen_mode = true
 
--- Terminal Behavior improvements
 config.scrollback_lines = 50000
 config.enable_scroll_bar = false
 config.term = 'wezterm'
 
--- Performance & Features
 config.max_fps = 120
 config.front_end = 'WebGpu'
 config.webgpu_power_preference = 'HighPerformance'
@@ -38,12 +33,10 @@ config.enable_kitty_graphics = true
 config.animation_fps = 1
 config.cursor_blink_rate = 0
 
--- System
 config.automatically_reload_config = true
 config.check_for_updates = false
 config.audible_bell = 'Disabled'
 
--- Enhanced hyperlink rules
 config.hyperlink_rules = wezterm.default_hyperlink_rules()
 table.insert(config.hyperlink_rules, {
   regex = [[\b\w+://[\w.-]+\S*\b]],
@@ -63,7 +56,7 @@ config.colors = {
   selection_bg = "#c1c1c1",
   selection_fg = "#000000",
   ansi = { "#000000", "#999999", "#ddeecc", "#99bbaa", "#888888", "#5f8787", "#aaaaaa", "#c1c1c1" },
-  brights = { "#333333", "#999999", "#ddeecc", "#99bbaa", "#888888", "#5f8787", "#aaaaaa", "#c1c1c1" },
+  brights = { "#4A4A4A", "#999999", "#ddeecc", "#99bbaa", "#888888", "#5f8787", "#aaaaaa", "#c1c1c1" },
 }
 
 config.window_background_gradient = {
@@ -71,21 +64,16 @@ config.window_background_gradient = {
   colors = { '#000000', '#131B1B', '#000000', },
 }
 
--- Enhanced key bindings (your existing ones plus useful additions)
 config.keys = {
-  -- Your existing clipboard and font controls
   { key = 'v',     mods = 'CMD',       action = wezterm.action.PasteFrom 'Clipboard' },
   { key = 'c',     mods = 'CMD',       action = wezterm.action.CopyTo 'Clipboard' },
   { key = '=',     mods = 'CMD',       action = wezterm.action.IncreaseFontSize },
   { key = '-',     mods = 'CMD',       action = wezterm.action.DecreaseFontSize },
   { key = '0',     mods = 'CMD',       action = wezterm.action.ResetFontSize },
-  -- Tab management
   { key = 'n',     mods = 'CMD',       action = wezterm.action.SpawnTab 'CurrentPaneDomain' },
   { key = 'w',     mods = 'CMD',       action = wezterm.action.CloseCurrentTab { confirm = false } },
-  -- Window management
   { key = 'n',     mods = 'CMD|SHIFT', action = wezterm.action.SpawnWindow },
   { key = 'Enter', mods = 'CMD',       action = wezterm.action.ToggleFullScreen },
-  -- Tab navigation
   { key = '1',     mods = 'CMD',       action = wezterm.action.ActivateTab(0) },
   { key = '2',     mods = 'CMD',       action = wezterm.action.ActivateTab(1) },
   { key = '3',     mods = 'CMD',       action = wezterm.action.ActivateTab(2) },
@@ -95,10 +83,8 @@ config.keys = {
   { key = '7',     mods = 'CMD',       action = wezterm.action.ActivateTab(6) },
   { key = '8',     mods = 'CMD',       action = wezterm.action.ActivateTab(7) },
   { key = '9',     mods = 'CMD',       action = wezterm.action.ActivateTab(8) },
-  -- Tab navigation with brackets
   { key = '[',     mods = 'CMD|SHIFT', action = wezterm.action.ActivateTabRelative(-1) },
   { key = ']',     mods = 'CMD|SHIFT', action = wezterm.action.ActivateTabRelative(1) },
-  -- Useful additions
   { key = 'k',     mods = 'CMD|SHIFT', action = wezterm.action.ClearScrollback 'ScrollbackAndViewport' },
   { key = 'r',     mods = 'CMD',       action = wezterm.action.ReloadConfiguration },
 }

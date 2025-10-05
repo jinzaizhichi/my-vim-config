@@ -4,18 +4,18 @@
   "floatFactory.floatConfig": {
     "border": true,
     "rounded": true,
-    "borderhighlight": "CocFloating"
+    "borderhighlight": "CocFloatingBorder"
   },
   "suggest.floatConfig": {
     "border": true,
     "rounded": true,
-    "borderhighlight": "CocBorder",
+    "borderhighlight": "CocFloatingBorder",
     "highlight": "CocFloating"
   },
   "diagnostic.floatConfig": {
     "border": true,
     "rounded": true,
-    "borderhighlight": "CocBorder",
+    "borderhighlight": "CocFloatingBorder",
     "highlight": "CocFloating"
   },
   "prettier.trailingComma": "none",

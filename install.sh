@@ -105,6 +105,7 @@ echo "=> Setting up full Vim configuration..."
 mv ~/kawaiDotfiles/vim/* ~/.vim
 mv ~/.vim/keta.vim ~/.vim/pack/plugins/start/vim-airline-themes/autoload/airline/themes
 mv ~/.vim/psychosis.vim ~/.vim/pack/plugins/start/vim-airline-themes/autoload/airline/themes
+mv ~/.vim/black_metal_burzum.vim ~/.vim/pack/plugins/start/vim-airline-themes/autoload/airline/themes
 
 echo "=> Cleaning up..."
 rm ~/.vim/temp.vimrc
