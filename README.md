@@ -1,6 +1,11 @@
 # Dotfiles
 
-Configurations for vim, tmux, zsh, git, and WezTerm. Uses Vim's native plugin management.
+## Configurations for vim, tmux, zsh, git, and WezTerm. Uses Vim's native plugin management.
+
+![screenshot](ss-1.png)
+![screenshot](ss-2.png)
+![screenshot](ss-3.png)
+![screenshot](ss-4.png)
 
 ## Requirements
 
