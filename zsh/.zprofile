@@ -11,6 +11,7 @@ export PATH="$JAVA_HOME/bin:$PATH"
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:/Users/doruk/go/bin
+export PATH="$HOME/.local/bin:$PATH"
 
 export LESS="-N -R -F -X"
 export LESS_TERMCAP_mb=$'\e[1;32m'
