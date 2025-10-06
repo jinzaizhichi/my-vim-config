@@ -51,6 +51,9 @@ fun! startscreen#custom_art()
   let l:win_width = winwidth(0)
   let l:win_height = winheight(0)
 
+  let l:was_modifiable = &l:modifiable
+  setlocal modifiable
+
   %delete _
 
   let l:art_height = len(s:ascii_art)
@@ -76,6 +79,10 @@ fun! startscreen#custom_art()
   call append(line('$'), '')
 
   :1
+
+  if !l:was_modifiable
+    setlocal nomodifiable
+  endif
 
   redraw!
 
@@ -124,7 +131,8 @@ endfun
 augroup startscreen
   autocmd!
   autocmd VimEnter * call startscreen#start()
-  autocmd VimResized * if &buftype ==# 'nofile' && !&modifiable | call startscreen#custom_art() | endif
+  autocmd VimResized * if &buftype ==# 'nofile' | call startscreen#custom_art() | endif
+  autocmd WinEnter * if &buftype ==# 'nofile' && expand('%') == '' | call startscreen#custom_art() | endif
 augroup end
 
 let &cpo = s:save_cpo
