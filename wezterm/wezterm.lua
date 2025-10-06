@@ -87,6 +87,7 @@ config.keys = {
   { key = ']',     mods = 'CMD|SHIFT', action = wezterm.action.ActivateTabRelative(1) },
   { key = 'k',     mods = 'CMD|SHIFT', action = wezterm.action.ClearScrollback 'ScrollbackAndViewport' },
   { key = 'r',     mods = 'CMD',       action = wezterm.action.ReloadConfiguration },
+  { key = "Enter", mods = "SHIFT",     action = wezterm.action { SendString = "\x1b\r" } },
 }
 
 return config
