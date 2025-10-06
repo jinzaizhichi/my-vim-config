@@ -25,7 +25,7 @@ nnoremap <Leader>ga :G add .<CR>
 nnoremap <Leader>gc :vertical G commit<CR>
 nnoremap <Leader>gp :G push<CR>
 nnoremap <Leader>gd :vertical G diff<CR>
-nnoremap <Leader>gl :vertical G log<CR>
+nnoremap <Leader>gl :Commits<CR>
 
 " open netrw
 nnoremap <Leader>t :Explore<CR>

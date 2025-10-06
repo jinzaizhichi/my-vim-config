@@ -55,3 +55,15 @@ command! -bang -nargs=* Buffers
       \     '--input-border=none',
       \   ]
       \ }, <bang>0)
+
+command! -bang -range=% -nargs=* Commits
+      \ let b:fzf_winview = winsaveview() |
+      \ <line1>,<line2>call fzf#vim#commits(<q-args>,
+      \   extend(fzf#vim#with_preview({ "placeholder": "" }), {
+      \     'window': { 'width': 1, 'height': 1, 'xoffset': 0 },
+      \     'options': get(fzf#vim#with_preview({ "placeholder": "" }), 'options', []) + [
+      \       '--border=none',
+      \       '--preview-border=none',
+      \       '--input-border=none',
+      \     ]
+      \   }), <bang>0)
