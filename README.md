@@ -1,30 +1,21 @@
 # Dotfiles
 
-## Configurations for vim, tmux, zsh, git, and WezTerm. Uses Vim's native plugin management.
+My kawai setup :3
+
+## Screenhots
 
 ![screenshot](ss-1.png)
 ![screenshot](ss-2.png)
 ![screenshot](ss-3.png)
 
-## Requirements
-
-- git
-- npm
-- fzf, bat, ripgrep, the_silver_searcher, perl, universal-ctags
-
-Install on macOS:
+## Requirements & Installation
 
 ```bash
 brew install git npm fzf bat ripgrep the_silver_searcher perl universal-ctags
-```
-
-## Installation
-
-```bash
 curl -o- https://raw.githubusercontent.com/dorukozerr/dotfiles/main/install.sh | bash
 ```
 
-This backs up existing configs to ~/dotfiles*backup*<timestamp>/ (including ~/.vimrc, ~/.vim/, ~/.zshrc, ~/.zprofile, ~/.config/tmux/, ~/.scripts/, ~/.gitconfig), sets up all configurations, and installs plugins.
+This backs up existing configs to ~/dotfiles*backup*<timestamp>/ (including ~/.vimrc, ~/.vim/, ~/.zshrc, ~/.zprofile, ~/.config/tmux/, ~/.config/wezterm, ~/.scripts/, ~/.gitconfig), sets up all configurations, and installs plugins.
 
 ## Vim Plugins
 
