@@ -201,9 +201,9 @@ func! OpenSelectedManPage() abort
   bwipeout!
 
   if !empty(section_number)
-    execute 'vertical Man ' . section_number . ' ' . command_name
+    execute 'Man ' . section_number . ' ' . command_name
   else
-    execute 'vertical Man ' . command_name
+    execute 'Man ' . command_name
   endif
 endfunc
 augroup ManSearchResults
