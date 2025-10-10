@@ -1,11 +1,29 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
-config.font = wezterm.font('0xProto Nerd Font')
+config.font = wezterm.font('Hack Nerd Font', { weight = 'Regular', style = 'Normal' })
+config.font_rules = {
+  {
+    intensity = 'Bold',
+    italic = false,
+    font = wezterm.font('Hack Nerd Font', { weight = 'Bold', style = 'Normal' })
+  },
+  {
+    intensity = 'Normal',
+    italic = true,
+    font = wezterm.font('Hack Nerd Font', { weight = 'Regular', style = 'Italic' })
+  },
+  {
+    intensity = 'Bold',
+    italic = true,
+    font = wezterm.font('Hack Nerd Font', { weight = 'Bold', style = 'Italic' })
+  },
+}
 config.font_size = 16.0
+config.warn_about_missing_glyphs = false
+config.allow_square_glyphs_to_overflow_width = "Never"
 
 config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
-config.bold_brightens_ansi_colors = true
 config.font_shaper = 'Harfbuzz'
 config.cell_width = 1.0
 config.line_height = 1.0
@@ -43,9 +61,18 @@ table.insert(config.hyperlink_rules, {
   format = '$0',
 })
 
-config.bold_brightens_ansi_colors = "BrightAndBold"
-
 -- Black Metal - https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/wezterm/Black%20Metal.toml
+-- config.colors = {
+--   foreground = "#c1c1c1",
+--   background = "#000000",
+--   cursor_bg = "#c1c1c1",
+--   cursor_border = "#c1c1c1",
+--   cursor_fg = "#000000",
+--   selection_bg = "#c1c1c1",
+--   selection_fg = "#000000",
+--   ansi = { "#000000", "#486e6f", "#dd9999", "#a06666", "#888888", "#999999", "#aaaaaa", "#c1c1c1" },
+--   brights = { "#404040", "#486e6f", "#dd9999", "#a06666", "#888888", "#999999", "#aaaaaa", "#c1c1c1" },
+-- }
 config.colors = {
   foreground = "#c1c1c1",
   background = "#000000",
@@ -54,8 +81,8 @@ config.colors = {
   cursor_fg = "#000000",
   selection_bg = "#c1c1c1",
   selection_fg = "#000000",
-  ansi = { "#000000", "#486e6f", "#dd9999", "#a06666", "#888888", "#999999", "#aaaaaa", "#c1c1c1" },
-  brights = { "#404040", "#486e6f", "#dd9999", "#a06666", "#888888", "#999999", "#aaaaaa", "#c1c1c1" },
+  ansi = { "#000000", "#5f8787", "#eceee3", "#974b46", "#888888", "#999999", "#aaaaaa", "#c1c1c1" },
+  brights = { "#404040", "#5f8787", "#eceee3", "#974b46", "#888888", "#999999", "#aaaaaa", "#c1c1c1" },
 }
 
 config.keys = {
