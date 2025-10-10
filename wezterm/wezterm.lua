@@ -45,8 +45,7 @@ table.insert(config.hyperlink_rules, {
 
 config.bold_brightens_ansi_colors = "BrightAndBold"
 
--- Black Metal (Burzum) - https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/wezterm/Black%20Metal%20(Burzum).toml
--- Swapped ansi slot 1 and 5 only
+-- Black Metal - https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/wezterm/Black%20Metal.toml
 config.colors = {
   foreground = "#c1c1c1",
   background = "#000000",
