@@ -45,24 +45,18 @@ table.insert(config.hyperlink_rules, {
 
 config.bold_brightens_ansi_colors = "BrightAndBold"
 
--- Black Metal (Burzum) - https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/wezterm/Black%20Metal%20(Burzum).toml
--- Swapped ansi slot 1 and 5 only
+-- Black Metal- https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/wezterm/Black%20Metal.toml
 config.colors = {
   foreground = "#c1c1c1",
   background = "#000000",
   cursor_bg = "#c1c1c1",
   cursor_border = "#c1c1c1",
-  cursor_fg = "#000000",
+  cursor_fg = "#8e8e8e",
   selection_bg = "#c1c1c1",
   selection_fg = "#000000",
-  ansi = { "#000000", "#999999", "#ddeecc", "#99bbaa", "#888888", "#5f8787", "#aaaaaa", "#c1c1c1" },
-  brights = { "#4A4A4A", "#999999", "#ddeecc", "#99bbaa", "#888888", "#5f8787", "#aaaaaa", "#c1c1c1" },
+  ansi = { "#000000", "#486e6f", "#dd9999", "#a06666", "#888888", "#999999", "#aaaaaa", "#c1c1c1" },
+  brights = { "#404040", "#486e6f", "#dd9999", "#a06666", "#888888", "#999999", "#aaaaaa", "#c1c1c1" },
 }
-
--- config.window_background_gradient = {
---   orientation = { Radial = { cx = 0, cy = 0, radius = 1.5, }, },
---   colors = { '#000000', '#131B1B', '#000000', },
--- }
 
 config.keys = {
   { key = 'v',     mods = 'CMD',       action = wezterm.action.PasteFrom 'Clipboard' },

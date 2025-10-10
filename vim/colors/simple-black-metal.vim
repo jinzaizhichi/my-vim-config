@@ -6,7 +6,7 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let g:colors_name = "black-metal-burzum"
+let g:colors_name = "simple-black-metal"
 
 set t_Co=16
 set notermguicolors

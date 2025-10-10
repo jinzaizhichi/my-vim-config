@@ -26,4 +26,4 @@ set nofoldenable
 
 syntax on
 
-colorscheme black-metal-burzum
+colorscheme simple-black-metal

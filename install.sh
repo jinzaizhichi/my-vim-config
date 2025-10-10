@@ -103,9 +103,7 @@ yes | vim -u ~/.vim/temp.vimrc -c 'CocInstall -sync coc-vimlsp coc-sh coc-tsserv
 
 echo "=> Setting up full Vim configuration..."
 mv ~/kawaiDotfiles/vim/* ~/.vim
-mv ~/.vim/keta.vim ~/.vim/pack/plugins/start/vim-airline-themes/autoload/airline/themes
-mv ~/.vim/psychosis.vim ~/.vim/pack/plugins/start/vim-airline-themes/autoload/airline/themes
-mv ~/.vim/black_metal_burzum.vim ~/.vim/pack/plugins/start/vim-airline-themes/autoload/airline/themes
+mv ~/.vim/simple_black_metal.vim ~/.vim/pack/plugins/start/vim-airline-themes/autoload/airline/themes
 
 echo "=> Cleaning up..."
 rm ~/.vim/temp.vimrc

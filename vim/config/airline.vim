@@ -1,6 +1,6 @@
 let g:airline_skip_empty_sections=1
 let g:airline_highlighting_cache=1
-let g:airline_theme='black_metal_burzum'
+let g:airline_theme='simple_black_metal'
 let g:airline_powerline_fonts = 0
 
 let g:webdevicons_enable_airline_statusline=0
