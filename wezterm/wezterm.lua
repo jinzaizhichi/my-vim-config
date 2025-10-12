@@ -62,17 +62,6 @@ table.insert(config.hyperlink_rules, {
 })
 
 -- Black Metal - https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/wezterm/Black%20Metal.toml
--- config.colors = {
---   foreground = "#c1c1c1",
---   background = "#000000",
---   cursor_bg = "#c1c1c1",
---   cursor_border = "#c1c1c1",
---   cursor_fg = "#000000",
---   selection_bg = "#c1c1c1",
---   selection_fg = "#000000",
---   ansi = { "#000000", "#486e6f", "#dd9999", "#a06666", "#888888", "#999999", "#aaaaaa", "#c1c1c1" },
---   brights = { "#404040", "#486e6f", "#dd9999", "#a06666", "#888888", "#999999", "#aaaaaa", "#c1c1c1" },
--- }
 config.colors = {
   foreground = "#c1c1c1",
   background = "#000000",
@@ -81,8 +70,8 @@ config.colors = {
   cursor_fg = "#000000",
   selection_bg = "#c1c1c1",
   selection_fg = "#000000",
-  ansi = { "#000000", "#5f8787", "#eceee3", "#974b46", "#888888", "#999999", "#aaaaaa", "#c1c1c1" },
-  brights = { "#404040", "#5f8787", "#eceee3", "#974b46", "#888888", "#999999", "#aaaaaa", "#c1c1c1" },
+  ansi = { "#000000", "#486e6f", "#dd9999", "#a06666", "#888888", "#999999", "#aaaaaa", "#c1c1c1" },
+  brights = { "#404040", "#486e6f", "#dd9999", "#a06666", "#888888", "#999999", "#aaaaaa", "#c1c1c1" },
 }
 
 config.keys = {
