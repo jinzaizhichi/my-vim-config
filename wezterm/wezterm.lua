@@ -1,25 +1,8 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
-config.font = wezterm.font('Hack Nerd Font', { weight = 'Regular', style = 'Normal' })
-config.font_rules = {
-  {
-    intensity = 'Bold',
-    italic = false,
-    font = wezterm.font('Hack Nerd Font', { weight = 'Bold', style = 'Normal' })
-  },
-  {
-    intensity = 'Normal',
-    italic = true,
-    font = wezterm.font('Hack Nerd Font', { weight = 'Regular', style = 'Italic' })
-  },
-  {
-    intensity = 'Bold',
-    italic = true,
-    font = wezterm.font('Hack Nerd Font', { weight = 'Bold', style = 'Italic' })
-  },
-}
-config.font_size = 16.0
+config.font = wezterm.font('CaskaydiaCove NF')
+config.font_size = 18.0
 config.warn_about_missing_glyphs = false
 config.allow_square_glyphs_to_overflow_width = "Never"
 
@@ -67,11 +50,11 @@ config.colors = {
   background = "#000000",
   cursor_bg = "#c1c1c1",
   cursor_border = "#c1c1c1",
-  cursor_fg = "#000000",
+  cursor_fg = "#8e8e8e",
   selection_bg = "#c1c1c1",
   selection_fg = "#000000",
-  ansi = { "#000000", "#486e6f", "#dd9999", "#a06666", "#888888", "#999999", "#aaaaaa", "#c1c1c1" },
-  brights = { "#404040", "#486e6f", "#dd9999", "#a06666", "#888888", "#999999", "#aaaaaa", "#c1c1c1" },
+  ansi = { "#000000", "#5f8787", "#ddeecc", "#99bbaa", "#888888", "#999999", "#aaaaaa", "#c1c1c1" },
+  brights = { "#404040", "#5f8787", "#ddeecc", "#99bbaa", "#888888", "#999999", "#aaaaaa", "#c1c1c1" },
 }
 
 config.keys = {
