@@ -1,8 +1,8 @@
 let g:fzf_colors = {
       \ 'fg':      ['fg', 'Type'],
       \ 'bg':      ['bg', 'Normal'],
-      \ 'hl':      ['fg', 'String'],
-      \ 'fg+':     ['fg', 'Identifier'],
+      \ 'hl':      ['fg', 'Statement'],
+      \ 'fg+':     ['fg', 'Statement'],
       \ 'bg+':     ['bg', 'Normal'],
       \ 'hl+':     ['fg', 'String'],
       \ 'info':    ['fg', 'Comment'],
