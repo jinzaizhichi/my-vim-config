@@ -91,14 +91,15 @@ Plugins install automatically. Run :helptags ALL after setup.
 
 ### Git (Fugitive)
 
-| Keys                                        | Description       | Mode |
-| :------------------------------------------ | :---------------- | :--- |
-| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>s</kbd> | Status            | n    |
-| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>a</kbd> | Add all           | n    |
-| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>c</kbd> | Commit (vertical) | n    |
-| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>p</kbd> | Push              | n    |
-| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>d</kbd> | Diff (vertical)   | n    |
-| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>l</kbd> | Log (vertical)    | n    |
+| Keys                                        | Description            | Mode |
+| :------------------------------------------ | :--------------------- | :--- |
+| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>s</kbd> | Status                 | n    |
+| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>a</kbd> | Add all                | n    |
+| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>c</kbd> | Commit (vertical)      | n    |
+| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>p</kbd> | Push                   | n    |
+| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>d</kbd> | Diff (vertical)        | n    |
+| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>l</kbd> | Log (vertical)         | n    |
+| <kbd>Leader</kbd> <kbd>g</kbd> <kbd>r</kbd> | Restore focused buffer | n    |
 
 ### Code (CoC)
 

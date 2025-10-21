@@ -26,6 +26,7 @@ nnoremap <Leader>gc :vertical G commit<CR>
 nnoremap <Leader>gp :G push<CR>
 nnoremap <Leader>gd :vertical G diff<CR>
 nnoremap <Leader>gl :Commits<CR>
+nnoremap <Leader>gr :call GitRestoreCurrent()<CR>
 
 " open netrw
 nnoremap <Leader>t :Explore<CR>

@@ -224,3 +224,15 @@ func! CleanFileLineEndings()
   edit!
   echo "File cleaned and reloaded."
 endfunc
+
+func! GitRestoreCurrent()
+  let l:current_file = expand('%:p')
+
+  if empty(l:current_file)
+    echo "No file in current buffer"
+
+    return
+  endif
+
+  execute 'G restore ' . l:current_file
+endfunc
