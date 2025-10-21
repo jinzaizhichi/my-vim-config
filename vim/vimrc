@@ -9,6 +9,7 @@ let g:config_files = [
       \ 'airline.vim',
       \ 'fastfold.vim',
       \ 'coc.vim',
+      \ 'sneak.vim',
       \ ]
 
 for config_file in g:config_files
