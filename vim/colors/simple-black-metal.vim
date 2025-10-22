@@ -34,8 +34,8 @@ hi Visual       ctermfg=5  ctermbg=8    cterm=NONE
 hi VisualNOS    ctermfg=5  ctermbg=8    cterm=NONE
 
 " Search and matches
-hi Search       ctermfg=0  ctermbg=11   cterm=NONE
-hi IncSearch    ctermfg=0  ctermbg=3    cterm=NONE
+hi Search       ctermfg=2  ctermbg=11   cterm=NONE
+hi IncSearch    ctermfg=2  ctermbg=3    cterm=NONE
 hi MatchParen   ctermfg=2  ctermbg=5    cterm=NONE
 
 " Popup menu
