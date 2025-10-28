@@ -7,5 +7,5 @@ map S <Plug>Sneak_S
 
 hi! link Sneak Search
 hi! link SneakCurrent CurSearch
-hi! SneakLabel ctermfg=2 ctermbg=3 cterm=bold
-hi! SneakLabelMask ctermfg=4 ctermbg=3 cterm=NONE
+hi! SneakLabel ctermfg=0 ctermbg=3 cterm=bold
+hi! SneakLabelMask ctermfg=8 ctermbg=1 cterm=NONE
