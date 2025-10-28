@@ -197,8 +197,6 @@ function startup_sequence() {
   if [ ${#messages[@]} -gt 0 ]; then
     echo "\033[1m${messages[$((RANDOM % ${#messages[@]} + 1))]}\033[0m"
   fi
-
-  echo
 }
 
 startup_sequence
