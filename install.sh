@@ -48,6 +48,7 @@ chmod +x ~/.scripts/kill_process.sh
 chmod +x ~/.scripts/tmux_save_session.sh
 chmod +x ~/.scripts/tmux_restore_session.sh
 chmod +x ~/.scripts/tmux_fzf_switcher.sh
+chmod +x ~/.scripts/tmux_file_picker.sh
 
 echo "=> Setting up Zsh..."
 mv ~/kawaiDotfiles/zsh/.zshrc ~/
