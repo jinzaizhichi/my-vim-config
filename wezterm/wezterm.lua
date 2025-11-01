@@ -3,11 +3,11 @@ local config = wezterm.config_builder()
 
 config.font = wezterm.font('CaskaydiaCove NF')
 config.font_size = 18.0
-config.warn_about_missing_glyphs = false
-config.allow_square_glyphs_to_overflow_width = "Never"
+config.warn_about_missing_glyphs = true
+config.allow_square_glyphs_to_overflow_width = "Always"
 
 config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
-config.font_shaper = 'Harfbuzz'
+config.font_shaper = "Harfbuzz"
 config.cell_width = 1.0
 config.line_height = 1.0
 config.underline_thickness = 1
@@ -23,19 +23,19 @@ config.enable_scroll_bar = false
 config.window_close_confirmation = 'NeverPrompt'
 config.native_macos_fullscreen_mode = true
 
-config.scrollback_lines = 50000
+config.scrollback_lines = 5000
 config.enable_scroll_bar = false
 config.term = 'wezterm'
 
 config.max_fps = 120
-config.front_end = 'WebGpu'
+config.front_end = "WebGpu"
 config.webgpu_power_preference = 'HighPerformance'
 config.enable_kitty_graphics = true
-config.animation_fps = 1
+config.animation_fps = 60
 config.cursor_blink_rate = 0
 
 config.automatically_reload_config = true
-config.check_for_updates = false
+config.check_for_updates = true
 config.audible_bell = 'Disabled'
 
 config.hyperlink_rules = wezterm.default_hyperlink_rules()
@@ -43,6 +43,8 @@ table.insert(config.hyperlink_rules, {
   regex = [[\b\w+://[\w.-]+\S*\b]],
   format = '$0',
 })
+
+config.display_pixel_geometry = "BGR"
 
 -- Black Metal - https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/wezterm/Black%20Metal.toml
 config.colors = {
@@ -53,8 +55,20 @@ config.colors = {
   cursor_fg = "#000000",
   selection_bg = "#c1c1c1",
   selection_fg = "#000000",
-  ansi = { "000000", "#5f8787", "#ddeecc", "#99bbaa", "#888888", "#999999", "#aaaaaa", "#c1c1c1" },
-  brights = { "404040", "#5f8787", "#ddeecc", "#99bbaa", "#888888", "#999999", "#aaaaaa", "#c1c1c1" },
+  ansi = { "#000000", "#5f8787", "#ddeecc", "#99bbaa", "#888888", "#999999", "#aaaaaa", "#c1c1c1" },
+  brights = { "#404040", "#5f8787", "#ddeecc", "#99bbaa", "#888888", "#999999", "#aaaaaa", "#c1c1c1" },
+}
+
+config.window_background_gradient = {
+  colors = { '#000000', '#0E1414', '#000000', '#000000' },
+  interpolation = "CatmullRom",
+  orientation = {
+    Radial = {
+      cx = 0.75,
+      cy = 0.75,
+      radius = 1.25,
+    },
+  },
 }
 
 config.keys = {
