@@ -66,6 +66,9 @@ nnoremap <Leader>bt :call BufferToggle()<CR>
 nnoremap <leader>bda :%bdelete<Bar>edit #<Bar>normal`"<CR>
 nnoremap <Leader>bdc :call BufferDeleteCurrent()<CR>
 
+" window splits
+nnoremap <Leader>vs :vsplit<CR>
+
 " increase/decrease pane width
 nnoremap <Leader>ipw :vertical resize +10<CR>
 nnoremap <Leader>dpw :vertical resize -10<CR>
@@ -85,7 +88,6 @@ vnoremap <leader>pr y:%s/\V<C-r>=escape(@", '/\')<CR>//g<Left><Left>
 
 " Visual mode: replace highlighted text with highlighted value + entered value
 vnoremap <leader>pa y:%s/\V<C-r>=escape(@", '/\')<CR>/<C-r>=escape(@", '/\&~')<CR>/g<Left><Left>
-
 
 " Auto-center screen after search navigation
 nnoremap <silent> n nzz

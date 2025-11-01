@@ -79,6 +79,7 @@ Plugins install automatically. Run :helptags ALL after setup.
 | <kbd>Leader</kbd> <kbd>b</kbd> <kbd>d</kbd> <kbd>c</kbd> | Delete current buffer     | n    |
 | <kbd>Leader</kbd> <kbd>b</kbd> <kbd>d</kbd> <kbd>a</kbd> | Delete all except current | n    |
 | <kbd>Leader</kbd> <kbd>b</kbd> <kbd>t</kbd>              | Toggle maximize/restore   | n    |
+| <kbd>Leader</kbd> <kbd>v</kbd> <kbd>s</kbd>              | Invoke `:vs` command      | n    |
 
 ### Window & Pane
 
