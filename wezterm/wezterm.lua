@@ -14,7 +14,8 @@ config.underline_thickness = 1
 config.underline_position = -2
 
 config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
-config.enable_tab_bar = true
+config.enable_tab_bar = false
+config.window_decorations = "RESIZE"
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = false
 config.use_fancy_tab_bar = false
@@ -46,7 +47,6 @@ table.insert(config.hyperlink_rules, {
 
 config.display_pixel_geometry = "BGR"
 
--- Black Metal - https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/wezterm/Black%20Metal.toml
 config.colors = {
   foreground = "#c1c1c1",
   background = "#000000",
@@ -55,12 +55,12 @@ config.colors = {
   cursor_fg = "#000000",
   selection_bg = "#c1c1c1",
   selection_fg = "#000000",
-  ansi = { "#000000", "#5f8787", "#ddeecc", "#99bbaa", "#888888", "#999999", "#aaaaaa", "#c1c1c1" },
-  brights = { "#404040", "#5f8787", "#ddeecc", "#99bbaa", "#888888", "#999999", "#aaaaaa", "#c1c1c1" },
+  ansi = { "#000000", "#b89090", "#dcc8d8", "#c8a8b8", "#888888", "#999999", "#aaaaaa", "#c1c1c1" },
+  brights = { "#404040", "#b89090", "#dcc8d8", "#c8a8b8", "#888888", "#999999", "#aaaaaa", "#c1c1c1" },
 }
 
 config.window_background_gradient = {
-  colors = { '#000000', '#0E1414', '#000000', '#000000' },
+  colors = { '#000000', '#0a0508', '#000000', '#000000' },
   interpolation = "CatmullRom",
   orientation = {
     Radial = {
