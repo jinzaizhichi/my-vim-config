@@ -1,0 +1,32 @@
+#!/usr/bin/env sh
+
+# Load scripting addition
+sudo yabai --load-sa
+
+# Bar settings - leave space for SketchyBar
+yabai -m config external_bar all:32:0
+
+# Layout
+yabai -m config layout bsp
+
+# Padding and gaps
+yabai -m config top_padding    0
+yabai -m config bottom_padding 10
+yabai -m config left_padding   0
+yabai -m config right_padding  0
+yabai -m config window_gap     0
+
+# Mouse settings
+yabai -m config mouse_follows_focus off
+yabai -m config focus_follows_mouse off
+
+# Window modifications
+yabai -m config window_shadow float
+yabai -m config window_opacity on
+yabai -m config active_window_opacity 1.0
+yabai -m config normal_window_opacity 0.9
+
+# Disable apps that don't tile well
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^Android Emulator" manage=off
