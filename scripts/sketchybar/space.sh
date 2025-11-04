@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source "$HOME/.config/sketchybar/colors.sh"
+source "$HOME/.scripts/sketchybar/colors.sh"
 
 if [ "$SELECTED" = "true" ]; then
   sketchybar --set $NAME background.color=0xffdcc8d8 \
