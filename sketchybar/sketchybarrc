@@ -5,9 +5,14 @@ source "$HOME/.scripts/sketchybar/colors.sh"
 PLUGIN_DIR="$HOME/.scripts/sketchybar/"
 BAR_HEIGHT=32
 FONT_SIZE=14
-LABEL_FONT_SIZE=13
+LABEL_FONT_SIZE=14
 SPACE_PADDING=12
 ITEM_PADDING=6
+RIGHT_ICON_PADDING_LEFT=0
+RIGHT_ICON_PADDING_RIGHT=4
+RIGHT_LABEL_PADDING_LEFT=0
+RIGHT_LABEL_PADDING_RIGHT=0
+SEPARATOR_PADDING=12
 
 sketchybar --bar height=$BAR_HEIGHT \
   blur_radius=0 \
@@ -71,34 +76,36 @@ do
 
   sketchybar --add item clock right \
     --set clock update_freq=1 \
-    icon="" \
+    icon="" \
     script="$PLUGIN_DIR/clock.sh" \
     background.drawing=off \
-    icon.padding_left=4 \
-    icon.padding_right=2 \
-    label.padding_left=2 \
-    label.padding_right=8
+    icon.padding_left=$RIGHT_ICON_PADDING_LEFT \
+    icon.padding_right=$RIGHT_ICON_PADDING_RIGHT \
+    label.padding_left=$RIGHT_LABEL_PADDING_LEFT \
+    label.padding_right=$RIGHT_LABEL_PADDING_RIGHT
 
   sketchybar --add item separator_r1 right \
     --set separator_r1 icon="|" \
-    icon.padding_left=0 \
-    icon.padding_right=0 \
+    icon.padding_left=$SEPARATOR_PADDING \
+    icon.padding_right=$SEPARATOR_PADDING \
+    label.drawing=off \
     background.drawing=off
 
   sketchybar --add item battery right \
     --set battery update_freq=10 \
-    icon="BAT" \
+    icon="󰁹" \
     script="$PLUGIN_DIR/battery.sh" \
     background.drawing=off \
-    icon.padding_left=4 \
-    icon.padding_right=2 \
-    label.padding_left=2 \
-    label.padding_right=4
+    icon.padding_left=$RIGHT_ICON_PADDING_LEFT \
+    icon.padding_right=$RIGHT_ICON_PADDING_RIGHT \
+    label.padding_left=$RIGHT_LABEL_PADDING_LEFT \
+    label.padding_right=$RIGHT_LABEL_PADDING_RIGHT
 
   sketchybar --add item separator_r2 right \
     --set separator_r2 icon="|" \
-    icon.padding_left=0 \
-    icon.padding_right=0 \
+    icon.padding_left=$SEPARATOR_PADDING \
+    icon.padding_right=$SEPARATOR_PADDING \
+    label.drawing=off \
     background.drawing=off
 
   sketchybar --add item vpn right \
@@ -106,15 +113,35 @@ do
     icon="VPN" \
     script="$PLUGIN_DIR/vpn.sh" \
     background.drawing=off \
-    icon.padding_left=4 \
-    icon.padding_right=2 \
-    label.padding_left=2 \
-    label.padding_right=4
+    icon.padding_left=$RIGHT_ICON_PADDING_LEFT \
+    icon.padding_right=$RIGHT_ICON_PADDING_RIGHT \
+    label.padding_left=$RIGHT_LABEL_PADDING_LEFT \
+    label.padding_right=$RIGHT_LABEL_PADDING_RIGHT
 
   sketchybar --add item separator_r3 right \
     --set separator_r3 icon="|" \
-    icon.padding_left=0 \
-    icon.padding_right=0 \
+    icon.padding_left=$SEPARATOR_PADDING \
+    icon.padding_right=$SEPARATOR_PADDING \
+    label.drawing=off \
+    background.drawing=off
+
+  sketchybar --add item wifi right \
+    --set wifi update_freq=10 \
+    icon="WIFI" \
+    script="$PLUGIN_DIR/wifi.sh" \
+    background.drawing=off \
+    icon.padding_left=$RIGHT_ICON_PADDING_LEFT \
+    icon.padding_right=$RIGHT_ICON_PADDING_RIGHT \
+    label.padding_left=$RIGHT_LABEL_PADDING_LEFT \
+    label.padding_right=$RIGHT_LABEL_PADDING_RIGHT \
+    click_script="open 'x-apple.systempreferences:com.apple.preference.network?Wi-Fi'" \
+    --subscribe wifi wifi_change
+
+  sketchybar --add item separator_r4 right \
+    --set separator_r4 icon="|" \
+    icon.padding_left=$SEPARATOR_PADDING \
+    icon.padding_right=$SEPARATOR_PADDING \
+    label.drawing=off \
     background.drawing=off
 
   sketchybar --add item spotify right \
@@ -122,10 +149,10 @@ do
     icon="♫" \
     script="$PLUGIN_DIR/spotify.sh" \
     background.drawing=off \
-    icon.padding_left=8 \
-    icon.padding_right=2 \
-    label.padding_left=2 \
-    label.padding_right=4 \
+    icon.padding_left=$RIGHT_ICON_PADDING_LEFT \
+    icon.padding_right=$RIGHT_ICON_PADDING_RIGHT \
+    label.padding_left=$RIGHT_LABEL_PADDING_LEFT \
+    label.padding_right=$RIGHT_LABEL_PADDING_RIGHT \
     --subscribe spotify system_woke
 
   sketchybar --update
