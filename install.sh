@@ -41,14 +41,8 @@ mv ~/kawaiDotfiles/tmux ~/.config/
 
 echo "=> Setting up scripts..."
 mv ~/kawaiDotfiles/scripts ~/.scripts
-chmod +x ~/.scripts/commit.sh
-chmod +x ~/.scripts/lazy_grep.sh
-chmod +x ~/.scripts/update_vim_plugins.sh
-chmod +x ~/.scripts/kill_process.sh
-chmod +x ~/.scripts/tmux_save_session.sh
-chmod +x ~/.scripts/tmux_restore_session.sh
-chmod +x ~/.scripts/tmux_fzf_switcher.sh
-chmod +x ~/.scripts/tmux_file_picker.sh
+chmod +x ~/.scripts/*
+chmod +x ~/.scripts/sketchybar/*
 
 echo "=> Setting up Zsh..."
 mv ~/kawaiDotfiles/zsh/.zshrc ~/
