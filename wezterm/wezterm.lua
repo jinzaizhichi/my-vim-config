@@ -60,15 +60,9 @@ config.colors = {
 }
 
 config.window_background_gradient = {
-  colors = { '#000000', '#0a0508', '#000000', '#000000' },
-  interpolation = "CatmullRom",
-  orientation = {
-    Radial = {
-      cx = 0.75,
-      cy = 0.75,
-      radius = 1.25,
-    },
-  },
+  colors = { '#000000', '#0a080a', '#000000' },
+  interpolation = 'Linear',
+  orientation = 'Vertical',
 }
 
 config.keys = {
