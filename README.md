@@ -8,8 +8,6 @@ My kawai setup :3
 ![screenshot](ss-2.png)
 ![screenshot](ss-3.png)
 ![screenshot](ss-4.png)
-![screenshot](ss-5.png)
-![screenshot](ss-6.png)
 
 ## Requirements & Installation
 
