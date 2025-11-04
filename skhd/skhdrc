@@ -54,3 +54,32 @@ ctrl + alt - b : yabai -m space --balance
 ctrl + alt - t : yabai -m space --layout bsp
 ctrl + alt - s : yabai -m space --layout stack
 ctrl + alt - d : yabai -m space --layout float
+
+# Create new space and follow
+ctrl + alt - c : yabai -m space --create && \
+                 index="$(yabai -m query --spaces --display | jq 'map(select(."is-native-fullscreen" == false))[-1].index')" && \
+                 yabai -m space --focus "${index}"
+
+# Destroy current space
+ctrl + alt - q : yabai -m space --destroy
+
+# Move space to next/prev display
+ctrl + alt + cmd - left : yabai -m space --display prev
+ctrl + alt + cmd - right : yabai -m space --display next
+
+# Close focused window
+ctrl + alt - w : yabai -m window --close
+
+# Toggle window split (horizontal/vertical)
+ctrl + alt - e : yabai -m window --toggle split
+
+# Mirror tree (flip layout)
+ctrl + alt - x : yabai -m space --mirror x-axis
+ctrl + alt - y : yabai -m space --mirror y-axis
+
+# Cycle through windows in stack
+ctrl + alt - n : yabai -m window --focus stack.next || yabai -m window --focus stack.first
+ctrl + alt - p : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
+
+# Toggle padding and gaps
+ctrl + alt - g : yabai -m space --toggle padding; yabai -m space --toggle gap
