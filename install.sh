@@ -1,8 +1,8 @@
 #!/bin/bash
 
 set -e
-if ! command -v npm &> /dev/null; then
-    echo "npm is not installed. Please install npm first."
+if ! command -v brew &> /dev/null; then
+    echo "Homebrew is not installed. Please install Homebrew first."
     exit 1
 fi
 
@@ -11,12 +11,20 @@ if ! command -v git &> /dev/null; then
     exit 1
 fi
 
-if ! command -v fortune &> /dev/null; then
-    echo "fortune is not installed. Please install fortune first."
+if ! command -v npm &> /dev/null; then
+    echo "npm is not installed. Please install npm first."
+    exit 1
+fi
+
+if ! command -v watchman &> /dev/null; then
+    echo "watchman is not installed. Please install watchman first."
     exit 1
 fi
 
 echo "=> Starting dotfiles installation..."
+
+echo "=> Installing required Homebrew packages..."
+brew install fzf bat ripgrep the_silver_searcher perl universal-ctags fd
 
 echo "=> Installing yarn globally..."
 npm i -g yarn@latest > /dev/null
@@ -28,7 +36,7 @@ backup_dir="$HOME/dotfiles_backup_$(date +%Y%m%d_%H%M%S)"
 
 echo "=> Creating backup directory at $backup_dir"
 mkdir -p "$backup_dir"
-for file in ~/.vim ~/.vimrc ~/.config/tmux ~/.scripts ~/.zshrc ~/.zprofile ~/.gitconfig ~/.config/wezterm; do
+for file in ~/.vim ~/.vimrc ~/.config/tmux ~/.scripts ~/.zshrc ~/.zprofile ~/.gitconfig ~/.config/wezterm ~/bin; do
     if [ -e "$file" ]; then
         echo "=> Backing up $file"
         mv "$file" "$backup_dir/"
@@ -59,6 +67,21 @@ mv ~/kawaiDotfiles/wezterm ~/.config
 
 echo "=> Setting up .gitconfig"
 mv ~/kawaiDotfiles/git/.gitconfig ~/
+
+echo "=> Setting up Watchman..."
+mkdir -p ~/.local/var/run/watchman/doruk-state
+mkdir -p ~/.local/var/log/watchman
+chmod 700 ~/.local/var/run/watchman/doruk-state
+chmod 755 ~/.local/var/log/watchman
+mkdir -p ~/bin
+mv ~/kawaiDotfiles/bin/watchman ~/bin/watchman
+chmod +x ~/bin/watchman
+if command -v watchman &> /dev/null; then
+    echo "=> Stopping existing Watchman processes..."
+    /opt/homebrew/bin/watchman shutdown-server &> /dev/null || true
+    pkill -f watchman &> /dev/null || true
+fi
+echo "=> Watchman configuration complete"
 
 echo "=> Setting up temp Vim config"
 mkdir -p ~/.vim/pack/plugins/start
