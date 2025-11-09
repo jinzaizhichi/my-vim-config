@@ -1,139 +1,256 @@
 #!/bin/bash
 
 set -e
-if ! command -v brew &> /dev/null; then
-    echo "Homebrew is not installed. Please install Homebrew first."
-    exit 1
-fi
 
-if ! command -v git &> /dev/null; then
-    echo "git is not installed. Please install git first."
-    exit 1
-fi
+BACKUP_DIR="$HOME/dotfiles_backup_$(date +%Y%m%d_%H%M%S)"
+DOTFILES_DIR="$HOME/kawaiDotfiles"
 
-if ! command -v npm &> /dev/null; then
-    echo "npm is not installed. Please install npm first."
-    exit 1
-fi
+log_info() {
+    echo "[INFO] $1"
+}
 
-if ! command -v watchman &> /dev/null; then
-    echo "watchman is not installed. Please install watchman first."
-    exit 1
-fi
+log_error() {
+    echo "[ERROR] $1" >&2
+}
 
-echo "=> Starting dotfiles installation..."
+check_and_install_package() {
+    local package=$1
+    local install_cmd=$2
 
-echo "=> Installing required Homebrew packages..."
-brew install fzf bat ripgrep the_silver_searcher perl universal-ctags fd
-
-echo "=> Installing yarn globally..."
-npm i -g yarn@latest > /dev/null
-
-echo "=> Cloning dotfiles repository..."
-git clone git@github.com:dorukozerr/dotfiles.git ~/kawaiDotfiles &> /dev/null
-
-backup_dir="$HOME/dotfiles_backup_$(date +%Y%m%d_%H%M%S)"
-
-echo "=> Creating backup directory at $backup_dir"
-mkdir -p "$backup_dir"
-for file in ~/.vim ~/.vimrc ~/.config/tmux ~/.scripts ~/.zshrc ~/.zprofile ~/.gitconfig ~/.config/wezterm ~/bin; do
-    if [ -e "$file" ]; then
-        echo "=> Backing up $file"
-        mv "$file" "$backup_dir/"
+    if ! command -v "$package" &> /dev/null; then
+        log_info "$package is not installed. Installing..."
+        eval "$install_cmd"
+        if ! command -v "$package" &> /dev/null; then
+            log_error "Failed to install $package"
+            exit 1
+        fi
+        log_info "$package installed successfully"
+    else
+        log_info "$package is already installed"
     fi
-done
+}
 
-echo "=> Setting up Tmux..."
-mkdir -p ~/.config
-mv ~/kawaiDotfiles/tmux ~/.config/
+check_dependencies() {
+    log_info "Checking system dependencies..."
 
-echo "=> Setting up scripts..."
-mv ~/kawaiDotfiles/scripts ~/.scripts
-chmod +x ~/.scripts/commit.sh
-chmod +x ~/.scripts/lazy_grep.sh
-chmod +x ~/.scripts/update_vim_plugins.sh
-chmod +x ~/.scripts/kill_process.sh
-chmod +x ~/.scripts/tmux_save_session.sh
-chmod +x ~/.scripts/tmux_restore_session.sh
-chmod +x ~/.scripts/tmux_fzf_switcher.sh
-chmod +x ~/.scripts/tmux_file_picker.sh
+    check_and_install_package "brew" '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
+    check_and_install_package "git" "brew install git"
+    check_and_install_package "npm" "brew install node"
+    check_and_install_package "watchman" "brew install watchman"
+    check_and_install_package "yarn" "npm install -g yarn@latest"
 
-echo "=> Setting up Zsh..."
-mv ~/kawaiDotfiles/zsh/.zshrc ~/
-mv ~/kawaiDotfiles/zsh/.zprofile ~/
+    local brew_packages=("fzf" "bat" "ripgrep" "the_silver_searcher" "perl" "universal-ctags" "fd")
 
-echo "=> Setting up WezTerm..."
-mv ~/kawaiDotfiles/wezterm ~/.config
+    for package in "${brew_packages[@]}"; do
+        if ! command -v "$package" &> /dev/null && ! brew list "$package" &> /dev/null; then
+            log_info "Installing $package via Homebrew..."
+            brew install "$package"
+        else
+            log_info "$package is already installed"
+        fi
+    done
+}
 
-echo "=> Setting up .gitconfig"
-mv ~/kawaiDotfiles/git/.gitconfig ~/
+clone_dotfiles() {
+    log_info "Cloning dotfiles repository..."
+    if [ -d "$DOTFILES_DIR" ]; then
+        log_info "Dotfiles directory already exists, removing..."
+        rm -rf "$DOTFILES_DIR"
+    fi
+    git clone git@github.com:dorukozerr/dotfiles.git "$DOTFILES_DIR" &> /dev/null
+    log_info "Dotfiles cloned successfully"
+}
 
-echo "=> Setting up Watchman..."
-mkdir -p ~/.local/var/run/watchman/doruk-state
-mkdir -p ~/.local/var/log/watchman
-chmod 700 ~/.local/var/run/watchman/doruk-state
-chmod 755 ~/.local/var/log/watchman
-mkdir -p ~/bin
-mv ~/kawaiDotfiles/bin/watchman ~/bin/watchman
-chmod +x ~/bin/watchman
-if command -v watchman &> /dev/null; then
-    echo "=> Stopping existing Watchman processes..."
-    /opt/homebrew/bin/watchman shutdown-server &> /dev/null || true
-    pkill -f watchman &> /dev/null || true
-fi
-echo "=> Watchman configuration complete"
+backup_existing_configs() {
+    log_info "Creating backup directory at $BACKUP_DIR"
+    mkdir -p "$BACKUP_DIR"
 
-echo "=> Setting up temp Vim config"
-mkdir -p ~/.vim/pack/plugins/start
+    local files_to_backup=(
+        "$HOME/.vim"
+        "$HOME/.vimrc"
+        "$HOME/.config/tmux"
+        "$HOME/.scripts"
+        "$HOME/.zshrc"
+        "$HOME/.zprofile"
+        "$HOME/.gitconfig"
+        "$HOME/.config/wezterm"
+        "$HOME/bin"
+    )
 
-cat > ~/.vim/temp.vimrc << 'EOF'
+    for file in "${files_to_backup[@]}"; do
+        if [ -e "$file" ]; then
+            log_info "Backing up $(basename "$file")"
+            mv "$file" "$BACKUP_DIR/"
+        fi
+    done
+}
+
+setup_tmux() {
+    log_info "Setting up Tmux configuration..."
+    mkdir -p "$HOME/.config"
+    mv "$DOTFILES_DIR/tmux" "$HOME/.config/"
+    log_info "Tmux setup complete"
+}
+
+setup_scripts() {
+    log_info "Setting up custom scripts..."
+    mv "$DOTFILES_DIR/scripts" "$HOME/.scripts"
+
+    local scripts=(
+        "commit.sh"
+        "lazy_grep.sh"
+        "update_vim_plugins.sh"
+        "kill_process.sh"
+        "tmux_save_session.sh"
+        "tmux_restore_session.sh"
+        "tmux_fzf_switcher.sh"
+        "tmux_file_picker.sh"
+    )
+
+    for script in "${scripts[@]}"; do
+        chmod +x "$HOME/.scripts/$script"
+    done
+
+    log_info "Scripts setup complete"
+}
+
+setup_zsh() {
+    log_info "Setting up Zsh configuration..."
+    mv "$DOTFILES_DIR/zsh/.zshrc" "$HOME/"
+    mv "$DOTFILES_DIR/zsh/.zprofile" "$HOME/"
+    log_info "Zsh setup complete"
+}
+
+setup_wezterm() {
+    log_info "Setting up WezTerm configuration..."
+    mv "$DOTFILES_DIR/wezterm" "$HOME/.config/"
+    log_info "WezTerm setup complete"
+}
+
+setup_git() {
+    log_info "Setting up Git configuration..."
+    mv "$DOTFILES_DIR/git/.gitconfig" "$HOME/"
+    log_info "Git setup complete"
+}
+
+setup_watchman() {
+    log_info "Setting up Watchman..."
+    mkdir -p "$HOME/.local/var/run/watchman/doruk-state"
+    mkdir -p "$HOME/.local/var/log/watchman"
+    chmod 700 "$HOME/.local/var/run/watchman/doruk-state"
+    chmod 755 "$HOME/.local/var/log/watchman"
+    mkdir -p "$HOME/bin"
+    mv "$DOTFILES_DIR/bin/watchman" "$HOME/bin/watchman"
+    chmod +x "$HOME/bin/watchman"
+
+    if command -v watchman &> /dev/null; then
+        log_info "Stopping existing Watchman processes..."
+        /opt/homebrew/bin/watchman shutdown-server &> /dev/null || true
+        pkill -f watchman &> /dev/null || true
+    fi
+
+    log_info "Watchman setup complete"
+}
+
+setup_vim_temp() {
+    log_info "Setting up temporary Vim configuration..."
+    mkdir -p "$HOME/.vim/pack/plugins/start"
+
+    cat > "$HOME/.vim/temp.vimrc" << 'EOF'
 set nocompatible
 set hidden
 set updatetime=100
 let g:coc_disable_startup_warning = 1
 EOF
 
-cd ~/.vim/pack/plugins/start
+    log_info "Temporary Vim config created"
+}
 
-echo "=> Setting up Vim plugins..."
-git clone https://github.com/tpope/vim-fugitive.git &> /dev/null
-git clone https://github.com/junegunn/fzf.git &> /dev/null
-git clone https://github.com/junegunn/fzf.vim.git &> /dev/null
-git clone https://github.com/neoclide/coc.nvim.git &> /dev/null
-git clone https://github.com/vim-airline/vim-airline.git &> /dev/null
-git clone https://github.com/vim-airline/vim-airline-themes.git &> /dev/null
-git clone https://github.com/ryanoasis/vim-devicons.git &> /dev/null
-git clone git@github.com:dorukozerr/kisuke.vim.git &> /dev/null
-git clone https://github.com/MaxMEllon/vim-jsx-pretty.git &> /dev/null
-git clone https://github.com/Konfekt/FastFold.git &> /dev/null
-git clone git@github.com:adelarsq/vim-matchit.git &> /dev/null
-git clone https://github.com/mg979/vim-visual-multi.git &> /dev/null
-git clone git@github.com:justinmk/vim-sneak.git &> /dev/null
-echo "=> Vim plugins base installation finished..."
+install_vim_plugins() {
+    log_info "Installing Vim plugins..."
+    cd "$HOME/.vim/pack/plugins/start"
 
-cd coc.nvim
-echo "=> Finishing CoC installation..."
-npm ci &> /dev/null
-cd ..
-cd fzf
-echo "=> Finishing FZF installation..."
-./install --all &> /dev/null
-cd ..
-cd kisuke.vim
-echo "=> Building Kisuke..."
-yarn build &> /dev/null
-cd ~
+    local plugins=(
+        "https://github.com/tpope/vim-fugitive.git"
+        "https://github.com/junegunn/fzf.git"
+        "https://github.com/junegunn/fzf.vim.git"
+        "https://github.com/neoclide/coc.nvim.git"
+        "https://github.com/vim-airline/vim-airline.git"
+        "https://github.com/vim-airline/vim-airline-themes.git"
+        "https://github.com/ryanoasis/vim-devicons.git"
+        "git@github.com:dorukozerr/kisuke.vim.git"
+        "https://github.com/MaxMEllon/vim-jsx-pretty.git"
+        "https://github.com/Konfekt/FastFold.git"
+        "git@github.com:adelarsq/vim-matchit.git"
+        "https://github.com/mg979/vim-visual-multi.git"
+        "git@github.com:justinmk/vim-sneak.git"
+    )
 
-echo "=> Installing CoC extensions..."
-yes | vim -u ~/.vim/temp.vimrc -c 'CocInstall -sync coc-vimlsp coc-sh coc-tsserver coc-go coc-html coc-css @yaegassy/coc-tailwindcss3 coc-json coc-yaml coc-prettier coc-eslint coc-dotenv coc-sql coc-lua coc-svg' -c 'qall!' > /dev/null 2>&1
+    for plugin in "${plugins[@]}"; do
+        git clone "$plugin" &> /dev/null
+    done
 
-echo "=> Setting up full Vim configuration..."
-mv ~/kawaiDotfiles/vim/* ~/.vim
-mv ~/.vim/simple_black_metal.vim ~/.vim/pack/plugins/start/vim-airline-themes/autoload/airline/themes
+    log_info "Vim plugins cloned successfully"
+}
 
-echo "=> Cleaning up..."
-rm ~/.vim/temp.vimrc
-rm -rf ~/kawaiDotfiles
+build_vim_plugins() {
+    log_info "Building CoC.nvim..."
+    cd "$HOME/.vim/pack/plugins/start/coc.nvim"
+    npm ci &> /dev/null
 
-echo "=> Installation complete! A backup of your previous configuration can be found in $backup_dir"
-echo "=> Please restart your terminal or source config files"
+    log_info "Building FZF..."
+    cd "$HOME/.vim/pack/plugins/start/fzf"
+    ./install --all &> /dev/null
+
+    log_info "Building Kisuke..."
+    cd "$HOME/.vim/pack/plugins/start/kisuke.vim"
+    yarn build &> /dev/null
+
+    cd "$HOME"
+    log_info "Vim plugins built successfully"
+}
+
+install_coc_extensions() {
+    log_info "Installing CoC extensions..."
+    yes | vim -u "$HOME/.vim/temp.vimrc" -c 'CocInstall -sync coc-vimlsp coc-sh coc-tsserver coc-go coc-html coc-css @yaegassy/coc-tailwindcss3 coc-json coc-yaml coc-prettier coc-eslint coc-dotenv coc-sql coc-lua coc-svg' -c 'qall!' > /dev/null 2>&1
+    log_info "CoC extensions installed successfully"
+}
+
+setup_vim_final() {
+    log_info "Setting up final Vim configuration..."
+    mv "$DOTFILES_DIR/vim/"* "$HOME/.vim/"
+    mv "$HOME/.vim/simple_black_metal.vim" "$HOME/.vim/pack/plugins/start/vim-airline-themes/autoload/airline/themes/"
+    log_info "Vim configuration complete"
+}
+
+cleanup() {
+    log_info "Cleaning up temporary files..."
+    rm -f "$HOME/.vim/temp.vimrc"
+    rm -rf "$DOTFILES_DIR"
+    log_info "Cleanup complete"
+}
+
+main() {
+    log_info "Starting dotfiles installation..."
+
+    check_dependencies
+    clone_dotfiles
+    backup_existing_configs
+    setup_tmux
+    setup_scripts
+    setup_zsh
+    setup_wezterm
+    setup_git
+    setup_watchman
+    setup_vim_temp
+    install_vim_plugins
+    build_vim_plugins
+    install_coc_extensions
+    setup_vim_final
+    cleanup
+
+    log_info "Installation complete! Backup saved to $BACKUP_DIR"
+    log_info "Please restart your terminal or source config files"
+}
+
+main
