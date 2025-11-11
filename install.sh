@@ -5,6 +5,16 @@ set -e
 BACKUP_DIR="$HOME/dotfiles_backup_$(date +%Y%m%d_%H%M%S)"
 DOTFILES_DIR="$HOME/kawaiDotfiles"
 
+# Detect OS
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    OS="macos"
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    OS="linux"
+else
+    echo "[ERROR] Unsupported OS: $OSTYPE"
+    exit 1
+fi
+
 log_info() {
     echo "[INFO] $1"
 }
@@ -13,42 +23,31 @@ log_error() {
     echo "[ERROR] $1" >&2
 }
 
-check_and_install_package() {
-    local package=$1
-    local install_cmd=$2
-
-    if ! command -v "$package" &> /dev/null; then
-        log_info "$package is not installed. Installing..."
-        eval "$install_cmd"
-        if ! command -v "$package" &> /dev/null; then
-            log_error "Failed to install $package"
-            exit 1
-        fi
-        log_info "$package installed successfully"
-    else
-        log_info "$package is already installed"
-    fi
-}
-
 check_dependencies() {
     log_info "Checking system dependencies..."
 
-    check_and_install_package "brew" '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
-    check_and_install_package "git" "brew install git"
-    check_and_install_package "npm" "brew install node"
-    check_and_install_package "watchman" "brew install watchman"
-    check_and_install_package "yarn" "npm install -g yarn@latest"
+    local required_packages=("git" "npm" "watchman" "fzf" "bat" "rg" "ag" "perl" "ctags" "fd" "yarn")
+    local missing=()
 
-    local brew_packages=("fzf" "bat" "ripgrep" "the_silver_searcher" "perl" "universal-ctags" "fd")
-
-    for package in "${brew_packages[@]}"; do
-        if ! command -v "$package" &> /dev/null && ! brew list "$package" &> /dev/null; then
-            log_info "Installing $package via Homebrew..."
-            brew install "$package"
-        else
-            log_info "$package is already installed"
+    for pkg in "${required_packages[@]}"; do
+        if ! command -v "$pkg" &> /dev/null; then
+            missing+=("$pkg")
+            log_error "Missing: $pkg"
         fi
     done
+
+    if [ ${#missing[@]} -gt 0 ]; then
+        log_error "Missing packages: ${missing[*]}"
+        log_error "Please install missing packages:"
+        if [ "$OS" = "macos" ]; then
+            echo "  brew install ${missing[*]}"
+        else
+            echo "  sudo apt install ${missing[*]} (or use your package manager)"
+        fi
+        exit 1
+    fi
+
+    log_info "All dependencies found"
 }
 
 clone_dotfiles() {
@@ -187,24 +186,22 @@ install_vim_plugins() {
     )
 
     for plugin in "${plugins[@]}"; do
-        git clone "$plugin" &> /dev/null
+        git clone "$plugin" &> /dev/null &
     done
+
+    wait
 
     log_info "Vim plugins cloned successfully"
 }
 
 build_vim_plugins() {
-    log_info "Building CoC.nvim..."
-    cd "$HOME/.vim/pack/plugins/start/coc.nvim"
-    npm ci &> /dev/null
+    log_info "Building Vim plugins..."
 
-    log_info "Building FZF..."
-    cd "$HOME/.vim/pack/plugins/start/fzf"
-    ./install --all &> /dev/null
+    (cd "$HOME/.vim/pack/plugins/start/coc.nvim" && npm ci &> /dev/null) &
+    (cd "$HOME/.vim/pack/plugins/start/fzf" && ./install --all &> /dev/null) &
+    (cd "$HOME/.vim/pack/plugins/start/kisuke.vim" && yarn build &> /dev/null) &
 
-    log_info "Building Kisuke..."
-    cd "$HOME/.vim/pack/plugins/start/kisuke.vim"
-    yarn build &> /dev/null
+    wait
 
     cd "$HOME"
     log_info "Vim plugins built successfully"
