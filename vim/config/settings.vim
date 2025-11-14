@@ -27,3 +27,11 @@ set nofoldenable
 syntax on
 
 colorscheme simple-black-metal
+
+augroup Binary
+  au!
+  au BufReadPre  *.bin,*.pcap set binary
+  au BufReadPost *.bin,*.pcap silent %!xxd
+  au BufWritePre *.bin,*.pcap silent %!xxd -r
+  au BufWritePost *.bin,*.pcap silent %!xxd
+augroup END
