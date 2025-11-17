@@ -198,12 +198,18 @@ func! OpenSelectedManPage() abort
   let command_name = matches[1]
   let section_number = matches[2]
 
-  bwipeout!
+  " Save the search results buffer number
+  let search_buf = bufnr('%')
 
   if !empty(section_number)
-    execute 'Man ' . section_number . ' ' . command_name
+    execute 'vert Man ' . section_number . ' ' . command_name
   else
-    execute 'Man ' . command_name
+    execute 'vert Man ' . command_name
+  endif
+
+  " Close the search results buffer after the man page opens
+  if bufexists(search_buf)
+    execute 'bwipeout! ' . search_buf
   endif
 endfunc
 augroup ManSearchResults
