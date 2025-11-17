@@ -65,14 +65,18 @@ backup_existing_configs() {
     mkdir -p "$BACKUP_DIR"
 
     local files_to_backup=(
+        "$HOME/.zshenv"
+        "$HOME/.zprofile"
+        "$HOME/.zshrc"
+        "$HOME/.config/zsh/.zprofile"
+        "$HOME/.config/zsh/.zshrc"
+        "$HOME/.config/zsh/zsh.d"
+        "$HOME/.gitconfig"
         "$HOME/.vim"
         "$HOME/.vimrc"
         "$HOME/.config/tmux"
-        "$HOME/.scripts"
-        "$HOME/.zshrc"
-        "$HOME/.zprofile"
-        "$HOME/.gitconfig"
         "$HOME/.config/wezterm"
+        "$HOME/.scripts"
         "$HOME/bin"
     )
 
@@ -116,8 +120,11 @@ setup_scripts() {
 
 setup_zsh() {
     log_info "Setting up Zsh configuration..."
-    mv "$DOTFILES_DIR/zsh/.zshrc" "$HOME/"
-    mv "$DOTFILES_DIR/zsh/.zprofile" "$HOME/"
+    mkdir -p "$HOME/.config/zsh"
+    mv "$DOTFILES_DIR/zsh/.zshenv" "$HOME/"
+    mv "$DOTFILES_DIR/zsh/.zprofile" "$HOME/.config/zsh"
+    mv "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.config/zsh"
+    mv "$DOTFILES_DIR/zsh/zsh.d" "$HOME/.config/zsh"
     log_info "Zsh setup complete"
 }
 
