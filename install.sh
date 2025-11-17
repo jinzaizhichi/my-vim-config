@@ -188,9 +188,10 @@ install_vim_plugins() {
         "git@github.com:dorukozerr/kisuke.vim.git"
         "https://github.com/MaxMEllon/vim-jsx-pretty.git"
         "https://github.com/Konfekt/FastFold.git"
-        "git@github.com:adelarsq/vim-matchit.git"
+        "https://github.com/adelarsq/vim-matchit.git"
         "https://github.com/mg979/vim-visual-multi.git"
-        "git@github.com:justinmk/vim-sneak.git"
+        "https://github.com/justinmk/vim-sneak.git"
+        "https://github.com/tjdevries/coc-zsh.git"
     )
 
     for plugin in "${plugins[@]}"; do
