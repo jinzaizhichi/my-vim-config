@@ -104,6 +104,7 @@ setup_scripts() {
         "tmux_restore_session.sh"
         "tmux_fzf_switcher.sh"
         "tmux_file_picker.sh"
+        "vman.sh"
     )
 
     for script in "${scripts[@]}"; do

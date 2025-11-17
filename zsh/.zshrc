@@ -48,6 +48,7 @@ alias kp="~/.scripts/kill_process.sh"
 alias far="~/.scripts/find_and_replace.sh"
 alias tss="~/.scripts/tmux_save_session.sh"
 alias trs="~/.scripts/tmux_restore_session.sh"
+alias vman="~/.scripts/vman.sh"
 
 setopt SHARE_HISTORY
 setopt INC_APPEND_HISTORY
