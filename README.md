@@ -14,7 +14,7 @@ brew install git npm fzf bat ripgrep the_silver_searcher perl universal-ctags
 curl -o- https://raw.githubusercontent.com/dorukozerr/dotfiles/main/install.sh | bash
 ```
 
-This backs up existing configs to ~/dotfiles*backup*<timestamp>/ (including ~/.vimrc, ~/.vim/, ~/.zshrc, ~/.zprofile, ~/.config/tmux/, ~/.config/wezterm, ~/.scripts/, ~/.gitconfig), sets up all configurations, and installs plugins.
+This backs up existing configs to `~/dotfiles*backup*<timestamp>/` folder (`~/.vimrc`, `~/.vim/`, `~/.zshenv`, `~/.config/zsh/`, `~/.zshrc`, `~/.zprofile`, `~/.config/tmux/`, `~/.config/wezterm`, `~/.scripts/`, `~/.gitconfig`), then sets up all configurations, and installs plugins.
 
 ## Vim Plugins
 
@@ -23,6 +23,7 @@ This backs up existing configs to ~/dotfiles*backup*<timestamp>/ (including ~/.v
 - vim-fugitive: Git integration
 - fzf & fzf.vim: Fuzzy finding
 - FastFold: Folding optimization
+- vim-sneak: Best motion plugin ever
 
 ### Development
 
@@ -40,11 +41,11 @@ This backs up existing configs to ~/dotfiles*backup*<timestamp>/ (including ~/.v
 
 ### CoC Extensions
 
-Language servers: coc-vimlsp, coc-sh, coc-tsserver, coc-go, coc-html, coc-css, coc-json, coc-yaml, coc-lua, coc-sql, coc-svg
+Language servers: coc-vimlsp, coc-sh, coc-tsserver, coc-go, coc-html, coc-css, coc-json, coc-yaml, coc-lua, coc-sql, coc-svg, coc-zsh
 
 Tools: coc-prettier, coc-eslint, coc-dotenv, @yaegassy/coc-tailwindcss3
 
-Plugins install automatically. Run :helptags ALL after setup.
+Run :helptags ALL after setup.
 
 ## Additional Vim Features
 
