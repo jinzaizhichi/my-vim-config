@@ -30,5 +30,6 @@
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
-  "typescript.updateImportsOnFileMove.enabled": "always"
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "sql.localstorage": "~/.config/coc/extensions/coc-sql-data"
 }
