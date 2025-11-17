@@ -17,3 +17,4 @@ export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
 
 export WATCHMAN_SOCK="$HOME/.local/var/run/watchman/doruk-state/sock"
+# export WATCHMAN_SOCK="$HOME/.experiment/watchman/proxy.sock"

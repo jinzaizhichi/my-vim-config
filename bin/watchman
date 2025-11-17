@@ -1,6 +1,7 @@
 #!/bin/bash
 
 CUSTOM_SOCK="$HOME/.local/var/run/watchman/doruk-state/sock"
+# CUSTOM_SOCK="$HOME/.experiment/watchman/proxy.sock"
 CUSTOM_LOG="$HOME/.local/var/log/watchman/watchman.log"
 
 mkdir -p "$(dirname "$CUSTOM_SOCK")"
@@ -16,4 +17,3 @@ if ! [ -S "$CUSTOM_SOCK" ]; then
 fi
 
 exec /opt/homebrew/bin/watchman --sockname="$CUSTOM_SOCK" "$@"
-
