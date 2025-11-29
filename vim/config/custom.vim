@@ -242,3 +242,20 @@ func! GitRestoreCurrent()
 
   execute 'G restore ' . l:current_file
 endfunc
+
+func! RenameFile(new_name)
+  let l:old_file = expand('%:p')
+
+  if empty(l:old_file)
+    echo "No file in current buffer"
+
+    return
+  endif
+
+  execute 'file ' . a:new_name
+  write
+  call delete(l:old_file)
+
+  echo "Renamed to " . a:new_name
+endfunc
+command! -nargs=1 -complete=file Rename call RenameFile(<q-args>)
