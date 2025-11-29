@@ -252,10 +252,13 @@ func! RenameFile(new_name)
     return
   endif
 
-  execute 'file ' . a:new_name
+  let l:dir = expand('%:p:h')
+  let l:new_file = l:dir . '/' . a:new_name
+
+  execute 'file ' . fnameescape(l:new_file)
   write
   call delete(l:old_file)
 
-  echo "Renamed to " . a:new_name
+  echo "Renamed to " . l:new_file
 endfunc
 command! -nargs=1 -complete=file Rename call RenameFile(<q-args>)
