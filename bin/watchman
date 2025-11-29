@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CUSTOM_SOCK="$HOME/.local/var/run/watchman/doruk-state/sock"
+CUSTOM_SOCK="$HOME/.local/var/run/watchman/custom/sock"
 # CUSTOM_SOCK="$HOME/.sandbox/watchman/proxy.sock"
 CUSTOM_LOG="$HOME/.local/var/log/watchman/watchman.log"
 

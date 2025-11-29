@@ -76,6 +76,7 @@ backup_existing_configs() {
         "$HOME/.vimrc"
         "$HOME/.config/tmux"
         "$HOME/.config/wezterm"
+        "$HOME/.config/htop"
         "$HOME/.scripts"
         "$HOME/bin"
     )
@@ -134,6 +135,12 @@ setup_wezterm() {
     log_info "WezTerm setup complete"
 }
 
+setup_htop() {
+    log_info "Setting up htop configuration..."
+    mv "$DOTFILES_DIR/htop" "$HOME/.config/"
+    log_info "htop setup complete"
+}
+
 setup_git() {
     log_info "Setting up Git configuration..."
     mv "$DOTFILES_DIR/git/.gitconfig" "$HOME/"
@@ -142,9 +149,9 @@ setup_git() {
 
 setup_watchman() {
     log_info "Setting up Watchman..."
-    mkdir -p "$HOME/.local/var/run/watchman/doruk-state"
+    mkdir -p "$HOME/.local/var/run/watchman/custom"
     mkdir -p "$HOME/.local/var/log/watchman"
-    chmod 700 "$HOME/.local/var/run/watchman/doruk-state"
+    chmod 700 "$HOME/.local/var/run/watchman/custom"
     chmod 755 "$HOME/.local/var/log/watchman"
     mkdir -p "$HOME/bin"
     mv "$DOTFILES_DIR/bin/watchman" "$HOME/bin/watchman"
@@ -246,6 +253,7 @@ main() {
     setup_scripts
     setup_zsh
     setup_wezterm
+    setup_htop
     setup_git
     setup_watchman
     setup_vim_temp
