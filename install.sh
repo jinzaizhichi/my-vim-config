@@ -110,6 +110,7 @@ setup_scripts() {
         "tmux_fzf_switcher.sh"
         "tmux_file_picker.sh"
         "vman.sh"
+        "extract_screenshots.sh"
     )
 
     for script in "${scripts[@]}"; do
