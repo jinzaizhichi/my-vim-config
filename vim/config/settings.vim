@@ -7,7 +7,10 @@ scriptencoding utf-8
 
 autocmd BufWritePre * :%s/\s\+$//e
 
-set background=dark
+syntax enable
+set background=light
+colorscheme solarized
+
 set encoding=utf-8
 set backspace=indent,eol,start
 set fillchars=eob:\ ,vert:\|
@@ -23,10 +26,6 @@ set incsearch
 set noswapfile
 set foldmethod=syntax
 set nofoldenable
-
-syntax on
-
-colorscheme simple-black-metal
 
 augroup Binary
   au!

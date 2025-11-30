@@ -20,7 +20,7 @@ command! -bang -nargs=? -complete=dir Files
       \   'window': { 'width': 0.9, 'height': 0.9, 'xoffset': 0.5, 'yoffset': 0.5, 'border': 'rounded' },
       \   'options': [
       \     '--preview',
-      \     'bat -f --style=numbers --theme=base16 {}',
+      \     'bat -f --style=numbers --theme=ansi {}',
       \     '--preview-window', 'right:50%:wrap',
       \     '--bind', 'ctrl-/:toggle-preview',
       \     '--color', 'border:8',
@@ -38,7 +38,7 @@ command! -bang -nargs=* Rg
       \     'window': { 'width': 0.9, 'height': 0.9, 'xoffset': 0.5, 'yoffset': 0.5, 'border': 'rounded' },
       \     'options': [
       \       '--preview',
-      \       'bat -f --style=numbers --theme=base16 {1} --highlight-line {2}',
+      \       'bat -f --style=numbers --theme=ansi {1} --highlight-line {2}',
       \       '--preview-window', 'right:50%:wrap',
       \       '--bind', 'ctrl-/:toggle-preview',
       \       '--exact',
@@ -55,7 +55,7 @@ command! -bang -nargs=* Buffers
       \   'window': { 'width': 0.9, 'height': 0.9, 'xoffset': 0.5, 'yoffset': 0.5, 'border': 'rounded' },
       \   'options': [
       \     '--preview',
-      \     'echo {} | sed "s/.*\t//" | xargs -I% bat -f --style=numbers --theme=base16 %',
+      \     'echo {} | sed "s/.*\t//" | xargs -I% bat -f --style=numbers --theme=ansi %',
       \     '--preview-window', 'right:50%:wrap',
       \     '--bind', 'ctrl-/:toggle-preview',
       \     '--color', 'border:8',

@@ -233,7 +233,6 @@ install_coc_extensions() {
 setup_vim_final() {
     log_info "Setting up final Vim configuration..."
     mv "$DOTFILES_DIR/vim/"* "$HOME/.vim/"
-    mv "$HOME/.vim/simple_black_metal.vim" "$HOME/.vim/pack/plugins/start/vim-airline-themes/autoload/airline/themes/"
     log_info "Vim configuration complete"
 }
 

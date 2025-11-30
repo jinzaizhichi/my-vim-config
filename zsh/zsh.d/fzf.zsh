@@ -1,9 +1,5 @@
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_DEFAULT_OPTS="
-  --color=fg:4,bg:-1,hl:2
-  --color=fg+:6,bg+:-1,hl+:2
-  --color=info:8,prompt:3,pointer:6
-  --color=marker:2,spinner:8,header:8
   --border=none
   --preview-border=none
   --input-border=none

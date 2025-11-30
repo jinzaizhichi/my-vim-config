@@ -1,19 +1,19 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
-config.font = wezterm.font('CaskaydiaCove NF')
+config.font = wezterm.font('Iosevka NF')
 config.font_size = 18.0
 config.warn_about_missing_glyphs = true
 config.allow_square_glyphs_to_overflow_width = "Always"
 
-config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
+config.harfbuzz_features = { 'calt=1', 'clig=1', 'liga=1' }
 config.font_shaper = "Harfbuzz"
 config.cell_width = 1.0
 config.line_height = 1.0
 config.underline_thickness = 1
 config.underline_position = -2
 
-config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
+config.window_padding = { left = 12, right = 12, top = 12, bottom = 0 }
 config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
 config.hide_tab_bar_if_only_one_tab = true
@@ -47,23 +47,7 @@ table.insert(config.hyperlink_rules, {
 
 config.display_pixel_geometry = "BGR"
 
-config.colors = {
-  foreground = "#c1c1c1",
-  background = "#000000",
-  cursor_bg = "#c1c1c1",
-  cursor_border = "#c1c1c1",
-  cursor_fg = "#000000",
-  selection_bg = "#c1c1c1",
-  selection_fg = "#000000",
-  ansi = { "#000000", "#b89090", "#dcc8d8", "#c8a8b8", "#888888", "#999999", "#aaaaaa", "#c1c1c1" },
-  brights = { "#404040", "#b89090", "#dcc8d8", "#c8a8b8", "#888888", "#999999", "#aaaaaa", "#c1c1c1" },
-}
-
-config.window_background_gradient = {
-  colors = { '#000000', '#0a080a', '#000000' },
-  interpolation = 'Linear',
-  orientation = 'Vertical',
-}
+config.color_scheme = 'Solarized Light (Gogh)'
 
 config.keys = {
   { key = 'v',     mods = 'CMD',       action = wezterm.action.PasteFrom 'Clipboard' },
