@@ -16,5 +16,5 @@ export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
 
-export WATCHMAN_SOCK="$HOME/.local/var/run/watchman/custom/sock"
+export WATCHMAN_SOCK="$HOME/.local/var/run/watchman/custom/s.sock"
 # export WATCHMAN_SOCK="$HOME/.sandbox/watchman/proxy.sock"
