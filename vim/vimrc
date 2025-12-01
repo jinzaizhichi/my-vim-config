@@ -5,7 +5,6 @@ let g:config_files = [
       \ 'fzf.vim',
       \ 'mappings.vim',
       \ 'settings.vim',
-      \ 'startscreen.vim',
       \ 'airline.vim',
       \ 'fastfold.vim',
       \ 'coc.vim',
