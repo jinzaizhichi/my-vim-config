@@ -31,20 +31,6 @@ nnoremap <Leader>gr :call GitRestoreCurrent()<CR>
 " open netrw
 nnoremap <Leader>t :Explore<CR>
 
-" coc
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gt <Plug>(coc-type-definition)
-inoremap <silent><expr> <C-j> coc#refresh()
-inoremap <silent><expr> <C-k><C-i> coc#rpc#request('doHover', [])
-nnoremap <silent><expr> <C-k><C-i> CocActionAsync('doHover')
-nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-nnoremap <Leader>ccd :call CocCopyDefinition()<CR>
-
 " kisuke
 nnoremap <Leader>ko :KisukeOpen<CR>
 nnoremap <Leader>krs :KisukeResumeLastSession<CR>

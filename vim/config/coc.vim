@@ -1,62 +1,163 @@
-" Match FZF styling
-hi link CocFloating Normal
-hi CocFloatingSbar      ctermfg=0  ctermbg=NONE cterm=NONE
-hi CocFloatingBorder    ctermfg=8  ctermbg=NONE cterm=NONE
+" Slightly custom CoC configuration, highlighting stuff generated with AI
+" based on solarized light ansi colors and vim colorschema and mappings copied
+" from example vim configuration of CoC in their github repo
+" https://github.com/neoclide/coc.nvim?tab=readme-ov-file#example-vim-configuration
 
-" Selection
-hi link CocMenuSel Statement
+" Floating windows - blend with normal text
+hi link CocFloating Normal
+hi link CocFloatingBorder Comment
+
+" Selection - subtle highlighting
+hi link CocMenuSel Visual
 hi link CocListLine Normal
 
-" Borders and dividers
-hi CocFloatingDividingLine ctermfg=8  ctermbg=NONE cterm=NONE
+" Documentation - keep it minimal
+hi link CocMarkdownHeader Normal
+hi link CocMarkdownCode Comment
+hi link CocMarkdownLink Underlined
 
-" Documentation
-hi CocMarkdownHeader    ctermfg=3  ctermbg=NONE cterm=bold
-hi CocMarkdownCode      ctermfg=2  ctermbg=NONE cterm=NONE
-hi CocMarkdownLink      ctermfg=6  ctermbg=NONE cterm=underline
+" Diagnostic messages - very subtle, inherit from Solarized
+hi link CocErrorFloat Error
+hi link CocWarningFloat WarningMsg
+hi link CocInfoFloat Comment
+hi link CocHintFloat Comment
 
-" Diagnostic messages
-hi CocErrorFloat        ctermfg=1  ctermbg=NONE cterm=NONE
-hi CocWarningFloat      ctermfg=3  ctermbg=NONE cterm=NONE
-hi CocInfoFloat         ctermfg=6  ctermbg=NONE cterm=NONE
-hi CocHintFloat         ctermfg=5  ctermbg=NONE cterm=NONE
+" Diagnostic signs - minimal, use Solarized's defaults
+hi link CocErrorSign Error
+hi link CocWarningSign WarningMsg
+hi link CocInfoSign Comment
+hi link CocHintSign Comment
 
-" Diagnostic signs
-hi CocErrorSign         ctermfg=1  ctermbg=NONE cterm=bold
-hi CocWarningSign       ctermfg=3  ctermbg=NONE cterm=bold
-hi CocInfoSign          ctermfg=6  ctermbg=NONE cterm=NONE
-hi CocHintSign          ctermfg=5  ctermbg=NONE cterm=NONE
+" Virtual text - very subtle, almost invisible
+hi link CocErrorVirtualText Comment
+hi link CocWarningVirtualText Comment
+hi link CocInfoVirtualText Comment
+hi link CocHintVirtualText Comment
 
-" Virtual text
-hi CocErrorVirtualText  ctermfg=1  ctermbg=NONE cterm=NONE
-hi CocWarningVirtualText ctermfg=3  ctermbg=NONE cterm=NONE
-hi CocInfoVirtualText   ctermfg=6  ctermbg=NONE cterm=NONE
-hi CocHintVirtualText   ctermfg=5  ctermbg=NONE cterm=NONE
-
-" Text styles
+" Text styles - inherit from Solarized
 hi link CocBold Normal
 hi link CocItalic Normal
 hi link CocStrikeThrough Comment
 hi link CocCodeLens Comment
 
-" Semantic tokens
+" Semantic tokens - use Solarized's syntax groups
 hi link CocSemTypeKeyword Statement
-hi link CocSemTypeFunction Statement
+hi link CocSemTypeFunction Function
 hi link CocSemTypeVariable Identifier
 hi link CocSemTypeComment Comment
 hi link CocSemTypeString String
 hi link CocSemTypeNumber Number
-hi link CocSemTypeType Identifier
+hi link CocSemTypeType Type
 
-" Popup menu
-hi link CocPumMenu Normal
-hi link CocPumMenuSel Statement
+" Popup menu - blend with normal interface
+hi link CocPumMenu Pmenu
+hi link CocPumMenuSel PmenuSel
 hi link CocPumDetail Comment
 hi link CocPumShortcut Comment
 hi link CocPumDeprecated Comment
 
-" Highlights
-hi link CocSearch Statement
-hi link CocHighlightText Statement
-hi CocHighlightRead     ctermfg=2  ctermbg=NONE cterm=underline
-hi CocHighlightWrite    ctermfg=1  ctermbg=NONE cterm=underline
+" Highlights - subtle, using Solarized's comment style
+hi link CocSearch IncSearch
+hi link CocHighlightText Visual
+hi link CocHighlightRead Visual
+hi link CocHighlightWrite Visual
+
+" Use tab for trigger completion with characters ahead and navigate
+" NOTE: There's always complete item selected by default, you may want to enable
+" no select by `"suggest.noselect": true` in your configuration file
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+inoremap <silent><expr> <c-@> coc#refresh()
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
+nmap <silent><nowait> [g <Plug>(coc-diagnostic-prev)
+nmap <silent><nowait> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation
+nmap <silent><nowait> gd <Plug>(coc-definition)
+nmap <silent><nowait> gy <Plug>(coc-type-definition)
+nmap <silent><nowait> gi <Plug>(coc-implementation)
+nmap <silent><nowait> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Symbol renaming
+nmap <leader>rn <Plug>(coc-rename)
+
+" Applying code actions to the selected code block
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap keys for applying code actions at the cursor position
+nmap <leader>ac  <Plug>(coc-codeaction-cursor)
+" Remap keys for apply code actions affect whole buffer
+nmap <leader>as  <Plug>(coc-codeaction-source)
+" Apply the most preferred quickfix action to fix diagnostic on the current line
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Remap keys for applying refactor code actions
+nmap <silent> <leader>re <Plug>(coc-codeaction-refactor)
+xmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
+nmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
+
+" Map function and class text objects
+" NOTE: Requires 'textDocument.documentSymbol' support from the language server
+xmap if <Plug>(coc-funcobj-i)
+omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
+
+" Remap <C-f> and <C-b> to scroll float windows/popups
+if has('nvim-0.4.0') || has('patch-8.2.0750')
+  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+endif
+
+" Use CTRL-S for selections ranges
+" Requires 'textDocument/selectionRange' support of language server
+nmap <silent> <C-s> <Plug>(coc-range-select)
+xmap <silent> <C-s> <Plug>(coc-range-select)
+
+" Add `:Format` command to format current buffer
+command! -nargs=0 Format :call CocActionAsync('format')
+
+" Only custom thing in here
+nnoremap <Leader>ccd :call CocCopyDefinition()<CR>
