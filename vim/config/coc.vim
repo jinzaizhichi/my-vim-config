@@ -111,7 +111,9 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming
-nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>rns <Plug>(coc-rename)
+" File Rename
+nmap <leader>rnf :CocCommand workspace.renameCurrentFile<CR>
 
 " Applying code actions to the selected code block
 " Example: `<leader>aap` for current paragraph
@@ -159,5 +161,5 @@ xmap <silent> <C-s> <Plug>(coc-range-select)
 " Add `:Format` command to format current buffer
 command! -nargs=0 Format :call CocActionAsync('format')
 
-" Only custom thing in here
+" Copy type definition
 nnoremap <Leader>ccd :call CocCopyDefinition()<CR>

@@ -89,6 +89,3 @@ nnoremap <leader>ms :ManSearch <C-r><right>
 
 " Clear/Reset file
 nnoremap <leader>cfe :call CleanFileLineEndings()<CR>
-
-" Rename current file
-nnoremap <leader>rn :Rename <C-r>=expand('%:t')<CR>
