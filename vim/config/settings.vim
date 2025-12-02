@@ -11,6 +11,8 @@ syntax enable
 set background=light
 colorscheme solarized
 
+set updatetime=300
+set signcolumn=yes
 set encoding=utf-8
 set backspace=indent,eol,start
 set fillchars=eob:\ ,vert:\|
