@@ -226,7 +226,7 @@ build_vim_plugins() {
 
 install_coc_extensions() {
     log_info "Installing CoC extensions..."
-    yes | vim -u "$HOME/.vim/temp.vimrc" -c 'CocInstall -sync coc-vimlsp coc-sh coc-tsserver coc-go coc-html coc-css @yaegassy/coc-tailwindcss3 coc-json coc-yaml coc-prettier coc-eslint coc-dotenv coc-sql coc-lua coc-svg' -c 'qall!' > /dev/null 2>&1
+    yes | vim -u "$HOME/.vim/temp.vimrc" -c 'CocInstall -sync coc-vimlsp coc-sh coc-tsserver coc-go coc-html coc-css @yaegassy/coc-tailwindcss3 coc-json coc-yaml coc-prettier coc-eslint coc-dotenv coc-sql coc-lua coc-svg coc-zshell' -c 'qall!' > /dev/null 2>&1
     log_info "CoC extensions installed successfully"
 }
 
