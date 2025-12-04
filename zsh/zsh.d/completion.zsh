@@ -1,11 +1,8 @@
 if type brew &>/dev/null; then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+    FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 fi
 
-fpath=(~/myfns $fpath)
+fpath=(~/.config/zsh/zsh.d/comp $fpath)
 
 autoload -Uz compinit
 compinit
-
-autoload -U promptinit
-promptinit
