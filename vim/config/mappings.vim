@@ -1,9 +1,8 @@
 " reset leader key
 let mapleader = "\<Space>"
 
-" gotta develop that muscle memory, one way or another
-" Note after months of enabling this mappings, it was the best decision in my
-" life, no joke
+" gotta develop that muscle memory, one way or another Note after months of
+" enabling this mappings, it was the best decision in my life, no joke
 noremap <up> :echoerr "Senpai, use k instead"<CR>
 noremap <down> :echoerr "Senpai, use j instead"<CR>
 noremap <left> :echoerr "Senpai, use h instead"<CR>
@@ -83,6 +82,14 @@ nnoremap <silent> N Nzz
 nnoremap y "+y
 vnoremap y "+y
 nnoremap Y "+Y
+
+" Paste from system clipboard in visual mode without yanking deleted text
+vnoremap p "+p
+vnoremap P "+P
+
+" Paste from system clipboard in normal mode
+nnoremap p "+p
+nnoremap P "+P
 
 " Man pages search
 nnoremap <leader>ms :ManSearch <C-r><right>
