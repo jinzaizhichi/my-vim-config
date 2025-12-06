@@ -14,10 +14,8 @@ config.underline_thickness = 1
 config.underline_position = -2
 
 config.window_padding = { left = 12, right = 12, top = 12, bottom = 0 }
-config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
 config.hide_tab_bar_if_only_one_tab = true
-config.tab_bar_at_bottom = false
 config.use_fancy_tab_bar = false
 config.tab_max_width = 32
 config.enable_scroll_bar = false
@@ -25,7 +23,6 @@ config.window_close_confirmation = 'NeverPrompt'
 config.native_macos_fullscreen_mode = true
 
 config.scrollback_lines = 5000
-config.enable_scroll_bar = false
 config.term = 'wezterm'
 
 config.max_fps = 120
@@ -59,18 +56,8 @@ config.keys = {
   { key = 'w',     mods = 'CMD',       action = wezterm.action.CloseCurrentTab { confirm = false } },
   { key = 'n',     mods = 'CMD|SHIFT', action = wezterm.action.SpawnWindow },
   { key = 'Enter', mods = 'CMD',       action = wezterm.action.ToggleFullScreen },
-  { key = '1',     mods = 'CMD',       action = wezterm.action.ActivateTab(0) },
-  { key = '2',     mods = 'CMD',       action = wezterm.action.ActivateTab(1) },
-  { key = '3',     mods = 'CMD',       action = wezterm.action.ActivateTab(2) },
-  { key = '4',     mods = 'CMD',       action = wezterm.action.ActivateTab(3) },
-  { key = '5',     mods = 'CMD',       action = wezterm.action.ActivateTab(4) },
-  { key = '6',     mods = 'CMD',       action = wezterm.action.ActivateTab(5) },
-  { key = '7',     mods = 'CMD',       action = wezterm.action.ActivateTab(6) },
-  { key = '8',     mods = 'CMD',       action = wezterm.action.ActivateTab(7) },
-  { key = '9',     mods = 'CMD',       action = wezterm.action.ActivateTab(8) },
   { key = '[',     mods = 'CMD|SHIFT', action = wezterm.action.ActivateTabRelative(-1) },
   { key = ']',     mods = 'CMD|SHIFT', action = wezterm.action.ActivateTabRelative(1) },
-  { key = 'k',     mods = 'CMD|SHIFT', action = wezterm.action.ClearScrollback 'ScrollbackAndViewport' },
   { key = 'r',     mods = 'CMD',       action = wezterm.action.ReloadConfiguration },
   { key = "Enter", mods = "SHIFT",     action = wezterm.action { SendString = "\x1b\r" } },
 }
