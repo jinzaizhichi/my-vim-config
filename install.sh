@@ -199,7 +199,6 @@ install_vim_plugins() {
         "https://github.com/adelarsq/vim-matchit.git"
         "https://github.com/mg979/vim-visual-multi.git"
         "https://github.com/justinmk/vim-sneak.git"
-        "https://github.com/tjdevries/coc-zsh.git"
     )
 
     for plugin in "${plugins[@]}"; do
