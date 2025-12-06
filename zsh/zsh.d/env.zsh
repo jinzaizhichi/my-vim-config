@@ -1,8 +1,9 @@
-export NVM_DIR="$HOME/.nvm"
+[-s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+rt NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-export TERM="tmux-256color"
+export TERM="wezterm"
 
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export JAVA_HOME="$(brew --prefix)/opt/openjdk@17"
