@@ -15,9 +15,6 @@ inoremap <right> <NOP>
 nnoremap j gj
 nnoremap k gk
 
-" exit insert mode
-inoremap jk <esc>
-
 " fugitive
 nnoremap <Leader>gs :G status<CR>
 nnoremap <Leader>ga :G add .<CR>
@@ -54,42 +51,36 @@ nnoremap <Leader>bdc :call BufferDeleteCurrent()<CR>
 " window splits
 nnoremap <Leader>vs :vsplit<CR>
 
-" increase/decrease pane width
+" increase/decrease pane width and height
 nnoremap <Leader>ipw :vertical resize +10<CR>
 nnoremap <Leader>dpw :vertical resize -10<CR>
-
-" increase/decrease pane height
 nnoremap <Leader>iph :resize +10<CR>
 nnoremap <Leader>dph :resize -10<CR>
 
 " save file
 nnoremap <leader>s :w<CR>
 
-" Search and replace word under cursor
+" Replace the world under cursor globally inside the buffer
 nnoremap <leader>wr :%s/\<<C-r><C-w>\>//g<left><left>
 
-" Visual mode: replace highlighted text with entered value
+" Replace the selected content in visual mode globally inside the buffer
 vnoremap <leader>pr y:%s/\V<C-r>=escape(@", '/\')<CR>//g<Left><Left>
 
-" Visual mode: replace highlighted text with highlighted value + entered value
+" Replace the selected content in visual mode globally inside the buffer also
+" enter selected content into new replace value field
 vnoremap <leader>pa y:%s/\V<C-r>=escape(@", '/\')<CR>/<C-r>=escape(@", '/\&~')<CR>/g<Left><Left>
 
 " Auto-center screen after search navigation
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
 
-" Copying yanked text into system clipboard.
+" Copying and yank improvements, yank registers into system clipboard and `gp`
+" mappings do paste from system clipboard
 nnoremap y "+y
 vnoremap y "+y
 nnoremap Y "+Y
-
-" Paste from system clipboard in visual mode without yanking deleted text
-vnoremap p "+p
-vnoremap P "+P
-
-" Paste from system clipboard in normal mode
-nnoremap p "+p
-nnoremap P "+P
+nnoremap gp i<C-r><C-o>+<Esc>
+vnoremap gp "_c<C-r><C-o>+<Esc>
 
 " Man pages search
 nnoremap <leader>ms :ManSearch <C-r><right>

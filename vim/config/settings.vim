@@ -36,15 +36,6 @@ set titlestring=%{substitute(getcwd(),\ $HOME,\ '~',\ '')}
 " Fix paste mode issues
 set t_BE=
 
-" Normal mode: gp = paste from clipboard
-nnoremap gp i<C-r><C-o>+<Esc>
-
-" Visual mode: gp = replace selection with clipboard
-vnoremap gp "_c<C-r><C-o>+<Esc>
-
-" cmd+c for copying to system clipboard in visual mode
-vnoremap <D-c> "+y
-
 augroup Binary
   au!
   au BufReadPre  *.bin,*.pcap set binary

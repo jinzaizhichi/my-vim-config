@@ -86,7 +86,16 @@ augroup GitStatsUpdate
 augroup END
 
 func! GenerateLoremIpsum(count)
-  let lorem_words = ['lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur', 'adipiscing', 'elit', 'sed', 'do', 'eiusmod', 'tempor', 'incididunt', 'ut', 'labore', 'et', 'dolore', 'magna', 'aliqua', 'enim', 'ad', 'minim', 'veniam', 'quis', 'nostrud', 'exercitation', 'ullamco', 'laboris', 'nisi', 'aliquip', 'ex', 'ea', 'commodo', 'consequat', 'duis', 'aute', 'irure', 'in', 'reprehenderit', 'voluptate', 'velit', 'esse', 'cillum', 'fugiat', 'nulla', 'pariatur', 'excepteur', 'sint', 'occaecat', 'cupidatat', 'non', 'proident', 'sunt', 'culpa', 'qui', 'officia', 'deserunt', 'mollit', 'anim', 'id', 'est', 'laborum']
+  let lorem_words = [ 'lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur',
+        \ 'adipiscing', 'elit', 'sed', 'do', 'eiusmod', 'tempor', 'incididunt',
+        \ 'ut', 'labore', 'et', 'dolore', 'magna', 'aliqua', 'enim', 'ad', 'minim',
+        \ 'veniam', 'quis', 'nostrud', 'exercitation', 'ullamco', 'laboris', 'nisi',
+        \ 'aliquip', 'ex', 'ea', 'commodo', 'consequat', 'duis', 'aute', 'irure',
+        \ 'in', 'reprehenderit', 'voluptate', 'velit', 'esse', 'cillum', 'fugiat',
+        \ 'nulla', 'pariatur', 'excepteur', 'sint', 'occaecat', 'cupidatat', 'non',
+        \ 'proident', 'sunt', 'culpa', 'qui', 'officia', 'deserunt', 'mollit',
+        \ 'anim', 'id', 'est', 'laborum'
+        \ ]
 
   let result = []
   let word_count = a:count
@@ -94,19 +103,24 @@ func! GenerateLoremIpsum(count)
   if word_count >= 2
     call add(result, 'Lorem')
     call add(result, 'ipsum')
+
     let word_count -= 2
   elseif word_count == 1
     call add(result, 'Lorem')
+
     let word_count -= 1
   endif
 
   while word_count > 0
     let random_index = rand() % len(lorem_words)
+
     call add(result, lorem_words[random_index])
+
     let word_count -= 1
   endwhile
 
   let text = join(result, ' ') . '.'
+
   execute "normal! a" . text
 endfunc
 command! -nargs=1 Lorem call GenerateLoremIpsum(<args>)
@@ -124,11 +138,12 @@ func! BufferToggle()
     if g:window_layout.win_count > 1
       resize
       vertical resize
+
       let g:window_zoomed = 1
     endif
   else
     wincmd =
-      let g:window_zoomed = 0
+    let g:window_zoomed = 0
   endif
 endfunc
 
@@ -154,11 +169,13 @@ endfunc
 
 func! GoImportsOnSave()
   let l:curw = winsaveview()
+
   try
     silent! call CocAction('organizeImport')
   catch
     " Ignore errors when no imports need organizing
   endtry
+
   call winrestview(l:curw)
 endfunc
 autocmd BufWritePre *.go silent! call GoImportsOnSave()
@@ -168,6 +185,7 @@ func! SearchManPages(name) abort
 
   if empty(output)
     echom 'No sections found for ' . a:name
+
     return
   endif
 
@@ -192,6 +210,7 @@ func! OpenSelectedManPage() abort
 
   if empty(matches)
     echom 'Cannot parse this line - expected format: command(section)'
+
     return
   endif
 
@@ -222,12 +241,16 @@ augroup END
 
 func! CleanFileLineEndings()
   edit ++enc=utf-8
+
   set nobomb
   set fileformat=unix
+
   %s/\r//g
   %s/[^\x00-\x7F]//g
+
   update
   edit!
+
   echo "File cleaned and reloaded."
 endfunc
 
