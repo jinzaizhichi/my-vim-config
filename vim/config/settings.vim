@@ -15,7 +15,6 @@ set updatetime=300
 set signcolumn=yes
 set encoding=utf-8
 set backspace=indent,eol,start
-set fillchars=eob:\ ,vert:\|
 set hlsearch
 set wrap
 set nu rnu
@@ -28,6 +27,16 @@ set incsearch
 set noswapfile
 set foldmethod=syntax
 set nofoldenable
+
+" hide filler chars
+set fillchars=eob:\ ,vert:\|
+
+" set title to render it in tmux panes
+set title
+set titlestring=%{substitute(getcwd(),\ $HOME,\ '~',\ '')}
+
+" Fix cmd+v paste corruption by enabling bracketed paste mode
+set t_BE=
 
 augroup Binary
   au!
