@@ -10,3 +10,9 @@ source "$ZDOTDIR/zsh.d/plugins.zsh"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.private/.private.zsh ] && source ~/.private/.private.zsh
 [ -f ~/.work/.work.zsh ] && source ~/.work/.work.zsh
+
+export PNPM_HOME="/Users/doruk/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
