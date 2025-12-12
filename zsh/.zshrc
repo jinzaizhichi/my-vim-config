@@ -1,4 +1,4 @@
-source "$ZDOTDIR/zsh.d/completion.zsh"
+source "$ZDOTDIR/zsh.d/compinit.zsh"
 source "$ZDOTDIR/zsh.d/prompt.zsh"
 source "$ZDOTDIR/zsh.d/history.zsh"
 source "$ZDOTDIR/zsh.d/fzf.zsh"
@@ -11,8 +11,5 @@ source "$ZDOTDIR/zsh.d/plugins.zsh"
 [ -f ~/.private/.private.zsh ] && source ~/.private/.private.zsh
 [ -f ~/.work/.work.zsh ] && source ~/.work/.work.zsh
 
-export PNPM_HOME="/Users/doruk/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
+# zmodload zsh/zprof
+# zprof

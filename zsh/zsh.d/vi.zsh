@@ -2,6 +2,7 @@ export KEYTIMEOUT=1
 
 autoload -Uz add-zsh-hook
 autoload -Uz edit-command-line
+
 zle -N edit-command-line
 
 bindkey -v
