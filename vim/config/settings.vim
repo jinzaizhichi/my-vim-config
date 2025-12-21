@@ -8,8 +8,14 @@ scriptencoding utf-8
 autocmd BufWritePre * :%s/\s\+$//e
 
 syntax enable
-set background=light
-colorscheme solarized
+set background=dark
+set termguicolors
+colorscheme base16-black-metal-burzum
+" set background=light
+" colorscheme solarized
+
+" FZF border color to match colorscheme
+highlight FZFBorder guifg=#333333 ctermfg=8
 
 set updatetime=300
 set signcolumn=yes
@@ -23,15 +29,14 @@ set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-set t_Co=16
 set incsearch
 set noswapfile
 set foldmethod=syntax
 set nofoldenable
 
 " set title to render it in tmux panes
-set title
-set titlestring=%{substitute(getcwd(),\ $HOME,\ '~',\ '')}
+" set title
+" set titlestring=%{substitute(getcwd(),\ $HOME,\ '~',\ '')}
 
 " Fix paste mode issues
 set t_BE=

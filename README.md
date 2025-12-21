@@ -9,5 +9,5 @@ curl -o- https://raw.githubusercontent.com/dorukozerr/dotfiles/main/install.sh |
 
 ## Screenhots
 
+![screenshot](ss-0.png)
 ![screenshot](ss-1.png)
-![screenshot](ss-2.png)

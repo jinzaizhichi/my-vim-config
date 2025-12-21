@@ -20,13 +20,15 @@ command! -bang -nargs=? -complete=dir Files
       \   'window': { 'width': 0.9, 'height': 0.9, 'xoffset': 0.5, 'yoffset': 0.5, 'border': 'rounded' },
       \   'options': [
       \     '--preview',
-      \     'bat -f --style=numbers --theme=ansi {}',
+      \     'bat -f --style=numbers --theme=burzum {}',
       \     '--preview-window', 'right:50%:wrap',
       \     '--bind', 'ctrl-/:toggle-preview',
-      \     '--color', 'border:8',
       \     '--border=rounded',
       \     '--preview-border=none',
       \     '--input-border=none',
+      \     '--color', 'fg:#c1c1c1,bg:#000000,hl:#ddeecc,fg+:#c1c1c1,bg+:#121212,hl+:#ddeecc',
+      \     '--color', 'info:#888888,prompt:#999999,pointer:#ddeecc,marker:#ddeecc,spinner:#888888,header:#888888',
+      \     '--color', 'border:#333333,gutter:#000000',
       \   ]
       \ }, <bang>0)
 
@@ -38,14 +40,15 @@ command! -bang -nargs=* Rg
       \     'window': { 'width': 0.9, 'height': 0.9, 'xoffset': 0.5, 'yoffset': 0.5, 'border': 'rounded' },
       \     'options': [
       \       '--preview',
-      \       'bat -f --style=numbers --theme=ansi {1} --highlight-line {2}',
+      \       'bat -f --style=numbers --theme=burzum {1} --highlight-line {2}',
       \       '--preview-window', 'right:50%:wrap',
       \       '--bind', 'ctrl-/:toggle-preview',
-      \       '--exact',
-      \       '--color', 'border:8',
       \       '--border=rounded',
       \       '--preview-border=none',
       \       '--input-border=none',
+      \       '--color', 'fg:#c1c1c1,bg:#000000,hl:#ddeecc,fg+:#c1c1c1,bg+:#121212,hl+:#ddeecc',
+      \       '--color', 'info:#888888,prompt:#999999,pointer:#ddeecc,marker:#ddeecc,spinner:#888888,header:#888888',
+      \       '--color', 'border:#333333,gutter:#000000',
       \     ]
       \   },
       \   <bang>0)
@@ -55,13 +58,15 @@ command! -bang -nargs=* Buffers
       \   'window': { 'width': 0.9, 'height': 0.9, 'xoffset': 0.5, 'yoffset': 0.5, 'border': 'rounded' },
       \   'options': [
       \     '--preview',
-      \     'echo {} | sed "s/.*\t//" | xargs -I% bat -f --style=numbers --theme=ansi %',
+      \     'echo {} | sed "s/.*\t//" | xargs -I% bat -f --style=numbers --theme=burzum %',
       \     '--preview-window', 'right:50%:wrap',
       \     '--bind', 'ctrl-/:toggle-preview',
-      \     '--color', 'border:8',
       \     '--border=rounded',
       \     '--preview-border=none',
       \     '--input-border=none',
+      \     '--color', 'fg:#c1c1c1,bg:#000000,hl:#ddeecc,fg+:#c1c1c1,bg+:#121212,hl+:#ddeecc',
+      \     '--color', 'info:#888888,prompt:#999999,pointer:#ddeecc,marker:#ddeecc,spinner:#888888,header:#888888',
+      \     '--color', 'border:#333333,gutter:#000000',
       \   ]
       \ }, <bang>0)
 
@@ -73,9 +78,11 @@ command! -bang -range=% -nargs=* Commits
       \     'options': get(fzf#vim#with_preview({ "placeholder": "" }), 'options', []) + [
       \       '--preview-window', 'right:50%:wrap',
       \       '--bind', 'ctrl-/:toggle-preview',
-      \       '--color', 'border:8',
       \       '--border=rounded',
       \       '--preview-border=none',
       \       '--input-border=none',
+      \       '--color', 'fg:#c1c1c1,bg:#000000,hl:#ddeecc,fg+:#c1c1c1,bg+:#121212,hl+:#ddeecc',
+      \       '--color', 'info:#888888,prompt:#999999,pointer:#ddeecc,marker:#ddeecc,spinner:#888888,header:#888888',
+      \       '--color', 'border:#333333,gutter:#000000',
       \     ]
       \   }), <bang>0)
