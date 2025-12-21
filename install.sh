@@ -109,6 +109,9 @@ setup_scripts() {
         "tmux_restore_session.sh"
         "tmux_fzf_switcher.sh"
         "tmux_file_picker.sh"
+        "tmux_timer.sh"
+        "tmux_timer_log.sh"
+        "tmux_timer_toggle.sh"
         "vman.sh"
         "extract_screenshots.sh"
     )
