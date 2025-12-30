@@ -7,8 +7,12 @@ zle -N edit-command-line
 
 bindkey -v
 bindkey -M vicmd 'v' edit-command-line
+
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
+
+bindkey -M viins '^?' backward-delete-char
+bindkey -M viins '^H' backward-delete-char
 
 function zle-keymap-select {
     case ${KEYMAP} in
