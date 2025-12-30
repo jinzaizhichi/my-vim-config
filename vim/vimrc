@@ -7,7 +7,6 @@ let g:config_files = [
       \ 'settings.vim',
       \ 'airline.vim',
       \ 'fastfold.vim',
-      \ 'coc.vim',
       \ 'sneak.vim',
       \ ]
 
