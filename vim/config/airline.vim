@@ -1,5 +1,5 @@
-" let g:airline_theme='solarized'
-let g:airline_theme='base16_black_metal_burzum'
+let g:airline_theme='base16_classic_dark'
+" let g:airline_theme='base16_black_metal_burzum'
 
 let g:airline_left_sep=''
 let g:airline_right_sep=''
