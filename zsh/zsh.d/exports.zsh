@@ -9,6 +9,8 @@ export TERM="wezterm"
 
 export EDITOR="vi"
 
+export BAT_THEME="ansi"
+
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
 export BUN_INSTALL="$HOME/.bun"
