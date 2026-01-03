@@ -32,7 +32,8 @@ set title
 set titlestring=%{substitute(getcwd(),\ $HOME,\ '~',\ '')}
 set t_BE=
 
-colorscheme base16-black-metal-burzum
+" colorscheme base16-black-metal-burzum
+colorscheme candle-grey-transparent
 
 augroup Binary
   au!

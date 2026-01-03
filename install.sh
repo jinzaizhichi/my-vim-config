@@ -202,6 +202,8 @@ install_vim_plugins() {
         "https://github.com/adelarsq/vim-matchit.git"
         "https://github.com/mg979/vim-visual-multi.git"
         "https://github.com/justinmk/vim-sneak.git"
+        "https://github.com/aditya-azad/candle-grey.git"
+        "https://github.com/nikolvs/vim-sunbather.git"
     )
 
     for plugin in "${plugins[@]}"; do
