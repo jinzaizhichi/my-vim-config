@@ -265,3 +265,19 @@ func! GitRestoreCurrent()
 
   execute 'G restore ' . l:current_file
 endfunc
+
+func! GitPartialAdd(files) abort
+  if empty(a:files)
+    return
+  endif
+
+  let cmd = 'git add -- ' . join(map(copy(a:files), 'shellescape(v:val)'), ' ')
+
+  call system(cmd)
+
+  if v:shell_error
+    echoerr 'Failed to stage files'
+  else
+    echo 'Staged ' . len(a:files) . ' file(s)'
+  endif
+endfunc

@@ -21,7 +21,6 @@ nnoremap <Leader>ga :G add .<CR>
 nnoremap <Leader>gc :vertical G commit<CR>
 nnoremap <Leader>gp :G push<CR>
 nnoremap <Leader>gd :vertical G diff<CR>
-nnoremap <Leader>gl :Commits<CR>
 nnoremap <Leader>gr :call GitRestoreCurrent()<CR>
 
 " open netrw
@@ -38,8 +37,11 @@ nnoremap <Leader>kd :KisukeDeleteSession<CR>
 
 " fzf
 nnoremap <Leader>p :Files<CR>
-nnoremap <Leader>f :Rg<CR>
+nnoremap <Leader>f :RG<CR>
 nnoremap <Leader>bb :Buffers<CR>
+nnoremap <Leader>gl :Commits<CR>
+inoremap <expr> <c-x><c-f> fzf#vim#complete#path('rg --files')
+nnoremap <Leader>gpa :GitStage<CR>
 
 " buffers
 nnoremap <Leader>bn :bn<CR>

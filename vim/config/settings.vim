@@ -1,22 +1,17 @@
 runtime! ftplugin/man.vim
+
 packadd! matchit
 
-filetype plugin indent on
-
 scriptencoding utf-8
+
+filetype plugin indent on
 
 autocmd BufWritePre * :%s/\s\+$//e
 
 syntax enable
+
 set background=dark
 set termguicolors
-colorscheme base16-black-metal-burzum
-" set background=light
-" colorscheme solarized
-
-" FZF border color to match colorscheme
-highlight FZFBorder guifg=#333333 ctermfg=8
-
 set updatetime=300
 set signcolumn=yes
 set encoding=utf-8
@@ -33,13 +28,11 @@ set incsearch
 set noswapfile
 set foldmethod=syntax
 set nofoldenable
-
-" set title to render it in tmux panes
-" set title
-" set titlestring=%{substitute(getcwd(),\ $HOME,\ '~',\ '')}
-
-" Fix paste mode issues
+set title
+set titlestring=%{substitute(getcwd(),\ $HOME,\ '~',\ '')}
 set t_BE=
+
+colorscheme base16-black-metal-burzum
 
 augroup Binary
   au!
