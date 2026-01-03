@@ -3,8 +3,8 @@ export FZF_DEFAULT_OPTS='
   --height=80%
   --info=inline-right
   --prompt="❯ "
-  --pointer="▶"
-  --marker="✓"
+  --pointer="▶ "
+  --marker="! "
 '
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS='--preview "bat --style=auto --theme=ansi --color=always {}"'
