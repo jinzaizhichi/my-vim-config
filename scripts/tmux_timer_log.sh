@@ -30,7 +30,7 @@ EOF
 
 # Open vim in tmux popup
 tmux display-popup -E -w 80% -h 80% -d "#{pane_current_path}" \
-  "vim -c 'startinsert' -c 'normal! ggA' '$TEMP_NOTE'"
+  "vim -c 'normal! ggA' '$TEMP_NOTE'"
 
 # Check if user saved the file (file exists and has content beyond template)
 if [ -f "$TEMP_NOTE" ]; then
