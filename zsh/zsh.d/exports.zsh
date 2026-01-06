@@ -11,6 +11,8 @@ export EDITOR="vi"
 
 export BAT_THEME="ansi"
 
+export CLAUDE_CONFIG_DIR="$HOME/.config/claude"
+
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
 export BUN_INSTALL="$HOME/.bun"
