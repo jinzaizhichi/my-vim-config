@@ -10,7 +10,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 syntax enable
 
-set background=dark
+" set background=dark
 set termguicolors
 set updatetime=300
 set signcolumn=yes

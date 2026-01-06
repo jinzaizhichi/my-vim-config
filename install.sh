@@ -190,7 +190,6 @@ install_vim_plugins() {
 
     local plugins=(
         "https://github.com/tpope/vim-fugitive.git"
-        "https://github.com/junegunn/fzf.git"
         "https://github.com/junegunn/fzf.vim.git"
         "https://github.com/neoclide/coc.nvim.git"
         "https://github.com/vim-airline/vim-airline.git"
@@ -203,7 +202,7 @@ install_vim_plugins() {
         "https://github.com/mg979/vim-visual-multi.git"
         "https://github.com/justinmk/vim-sneak.git"
         "https://github.com/aditya-azad/candle-grey.git"
-        "https://github.com/nikolvs/vim-sunbather.git"
+        "https://github.com/chriskempson/base16-vim.git"
     )
 
     for plugin in "${plugins[@]}"; do
