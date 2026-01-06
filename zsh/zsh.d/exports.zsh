@@ -6,15 +6,15 @@ export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:"
 export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}"
 
 export TERM="wezterm"
-
 export EDITOR="vi"
-
 export BAT_THEME="ansi"
 
 export CLAUDE_CONFIG_DIR="$HOME/.config/claude"
+export ASDF_DATA_DIR="$HOME/.config/asdf"
 
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
+
 export BUN_INSTALL="$HOME/.bun"
 
 export PATH="$HOMEBREW_PREFIX/bin:$PATH"
