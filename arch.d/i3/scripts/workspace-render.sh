@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Get primary output name
+OUTPUT=$(i3-msg -t get_outputs | jq -r '.[] | select(.active) | .name' | head -1)
+
+i3-msg -t subscribe -m '["workspace", "output"]' | {
+    i3-msg -t get_workspaces;
+    while read EVENT; do i3-msg -t get_workspaces; done;
+} | jq --unbuffered -c --arg out "$OUTPUT" '
+    def fake_ws(name): {
+        name: name,
+        output: $out,
+    };
+    . + [ fake_ws("1"), fake_ws("2"), fake_ws("3"), fake_ws("4"), fake_ws("5"), fake_ws("6") ] | unique_by(.name) | sort_by(.name)
+'

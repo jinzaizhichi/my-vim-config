@@ -1,0 +1,23 @@
+general {
+        colors = false
+        interval = 2
+        separator = "  "
+}
+
+order += "cpu_usage"
+order += "disk /"
+order += "memory"
+
+cpu_usage {
+        format = "󰻠 %usage"
+}
+
+disk "/" {
+        format = "󰋊 %avail"
+}
+
+memory {
+        format = "󰍛 %used"
+        threshold_degraded = "1G"
+        format_degraded = "󰍛 %available"
+}
