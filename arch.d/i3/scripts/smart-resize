@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 read x y w h<<<$(i3-msg -t get_tree|jq -r '..?|select(.focused? and .window?)|"\(.rect.x) \(.rect.y) \(.rect.width) \(.rect.height)"'|head -1)
 

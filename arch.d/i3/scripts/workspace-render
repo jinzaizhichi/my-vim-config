@@ -1,6 +1,5 @@
 #!/bin/sh
 
-# Get primary output name
 OUTPUT=$(i3-msg -t get_outputs | jq -r '.[] | select(.active) | .name' | head -1)
 
 i3-msg -t subscribe -m '["workspace", "output"]' | {

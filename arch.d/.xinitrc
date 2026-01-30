@@ -31,6 +31,9 @@ fi
 
 # keyboard repeat: 200ms delay, 50 keys/sec
 xset r rate 200 50
+# screen lock with i3lock via xss-lock idle timeout: 10 seconds (change to 300
+# for 5 min, etc.)
+xset s 60
 
 # VM clipboard/display sharing
 spice-vdagent &
@@ -38,16 +41,13 @@ spice-vdagent &
 # clipboard history daemon (for clipmenu)
 clipmenud &
 
-# screen saver - start, wait for ready, lock, THEN start i3
-xscreensaver --no-splash &
+# xss-lock handles: idle timeout, suspend, lid close, loginctl lock-session
+xss-lock --transfer-sleep-lock -- /home/softboi/.scripts/lock.sh &
 
-# wait for xscreensaver daemon to initialize
-while ! xscreensaver-command -time >/dev/null 2>&1; do
-    sleep 0.1
-done
+# lock before starting window manager (i3lock blocks until unlock, no sleep needed)
+i3lock -e -f -n -i ~/Pictures/background.png
 
-# lock before starting window manager
-xscreensaver-command -lock
-sleep 0.5  # let lock window fully render before i3 starts
+# background
+feh --no-fehbg --bg-scale ~/Pictures/background.png
 
 exec i3

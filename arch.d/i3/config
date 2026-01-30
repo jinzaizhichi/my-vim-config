@@ -1,38 +1,23 @@
 set $mod Mod4
 
-font  pango:Iosevka Nerd Font Mono 14
-
-# ============================================================================
-# Window decoration / styling
-# ============================================================================
+font pango:Iosevka Nerd Font Mono 14
 
 default_border pixel 2
-smart_borders on
-
-# Force borders on all windows (override app requests)
 for_window [class=".*"] border pixel 2
 
-# Window colors (Black Metal Venom theme)
+# Window colors
 #                       border  backgr  text    indicator child_border
 client.focused          #2a0f0d #121212 #c1c1c1 #2a0f0d   #2a0f0d
 client.focused_inactive #222222 #121212 #999999 #222222   #222222
 client.unfocused        #121212 #000000 #666666 #121212   #121212
 client.urgent           #2a0f0d #2a0f0d #f8f7f2 #2a0f0d   #2a0f0d
 client.placeholder      #000000 #000000 #666666 #000000   #000000
-client.background       #000000
+client.background       #00000000
 
 # ============================================================================
 
 # autostart .desktop files (XDG autostart)
 exec --no-startup-id dex --autostart --environment i3
-
-# xscreensaver watcher: show bar and start tray apps only after unlock
-exec --no-startup-id xscreensaver-command -watch | while read event; do \
-    case "$event" in \
-        UNBLANK*) i3-msg bar mode dock; pgrep -x nm-applet || nm-applet & ;; \
-        LOCK*) i3-msg bar mode invisible ;; \
-    esac; \
-done
 
 # volume control (pactl/PulseAudio)
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -43,16 +28,16 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # launcher
-bindsym $mod+d exec "rofi -modi drun,run -show drun"
+bindsym $mod+d exec --no-startup-id "rofi -modi drun,run -show drun"
 
 # clipboard history
-bindsym $mod+c exec CM_LAUNCHER=rofi clipmenu
+bindsym $mod+c exec --no-startup-id CM_LAUNCHER=rofi clipmenu
 
 # change focus
 bindsym $mod+h focus left
@@ -67,8 +52,8 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # split in horizontal/vertical
-bindsym $mod+semicolon split h; exec --no-startup-id notify-send -t 1000 "Split" "Horizontal ─"
-bindsym $mod+apostrophe split v; exec --no-startup-id notify-send -t 1000 "Split" "Vertical │"
+bindsym $mod+semicolon split h; exec --no-startup-id notify-send -t 1000 "Split" "Horizontal"
+bindsym $mod+apostrophe split v; exec --no-startup-id notify-send -t 1000 "Split" "Vertical"
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -120,10 +105,10 @@ bindsym $mod+Shift+e exec --no-startup-id "rofi -dmenu -p 'Exit i3?' -lines 2 <<
 
 mode "resize" {
         # Smart resize - direction depends on window position
-        bindsym h exec --no-startup-id ~/.config/i3/scripts/smart-resize.sh h
-        bindsym j exec --no-startup-id ~/.config/i3/scripts/smart-resize.sh j
-        bindsym k exec --no-startup-id ~/.config/i3/scripts/smart-resize.sh k
-        bindsym l exec --no-startup-id ~/.config/i3/scripts/smart-resize.sh l
+        bindsym h exec --no-startup-id ~/.config/i3/scripts/smart-resize h
+        bindsym j exec --no-startup-id ~/.config/i3/scripts/smart-resize j
+        bindsym k exec --no-startup-id ~/.config/i3/scripts/smart-resize k
+        bindsym l exec --no-startup-id ~/.config/i3/scripts/smart-resize l
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
@@ -132,16 +117,17 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bar {
-        status_command i3blocks -c ~/.config/i3blocks/config
-        workspace_command ~/.config/i3/scripts/workspace-render.sh
-        font pango:Iosevka Nerd Font Mono 16
+        status_command i3blocks -c ~/.config/i3/statusbar.conf
+        workspace_command ~/.config/i3/scripts/workspace-render
+        font pango:Iosevka Nerd Font Mono 14
         mode dock
-        separator_symbol "  "
-        workspace_min_width 25
-        tray_padding 4
+        separator_symbol " | "
+        workspace_min_width 24
+        tray_padding 2
+        padding 0
+        tray_output primary
 
         colors {
-                # Black Metal Venom theme
                 background #000000
                 statusline #999999
                 separator  #333333
