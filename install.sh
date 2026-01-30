@@ -218,7 +218,6 @@ build_vim_plugins() {
     log_info "Building Vim plugins..."
 
     (cd "$HOME/.vim/pack/plugins/start/coc.nvim" && npm ci &> /dev/null) &
-    (cd "$HOME/.vim/pack/plugins/start/fzf" && ./install --all &> /dev/null) &
     (cd "$HOME/.vim/pack/plugins/start/kisuke.vim" && yarn build &> /dev/null) &
 
     wait
