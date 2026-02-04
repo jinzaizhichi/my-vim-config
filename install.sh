@@ -42,7 +42,7 @@ check_dependencies() {
         if [ "$OS" = "macos" ]; then
             echo "  brew install ${missing[*]}"
         else
-            echo "  sudo apt install ${missing[*]} (or use your package manager)"
+            echo "  paru ${missing[*]} (or use your package manager)"
         fi
         exit 1
     fi

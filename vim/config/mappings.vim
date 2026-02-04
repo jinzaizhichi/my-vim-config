@@ -34,6 +34,9 @@ vnoremap <Leader>kh :KisukeMarkHighlighted<CR>
 nnoremap <leader>krc :KisukeRemoveLastMarkedCodeBlock<CR>
 nnoremap <Leader>kc :KisukeCreateNewSession<CR>
 nnoremap <Leader>kd :KisukeDeleteSession<CR>
+nnoremap <Leader>krp :KisukeRestart<CR>
+nnoremap <Leader>kns :KisukeNextSession<CR>
+nnoremap <Leader>kps :KisukePreviousSession<CR>
 
 " fzf
 nnoremap <Leader>p :Files<CR>
@@ -58,6 +61,9 @@ nnoremap <Leader>ipw :vertical resize +10<CR>
 nnoremap <Leader>dpw :vertical resize -10<CR>
 nnoremap <Leader>iph :resize +10<CR>
 nnoremap <Leader>dph :resize -10<CR>
+
+" run precommit script
+nnoremap <leader>rp :Precommit<CR>
 
 " save file
 nnoremap <leader>s :w<CR>

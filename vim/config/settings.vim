@@ -10,7 +10,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 syntax enable
 
-" set background=dark
 set termguicolors
 set updatetime=300
 set signcolumn=yes
@@ -32,8 +31,7 @@ set title
 set titlestring=%{substitute(getcwd(),\ $HOME,\ '~',\ '')}
 set t_BE=
 
-" colorscheme base16-black-metal-burzum
-colorscheme candle-grey-transparent
+colorscheme base16-black-metal-venom
 
 augroup Binary
   au!
