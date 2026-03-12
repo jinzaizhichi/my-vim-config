@@ -33,7 +33,7 @@ fi
 xset r rate 200 50
 # screen lock with i3lock via xss-lock idle timeout: 10 seconds (change to 300
 # for 5 min, etc.)
-xset s 60
+xset s 180
 
 # VM clipboard/display sharing
 spice-vdagent &
