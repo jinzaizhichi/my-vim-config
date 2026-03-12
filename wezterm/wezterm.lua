@@ -45,7 +45,7 @@ table.insert(config.hyperlink_rules, {
 config.display_pixel_geometry = "BGR"
 
 -- config.color_scheme = 'Solarized Light (Gogh)'
-config.color_scheme = 'Black Metal (Burzum) (base16)'
+config.color_scheme = 'Black Metal (Venom) (base16)'
 
 config.keys = {
   { key = 'v',     mods = 'CMD',       action = wezterm.action.PasteFrom 'Clipboard' },
