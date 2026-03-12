@@ -10,6 +10,7 @@ source "$ZDOTDIR/zsh.d/plugins.zsh"
 [ -f ~/.private/.private.zsh ] && source ~/.private/.private.zsh
 [ -f ~/.work/.work.zsh ] && source ~/.work/.work.zsh
 [ -f ~/.bun/_bun ] && source ~/.bun/_bun
+[ -f ~/.cargo/env ] && source ~/.cargo/env
 
 # zmodload zsh/zprof
 # zprof

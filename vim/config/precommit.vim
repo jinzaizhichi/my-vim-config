@@ -6,11 +6,10 @@
 " "type-check": "tsc --noEmit --pretty",
 " "precommit": "yarn format && yarn lint && yarn type-check"
 "
-" Note: I usually have that 4 script above as exactly same in most of my
-" projects, with this helper functions It's easier than ever to
-" check/fix/navigate existing errors. `:CocDiagnostic` command checks open
-" buffers only. Also this helper functions can become a nice baseline to
-" extend anything else similiar
+" Note: I usually have that 4 script exactly same in most of my projects,
+" with this precommit.vim code It's easier than ever to check/fix/navigate
+" existing errors. Also this file become a nice baseline to extend anything
+" else similiar
 "
 " Mapping: nnoremap <leader>rp :Precommit<CR>
 " Usage: :Precommit
