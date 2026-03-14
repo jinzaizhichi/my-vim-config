@@ -10,6 +10,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 syntax enable
 
+" set background=dark
 set termguicolors
 set updatetime=300
 set signcolumn=yes
@@ -26,12 +27,14 @@ set shiftwidth=2
 set incsearch
 set noswapfile
 set foldmethod=syntax
-set nofoldenable
+set foldenable
+set foldlevelstart=99
 set title
 set titlestring=%{substitute(getcwd(),\ $HOME,\ '~',\ '')}
 set t_BE=
 
 colorscheme base16-black-metal-venom
+" colorscheme candle-grey-transparent
 
 augroup Binary
   au!
