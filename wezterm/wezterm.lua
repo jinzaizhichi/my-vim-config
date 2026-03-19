@@ -1,7 +1,7 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
-config.font = wezterm.font('Iosevka NF')
+config.font = wezterm.font('IosevkaTerm NF')
 config.font_size = 18.0
 config.warn_about_missing_glyphs = true
 config.allow_square_glyphs_to_overflow_width = "Always"
