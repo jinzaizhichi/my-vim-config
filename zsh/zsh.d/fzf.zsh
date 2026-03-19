@@ -20,5 +20,6 @@ export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
 source <(fzf --zsh)
 
 bindkey -r '^T'
-bindkey -r '^G'
+bindkey -r '^K'
+
 bindkey '^O' fzf-file-widget

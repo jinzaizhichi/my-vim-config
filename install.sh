@@ -56,10 +56,7 @@ clone_dotfiles() {
     log_info "Dotfiles directory already exists, removing..."
     rm -rf "$DOTFILES_DIR"
   fi
-  git clone git@github.com:dorukozerr/dotfiles.git "$DOTFILES_DIR" &> /dev/null
-
-  cd $DOTFILES_DIR
-  git submodule update --recursive --init &> /dev/null
+  git clone git@github.com:dorukozerr/dotfiles.git "$DOTFILES_DIR" &> /dev/null --recurse-submodules --depth 1
 
   log_info "Dotfiles cloned successfully"
 }
