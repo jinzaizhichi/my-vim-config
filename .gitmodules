@@ -47,3 +47,15 @@
 [submodule "zsh/plugins/zsh-autopair"]
 	path = zsh/plugins/zsh-autopair
 	url = 'git@github.com:hlissner/zsh-autopair
+[submodule "zsh/plugins/zsh-syntax-highlighting"]
+	path = zsh/plugins/zsh-syntax-highlighting
+	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
+[submodule "zsh/plugins/fzf-tab"]
+	path = zsh/plugins/fzf-tab
+	url = git@github.com:Aloxaf/fzf-tab.git
+[submodule "zsh/plugins/git-completion"]
+	path = zsh/plugins/git-completion
+	url = git@github.com:felipec/git-completion.git
+[submodule "zsh/plugins/fzf-clipboard"]
+	path = zsh/plugins/fzf-clipboard
+	url = git@github.com:dorukozerr/fzf-clipboard.git

@@ -22,10 +22,3 @@ source <(fzf --zsh)
 bindkey -r '^T'
 bindkey -r '^G'
 bindkey '^O' fzf-file-widget
-
-source "$HOME/bin/fzf-git.sh/fzf-git.sh"
-source "$HOME/bin/fzf-clipboard/fzf-clipboard.zsh"
-
-stty -ixon
-
-alias fssh="$HOME/bin/fzf-ssh.sh/ssh.fzf"

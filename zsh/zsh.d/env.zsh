@@ -11,5 +11,3 @@ export PATH="$HOME/bin:$PATH"
 
 [ -s "${ASDF_DATA_DIR:-$HOME/.asdf}/asdf.sh" ] && source "${ASDF_DATA_DIR:-$HOME/.asdf}/asdf.sh"
 [ -f ~/.cargo/env ] && source ~/.cargo/env
-[ -f /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-[ -f /opt/homebrew/share/zsh-autopair/autopair.zsh ] && source /opt/homebrew/share/zsh-autopair/autopair.zsh
