@@ -75,6 +75,7 @@ backup_existing_configs() {
     "$HOME/.config/zsh/.zprofile"
     "$HOME/.config/zsh/.zshrc"
     "$HOME/.config/zsh/zsh.d"
+    "$HOME/.config/zsh/plugins"
     "$HOME/.gitconfig"
     "$HOME/.vim"
     "$HOME/.vimrc"
@@ -123,6 +124,7 @@ setup_zsh() {
   mv "$DOTFILES_DIR/zsh/.zprofile" "$HOME/.config/zsh"
   mv "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.config/zsh"
   mv "$DOTFILES_DIR/zsh/zsh.d" "$HOME/.config/zsh"
+  mv "$DOTFILES_DIR/zsh/plugins" "$HOME/.config/zsh"
   log_info "Zsh setup complete"
 }
 
