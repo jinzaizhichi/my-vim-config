@@ -98,26 +98,13 @@ setup_tmux() {
 
 setup_scripts() {
     log_info "Setting up custom scripts..."
+
     mv "$DOTFILES_DIR/scripts" "$HOME/.scripts"
 
-    local scripts=(
-        "commit.sh"
-        "lazy_grep.sh"
-        "update_vim_plugins.sh"
-        "kill_process.sh"
-        "tmux_save_session.sh"
-        "tmux_restore_session.sh"
-        "tmux_fzf_switcher.sh"
-        "tmux_file_picker.sh"
-        "tmux_timer.sh"
-        "tmux_timer_log.sh"
-        "tmux_timer_toggle.sh"
-        "vman.sh"
-        "extract_screenshots.sh"
-    )
+    rm -rf "$HOME/.scripts/cringe_source"
 
-    for script in "${scripts[@]}"; do
-        chmod +x "$HOME/.scripts/$script"
+    for SCRIPT in $(\ls "$HOME/.scripts"); do
+      chmod +x "$SCRIPT"
     done
 
     log_info "Scripts setup complete"
