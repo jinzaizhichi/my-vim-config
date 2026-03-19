@@ -144,30 +144,12 @@ setup_git() {
   log_info "Git setup complete"
 }
 
-setup_vim_temp() {
-  log_info "Setting up temporary Vim configuration..."
-  mkdir -p "$HOME/.vim/pack/plugins/start"
-
-  cat > "$HOME/.vim/temp.vimrc" << 'EOF'
-set nocompatible
-set hidden
-set updatetime=100
-let g:coc_disable_startup_warning = 1
-EOF
-
-log_info "Temporary Vim config created"
-}
-
-install_coc_extensions() {
+setup_vim() {
+  log_info "Setting up Vim configuration..."
+  mv "$DOTFILES_DIR/vim" "$HOME/.vim/"
   log_info "Installing CoC extensions..."
-  yes | vim -u "$HOME/.vim/temp.vimrc" -c 'CocInstall -sync coc-vimlsp coc-sh coc-tsserver coc-go coc-html coc-css @yaegassy/coc-tailwindcss3 coc-json coc-yaml coc-prettier coc-eslint coc-dotenv coc-sql coc-lua coc-toml coc-svg coc-zshell' -c 'qall!' > /dev/null 2>&1
+  yes | vim -c 'CocInstall -sync coc-vimlsp coc-sh coc-tsserver coc-go coc-html coc-css @yaegassy/coc-tailwindcss3 coc-json coc-yaml coc-prettier coc-eslint coc-dotenv coc-sql coc-lua coc-toml coc-svg coc-zshell' -c 'qall!' > /dev/null 2>&1
   log_info "CoC extensions installed successfully"
-}
-
-setup_vim_final() {
-  log_info "Setting up final Vim configuration..."
-  mv "$DOTFILES_DIR/vim/"* "$HOME/.vim/"
-  log_info "Vim configuration complete"
 }
 
 cleanup() {
@@ -189,9 +171,7 @@ main() {
   setup_wezterm
   setup_htop
   setup_git
-  setup_vim_temp
-  install_coc_extensions
-  setup_vim_final
+  setup_vim
   cleanup
 
   log_info "Installation complete! Backup saved to $BACKUP_DIR"
