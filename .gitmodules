@@ -53,3 +53,21 @@
 [submodule "zsh/plugins/fzf-clipboard"]
 	path = zsh/plugins/fzf-clipboard
 	url = git@github.com:dorukozerr/fzf-clipboard.git
+[submodule "tmux/plugins/tmux-copycat"]
+	path = tmux/plugins/tmux-copycat
+	url = git@github.com:tmux-plugins/tmux-copycat.git
+[submodule "tmux/plugins/tmux-git-autofetch"]
+	path = tmux/plugins/tmux-git-autofetch
+	url = git@github.com:thepante/tmux-git-autofetch.git
+[submodule "tmux/plugins/tmux-notify"]
+	path = tmux/plugins/tmux-notify
+	url = git@github.com:rickstaa/tmux-notify.git
+[submodule "tmux/plugins/tmux-now-playing"]
+	path = tmux/plugins/tmux-now-playing
+	url = git@github.com:spywhere/tmux-now-playing.git
+[submodule "tmux/plugins/tmux-resurrect"]
+	path = tmux/plugins/tmux-resurrect
+	url = git@github.com:tmux-plugins/tmux-resurrect.git
+[submodule "tmux/plugins/tmux-yank"]
+	path = tmux/plugins/tmux-yank
+	url = git@github.com:tmux-plugins/tmux-yank.git
