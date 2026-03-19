@@ -154,37 +154,6 @@ EOF
 log_info "Temporary Vim config created"
 }
 
-install_vim_plugins() {
-  log_info "Installing Vim plugins..."
-  cd "$HOME/.vim/pack/plugins/start"
-
-  local plugins=(
-    "git@github.com:tpope/vim-fugitive.git"
-    "git@github.com:junegunn/fzf.vim.git"
-    "git@github.com:neoclide/coc.nvim.git"
-    "git@github.com:vim-airline/vim-airline.git"
-    "git@github.com:vim-airline/vim-airline-themes.git"
-    "git@github.com:ryanoasis/vim-devicons.git"
-    "git@github.com:dorukozerr/kisuke.vim.git"
-    "git@github.com:MaxMEllon/vim-jsx-pretty.git"
-    "git@github.com:Konfekt/FastFold.git"
-    "git@github.com:adelarsq/vim-matchit.git"
-    "git@github.com:mg979/vim-visual-multi.git"
-    "git@github.com:justinmk/vim-sneak.git"
-    "git@github.com:aditya-azad/candle-grey.git"
-    "git@github.com:chriskempson/base16-vim.git"
-    "git@github.com:vim/killersheep.git"
-  )
-
-  for plugin in "${plugins[@]}"; do
-    git clone "$plugin" &> /dev/null &
-  done
-
-  wait
-
-  log_info "Vim plugins cloned successfully"
-}
-
 build_vim_plugins() {
   log_info "Building Vim plugins..."
 
@@ -229,7 +198,6 @@ main() {
   setup_htop
   setup_git
   setup_vim_temp
-  install_vim_plugins
   build_vim_plugins
   install_coc_extensions
   setup_vim_final

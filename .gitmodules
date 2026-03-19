@@ -1,0 +1,45 @@
+[submodule "vim/pack/plugins/start/vim-fugitive"]
+	path = vim/pack/plugins/start/vim-fugitive
+	url = git@github.com:tpope/vim-fugitive
+[submodule "vim/pack/plugins/start/fzf.vim"]
+	path = vim/pack/plugins/start/fzf.vim
+	url = git@github.com:junegunn/fzf.vim
+[submodule "vim/pack/plugins/start/coc.nvim"]
+	path = vim/pack/plugins/start/coc.nvim
+	url = git@github.com:neoclide/coc.nvim
+[submodule "vim/pack/plugins/start/vim-airline"]
+	path = vim/pack/plugins/start/vim-airline
+	url = git@github.com:vim-airline/vim-airline
+[submodule "vim/pack/plugins/start/vim-airline-themes"]
+	path = vim/pack/plugins/start/vim-airline-themes
+	url = git@github.com:vim-airline/vim-airline-themes
+[submodule "vim/pack/plugins/start/vim-devicons"]
+	path = vim/pack/plugins/start/vim-devicons
+	url = git@github.com:ryanoasis/vim-devicons
+[submodule "vim/pack/plugins/start/kisuke.vim"]
+	path = vim/pack/plugins/start/kisuke.vim
+	url = git@github.com:dorukozerr/kisuke.vim
+[submodule "vim/pack/plugins/start/vim-jsx-pretty"]
+	path = vim/pack/plugins/start/vim-jsx-pretty
+	url = git@github.com:MaxMEllon/vim-jsx-pretty
+[submodule "vim/pack/plugins/start/FastFold"]
+	path = vim/pack/plugins/start/FastFold
+	url = git@github.com:Konfekt/FastFold
+[submodule "vim/pack/plugins/start/vim-matchit"]
+	path = vim/pack/plugins/start/vim-matchit
+	url = git@github.com:adelarsq/vim-matchit
+[submodule "vim/pack/plugins/start/vim-visual-multi"]
+	path = vim/pack/plugins/start/vim-visual-multi
+	url = git@github.com:mg979/vim-visual-multi
+[submodule "vim/pack/plugins/start/vim-sneak"]
+	path = vim/pack/plugins/start/vim-sneak
+	url = git@github.com:justinmk/vim-sneak
+[submodule "vim/pack/plugins/start/candle-grey"]
+	path = vim/pack/plugins/start/candle-grey
+	url = git@github.com:aditya-azad/candle-grey
+[submodule "vim/pack/plugins/start/base16-vim"]
+	path = vim/pack/plugins/start/base16-vim
+	url = git@github.com:chriskempson/base16-vim
+[submodule "vim/pack/plugins/start/killersheep"]
+	path = vim/pack/plugins/start/killersheep
+	url = git@github.com:vim/killersheep
