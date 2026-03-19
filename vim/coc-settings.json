@@ -1,6 +1,6 @@
 {
   "eslint.alwaysShowStatus": true,
-  "eslint.experimental.useFlatConfig": true,
+  "eslint.useFlatConfig": true,
   "floatFactory.floatConfig": {
     "border": true,
     "rounded": true,
@@ -12,9 +12,8 @@
     "borderhighlight": "CocFloatingBorder",
     "highlight": "CocFloating"
   },
+  "tsserver.experimental.enableProjectDiagnostics": true,
   "diagnostic.floatConfig": {
-    "border": true,
-    "rounded": true,
     "borderhighlight": "CocFloatingBorder",
     "highlight": "CocFloating"
   },
@@ -30,6 +29,5 @@
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "sql.localstorage": "~/.config/coc/extensions/coc-sql-data"
+  "typescript.updateImportsOnFileMove.enabled": "always"
 }
