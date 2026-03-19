@@ -57,6 +57,10 @@ clone_dotfiles() {
     rm -rf "$DOTFILES_DIR"
   fi
   git clone git@github.com:dorukozerr/dotfiles.git "$DOTFILES_DIR" &> /dev/null
+
+  cd "DOTFILES_DIR"
+  git submodule update --recursive --init &> /dev/null
+
   log_info "Dotfiles cloned successfully"
 }
 
@@ -154,18 +158,6 @@ EOF
 log_info "Temporary Vim config created"
 }
 
-build_vim_plugins() {
-  log_info "Building Vim plugins..."
-
-  (cd "$HOME/.vim/pack/plugins/start/coc.nvim" && npm ci &> /dev/null) &
-  (cd "$HOME/.vim/pack/plugins/start/kisuke.vim" && yarn build &> /dev/null) &
-
-  wait
-
-  cd "$HOME"
-  log_info "Vim plugins built successfully"
-}
-
 install_coc_extensions() {
   log_info "Installing CoC extensions..."
   yes | vim -u "$HOME/.vim/temp.vimrc" -c 'CocInstall -sync coc-vimlsp coc-sh coc-tsserver coc-go coc-html coc-css @yaegassy/coc-tailwindcss3 coc-json coc-yaml coc-prettier coc-eslint coc-dotenv coc-sql coc-lua coc-toml coc-svg coc-zshell' -c 'qall!' > /dev/null 2>&1
@@ -198,7 +190,6 @@ main() {
   setup_htop
   setup_git
   setup_vim_temp
-  build_vim_plugins
   install_coc_extensions
   setup_vim_final
   cleanup
