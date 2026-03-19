@@ -101,7 +101,9 @@ setup_scripts() {
 
     mv "$DOTFILES_DIR/scripts" "$HOME/.scripts"
 
-    rm -rf "$HOME/.scripts/cringe_source"
+    cd "$HOME/.scripts/"
+
+    rm -rf cring_source
 
     for SCRIPT in $(\ls "$HOME/.scripts"); do
       chmod +x "$SCRIPT"
@@ -136,25 +138,6 @@ setup_git() {
     log_info "Setting up Git configuration..."
     mv "$DOTFILES_DIR/git/.gitconfig" "$HOME/"
     log_info "Git setup complete"
-}
-
-setup_watchman() {
-    log_info "Setting up Watchman..."
-    mkdir -p "$HOME/.local/var/run/watchman/custom"
-    mkdir -p "$HOME/.local/var/log/watchman"
-    chmod 700 "$HOME/.local/var/run/watchman/custom"
-    chmod 755 "$HOME/.local/var/log/watchman"
-    mkdir -p "$HOME/bin"
-    mv "$DOTFILES_DIR/bin/watchman" "$HOME/bin/watchman"
-    chmod +x "$HOME/bin/watchman"
-
-    if command -v watchman &> /dev/null; then
-        log_info "Stopping existing Watchman processes..."
-        /opt/homebrew/bin/watchman shutdown-server &> /dev/null || true
-        pkill -f watchman &> /dev/null || true
-    fi
-
-    log_info "Watchman setup complete"
 }
 
 setup_vim_temp() {
@@ -244,7 +227,6 @@ main() {
     setup_wezterm
     setup_htop
     setup_git
-    setup_watchman
     setup_vim_temp
     install_vim_plugins
     build_vim_plugins
