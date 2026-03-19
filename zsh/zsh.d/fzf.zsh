@@ -1,5 +1,3 @@
-local FZF_LAYOUT
-
 if [[ -n "$TMUX" ]]; then
   FZF_LAYOUT="--tmux=100%"
 else
@@ -26,7 +24,7 @@ bindkey -r '^G'
 bindkey '^O' fzf-file-widget
 
 source "$HOME/bin/fzf-git.sh/fzf-git.sh"
-source "$HOME/bin/fzf-clipboard.sh/fzf-clipboard.zsh"
+source "$HOME/bin/fzf-clipboard/fzf-clipboard.zsh"
 
 stty -ixon
 
