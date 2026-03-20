@@ -71,3 +71,6 @@
 [submodule "tmux/plugins/tmux-yank"]
 	path = tmux/plugins/tmux-yank
 	url = git@github.com:tmux-plugins/tmux-yank.git
+[submodule "tmux/plugins/tmux-mem-cpu-load"]
+	path = tmux/plugins/tmux-mem-cpu-load
+	url = git@github.com:thewtex/tmux-mem-cpu-load.git
