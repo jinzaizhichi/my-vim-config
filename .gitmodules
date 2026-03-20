@@ -56,12 +56,6 @@
 [submodule "tmux/plugins/tmux-copycat"]
 	path = tmux/plugins/tmux-copycat
 	url = git@github.com:tmux-plugins/tmux-copycat.git
-[submodule "tmux/plugins/tmux-git-autofetch"]
-	path = tmux/plugins/tmux-git-autofetch
-	url = git@github.com:thepante/tmux-git-autofetch.git
-[submodule "tmux/plugins/tmux-notify"]
-	path = tmux/plugins/tmux-notify
-	url = git@github.com:rickstaa/tmux-notify.git
 [submodule "tmux/plugins/tmux-now-playing"]
 	path = tmux/plugins/tmux-now-playing
 	url = git@github.com:spywhere/tmux-now-playing.git
