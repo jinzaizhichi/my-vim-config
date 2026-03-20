@@ -16,10 +16,20 @@ play_frames() {
     fi
   done < "$file"
   [[ -n "$frame" ]] && frames+=("$frame")
-  for ((i=0; i<11; i++)); do printf '\n'; done
+
+  local frame_h=11 frame_w=24
+  local top_pad=$(( ($(tput lines) - frame_h) / 2 ))
+  local left_pad=$(( ($(tput cols) - frame_w) / 2 ))
+
+  printf '\033[2J\033[H'
+  for ((i=0; i < top_pad + frame_h; i++)); do printf '\n'; done
+
   while true; do
     for f in "${frames[@]}"; do
-      printf "\033[11A%s" "$f"
+      printf "\033[%dA" "$frame_h"
+      while IFS= read -r line; do
+        printf "%${left_pad}s%s\n" "" "$line"
+      done <<< "${f%$'\n'}"
       sleep "$delay"
     done
   done
