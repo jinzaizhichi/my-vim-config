@@ -5,6 +5,36 @@ set -e
 BACKUP_DIR="$HOME/dotfiles_backup_$(date +%Y%m%d_%H%M%S)"
 DOTFILES_DIR="$HOME/kawaiDotfiles"
 
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+play_frames() {
+  local file="$1"
+  local delay="${2:-0.1}"
+  local frame=""
+  local -a frames=()
+
+  while IFS= read -r line || [[ -n "$line" ]]; do
+    if [[ -z "$line" ]]; then
+      [[ -n "$frame" ]] && frames+=("$frame")
+      frame=""
+    else
+      frame+="$line"$'\n'
+    fi
+  done < "$file"
+  [[ -n "$frame" ]] && frames+=("$frame")
+
+  local height=11
+  for ((i=0; i<height; i++)); do printf '\n'; done
+
+  while true; do
+    for f in "${frames[@]}"; do
+      printf "\033[%dA" "$height"
+      printf '%s' "$f"
+      sleep "$delay"
+    done
+  done
+}
+
 detach_submodule() {
   local rel_path="$1"
   local dest="$2"
@@ -18,10 +48,10 @@ detach_submodule() {
 
 main() {
   # Clone
-  [ -d "$DOTFILES_DIR" ] && rm -rf "$DOTFILES_DIR"
-  git clone git@github.com:dorukozerr/dotfiles.git "$DOTFILES_DIR" --recurse-submodules &> /dev/null
-  git -C "$DOTFILES_DIR" submodule update --init --rebase --recursive
-  git -C "$DOTFILES_DIR" submodule sync --recursive
+  # [ -d "$DOTFILES_DIR" ] && rm -rf "$DOTFILES_DIR"
+  # git clone git@github.com:dorukozerr/dotfiles.git "$DOTFILES_DIR" --recurse-submodules &> /dev/null
+  # git -C "$DOTFILES_DIR" submodule update --init --rebase --recursive
+  # git -C "$DOTFILES_DIR" submodule sync --recursive
 
   # Backup
   mkdir -p "$BACKUP_DIR"
@@ -81,7 +111,11 @@ main() {
   rm -f "$HOME/.vim/temp.vimrc"
   rm -rf "$DOTFILES_DIR"
 
-  echo "Done. Backup saved to $BACKUP_DIR"
 }
+
+printf '\033[?25l'
+play_frames "$SCRIPT_DIR/rm.frames" 0.1 &
+ANIM_PID=$!
+trap 'kill "$ANIM_PID" 2>/dev/null; printf "\033[?25h"' EXIT INT TERM
 
 main
