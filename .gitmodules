@@ -68,3 +68,7 @@
 [submodule "tmux/plugins/tmux-mem-cpu-load"]
 	path = tmux/plugins/tmux-mem-cpu-load
 	url = git@github.com:thewtex/tmux-mem-cpu-load.git
+[submodule "tmux/plugins/tmux-continuum"]
+	path = tmux/plugins/tmux-continuum
+	url = git@github.com:dorukozerr/tmux-continuum.git
+	branch = feat/support-osx-wezterm-start
