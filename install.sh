@@ -1,4 +1,14 @@
 #!/bin/bash
+#
+#  _____               _    ____      _   ___ _ _
+# |  |  |___ _ _ _ ___|_|  |    \ ___| |_|  _|_| |___ ___
+# |    -| .'| | | | .'| |  |  |  | . |  _|  _| | | -_|_ -|
+# |__|__|__,|_____|__,|_|  |____/|___|_| |_| |_|_|___|___|
+#
+# Author: Doruk Özer <dorukozer@protonmail.com>
+#
+# vim, tmux, zsh, wezterm, fzf, ...
+#
 
 set -e
 
@@ -35,6 +45,7 @@ play_frames() {
   done
 }
 
+# I feel like its too late for chezmoi, not after this function
 detach_submodule() {
   mkdir -p "$(dirname "$2")"
   mv "$DOTFILES_DIR/$1" "$2"
