@@ -57,8 +57,37 @@ clone_dotfiles() {
     rm -rf "$DOTFILES_DIR"
   fi
   git clone git@github.com:dorukozerr/dotfiles.git "$DOTFILES_DIR" &> /dev/null --recurse-submodules --depth 1
+  git -C "$DOTFILES_DIR" submodule update --init --rebase --recursive
+  git -C "$DOTFILES_DIR" submodule sync --recursive
 
   log_info "Dotfiles cloned successfully"
+}
+
+detach_submodule() {
+  local rel_path="$1"
+  local dest="$2"
+
+  mkdir -p "$(dirname "$dest")"
+  mv "$DOTFILES_DIR/$rel_path" "$dest"
+  rm "$dest/.git"
+  mv "$DOTFILES_DIR/.git/modules/$rel_path" "$dest/.git"
+  git config --file "$dest/.git/config" --unset core.worktree
+}
+
+setup_plugins() {
+  log_info "Detaching submodules as standalone repos..."
+  cd "$(dirname "$DOTFILES_DIR")"
+  local vim_plugins=(
+    "vim-fugitive" "fzf.vim" "vim-airline" "vim-airline-themes" "vim-devicons"
+    "kisuke.vim" "vim-jsx-pretty" "FastFold" "vim-matchit" "vim-visual-multi"
+    "vim-sneak" "candle-grey" "base16-vim" "killersheep" "coc.nvim"
+  )
+  local zsh_plugins=("zsh-autopair" "zsh-syntax-highlighting" "fzf-clipboard")
+  local tmux_plugins=("tmux-copycat" "tmux-git-autofetch" "tmux-notify" "tmux-now-playing" "tmux-resurrect" "tmux-yank")
+  for p in "${vim_plugins[@]}";  do detach_submodule "vim/pack/plugins/start/$p"  "$HOME/.vim/pack/plugins/start/$p";  done
+  for p in "${zsh_plugins[@]}";  do detach_submodule "zsh/plugins/$p"             "$HOME/.config/zsh/plugins/$p";      done
+  for p in "${tmux_plugins[@]}"; do detach_submodule "tmux/plugins/$p"            "$HOME/.config/tmux/plugins/$p";     done
+  log_info "Plugins detached successfully"
 }
 
 backup_existing_configs() {
@@ -93,8 +122,8 @@ backup_existing_configs() {
 
 setup_tmux() {
   log_info "Setting up Tmux configuration..."
-  mkdir -p "$HOME/.config"
-  mv "$DOTFILES_DIR/tmux" "$HOME/.config/"
+  mkdir -p "$HOME/.config/tmux"
+  cp -r "$DOTFILES_DIR/tmux/." "$HOME/.config/tmux/"
   log_info "Tmux setup complete"
 }
 
@@ -121,7 +150,6 @@ setup_zsh() {
   mv "$DOTFILES_DIR/zsh/.zprofile" "$HOME/.config/zsh"
   mv "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.config/zsh"
   mv "$DOTFILES_DIR/zsh/zsh.d" "$HOME/.config/zsh"
-  mv "$DOTFILES_DIR/zsh/plugins" "$HOME/.config/zsh"
   log_info "Zsh setup complete"
 }
 
@@ -145,7 +173,7 @@ setup_git() {
 
 setup_vim() {
   log_info "Setting up Vim configuration..."
-  mv "$DOTFILES_DIR/vim" "$HOME/.vim/"
+  cp -r "$DOTFILES_DIR/vim/." "$HOME/.vim/"
   log_info "Installing CoC extensions..."
   yes | vim -c 'CocInstall -sync coc-vimlsp coc-sh coc-tsserver coc-go coc-html coc-css @yaegassy/coc-tailwindcss3 coc-json coc-yaml coc-prettier coc-eslint coc-dotenv coc-sql coc-lua coc-toml coc-svg coc-zshell' -c 'qall!' > /dev/null 2>&1
   log_info "CoC extensions installed successfully"
@@ -164,6 +192,7 @@ main() {
   check_dependencies
   clone_dotfiles
   backup_existing_configs
+  setup_plugins
   setup_tmux
   setup_scripts
   setup_zsh
