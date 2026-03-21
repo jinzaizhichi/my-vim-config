@@ -72,3 +72,6 @@
 	path = tmux/plugins/tmux-continuum
 	url = git@github.com:dorukozerr/tmux-continuum.git
 	branch = feat/support-osx-wezterm-start
+[submodule "tmux/plugins/tmux-window-name"]
+	path = tmux/plugins/tmux-window-name
+	url = git@github.com:ofirgall/tmux-window-name.git
