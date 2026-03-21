@@ -36,6 +36,10 @@ set t_BE=
 colorscheme base16-black-metal-venom
 " colorscheme candle-grey-transparent
 
+if !empty($TMUX) && has('job')
+  autocmd VimEnter,VimLeave * call job_start(expand('~/.config/tmux/plugins/tmux-window-name/scripts/rename_session_windows.py'))
+endif
+
 augroup Binary
   au!
   au BufReadPre  *.bin,*.pcap set binary
