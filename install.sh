@@ -1,5 +1,4 @@
 #!/bin/bash
-#
 #  _____               _    ____      _   ___ _ _
 # |  |  |___ _ _ _ ___|_|  |    \ ___| |_|  _|_| |___ ___
 # |    -| .'| | | | .'| |  |  |  | . |  _|  _| | | -_|_ -|
@@ -11,8 +10,8 @@
 # git. Also some shell scripts.
 # - vim, tmux, zsh has plugins as submodules in git, after clone they get
 # restored to standalone repo state.
-# - I really wanna switch to chezmoi but its too late :(( It's hard for me
-# after the detach submodules function
+# - I really wanna switch to chezmoi but its too late :(( not after the detach
+# submodules function
 
 set -e
 
