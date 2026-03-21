@@ -11,3 +11,11 @@ export PATH="$HOME/bin:$PATH"
 
 [ -s "${ASDF_DATA_DIR:-$HOME/.asdf}/asdf.sh" ] && source "${ASDF_DATA_DIR:-$HOME/.asdf}/asdf.sh"
 [ -f ~/.cargo/env ] && source ~/.cargo/env
+
+autoload -Uz add-zsh-hook
+
+tmux-window-name() {
+	($HOME/.config/tmux/plugins/tmux-window-name/scripts/rename_session_windows.py &)
+}
+
+add-zsh-hook chpwd tmux-window-name
