@@ -15,7 +15,7 @@ export PATH="$HOME/bin:$PATH"
 autoload -Uz add-zsh-hook
 
 tmux-window-name() {
-	($HOME/.config/tmux/plugins/tmux-window-name/scripts/rename_session_windows.py &)
+  [[ -n "$TMUX" ]] && ($HOME/.config/tmux/plugins/tmux-window-name/scripts/rename_session_windows.py &)
 }
 
 add-zsh-hook chpwd tmux-window-name
