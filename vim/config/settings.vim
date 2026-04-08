@@ -43,3 +43,7 @@ augroup Binary
   au BufWritePre *.bin,*.pcap silent %!xxd -r
   au BufWritePost *.bin,*.pcap silent %!xxd
 augroup END
+
+if has('mac')
+  let g:fugitive_pty_debug_override = 0
+endif
