@@ -68,3 +68,6 @@
 [submodule "tmux/plugins/tmux-mem-cpu-load"]
 	path = tmux/plugins/tmux-mem-cpu-load
 	url = git@github.com:thewtex/tmux-mem-cpu-load.git
+[submodule "tmux/plugins/tmux-nerd-font-window-name"]
+	path = tmux/plugins/tmux-nerd-font-window-name
+	url = git@github.com:joshmedeski/tmux-nerd-font-window-name.git
