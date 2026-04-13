@@ -34,6 +34,7 @@ set titlestring=%{substitute(getcwd(),\ $HOME,\ '~',\ '')}
 set t_BE=
 
 colorscheme base16-black-metal-venom
+hi Normal guibg=NONE ctermbg=NONE
 " colorscheme candle-grey-transparent
 
 augroup Binary

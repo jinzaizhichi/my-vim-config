@@ -1,4 +1,3 @@
-" let g:airline_theme='base16_classic_dark'
 let g:airline_theme='base16_black_metal_venom'
 
 let g:airline_left_sep=''
