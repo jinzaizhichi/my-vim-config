@@ -1,13 +1,7 @@
 runtime! ftplugin/man.vim
-
 packadd! matchit
-
 scriptencoding utf-8
-
 filetype plugin indent on
-
-autocmd BufWritePre * :%s/\s\+$//e
-
 syntax enable
 
 " set background=dark
@@ -36,6 +30,10 @@ set t_BE=
 colorscheme base16-black-metal-venom
 hi Normal guibg=NONE ctermbg=NONE
 " colorscheme candle-grey-transparent
+
+let g:netrw_banner=0
+
+autocmd BufWritePre * :%s/\s\+$//e
 
 augroup Binary
   au!

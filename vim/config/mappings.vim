@@ -24,7 +24,7 @@ nnoremap <Leader>gd :vertical G diff<CR>
 nnoremap <Leader>gr :call GitRestoreCurrent()<CR>
 
 " open netrw
-nnoremap <Leader>t :Explore<CR>
+nnoremap <Leader>t :Lexplore<CR>
 
 " kisuke
 nnoremap <Leader>ko :KisukeOpen<CR>
@@ -45,6 +45,7 @@ nnoremap <Leader>bb :Buffers<CR>
 nnoremap <Leader>gl :Commits<CR>
 inoremap <expr> <c-x><c-f> fzf#vim#complete#path('rg --files')
 nnoremap <Leader>gpa :GitStage<CR>
+nnoremap <Leader>c :Commands<CR>
 
 " buffers
 nnoremap <Leader>bn :bn<CR>

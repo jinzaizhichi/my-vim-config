@@ -2,8 +2,7 @@
 
 set -euo pipefail
 
-
-main() {
+tmux_file_picker() {
 	if [[ -z "${TMUX-}" ]]; then
 		echo "Error: This script must be run inside a tmux session." >&2
 
@@ -169,4 +168,4 @@ main() {
 	tmux send-keys -t "$pane_id" "$files_oneline"
 }
 
-main "$@"
+tmux_file_picker "$@"
