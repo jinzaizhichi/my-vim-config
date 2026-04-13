@@ -2,7 +2,7 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 config.font = wezterm.font('IosevkaTerm NF')
-config.font_size = 18.0
+config.font_size = 16.0
 config.warn_about_missing_glyphs = true
 config.allow_square_glyphs_to_overflow_width = "Always"
 
@@ -13,7 +13,7 @@ config.line_height = 1.0
 config.underline_thickness = 1
 config.underline_position = -2
 
-config.window_padding = { left = 12, right = 12, top = 12, bottom = 0 }
+config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
 config.window_decorations = "RESIZE"
 config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = false
@@ -21,6 +21,9 @@ config.tab_max_width = 32
 config.enable_scroll_bar = false
 config.window_close_confirmation = 'NeverPrompt'
 config.native_macos_fullscreen_mode = true
+
+config.window_background_opacity = 0.8
+config.macos_window_background_blur = 10
 
 config.scrollback_lines = 5000
 config.term = 'wezterm'
@@ -34,7 +37,7 @@ config.cursor_blink_rate = 0
 
 config.automatically_reload_config = true
 config.check_for_updates = true
-config.audible_bell = 'Disabled'
+config.audible_bell = 'SystemBeep'
 
 config.hyperlink_rules = wezterm.default_hyperlink_rules()
 table.insert(config.hyperlink_rules, {
