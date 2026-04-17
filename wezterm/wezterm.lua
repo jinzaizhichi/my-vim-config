@@ -16,38 +16,24 @@ config.underline_position = -2
 config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
 config.window_decorations = "RESIZE"
 config.hide_tab_bar_if_only_one_tab = true
-config.use_fancy_tab_bar = false
-config.tab_max_width = 32
-config.enable_scroll_bar = false
 config.window_close_confirmation = 'NeverPrompt'
 config.native_macos_fullscreen_mode = true
 
-config.window_background_opacity = 0.8
-config.macos_window_background_blur = 10
+config.window_background_opacity = 0.9
+config.macos_window_background_blur = 20
 
 config.scrollback_lines = 5000
 config.term = 'wezterm'
 
-config.max_fps = 120
+config.max_fps = 240
 config.front_end = "WebGpu"
 config.webgpu_power_preference = 'HighPerformance'
-config.enable_kitty_graphics = true
-config.animation_fps = 60
-config.cursor_blink_rate = 0
+config.animation_fps = 120
 
 config.automatically_reload_config = true
 config.check_for_updates = true
 config.audible_bell = 'SystemBeep'
-
 config.hyperlink_rules = wezterm.default_hyperlink_rules()
-table.insert(config.hyperlink_rules, {
-  regex = [[\b\w+://[\w.-]+\S*\b]],
-  format = '$0',
-})
-
-config.display_pixel_geometry = "BGR"
-
--- config.color_scheme = 'Solarized Light (Gogh)'
 config.color_scheme = 'Black Metal (Venom) (base16)'
 
 config.keys = {
@@ -57,9 +43,9 @@ config.keys = {
   { key = '-',     mods = 'CMD',       action = wezterm.action.DecreaseFontSize },
   { key = '0',     mods = 'CMD',       action = wezterm.action.ResetFontSize },
   { key = 'n',     mods = 'CMD',       action = wezterm.action.SpawnTab 'CurrentPaneDomain' },
+  { key = 'Enter', mods = 'CMD',       action = wezterm.action.ToggleFullScreen },
   { key = 'w',     mods = 'CMD',       action = wezterm.action.CloseCurrentTab { confirm = false } },
   { key = 'n',     mods = 'CMD|SHIFT', action = wezterm.action.SpawnWindow },
-  { key = 'Enter', mods = 'CMD',       action = wezterm.action.ToggleFullScreen },
   { key = '[',     mods = 'CMD|SHIFT', action = wezterm.action.ActivateTabRelative(-1) },
   { key = ']',     mods = 'CMD|SHIFT', action = wezterm.action.ActivateTabRelative(1) },
   { key = 'r',     mods = 'CMD',       action = wezterm.action.ReloadConfiguration },

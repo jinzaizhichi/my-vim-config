@@ -31,17 +31,7 @@ colorscheme base16-black-metal-venom
 hi Normal guibg=NONE ctermbg=NONE
 " colorscheme candle-grey-transparent
 
-let g:netrw_banner=0
-
-autocmd BufWritePre * :%s/\s\+$//e
-
-augroup Binary
-  au!
-  au BufReadPre  *.bin,*.pcap set binary
-  au BufReadPost *.bin,*.pcap silent %!xxd
-  au BufWritePre *.bin,*.pcap silent %!xxd -r
-  au BufWritePost *.bin,*.pcap silent %!xxd
-augroup END
+" autocmd BufWritePre * :%s/\s\+$//e
 
 if has('mac')
   let g:fugitive_pty_debug_override = 0

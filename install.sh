@@ -2,10 +2,10 @@
 #
 # Doruk Özer <dorukozer@protonmail.com>
 # ---
-# - relatively lite setup for vim, zsh, tmux, wezterm, lite i3 WM for arch and
-# git, + some shell scripts.
-# - vim, tmux, zsh plugins are submodules, after clone they detach from dotfile
-# git repo
+# - relatively lite setup for vim, zsh, tmux, wezterm, i3 WM for arch and git,
+# + some shell scripts.
+# - vim, tmux, zsh plugins added as submodules, after clone they detach from
+# dotfiles repo
 
 set -e
 
@@ -24,7 +24,7 @@ main() {
   [ -d "$DOTFILES_DIR" ] && rm -rf "$DOTFILES_DIR"
 
   git clone git@github.com:dorukozerr/dotfiles.git "$DOTFILES_DIR"
-  git -C "$DOTFILES_DIR" submodule update --init --rebase --recursive --progress
+  git -C "$DOTFILES_DIR" submodule update --init --remote
 
   mkdir -p "$BACKUP_DIR"
 
@@ -63,7 +63,7 @@ main() {
   mv "$DOTFILES_DIR/git/.gitconfig" "$DOTFILES_DIR/zsh/.zshenv" "$HOME/"
   mv "$DOTFILES_DIR/zsh/.zshrc" "$DOTFILES_DIR/zsh/.zprofile" "$DOTFILES_DIR/zsh/zsh.d" "$HOME/.config/zsh/"
   mv "$DOTFILES_DIR/wezterm" "$DOTFILES_DIR/htop" "$HOME/.config/"
-  mv "$DOTFILES_DIR/tmux/snapshot.conf" "$DOTFILES_DIR/tmux/tmux.conf" "$HOME/.config/tmux/"
+  mv "$DOTFILES_DIR/tmux/snapshot.conf" "$DOTFILES_DIR/tmux/tmux.conf" $HOME/.config/tmux/tmux-nerd-font-window-name.yml" "$HOME/.config/tmux/"
   mv "$DOTFILES_DIR/vim/coc-settings.json" "$DOTFILES_DIR/vim/vimrc" "$DOTFILES_DIR/vim/config" "$HOME/.vim/"
 
   yes | vim -c 'CocInstall -sync coc-vimlsp coc-sh coc-tsserver coc-go coc-html coc-css @yaegassy/coc-tailwindcss3 coc-json coc-yaml coc-prettier coc-eslint coc-dotenv coc-sql coc-lua coc-toml coc-svg coc-zshell' -c 'qall!'

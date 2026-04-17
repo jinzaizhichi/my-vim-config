@@ -71,3 +71,6 @@
 [submodule "tmux/plugins/tmux-resurrect"]
 	path = tmux/plugins/tmux-resurrect
 	url = git@github.com:tmux-plugins/tmux-resurrect.git
+[submodule "vim/pack/plugins/start/tsc-watcher-vim"]
+	path = vim/pack/plugins/start/tsc-watcher-vim
+	url = ssh://git@codeberg.org/doruk/tsc-watcher-vim.git
