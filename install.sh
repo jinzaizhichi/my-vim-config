@@ -63,14 +63,14 @@ main() {
   mv "$DOTFILES_DIR/git/.gitconfig" "$DOTFILES_DIR/zsh/.zshenv" "$HOME/"
   mv "$DOTFILES_DIR/zsh/.zshrc" "$DOTFILES_DIR/zsh/.zprofile" "$DOTFILES_DIR/zsh/zsh.d" "$HOME/.config/zsh/"
   mv "$DOTFILES_DIR/wezterm" "$DOTFILES_DIR/htop" "$HOME/.config/"
-  mv "$DOTFILES_DIR/tmux/snapshot.conf" "$DOTFILES_DIR/tmux/tmux.conf" $HOME/.config/tmux/tmux-nerd-font-window-name.yml" "$HOME/.config/tmux/"
+  mv "$DOTFILES_DIR/tmux/snapshot.conf" "$DOTFILES_DIR/tmux/tmux.conf" "$HOME/.config/tmux/tmux-nerd-font-window-name.yml" "$HOME/.config/tmux/"
   mv "$DOTFILES_DIR/vim/coc-settings.json" "$DOTFILES_DIR/vim/vimrc" "$DOTFILES_DIR/vim/config" "$HOME/.vim/"
 
-  yes | vim -c 'CocInstall -sync coc-vimlsp coc-sh coc-tsserver coc-go coc-html coc-css @yaegassy/coc-tailwindcss3 coc-json coc-yaml coc-prettier coc-eslint coc-dotenv coc-sql coc-lua coc-toml coc-svg coc-zshell' -c 'qall!'
+  yes | vim -c "CocInstall -sync coc-vimlsp coc-sh coc-tsserver coc-go coc-html coc-css @yaegassy/coc-tailwindcss3 coc-json coc-yaml coc-prettier coc-eslint coc-dotenv coc-sql coc-lua coc-toml coc-svg coc-zshell" -c "qall!"
 
   rm -f "$HOME/.vim/temp.vimrc" && rm -rf "$DOTFILES_DIR" && cd
 
-  echo 'done'
+  echo "done"
 }
 
 main
